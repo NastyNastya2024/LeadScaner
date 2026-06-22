@@ -1,0 +1,988 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>LeadScaper — Архитектура платформы</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #fafafa;
+      --surface: #ffffff;
+      --border: #e8e8e8;
+      --text: #1a1a1a;
+      --text-muted: #6b7280;
+      --accent: #2563eb;
+      --accent-soft: #eff6ff;
+      --layer-1: #3b82f6;
+      --layer-2: #8b5cf6;
+      --layer-3: #f59e0b;
+      --layer-4: #10b981;
+      --radius: 10px;
+      --shadow: 0 1px 3px rgba(0,0,0,.06);
+      --max-w: 960px;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Inter', system-ui, -apple-system, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.65;
+      font-size: 15px;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    a { color: var(--accent); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+
+    .wrap {
+      max-width: var(--max-w);
+      margin: 0 auto;
+      padding: 0 20px 80px;
+    }
+
+    /* Header */
+    header {
+      padding: 48px 0 40px;
+      border-bottom: 1px solid var(--border);
+      margin-bottom: 48px;
+    }
+
+    .logo {
+      font-size: 13px;
+      font-weight: 600;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      margin-bottom: 12px;
+    }
+
+    h1 {
+      font-size: clamp(1.75rem, 5vw, 2.25rem);
+      font-weight: 700;
+      letter-spacing: -.02em;
+      line-height: 1.2;
+      margin-bottom: 16px;
+    }
+
+    .lead {
+      font-size: 16px;
+      color: var(--text-muted);
+      max-width: 680px;
+    }
+
+    /* Nav */
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(250,250,250,.92);
+      backdrop-filter: blur(8px);
+      border-bottom: 1px solid var(--border);
+      margin: 0 -20px 40px;
+      padding: 0 20px;
+    }
+
+    nav ul {
+      display: flex;
+      gap: 4px;
+      list-style: none;
+      overflow-x: auto;
+      padding: 12px 0;
+      scrollbar-width: none;
+    }
+
+    nav ul::-webkit-scrollbar { display: none; }
+
+    nav a {
+      display: block;
+      padding: 6px 14px;
+      border-radius: 999px;
+      font-size: 13px;
+      font-weight: 500;
+      color: var(--text-muted);
+      white-space: nowrap;
+      text-decoration: none;
+      transition: background .15s, color .15s;
+    }
+
+    nav a:hover {
+      background: var(--surface);
+      color: var(--text);
+      text-decoration: none;
+      box-shadow: var(--shadow);
+    }
+
+    /* Sections */
+    section { margin-bottom: 56px; }
+
+    h2 {
+      font-size: 1.35rem;
+      font-weight: 700;
+      letter-spacing: -.01em;
+      margin-bottom: 8px;
+    }
+
+    h3 {
+      font-size: 1.05rem;
+      font-weight: 600;
+      margin: 28px 0 12px;
+    }
+
+    .section-desc {
+      color: var(--text-muted);
+      margin-bottom: 24px;
+      font-size: 14px;
+    }
+
+    .section-label {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: .06em;
+      text-transform: uppercase;
+      margin-bottom: 8px;
+    }
+
+    .dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      flex-shrink: 0;
+    }
+
+    /* Pipeline */
+    .pipeline {
+      display: flex;
+      align-items: stretch;
+      gap: 0;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 24px 16px;
+      overflow-x: auto;
+      margin-bottom: 32px;
+    }
+
+    .pipeline-step {
+      flex: 1;
+      min-width: 130px;
+      text-align: center;
+      position: relative;
+    }
+
+    .pipeline-step:not(:last-child)::after {
+      content: '→';
+      position: absolute;
+      right: -10px;
+      top: 50%;
+      transform: translateY(-50%);
+      color: var(--text-muted);
+      font-size: 18px;
+      z-index: 1;
+    }
+
+    .pipeline-num {
+      font-size: 11px;
+      font-weight: 600;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      letter-spacing: .05em;
+      margin-bottom: 6px;
+    }
+
+    .pipeline-title {
+      font-size: 13px;
+      font-weight: 600;
+      line-height: 1.3;
+    }
+
+    .pipeline-bar {
+      height: 3px;
+      border-radius: 2px;
+      margin: 10px auto 0;
+      width: 48px;
+    }
+
+    /* Cards grid */
+    .card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 20px;
+      margin-bottom: 16px;
+    }
+
+    /* Tables */
+    .table-wrap {
+      overflow-x: auto;
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      background: var(--surface);
+      margin-bottom: 24px;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 13px;
+      min-width: 560px;
+    }
+
+    th, td {
+      padding: 11px 14px;
+      text-align: left;
+      border-bottom: 1px solid var(--border);
+      vertical-align: top;
+    }
+
+    th {
+      font-weight: 600;
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: .05em;
+      color: var(--text-muted);
+      background: var(--bg);
+    }
+
+    tr:last-child td { border-bottom: none; }
+
+    td:first-child {
+      font-weight: 500;
+      color: var(--text-muted);
+      white-space: nowrap;
+    }
+
+    .tool-link {
+      font-weight: 600;
+      color: var(--accent);
+    }
+
+    /* Diagram */
+    .diagram {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 24px;
+      margin-bottom: 24px;
+      font-size: 13px;
+    }
+
+    .diagram-row {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 10px;
+      margin-bottom: 10px;
+    }
+
+    .diagram-box {
+      background: var(--bg);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 10px 14px;
+      font-weight: 500;
+      font-size: 12px;
+      text-align: center;
+      min-width: 120px;
+    }
+
+    .diagram-box.highlight {
+      background: var(--accent-soft);
+      border-color: #bfdbfe;
+      color: var(--accent);
+    }
+
+    .diagram-arrow {
+      text-align: center;
+      color: var(--text-muted);
+      font-size: 18px;
+      line-height: 1;
+      padding: 4px 0;
+    }
+
+    .diagram-label {
+      text-align: center;
+      font-size: 11px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: .06em;
+      color: var(--text-muted);
+      margin-bottom: 12px;
+    }
+
+    /* Code */
+    pre {
+      background: #1e1e2e;
+      color: #cdd6f4;
+      border-radius: var(--radius);
+      padding: 18px 20px;
+      overflow-x: auto;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 12px;
+      line-height: 1.6;
+      margin-bottom: 24px;
+    }
+
+    .code-label {
+      font-size: 11px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: .06em;
+      color: var(--text-muted);
+      margin-bottom: 8px;
+    }
+
+    /* Flow steps */
+    .flow {
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+      margin-bottom: 24px;
+    }
+
+    .flow-step {
+      display: flex;
+      gap: 16px;
+      align-items: flex-start;
+      padding: 14px 0;
+      border-left: 2px solid var(--border);
+      margin-left: 11px;
+      padding-left: 24px;
+      position: relative;
+    }
+
+    .flow-step::before {
+      content: '';
+      position: absolute;
+      left: -6px;
+      top: 20px;
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background: var(--surface);
+      border: 2px solid var(--accent);
+    }
+
+    .flow-step:last-child { border-left-color: transparent; }
+
+    .flow-num {
+      font-size: 11px;
+      font-weight: 700;
+      color: var(--accent);
+      min-width: 20px;
+    }
+
+    .flow-text { font-size: 14px; }
+
+    /* Full arch */
+    .arch-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 10px;
+      margin-bottom: 16px;
+    }
+
+    .arch-layer {
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 14px 10px;
+      text-align: center;
+      font-size: 11px;
+      background: var(--bg);
+    }
+
+    .arch-layer strong {
+      display: block;
+      font-size: 12px;
+      margin-bottom: 8px;
+    }
+
+    .arch-layer ul {
+      list-style: none;
+      color: var(--text-muted);
+      line-height: 1.7;
+    }
+
+    .arch-layer a { font-size: 10px; }
+
+    .arch-bar {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 14px;
+      text-align: center;
+      font-size: 12px;
+      font-weight: 600;
+      margin-bottom: 10px;
+    }
+
+    .arch-bar.muted {
+      font-weight: 500;
+      color: var(--text-muted);
+      font-size: 11px;
+    }
+
+    /* Tech table badges */
+    .badge {
+      display: inline-block;
+      background: var(--bg);
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      padding: 2px 8px;
+      font-size: 12px;
+      font-weight: 500;
+    }
+
+    /* Links section */
+    .links-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+      gap: 10px;
+    }
+
+    .link-item {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 12px 14px;
+      font-size: 13px;
+      transition: border-color .15s;
+    }
+
+    .link-item:hover { border-color: #bfdbfe; }
+
+    .link-item a {
+      font-weight: 500;
+      word-break: break-all;
+    }
+
+    .link-cat {
+      font-size: 11px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: .05em;
+      color: var(--text-muted);
+      margin: 24px 0 10px;
+    }
+
+    footer {
+      margin-top: 64px;
+      padding-top: 24px;
+      border-top: 1px solid var(--border);
+      font-size: 13px;
+      color: var(--text-muted);
+      text-align: center;
+    }
+
+    @media (max-width: 640px) {
+      header { padding: 32px 0 28px; }
+      .pipeline-step:not(:last-child)::after { display: none; }
+      .pipeline { gap: 12px; flex-direction: column; align-items: stretch; }
+      .pipeline-step { min-width: unset; }
+      .arch-grid { grid-template-columns: repeat(2, 1fr); }
+      pre { font-size: 11px; padding: 14px; }
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <div class="logo">LeadScaper Platform</div>
+      <h1>Архитектура платформы</h1>
+      <p class="lead">LeadScaper — многослойная AI-платформа для автоматического поиска B2B-клиентов, сбора данных о компаниях и ЛПР, мониторинга социальных сетей и генерации персонализированных предложений.</p>
+    </header>
+
+    <nav>
+      <ul>
+        <li><a href="#overview">Обзор</a></li>
+        <li><a href="#layer-1">Слой 1</a></li>
+        <li><a href="#layer-2">Слой 2</a></li>
+        <li><a href="#layer-3">Слой 3</a></li>
+        <li><a href="#layer-4">Слой 4</a></li>
+        <li><a href="#full-arch">Схема</a></li>
+        <li><a href="#data-flow">Data Flow</a></li>
+        <li><a href="#tech">Стек</a></li>
+        <li><a href="#links">Ссылки</a></li>
+      </ul>
+    </nav>
+
+    <!-- Overview -->
+    <section id="overview">
+      <h2>Общая концепция</h2>
+      <p class="section-desc">Четыре последовательных слоя обработки данных — от поиска компаний до вовлечения в соцсетях.</p>
+
+      <div class="pipeline">
+        <div class="pipeline-step">
+          <div class="pipeline-num">Слой 1</div>
+          <div class="pipeline-title">Поиск<br>Компаний</div>
+          <div class="pipeline-bar" style="background:var(--layer-1)"></div>
+        </div>
+        <div class="pipeline-step">
+          <div class="pipeline-num">Слой 2</div>
+          <div class="pipeline-title">Сбор<br>Контактов</div>
+          <div class="pipeline-bar" style="background:var(--layer-2)"></div>
+        </div>
+        <div class="pipeline-step">
+          <div class="pipeline-num">Слой 3</div>
+          <div class="pipeline-title">Анализ<br>Данных</div>
+          <div class="pipeline-bar" style="background:var(--layer-3)"></div>
+        </div>
+        <div class="pipeline-step">
+          <div class="pipeline-num">Слой 4</div>
+          <div class="pipeline-title">Действие<br>Вовлечение</div>
+          <div class="pipeline-bar" style="background:var(--layer-4)"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Layer 1 -->
+    <section id="layer-1">
+      <div class="section-label"><span class="dot" style="background:var(--layer-1)"></span> Слой 1</div>
+      <h2>Поиск компаний <span style="font-weight:400;color:var(--text-muted)">(Discovery Layer)</span></h2>
+      <p class="section-desc">Найти все возможные компании-клиенты по заданным критериям.</p>
+
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr><th>#</th><th>Инструмент</th><th>Функция</th><th>Источник данных</th></tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>1.1</td>
+              <td><a class="tool-link" href="https://github.com/xiongQvQ/AI_Find_Customer" target="_blank" rel="noopener">AI_Find_Customer</a></td>
+              <td>Поиск компаний через AI-агентов по ключевым словам, отрасли, геолокации</td>
+              <td>Google, B2B-платформы</td>
+            </tr>
+            <tr>
+              <td>1.2</td>
+              <td><a class="tool-link" href="https://apify.com/lizzyyy2/github-lead-signals-ai" target="_blank" rel="noopener">GitHub Lead Signals</a></td>
+              <td>Поиск компаний по технологическому стеку (GitHub активности)</td>
+              <td>GitHub API</td>
+            </tr>
+            <tr>
+              <td>1.3</td>
+              <td><a class="tool-link" href="https://github.com/sajdakabir/clutch-profile-scraper" target="_blank" rel="noopener">Clutch Profile Scraper</a></td>
+              <td>Сбор компаний из B2B-каталога</td>
+              <td>Clutch.co</td>
+            </tr>
+            <tr>
+              <td>1.4</td>
+              <td><a class="tool-link" href="https://github.com/brightdata/trendscan" target="_blank" rel="noopener">TrendScan</a></td>
+              <td>Поиск трендовых компаний</td>
+              <td>Crunchbase, LinkedIn, Twitter/X</td>
+            </tr>
+            <tr>
+              <td>1.5</td>
+              <td><a class="tool-link" href="https://github.com/thekiln-dev/icp-researcher" target="_blank" rel="noopener">ICP Researcher</a></td>
+              <td>Определение Ideal Customer Profile и поиск по нему</td>
+              <td>Веб-поиск, LinkedIn, Crunchbase</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="code-label">Выходные данные слоя 1</div>
+      <pre>{
+  "companies": [
+    {
+      "id": "comp_001",
+      "name": "TechCorp Inc.",
+      "website": "https://techcorp.com",
+      "industry": "SaaS",
+      "tech_stack": ["Python", "React", "AWS"],
+      "size": "50-200",
+      "source": "GitHub_Lead_Signals",
+      "relevance_score": 0.92
+    }
+  ]
+}</pre>
+    </section>
+
+    <!-- Layer 2 -->
+    <section id="layer-2">
+      <div class="section-label"><span class="dot" style="background:var(--layer-2)"></span> Слой 2</div>
+      <h2>Сбор контактов и соцсетей <span style="font-weight:400;color:var(--text-muted)">(Enrichment Layer)</span></h2>
+      <p class="section-desc">Для каждой найденной компании собрать контакты, соцсети и публичные данные.</p>
+
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr><th>#</th><th>Инструмент</th><th>Функция</th><th>Источник данных</th></tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>2.1</td>
+              <td><a class="tool-link" href="https://github.com/sspomeroy-banyanlabs/ColdReach-Scraper" target="_blank" rel="noopener">ColdReach-Scraper</a></td>
+              <td>Скрапинг сайта: контакты, миссия, услуги</td>
+              <td>Сайт компании</td>
+            </tr>
+            <tr>
+              <td>2.2</td>
+              <td><a class="tool-link" href="https://github.com/Anudeepreddynarala/lead-generator" target="_blank" rel="noopener">lead-generator</a></td>
+              <td>Поиск LinkedIn-профилей сотрудников и обогащение email</td>
+              <td>LinkedIn, Apollo.io</td>
+            </tr>
+            <tr>
+              <td>2.3</td>
+              <td><a class="tool-link" href="https://github.com/haytham10/linkedIn_scraper" target="_blank" rel="noopener">linkedIn_scraper</a></td>
+              <td>Сбор профилей ЛПР с AI-генерацией «болевых точек»</td>
+              <td>LinkedIn</td>
+            </tr>
+            <tr>
+              <td>2.4</td>
+              <td><a class="tool-link" href="https://github.com/Ordinary0x/The-3rd-Eye" target="_blank" rel="noopener">The 3rd Eye</a></td>
+              <td>Сбор цифрового следа из всех соцсетей</td>
+              <td>Twitter, LinkedIn, Instagram, Facebook, Telegram</td>
+            </tr>
+            <tr>
+              <td>2.5</td>
+              <td><a class="tool-link" href="https://github.com/bgunyel/business-researcher" target="_blank" rel="noopener">Business Researcher</a></td>
+              <td>Глубокое исследование: финансы, структура, рынок</td>
+              <td>Tavily API, веб-поиск</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h3>Архитектура слоя 2</h3>
+      <div class="diagram">
+        <div class="diagram-label">Company URL List</div>
+        <div class="diagram-row">
+          <div class="diagram-box highlight">ColdReach-Scraper<br><small style="color:var(--text-muted)">Сайт</small></div>
+          <div class="diagram-box highlight">The 3rd Eye<br><small style="color:var(--text-muted)">Соцсети</small></div>
+          <div class="diagram-box highlight">lead-generator<br><small style="color:var(--text-muted)">LinkedIn</small></div>
+        </div>
+        <div class="diagram-arrow">↓</div>
+        <div class="diagram-row">
+          <div class="diagram-box highlight" style="min-width:200px">Aggregated Profile — Company DB</div>
+        </div>
+      </div>
+
+      <div class="code-label">Выходные данные слоя 2</div>
+      <pre>{
+  "company_id": "comp_001",
+  "enriched_data": {
+    "contacts": [
+      {
+        "name": "John Doe",
+        "position": "CEO",
+        "email": "john@techcorp.com",
+        "linkedin": "https://linkedin.com/in/johndoe",
+        "twitter": "@johndoe",
+        "is_decision_maker": true
+      }
+    ],
+    "social_media": {
+      "linkedin": "https://linkedin.com/company/techcorp",
+      "twitter": "https://twitter.com/techcorp",
+      "facebook": "https://facebook.com/techcorp",
+      "instagram": "https://instagram.com/techcorp"
+    },
+    "public_data": {
+      "mission": "...",
+      "services": ["..."],
+      "funding": "$10M Series A",
+      "employees": 120
+    }
+  }
+}</pre>
+    </section>
+
+    <!-- Layer 3 -->
+    <section id="layer-3">
+      <div class="section-label"><span class="dot" style="background:var(--layer-3)"></span> Слой 3</div>
+      <h2>Анализ и генерация инсайтов <span style="font-weight:400;color:var(--text-muted)">(Analysis Layer)</span></h2>
+      <p class="section-desc">Анализ данных для поиска триггерных слов, ЛПР и генерации персонализированных сообщений.</p>
+
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr><th>#</th><th>Инструмент</th><th>Функция</th><th>Источник данных</th></tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>3.1</td>
+              <td><a class="tool-link" href="https://github.com/chibbss/Automated-Decision-Making-Discovery" target="_blank" rel="noopener">Automated-Decision-Making-Discovery</a></td>
+              <td>Выявление ЛПР (CEO, CTO, Head of X) с валидацией контактов</td>
+              <td>Веб-поиск, LinkedIn, AI</td>
+            </tr>
+            <tr>
+              <td>3.2</td>
+              <td><a class="tool-link" href="https://github.com/bm-github/owasp-social-osint-agent" target="_blank" rel="noopener">OWASP SocialOSINTAgent</a></td>
+              <td>Анализ текста и изображений из соцсетей, создание отчётов</td>
+              <td>X, Reddit, GitHub, YouTube</td>
+            </tr>
+            <tr>
+              <td>3.3</td>
+              <td><a class="tool-link" href="https://github.com/obsei/obsei" target="_blank" rel="noopener">Obsei</a></td>
+              <td>Анализ тональности и классификация сообщений</td>
+              <td>X, Reddit, Facebook, отзывы</td>
+            </tr>
+            <tr>
+              <td>3.4</td>
+              <td><a class="tool-link" href="https://github.com/BunsDev/company-research-agent-tavily" target="_blank" rel="noopener">Company Research Agent (Tavily)</a></td>
+              <td>Глубокий анализ и генерация отчётов в PDF/Markdown</td>
+              <td>Tavily API, Anthropic API</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h3>Архитектура слоя 3</h3>
+      <div class="diagram">
+        <div class="diagram-label">Data Ingest — Company profiles + Social media + OSINT</div>
+        <div class="diagram-arrow">↓</div>
+        <div class="diagram-label">Parallel Analysis Pipeline</div>
+        <div class="diagram-row">
+          <div class="diagram-box">Decision Maker<br><small style="color:var(--text-muted)">CrewAI</small></div>
+          <div class="diagram-box">Social OSINT<br><small style="color:var(--text-muted)">OWASP</small></div>
+          <div class="diagram-box">Sentiment<br><small style="color:var(--text-muted)">Obsei</small></div>
+          <div class="diagram-box">Report Gen<br><small style="color:var(--text-muted)">Tavily</small></div>
+          <div class="diagram-box">Pain Points<br><small style="color:var(--text-muted)">LinkedIn</small></div>
+        </div>
+        <div class="diagram-arrow">↓</div>
+        <div class="diagram-row">
+          <div class="diagram-box highlight" style="min-width:280px">Unified Output — ЛПР, pain points, sentiment, outreach strategy, PDF</div>
+        </div>
+      </div>
+
+      <div class="code-label">Выходные данные слоя 3</div>
+      <pre>{
+  "company_id": "comp_001",
+  "decision_makers": [
+    {
+      "name": "John Doe",
+      "role": "CEO",
+      "validated_email": "john@techcorp.com",
+      "confidence": 0.95,
+      "pain_points": ["Customer acquisition cost too high", "Manual processes"]
+    }
+  ],
+  "sentiment_analysis": { "twitter": 0.7, "reddit": 0.3, "news": 0.8 },
+  "opportunities": [
+    "They just raised Series A - need to scale sales",
+    "Recent layoffs - automation opportunity"
+  ],
+  "outreach_strategy": {
+    "personalized_message": "...",
+    "best_channel": "LinkedIn",
+    "best_time": "Tuesday 10 AM"
+  }
+}</pre>
+    </section>
+
+    <!-- Layer 4 -->
+    <section id="layer-4">
+      <div class="section-label"><span class="dot" style="background:var(--layer-4)"></span> Слой 4</div>
+      <h2>Вовлечение в соцсетях <span style="font-weight:400;color:var(--text-muted)">(Engagement Layer)</span></h2>
+      <p class="section-desc">Автоматический мониторинг и вовлечение аудитории по триггерным словам.</p>
+
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr><th>#</th><th>Инструмент</th><th>Платформа</th><th>Функция</th></tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>4.1</td>
+              <td><a class="tool-link" href="https://github.com/aramirez087/TuitBot" target="_blank" rel="noopener">Agent-X (TuitBot)</a></td>
+              <td>X (Twitter)</td>
+              <td>Мониторинг ключевых слов, AI-ответы на посты с одобрением</td>
+            </tr>
+            <tr>
+              <td>4.2</td>
+              <td><a class="tool-link" href="https://github.com/ivucicev/redsignal" target="_blank" rel="noopener">RedSignal</a></td>
+              <td>Reddit</td>
+              <td>Поиск «тёплых» лидов, AI-фильтрация релевантности</td>
+            </tr>
+            <tr>
+              <td>4.3</td>
+              <td><a class="tool-link" href="https://n8n.io/workflows/10251-cross-platform-brand-monitoring-and-analysis-with-anysite-api-and-gpt/" target="_blank" rel="noopener">n8n workflow</a></td>
+              <td>Reddit, LinkedIn, X, Instagram</td>
+              <td>Мультиплатформенный мониторинг и уведомления</td>
+            </tr>
+            <tr>
+              <td>4.4</td>
+              <td><a class="tool-link" href="https://github.com/obsei/obsei" target="_blank" rel="noopener">Obsei</a></td>
+              <td>X, Reddit, Facebook</td>
+              <td>Анализ тональности упоминаний</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h3>Архитектура слоя 4</h3>
+      <div class="diagram">
+        <div class="diagram-label">Trigger Keywords — ["Sales automation", "Lead generation", ...]</div>
+        <div class="diagram-arrow">↓</div>
+        <div class="diagram-row">
+          <div class="diagram-box highlight">Agent-X<br><small style="color:var(--text-muted)">X/Twitter</small></div>
+          <div class="diagram-box highlight">RedSignal<br><small style="color:var(--text-muted)">Reddit</small></div>
+          <div class="diagram-box highlight">n8n Workflow</div>
+        </div>
+        <div class="diagram-arrow">↓</div>
+        <div class="diagram-row">
+          <div class="diagram-box">AI Filter &amp; Classify — Obsei + OWASP SocialOSINTAgent</div>
+        </div>
+        <div class="diagram-arrow">↓</div>
+        <div class="diagram-row">
+          <div class="diagram-box">Send DM</div>
+          <div class="diagram-box">Schedule Reply</div>
+          <div class="diagram-box">Create Task</div>
+          <div class="diagram-box">Add to CRM</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Full Architecture -->
+    <section id="full-arch">
+      <h2>Полная архитектурная схема</h2>
+      <p class="section-desc">Взаимодействие слоёв, оркестрации и хранилища данных.</p>
+
+      <div class="card">
+        <div class="arch-bar">User Interface — Dashboard / Reports / Notifications</div>
+        <div class="diagram-arrow">↓</div>
+        <div class="arch-bar muted">Orchestration Layer — CrewAI / LangGraph / n8n</div>
+        <div class="arch-grid">
+          <div class="arch-layer" style="border-top:3px solid var(--layer-1)">
+            <strong>Слой 1 — Поиск</strong>
+            <ul>
+              <li><a href="https://github.com/xiongQvQ/AI_Find_Customer">AI_Find_Customer</a></li>
+              <li><a href="https://apify.com/lizzyyy2/github-lead-signals-ai">GitHub Lead Signals</a></li>
+              <li><a href="https://github.com/sajdakabir/clutch-profile-scraper">Clutch Scraper</a></li>
+              <li><a href="https://github.com/brightdata/trendscan">TrendScan</a></li>
+              <li><a href="https://github.com/thekiln-dev/icp-researcher">ICP Researcher</a></li>
+            </ul>
+          </div>
+          <div class="arch-layer" style="border-top:3px solid var(--layer-2)">
+            <strong>Слой 2 — Сбор</strong>
+            <ul>
+              <li><a href="https://github.com/sspomeroy-banyanlabs/ColdReach-Scraper">ColdReach</a></li>
+              <li><a href="https://github.com/Anudeepreddynarala/lead-generator">lead-generator</a></li>
+              <li><a href="https://github.com/haytham10/linkedIn_scraper">LinkedIn Scraper</a></li>
+              <li><a href="https://github.com/Ordinary0x/The-3rd-Eye">The 3rd Eye</a></li>
+              <li><a href="https://github.com/bgunyel/business-researcher">Business Researcher</a></li>
+            </ul>
+          </div>
+          <div class="arch-layer" style="border-top:3px solid var(--layer-3)">
+            <strong>Слой 3 — Анализ</strong>
+            <ul>
+              <li><a href="https://github.com/chibbss/Automated-Decision-Making-Discovery">Decision Maker</a></li>
+              <li><a href="https://github.com/bm-github/owasp-social-osint-agent">OWASP OSINT</a></li>
+              <li><a href="https://github.com/obsei/obsei">Obsei</a></li>
+              <li><a href="https://github.com/BunsDev/company-research-agent-tavily">Tavily Agent</a></li>
+            </ul>
+          </div>
+          <div class="arch-layer" style="border-top:3px solid var(--layer-4)">
+            <strong>Слой 4 — Вовлечение</strong>
+            <ul>
+              <li><a href="https://github.com/aramirez087/TuitBot">Agent-X</a></li>
+              <li><a href="https://github.com/ivucicev/redsignal">RedSignal</a></li>
+              <li><a href="https://n8n.io/workflows/10251-cross-platform-brand-monitoring-and-analysis-with-anysite-api-and-gpt/">n8n</a></li>
+              <li><a href="https://github.com/obsei/obsei">Obsei</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="diagram-arrow">↓</div>
+        <div class="arch-bar muted">Data Lake &amp; CRM — PostgreSQL / SQLite + HubSpot / Salesforce</div>
+      </div>
+    </section>
+
+    <!-- Data Flow -->
+    <section id="data-flow">
+      <h2>Процесс обработки данных</h2>
+      <p class="section-desc">Последовательность шагов от поиска компании до вовлечения.</p>
+
+      <div class="flow">
+        <div class="flow-step"><span class="flow-num">→</span><span class="flow-text">Поиск компаний (Слой 1)</span></div>
+        <div class="flow-step"><span class="flow-num">→</span><span class="flow-text">Обогащение данными (Слой 2)</span></div>
+        <div class="flow-step"><span class="flow-num">→</span><span class="flow-text">Анализ и генерация инсайтов (Слой 3)</span></div>
+        <div class="flow-step"><span class="flow-num">→</span><span class="flow-text">Запись в CRM (PostgreSQL / Salesforce)</span></div>
+        <div class="flow-step"><span class="flow-num">→</span><span class="flow-text">Мониторинг соцсетей по триггерным словам (Слой 4)</span></div>
+        <div class="flow-step"><span class="flow-num">→</span><span class="flow-text">AI-фильтрация и классификация (Obsei + OWASP)</span></div>
+        <div class="flow-step"><span class="flow-num">→</span><span class="flow-text">Генерация персонализированных сообщений (Agent-X / RedSignal)</span></div>
+        <div class="flow-step"><span class="flow-num">→</span><span class="flow-text">Вовлечение и отправка в CRM</span></div>
+      </div>
+    </section>
+
+    <!-- Tech Stack -->
+    <section id="tech">
+      <h2>Технические рекомендации</h2>
+      <p class="section-desc">Стек для оркестрации, API, хранения и уведомлений.</p>
+
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr><th>Компонент</th><th>Технология</th><th>Назначение</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>Orchestration</td><td><span class="badge">CrewAI</span> <span class="badge">LangGraph</span></td><td>Управление агентами и потоками данных</td></tr>
+            <tr><td>Backend API</td><td><span class="badge">Python (FastAPI)</span></td><td>REST API для взаимодействия с клиентами</td></tr>
+            <tr><td>Frontend</td><td><span class="badge">Streamlit</span> <span class="badge">Next.js</span></td><td>Дашборд для просмотра результатов</td></tr>
+            <tr><td>Database</td><td><span class="badge">PostgreSQL</span> <span class="badge">SQLite</span></td><td>Хранение компаний, контактов, отчётов</td></tr>
+            <tr><td>Queue</td><td><span class="badge">Celery</span> <span class="badge">Redis</span></td><td>Асинхронная обработка задач</td></tr>
+            <tr><td>AI/LLM</td><td><span class="badge">OpenAI</span> <span class="badge">Anthropic</span> <span class="badge">Gemini</span></td><td>Анализ, генерация сообщений</td></tr>
+            <tr><td>Search APIs</td><td><span class="badge">Tavily</span> <span class="badge">Exa.ai</span> <span class="badge">Google Search</span></td><td>Поиск данных о компаниях</td></tr>
+            <tr><td>Cron/Scheduler</td><td><span class="badge">APScheduler</span> <span class="badge">Celery Beat</span></td><td>Регулярный запуск мониторинга</td></tr>
+            <tr><td>Notifications</td><td><span class="badge">Slack</span> <span class="badge">Telegram</span> <span class="badge">Email</span></td><td>Уведомления о новых лидах</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- All Links -->
+    <section id="links">
+      <h2>Все инструменты — ссылки</h2>
+      <p class="section-desc">Полный список GitHub-репозиториев и шаблонов, используемых в платформе.</p>
+
+      <div class="link-cat">Слой 1 — Поиск компаний</div>
+      <div class="links-grid">
+        <div class="link-item"><a href="https://github.com/xiongQvQ/AI_Find_Customer" target="_blank" rel="noopener">AI_Find_Customer</a></div>
+        <div class="link-item"><a href="https://apify.com/lizzyyy2/github-lead-signals-ai" target="_blank" rel="noopener">GitHub Lead Signals (Apify)</a></div>
+        <div class="link-item"><a href="https://github.com/sajdakabir/clutch-profile-scraper" target="_blank" rel="noopener">Clutch Profile Scraper</a></div>
+        <div class="link-item"><a href="https://github.com/brightdata/trendscan" target="_blank" rel="noopener">TrendScan</a></div>
+        <div class="link-item"><a href="https://github.com/thekiln-dev/icp-researcher" target="_blank" rel="noopener">ICP Researcher</a></div>
+      </div>
+
+      <div class="link-cat">Слой 2 — Сбор контактов</div>
+      <div class="links-grid">
+        <div class="link-item"><a href="https://github.com/sspomeroy-banyanlabs/ColdReach-Scraper" target="_blank" rel="noopener">ColdReach-Scraper</a></div>
+        <div class="link-item"><a href="https://github.com/Anudeepreddynarala/lead-generator" target="_blank" rel="noopener">lead-generator</a></div>
+        <div class="link-item"><a href="https://github.com/haytham10/linkedIn_scraper" target="_blank" rel="noopener">linkedIn_scraper</a></div>
+        <div class="link-item"><a href="https://github.com/Ordinary0x/The-3rd-Eye" target="_blank" rel="noopener">The 3rd Eye</a></div>
+        <div class="link-item"><a href="https://github.com/bgunyel/business-researcher" target="_blank" rel="noopener">Business Researcher</a></div>
+      </div>
+
+      <div class="link-cat">Слой 3 — Анализ данных</div>
+      <div class="links-grid">
+        <div class="link-item"><a href="https://github.com/chibbss/Automated-Decision-Making-Discovery" target="_blank" rel="noopener">Automated-Decision-Making-Discovery</a></div>
+        <div class="link-item"><a href="https://github.com/bm-github/owasp-social-osint-agent" target="_blank" rel="noopener">OWASP SocialOSINTAgent</a></div>
+        <div class="link-item"><a href="https://github.com/obsei/obsei" target="_blank" rel="noopener">Obsei</a></div>
+        <div class="link-item"><a href="https://github.com/BunsDev/company-research-agent-tavily" target="_blank" rel="noopener">Company Research Agent (Tavily)</a></div>
+      </div>
+
+      <div class="link-cat">Слой 4 — Вовлечение в соцсетях</div>
+      <div class="links-grid">
+        <div class="link-item"><a href="https://github.com/aramirez087/TuitBot" target="_blank" rel="noopener">Agent-X — TuitBot (X/Twitter)</a></div>
+        <div class="link-item"><a href="https://github.com/ivucicev/redsignal" target="_blank" rel="noopener">RedSignal (Reddit)</a></div>
+        <div class="link-item"><a href="https://n8n.io/workflows/10251-cross-platform-brand-monitoring-and-analysis-with-anysite-api-and-gpt/" target="_blank" rel="noopener">n8n — Cross-platform monitoring</a></div>
+        <div class="link-item"><a href="https://github.com/enescingoz/awesome-n8n-templates" target="_blank" rel="noopener">awesome-n8n-templates (коллекция)</a></div>
+      </div>
+    </section>
+
+    <footer>LeadScaper Platform — Architecture Documentation</footer>
+  </div>
+</body>
+</html>
