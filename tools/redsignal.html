@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>RedSignal — LeadScaper</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="header-inner">
+      <a class="logo" href="../index.html">
+        <span class="logo-icon">✦</span>
+        LeadScaper
+      </a>
+      <div class="header-actions">
+        <button class="btn-icon" type="button">⚙</button>
+      </div>
+    </div>
+  </header>
+
+  <div class="layout tool-page">
+    <main class="main">
+      <a class="back-link" href="../index.html">← Назад к архитектуре</a>
+
+      <div class="hero-card hero-card-accent tool-hero">
+        <div class="tool-icon">4.2</div>
+        <div class="tool-hero-body">
+          <div class="hero-stat-label">Слой 4 · Вовлечение в соцсетях</div>
+          <h1 class="hero-stat-value tool-hero-title">RedSignal</h1>
+          <p class="hero-stat-sub">Поиск «тёплых» лидов, AI-фильтрация релевантности</p>
+          <a class="btn-external" href="https://github.com/ivucicev/redsignal" target="_blank" rel="noopener">
+            Открыть на GitHub →
+          </a>
+        </div>
+      </div>
+
+      <section class="panel">
+        <div class="panel-head">
+          <div class="panel-tag">GitHub</div>
+          <h2 class="panel-title">Описание</h2>
+        </div>
+
+        <div class="tool-stats">
+          <div class="tool-stat"><span class="tool-stat-label">Репозиторий</span><span class="tool-stat-value">ivucicev/redsignal</span></div>
+          <div class="tool-stat"><span class="tool-stat-label">Stars</span><span class="tool-stat-value">19</span></div>
+          <div class="tool-stat"><span class="tool-stat-label">Язык</span><span class="tool-stat-value">JavaScript</span></div>
+          <div class="tool-stat"><span class="tool-stat-label">Источник данных</span><span class="tool-stat-value">Reddit</span></div>
+          <div class="tool-stat"><span class="tool-stat-label">Платформа</span><span class="tool-stat-value">Reddit</span></div>
+        </div>
+
+        <div class="readme-content">
+          <div class="markdown-heading" dir="auto"><h1 class="heading-element" dir="auto">RedSignal</h1><a id="user-content-redsignal" class="anchor" aria-label="Permalink: RedSignal" href="#redsignal"></a></div>
+<p dir="auto">Reddit monitoring for people who are tired of manually scrolling for leads.</p>
+<p dir="auto"><a target="_blank" rel="noopener noreferrer" href="screenshots/RedSignal.gif"><img src="screenshots/RedSignal.gif" alt="RedSignal" data-animated-image="" style="max-width: 100%;"></a></p>
+<p dir="auto"><a href="https://buymeacoffee.com/ivucicev" rel="nofollow"><img src="https://camo.githubusercontent.com/570da51dda6d3432d3fcbaa66b879fc2e1d32a31566d14afd717f2cc0c44b801/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f4275792532304d6525323041253230436f666665652d737570706f72742d79656c6c6f773f7374796c653d666f722d7468652d6261646765266c6f676f3d6275792d6d652d612d636f66666565266c6f676f436f6c6f723d7768697465" alt="Buy Me A Coffee" data-canonical-src="https://img.shields.io/badge/Buy%20Me%20A%20Coffee-support-yellow?style=for-the-badge&amp;logo=buy-me-a-coffee&amp;logoColor=white" style="max-width: 100%;"></a></p>
+<hr>
+<div class="markdown-heading" dir="auto"><h2 class="heading-element" dir="auto">Why this exists</h2><a id="user-content-why-this-exists" class="anchor" aria-label="Permalink: Why this exists" href="#why-this-exists"></a></div>
+<p dir="auto">Reddit is one of the few places on the internet where people still ask genuine questions and share real problems. If someone posts in r/entrepreneur asking which CRM handles their workflow, that is a warm lead. They are already describing their pain, already looking for a solution, and they will get replies from real people including your competitors.</p>
+<p dir="auto">The problem is finding those posts. You can set up Google Alerts but Reddit barely surfaces in search. You can manually browse subreddits but that only works if you remember to do it and if the timing aligns. Most people just miss it.</p>
+<p dir="auto">RedSignal runs in the background and watches Reddit for you. You define the keywords, it finds the matches, and you decide what to do with them. You can layer Claude, OpenAI, or a local Ollama model on top to filter out noise before anything even reaches your feed. When something real comes through, you get it.</p>
+<hr>
+<div class="markdown-heading" dir="auto"><h2 class="heading-element" dir="auto">What it does</h2><a id="user-content-what-it-does" class="anchor" aria-label="Permalink: What it does" href="#what-it-does"></a></div>
+<p dir="auto">You create listeners. Each listener watches one or more subreddits (or all of Reddit) for keyword patterns you define. When a post or comment matches, it shows up in the live feed. From there you can read the thread in context, draft a reply, track its status as a lead, and get notified via Slack or Telegram.</p>
+<p dir="auto">The AI filter step is optional but useful. You write a prompt like "is this person looking for a tool that does X" and the model answers yes or no before the hit lands in your feed. This way you are not wading through keyword matches that happen to use your term in a completely irrelevant context.</p>
+<p dir="auto">Everything is stored locally in SQLite. No data leaves your machine except the Reddit API calls and any AI provider you connect.</p>
+<hr>
+<div class="markdown-heading" dir="auto"><h2 class="heading-element" dir="auto">Screenshots</h2><a id="user-content-screenshots" class="anchor" aria-label="Permalink: Screenshots" href="#screenshots"></a></div>
+<p dir="auto"><strong>Live feed</strong></p>
+<p dir="auto"><a target="_blank" rel="noopener noreferrer" href="screenshots/home.png"><img src="screenshots/home.png" alt="Live feed" style="max-width: 100%;"></a></p>
+<p dir="auto"><strong>Analytics</strong></p>
+<p dir="auto"><a target="_blank" rel="noopener noreferrer" href="screenshots/dash.png"><img src="screenshots/dash.png" alt="Analytics dashboard" style="max-width: 100%;"></a></p>
+<p dir="auto"><strong>Listener settings</strong></p>
+<p dir="auto"><a target="_blank" rel="noopener noreferrer" href="screenshots/listener.png"><img src="screenshots/listener.png" alt="Listener configuration" style="max-width: 100%;"></a></p>
+<p dir="auto"><strong>Vault</strong></p>
+<p dir="auto"><a target="_blank" rel="noopener noreferrer" href="screenshots/vaults.png"><img src="screenshots/vaults.png" alt="Vault" style="max-width: 100%;"></a></p>
+<hr>
+<div class="markdown-heading" dir="auto"><h2 class="heading-element" dir="auto">Running it</h2><a id="user-content-running-it" class="anchor" aria-label="Permalink: Running it" href="#running-it"></a></div>
+<div class="markdown-heading" dir="auto"><h3 class="heading-element" dir="auto">Option 1: Docker (recommended for running on a server)</h3><a id="user-content-option-1-docker-recommended-for-running-on-a-server" class="anchor" aria-label="Permalink: Option 1: Docker (recommended for running on a server)" href="#option-1-docker-recommended-for-running-on-a-server"></a></div>
+<p dir="auto">You need Docker and Docker Compose installed.</p>
+<div class="highlight highlight-source-shell notranslate position-relative overflow-auto" dir="auto" data-snippet-clipboard-copy-content="git clone https://github.com/yourname/redsignal.git
+cd redsignal
+cp .env.example .env"><pre>git clone https://github.com/yourname/redsignal.git
+<span class="pl-c1">cd</span> redsignal
+cp .env.example .env</pre></div>
+<p dir="auto">Open <code>.env</code> and fill in your values. Then start it:</p>
+<div class="highlight highlight-source-shell notranslate position-relative overflow-auto" dir="auto" data-snippet-clipboard-copy-content="docker compose up -d"><pre>docker compose up -d</pre></div>
+<p dir="auto">Open <code>http://localhost:8000</code> in your browser. The app persists all data in <code>./data/redsignal.db</code> so it survives restarts.</p>
+<p dir="auto">To stop it:</p>
+<div class="highlight highlight-source-shell notranslate position-relative overflow-auto" dir="auto" data-snippet-clipboard-copy-content="docker compose down"><pre>docker compose down</pre></div>
+<div class="markdown-heading" dir="auto"><h3 class="heading-element" dir="auto">Option 2: Local development</h3><a id="user-content-option-2-local-development" class="anchor" aria-label="Permalink: Option 2: Local development" href="#option-2-local-development"></a></div>
+<p dir="auto">You need Python 3.11 or newer.</p>
+<div class="highlight highlight-source-shell notranslate position-relative overflow-auto" dir="auto" data-snippet-clipboard-copy-content="git clone https://github.com/yourname/redsignal.git
+cd redsignal
+./start.sh"><pre>git clone https://github.com/yourname/redsignal.git
+<span class="pl-c1">cd</span> redsignal
+./start.sh</pre></div>
+<p dir="auto">The script creates a virtual environment, installs dependencies, and starts the server at <code>http://127.0.0.1:8000</code> with auto-reload.</p>
+<hr>
+<div class="markdown-heading" dir="auto"><h2 class="heading-element" dir="auto">First time setup</h2><a id="user-content-first-time-setup" class="anchor" aria-label="Permalink: First time setup" href="#first-time-setup"></a></div>
+<div class="markdown-heading" dir="auto"><h3 class="heading-element" dir="auto">1. Get Reddit API credentials</h3><a id="user-content-1-get-reddit-api-credentials" class="anchor" aria-label="Permalink: 1. Get Reddit API credentials" href="#1-get-reddit-api-credentials"></a></div>
+<p dir="auto">Go to <a href="https://www.reddit.com/prefs/apps" rel="nofollow">reddit.com/prefs/apps</a> and create a new app. Choose "script" as the type. You will get a client ID and client secret.</p>
+<div class="markdown-heading" dir="auto"><h3 class="heading-element" dir="auto">2. Add credentials in the Vault tab</h3><a id="user-content-2-add-credentials-in-the-vault-tab" class="anchor" aria-label="Permalink: 2. Add credentials in the Vault tab" href="#2-add-credentials-in-the-vault-tab"></a></div>
+<p dir="auto">Open the app and go to the Vault tab. Add your Reddit account with the client ID, client secret, and a user agent string. The user agent format Reddit expects looks like <code>myapp/1.0 by u/yourname</code>.</p>
+<p dir="auto">If you want AI filtering, also add an Anthropic, OpenAI, or Ollama key in the same tab.</p>
+<div class="markdown-heading" dir="auto"><h3 class="heading-element" dir="auto">3. Create a listener</h3><a id="user-content-3-create-a-listener" class="anchor" aria-label="Permalink: 3. Create a listener" href="#3-create-a-listener"></a></div>
+<p dir="auto">Go to the Listeners tab and click New Listener. Assign it your Reddit account. Set the subreddits you want to watch (comma-separate them with plus signs like <code>entrepreneur+SaaS+smallbusiness</code>, or use <code>all</code> to watch everything). Add your keywords as regex patterns.</p>
+<p dir="auto">Click Start and it begins streaming immediately.</p>
+<div class="markdown-heading" dir="auto"><h3 class="heading-element" dir="auto">4. Set up AI filtering (optional)</h3><a id="user-content-4-set-up-ai-filtering-optional" class="anchor" aria-label="Permalink: 4. Set up AI filtering (optional)" href="#4-set-up-ai-filtering-optional"></a></div>
+<p dir="auto">Inside the listener settings, scroll down to AI Filter Pipeline and add a step. Write a plain English prompt telling the model what a relevant post looks like and asking it to reply YES or NO. Enable it and the model will evaluate every keyword match before it reaches your feed.</p>
+<div class="markdown-heading" dir="auto"><h3 class="heading-element" dir="auto">5. Set up notifications (optional)</h3><a id="user-content-5-set-up-notifications-optional" class="anchor" aria-label="Permalink: 5. Set up notifications (optional)" href="#5-set-up-notifications-optional"></a></div>
+<p dir="auto">Still inside listener settings, you can add a Slack webhook or Telegram bot token. Hits will be posted there as they arrive. If you have AI filtering on, passing hits send a richer message with the filter reasoning included.</p>
+<hr>
+<div class="markdown-heading" dir="auto"><h2 class="heading-element" dir="auto">How to use the feed</h2><a id="user-content-how-to-use-the-feed" class="anchor" aria-label="Permalink: How to use the feed" href="#how-to-use-the-feed"></a></div>
+<p dir="auto">The Stream tab is your main view. New hits appear at the top as they come in. Older hits from previous sessions load below them with a "Load older" button.</p>
+<p dir="auto">Each card has four actions on the right side. Open takes you straight to the Reddit post. Thread loads the full comment thread in a side panel so you do not have to leave the app. Reply opens a panel where you describe your product and Claude writes a context-aware reply you can edit and copy. Analyze runs the AI filter on that specific hit manually.</p>
+<p dir="auto">You can also set a status on each hit. The options are New, Reviewing, Replied, Converted, and Skipped. This is a basic CRM workflow so you can track what you have already acted on.</p>
+<p dir="auto">The kind filter at the top lets you see only posts or only comments. The stream filter lets you focus on a single listener. You can also switch to History mode to search and filter everything stored in the database.</p>
+<hr>
+<div class="markdown-heading" dir="auto"><h2 class="heading-element" dir="auto">Analytics</h2><a id="user-content-analytics" class="anchor" aria-label="Permalink: Analytics" href="#analytics"></a></div>
+<p dir="auto">The Analytics tab shows charts built from your stored hit history. You can see volume over time, which subreddits generate the most hits, which keywords match most often, activity by hour of day and day of week, AI pass rates per subreddit, and the most active authors.</p>
+<p dir="auto">Use the time range selector at the top right to filter by last 7 days, 30 days, 90 days, or all time.</p>
+<hr>
+<div class="markdown-heading" dir="auto"><h2 class="heading-element" dir="auto">Schedule windows</h2><a id="user-content-schedule-windows" class="anchor" aria-label="Permalink: Schedule windows" href="#schedule-windows"></a></div>
+<p dir="auto">If you only care about hits during business hours, or you want the listener to run only on weekdays, open the listener settings and enable the Schedule Window section. You pick the timezone, which days to run, and the start and end hours. The listener pauses automatically outside that window and resumes when the window opens again.</p>
+<hr>
+<div class="markdown-heading" dir="auto"><h2 class="heading-element" dir="auto">Webhook retry and logs</h2><a id="user-content-webhook-retry-and-logs" class="anchor" aria-label="Permalink: Webhook retry and logs" href="#webhook-retry-and-logs"></a></div>
+<p dir="auto">The Logs tab shows two things. System logs capture listener starts and stops, errors, and other internal events. Webhook logs show every outgoing notification with its status, how many attempts were made, and the last response. If a delivery failed you can retry it manually from there.</p>
+<hr>
+<div class="markdown-heading" dir="auto"><h2 class="heading-element" dir="auto">Environment variables</h2><a id="user-content-environment-variables" class="anchor" aria-label="Permalink: Environment variables" href="#environment-variables"></a></div>
+<markdown-accessiblity-table><table>
+<thead>
+<tr>
+<th>Variable</th>
+<th>Description</th>
+<th>Default</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>DB_PATH</code></td>
+<td>Path to the SQLite database file</td>
+<td><code>data/redsignal.db</code></td>
+</tr>
+<tr>
+<td><code>APP_USER</code></td>
+<td>Username for HTTP basic auth</td>
+<td>none (auth disabled)</td>
+</tr>
+<tr>
+<td><code>APP_PASSWORD</code></td>
+<td>Password for HTTP basic auth</td>
+<td>none (auth disabled)</td>
+</tr>
+<tr>
+<td><code>PORT</code></td>
+<td>Port to bind the server to</td>
+<td><code>8000</code></td>
+</tr>
+</tbody>
+</table></markdown-accessiblity-table>
+<p dir="auto">If you set both <code>APP_USER</code> and <code>APP_PASSWORD</code> the entire app is protected with basic auth. Useful when running on a public server.</p>
+<hr>
+<div class="markdown-heading" dir="auto"><h2 class="heading-element" dir="auto">Tech stack</h2><a id="user-content-tech-stack" class="anchor" aria-label="Permalink: Tech stack" href="#tech-stack"></a></div>
+<ul dir="auto">
+<li><strong>FastAPI</strong> for the backend API and WebSocket</li>
+<li><strong>PRAW</strong> for the Reddit streaming API</li>
+<li><strong>SQLite</strong> for persistent storage, running in WAL mode</li>
+<li><strong>Anthropic / OpenAI / Ollama</strong> for AI filtering and reply drafting</li>
+<li><strong>Tailwind CSS</strong> and <strong>Chart.js</strong> loaded from CDN, no build step</li>
+<li><strong>Docker Compose</strong> for deployment</li>
+</ul>
+<p dir="auto">The Reddit listener runs in a background thread per listener. Hits flow from the thread into an asyncio queue and get broadcast to all connected WebSocket clients in real time.</p>
+<hr>
+<div class="markdown-heading" dir="auto"><h2 class="heading-element" dir="auto">License</h2><a id="user-content-license" class="anchor" aria-label="Permalink: License" href="#license"></a></div>
+<p dir="auto">MIT</p>
+        </div>
+      </section>
+
+      <footer>LeadScaper Platform — RedSignal</footer>
+    </main>
+  </div>
+</body>
+</html>

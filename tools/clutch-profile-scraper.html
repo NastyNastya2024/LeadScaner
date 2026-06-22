@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Clutch Profile Scraper — LeadScaper</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="header-inner">
+      <a class="logo" href="../index.html">
+        <span class="logo-icon">✦</span>
+        LeadScaper
+      </a>
+      <div class="header-actions">
+        <button class="btn-icon" type="button">⚙</button>
+      </div>
+    </div>
+  </header>
+
+  <div class="layout tool-page">
+    <main class="main">
+      <a class="back-link" href="../index.html">← Назад к архитектуре</a>
+
+      <div class="hero-card hero-card-accent tool-hero">
+        <div class="tool-icon">1.3</div>
+        <div class="tool-hero-body">
+          <div class="hero-stat-label">Слой 1 · Поиск компаний</div>
+          <h1 class="hero-stat-value tool-hero-title">Clutch Profile Scraper</h1>
+          <p class="hero-stat-sub">Сбор компаний из B2B-каталога</p>
+          <a class="btn-external" href="https://github.com/sajdakabir/clutch-profile-scraper" target="_blank" rel="noopener">
+            Открыть на GitHub →
+          </a>
+        </div>
+      </div>
+
+      <section class="panel">
+        <div class="panel-head">
+          <div class="panel-tag">GitHub</div>
+          <h2 class="panel-title">Описание</h2>
+        </div>
+
+        <div class="tool-stats">
+          <div class="tool-stat"><span class="tool-stat-label">Репозиторий</span><span class="tool-stat-value">sajdakabir/clutch-profile-scraper</span></div>
+          <div class="tool-stat"><span class="tool-stat-label">Stars</span><span class="tool-stat-value">0</span></div>
+          <div class="tool-stat"><span class="tool-stat-label">Язык</span><span class="tool-stat-value">Python</span></div>
+          <div class="tool-stat"><span class="tool-stat-label">Источник данных</span><span class="tool-stat-value">Clutch.co</span></div>
+        </div>
+
+        <div class="readme-content">
+          <div class="markdown-heading" dir="auto"><h1 class="heading-element" dir="auto">Clutch.co Profile Scraper</h1><a id="user-content-clutchco-profile-scraper" class="anchor" aria-label="Permalink: Clutch.co Profile Scraper" href="#clutchco-profile-scraper"></a></div>
+<p dir="auto"><a href="https://www.python.org/downloads/" rel="nofollow"><img src="https://camo.githubusercontent.com/785b2e407edf0defa259ed9545b4160ac16ba73d9403aa756ffb6959e27762e1/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f707974686f6e2d332e372532422d626c75652e737667" alt="Python Version" data-canonical-src="https://img.shields.io/badge/python-3.7%2B-blue.svg" style="max-width: 100%;"></a>
+<a href="https://opensource.org/licenses/MIT" rel="nofollow"><img src="https://camo.githubusercontent.com/fdf2982b9f5d7489dcf44570e714e3a15fce6253e0cc6b5aa61a075aac2ff71b/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f4c6963656e73652d4d49542d79656c6c6f772e737667" alt="License: MIT" data-canonical-src="https://img.shields.io/badge/License-MIT-yellow.svg" style="max-width: 100%;"></a></p>
+<p dir="auto">A robust Python-based web scraping tool designed to extract company profile information and website URLs from Clutch.co profiles. This tool is particularly useful for lead generation, market research, and business intelligence gathering.</p>
+<div class="markdown-heading" dir="auto"><h2 class="heading-element" dir="auto">✨ Features</h2><a id="user-content--features" class="anchor" aria-label="Permalink: ✨ Features" href="#-features"></a></div>
+<ul dir="auto">
+<li>🚀 <strong>Efficient Scraping</strong>: Extract company website URLs from Clutch.co profiles</li>
+<li>🔄 <strong>Resume Capability</strong>: Continue interrupted scraping sessions</li>
+<li>🛡 <strong>Anti-detection</strong>: Uses undetected-chromedriver to avoid bot detection</li>
+<li>📊 <strong>CSV Integration</strong>: Easy import/export of data in CSV format</li>
+<li>⚡ <strong>Fast &amp; Reliable</strong>: Multi-threaded processing for better performance</li>
+<li>📝 <strong>Detailed Logging</strong>: Comprehensive status updates and error reporting</li>
+</ul>
+<div class="markdown-heading" dir="auto"><h2 class="heading-element" dir="auto">📋 Prerequisites</h2><a id="user-content--prerequisites" class="anchor" aria-label="Permalink: 📋 Prerequisites" href="#-prerequisites"></a></div>
+<ul dir="auto">
+<li>Python 3.7 or higher</li>
+<li>Google Chrome browser installed</li>
+<li>ChromeDriver (will be handled automatically by webdriver-manager)</li>
+</ul>
+<div class="markdown-heading" dir="auto"><h2 class="heading-element" dir="auto">🚀 Installation</h2><a id="user-content--installation" class="anchor" aria-label="Permalink: 🚀 Installation" href="#-installation"></a></div>
+<ol dir="auto">
+<li>
+<p dir="auto"><strong>Clone the repository</strong></p>
+<div class="highlight highlight-source-shell notranslate position-relative overflow-auto" dir="auto" data-snippet-clipboard-copy-content="git clone https://github.com/yourusername/clutch-profile-scraper.git
+cd clutch-profile-scraper"><pre>git clone https://github.com/yourusername/clutch-profile-scraper.git
+<span class="pl-c1">cd</span> clutch-profile-scraper</pre></div>
+</li>
+<li>
+<p dir="auto"><strong>Set up a virtual environment</strong> (recommended)</p>
+<div class="highlight highlight-source-shell notranslate position-relative overflow-auto" dir="auto" data-snippet-clipboard-copy-content="# For Windows
+python -m venv venv
+.\venv\Scripts\activate
+
+# For macOS/Linux
+python3 -m venv venv
+source venv/bin/activate"><pre><span class="pl-c"><span class="pl-c">#</span> For Windows</span>
+python -m venv venv
+.<span class="pl-cce">\v</span>env<span class="pl-cce">\S</span>cripts<span class="pl-cce">\a</span>ctivate
+
+<span class="pl-c"><span class="pl-c">#</span> For macOS/Linux</span>
+python3 -m venv venv
+<span class="pl-c1">source</span> venv/bin/activate</pre></div>
+</li>
+<li>
+<p dir="auto"><strong>Install dependencies</strong></p>
+<div class="highlight highlight-source-shell notranslate position-relative overflow-auto" dir="auto" data-snippet-clipboard-copy-content="pip install -r requirements.txt"><pre>pip install -r requirements.txt</pre></div>
+</li>
+</ol>
+<div class="markdown-heading" dir="auto"><h2 class="heading-element" dir="auto">🏃‍♂️ Quick Start</h2><a id="user-content-‍️-quick-start" class="anchor" aria-label="Permalink: 🏃‍♂️ Quick Start" href="#‍️-quick-start"></a></div>
+<ol dir="auto">
+<li>
+<p dir="auto"><strong>Prepare your input file</strong></p>
+<ul dir="auto">
+<li>Place your CSV file with Clutch.co profile URLs in the <code>data</code> directory</li>
+<li>Ensure the file has a column containing the profile URLs</li>
+<li>The script will automatically detect URL columns</li>
+</ul>
+</li>
+<li>
+<p dir="auto"><strong>Run the scraper</strong></p>
+<div class="highlight highlight-source-shell notranslate position-relative overflow-auto" dir="auto" data-snippet-clipboard-copy-content="python app.py"><pre>python app.py</pre></div>
+</li>
+<li>
+<p dir="auto"><strong>View results</strong></p>
+<ul dir="auto">
+<li>The script will create a <code>clutch_with_sites.csv</code> file with the results</li>
+<li>Progress is saved automatically, so you can stop and resume anytime</li>
+</ul>
+</li>
+</ol>
+<div class="markdown-heading" dir="auto"><h2 class="heading-element" dir="auto">🛠 Scripts</h2><a id="user-content--scripts" class="anchor" aria-label="Permalink: 🛠 Scripts" href="#-scripts"></a></div>
+<ul dir="auto">
+<li><code>app.py</code>: Main scraping script</li>
+<li><code>continue_scraping.py</code>: Resume interrupted scraping sessions</li>
+<li><code>merge_csv.py</code>: Merge multiple CSV files</li>
+<li><code>single_url.py</code>: Test scraping for a single URL</li>
+<li><code>update_missing_urls.py</code>: Update missing URLs in the dataset</li>
+</ul>
+<div class="markdown-heading" dir="auto"><h2 class="heading-element" dir="auto">⚙️ Configuration</h2><a id="user-content-️-configuration" class="anchor" aria-label="Permalink: ⚙️ Configuration" href="#️-configuration"></a></div>
+<p dir="auto">Edit the configuration section in <code>app.py</code> to customize:</p>
+<div class="highlight highlight-source-python notranslate position-relative overflow-auto" dir="auto" data-snippet-clipboard-copy-content="# Input/Output files
+INPUT_CSV = &quot;data/extracted_urls_20250604_161856.csv&quot;  # Your input file
+OUTPUT_CSV = &quot;clutch_with_sites.csv&quot;  # Output file
+TEMP_CSV = &quot;clutch_temp.csv&quot;  # Temporary progress file
+
+# Browser settings
+HEADLESS = True  # Set to False to see the browser
+WAIT_SHORT = 20  # Seconds to wait for elements
+MAX_RETRIES = 2  # Number of retries for failed attempts
+SLEEP_BETWEEN = (3, 6)  # Random delay between requests (min, max) seconds"><pre><span class="pl-c"># Input/Output files</span>
+<span class="pl-c1">INPUT_CSV</span> <span class="pl-c1">=</span> <span class="pl-s">"data/extracted_urls_20250604_161856.csv"</span>  <span class="pl-c"># Your input file</span>
+<span class="pl-c1">OUTPUT_CSV</span> <span class="pl-c1">=</span> <span class="pl-s">"clutch_with_sites.csv"</span>  <span class="pl-c"># Output file</span>
+<span class="pl-c1">TEMP_CSV</span> <span class="pl-c1">=</span> <span class="pl-s">"clutch_temp.csv"</span>  <span class="pl-c"># Temporary progress file</span>
+
+<span class="pl-c"># Browser settings</span>
+<span class="pl-c1">HEADLESS</span> <span class="pl-c1">=</span> <span class="pl-c1">True</span>  <span class="pl-c"># Set to False to see the browser</span>
+<span class="pl-c1">WAIT_SHORT</span> <span class="pl-c1">=</span> <span class="pl-c1">20</span>  <span class="pl-c"># Seconds to wait for elements</span>
+<span class="pl-c1">MAX_RETRIES</span> <span class="pl-c1">=</span> <span class="pl-c1">2</span>  <span class="pl-c"># Number of retries for failed attempts</span>
+<span class="pl-c1">SLEEP_BETWEEN</span> <span class="pl-c1">=</span> (<span class="pl-c1">3</span>, <span class="pl-c1">6</span>)  <span class="pl-c"># Random delay between requests (min, max) seconds</span></pre></div>
+<div class="markdown-heading" dir="auto"><h2 class="heading-element" dir="auto">📂 Project Structure</h2><a id="user-content--project-structure" class="anchor" aria-label="Permalink: 📂 Project Structure" href="#-project-structure"></a></div>
+<div class="snippet-clipboard-content notranslate position-relative overflow-auto" data-snippet-clipboard-copy-content=".
+├── data/                      # Directory for input/output files
+│   └── extracted_urls_20250604_161856.csv  # Example input file
+├── app.py                    # Main scraping script
+├── app_clean.py              # Cleaned version of the main script
+├── continue_scraping.py      # Resume interrupted sessions
+├── merge_csv.py              # Merge multiple CSV files
+├── single_url.py             # Test script for single URL
+├── update_missing_urls.py    # Update missing URLs
+├── requirements.txt          # Python dependencies
+└── README.md                # This file"><pre class="notranslate"><code>.
+├── data/                      # Directory for input/output files
+│   └── extracted_urls_20250604_161856.csv  # Example input file
+├── app.py                    # Main scraping script
+├── app_clean.py              # Cleaned version of the main script
+├── continue_scraping.py      # Resume interrupted sessions
+├── merge_csv.py              # Merge multiple CSV files
+├── single_url.py             # Test script for single URL
+├── update_missing_urls.py    # Update missing URLs
+├── requirements.txt          # Python dependencies
+└── README.md                # This file
+</code></pre></div>
+<div class="markdown-heading" dir="auto"><h2 class="heading-element" dir="auto">🤝 Contributing</h2><a id="user-content--contributing" class="anchor" aria-label="Permalink: 🤝 Contributing" href="#-contributing"></a></div>
+<p dir="auto">Contributions are welcome! Please follow these steps:</p>
+<ol dir="auto">
+<li>Fork the repository</li>
+<li>Create a feature branch: <code>git checkout -b feature/amazing-feature</code></li>
+<li>Commit your changes: <code>git commit -m 'Add some amazing feature'</code></li>
+<li>Push to the branch: <code>git push origin feature/amazing-feature</code></li>
+<li>Open a Pull Request</li>
+</ol>
+<div class="markdown-heading" dir="auto"><h2 class="heading-element" dir="auto">📝 License</h2><a id="user-content--license" class="anchor" aria-label="Permalink: 📝 License" href="#-license"></a></div>
+<p dir="auto">This project is licensed under the MIT License - see the <a href="LICENSE">LICENSE</a> file for details.</p>
+<div class="markdown-heading" dir="auto"><h2 class="heading-element" dir="auto">💡 Support</h2><a id="user-content--support" class="anchor" aria-label="Permalink: 💡 Support" href="#-support"></a></div>
+<p dir="auto">For support, please:</p>
+<ul dir="auto">
+<li>Open an issue in the GitHub repository</li>
+<li>Or contact the maintainer directly</li>
+</ul>
+<div class="markdown-heading" dir="auto"><h2 class="heading-element" dir="auto">📊 Performance</h2><a id="user-content--performance" class="anchor" aria-label="Permalink: 📊 Performance" href="#-performance"></a></div>
+<ul dir="auto">
+<li>Processes approximately 100-200 profiles per hour (varies based on website response times)</li>
+<li>Includes automatic retries and error handling</li>
+<li>Saves progress to prevent data loss</li>
+</ul>
+<div class="markdown-heading" dir="auto"><h2 class="heading-element" dir="auto">🔗 Integration with ContactHarvest</h2><a id="user-content--integration-with-contactharvest" class="anchor" aria-label="Permalink: 🔗 Integration with ContactHarvest" href="#-integration-with-contactharvest"></a></div>
+<p dir="auto">This tool pairs perfectly with <a href="https://github.com/sajdakabir/ContactHarvest">ContactHarvest</a> to enrich your Clutch.co data with contact information using the Apollo.io API.</p>
+<div class="markdown-heading" dir="auto"><h3 class="heading-element" dir="auto">Combined Workflow:</h3><a id="user-content-combined-workflow" class="anchor" aria-label="Permalink: Combined Workflow:" href="#combined-workflow"></a></div>
+<ol dir="auto">
+<li>
+<p dir="auto"><strong>Scrape Company Data</strong> (this tool)</p>
+<div class="highlight highlight-source-shell notranslate position-relative overflow-auto" dir="auto" data-snippet-clipboard-copy-content="python app.py"><pre>python app.py</pre></div>
+<p dir="auto">Output: <code>clutch_with_sites.csv</code> with company names and websites</p>
+</li>
+<li>
+<p dir="auto"><strong>Enrich with Contact Information</strong></p>
+<div class="highlight highlight-source-shell notranslate position-relative overflow-auto" dir="auto" data-snippet-clipboard-copy-content="# Install ContactHarvest
+pip install git+https://github.com/sajdakabir/ContactHarvest.git
+
+# Run with your Apollo.io API key
+python -m contactharvest input.csv enriched_output.csv --api-key YOUR_APOLLO_API_KEY"><pre><span class="pl-c"><span class="pl-c">#</span> Install ContactHarvest</span>
+pip install git+https://github.com/sajdakabir/ContactHarvest.git
+
+<span class="pl-c"><span class="pl-c">#</span> Run with your Apollo.io API key</span>
+python -m contactharvest input.csv enriched_output.csv --api-key YOUR_APOLLO_API_KEY</pre></div>
+</li>
+</ol>
+<div class="markdown-heading" dir="auto"><h3 class="heading-element" dir="auto">Enriched Output Includes:</h3><a id="user-content-enriched-output-includes" class="anchor" aria-label="Permalink: Enriched Output Includes:" href="#enriched-output-includes"></a></div>
+<ul dir="auto">
+<li>Company name</li>
+<li>Company website</li>
+<li>Contact person's name</li>
+<li>Job title</li>
+<li>Email address</li>
+<li>LinkedIn profile URL</li>
+</ul>
+<div class="markdown-heading" dir="auto"><h3 class="heading-element" dir="auto">Requirements for ContactHarvest:</h3><a id="user-content-requirements-for-contactharvest" class="anchor" aria-label="Permalink: Requirements for ContactHarvest:" href="#requirements-for-contactharvest"></a></div>
+<ul dir="auto">
+<li>Apollo.io API key</li>
+<li>Python 3.7+</li>
+<li>Internet connection</li>
+</ul>
+<blockquote>
+<p dir="auto"><strong>Note:</strong> Make sure to comply with Apollo.io's terms of service and data usage policies when using their API.</p>
+</blockquote>
+<div class="markdown-heading" dir="auto"><h2 class="heading-element" dir="auto"><g-emoji class="g-emoji" alias="warning">⚠️</g-emoji> Legal Notice</h2><a id="user-content-️-legal-notice" class="anchor" aria-label="Permalink: ⚠️ Legal Notice" href="#️-legal-notice"></a></div>
+<p dir="auto">This tool is for educational and research purposes only. Please ensure you comply with Clutch.co's Terms of Service and use this tool responsibly. The developers are not responsible for any misuse or damage caused by this software.</p>
+        </div>
+      </section>
+
+      <footer>LeadScaper Platform — Clutch Profile Scraper</footer>
+    </main>
+  </div>
+</body>
+</html>

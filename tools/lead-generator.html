@@ -1,0 +1,657 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>lead-generator — LeadScaper</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="header-inner">
+      <a class="logo" href="../index.html">
+        <span class="logo-icon">✦</span>
+        LeadScaper
+      </a>
+      <div class="header-actions">
+        <button class="btn-icon" type="button">⚙</button>
+      </div>
+    </div>
+  </header>
+
+  <div class="layout tool-page">
+    <main class="main">
+      <a class="back-link" href="../index.html">← Назад к архитектуре</a>
+
+      <div class="hero-card hero-card-accent tool-hero">
+        <div class="tool-icon">2.2</div>
+        <div class="tool-hero-body">
+          <div class="hero-stat-label">Слой 2 · Сбор контактов</div>
+          <h1 class="hero-stat-value tool-hero-title">lead-generator</h1>
+          <p class="hero-stat-sub">Поиск LinkedIn-профилей сотрудников и обогащение email</p>
+          <a class="btn-external" href="https://github.com/Anudeepreddynarala/lead-generator" target="_blank" rel="noopener">
+            Открыть на GitHub →
+          </a>
+        </div>
+      </div>
+
+      <section class="panel">
+        <div class="panel-head">
+          <div class="panel-tag">GitHub</div>
+          <h2 class="panel-title">Описание</h2>
+        </div>
+
+        <div class="tool-stats">
+          <div class="tool-stat"><span class="tool-stat-label">Репозиторий</span><span class="tool-stat-value">Anudeepreddynarala/lead-generator</span></div>
+          <div class="tool-stat"><span class="tool-stat-label">Stars</span><span class="tool-stat-value">1</span></div>
+          <div class="tool-stat"><span class="tool-stat-label">Язык</span><span class="tool-stat-value">Python</span></div>
+          <div class="tool-stat"><span class="tool-stat-label">Источник данных</span><span class="tool-stat-value">LinkedIn, Apollo.io</span></div>
+        </div>
+
+        <div class="readme-content">
+          <div class="markdown-heading" dir="auto"><h1 class="heading-element" dir="auto">Multi-Source Company Lead Generator</h1><a id="user-content-multi-source-company-lead-generator" class="anchor" aria-label="Permalink: Multi-Source Company Lead Generator" href="#multi-source-company-lead-generator"></a></div>
+<p dir="auto">A flexible Python-based lead generation tool that extracts company information and employee LinkedIn profiles from <strong>any URL</strong> - job boards, portfolio pages, company directories, or direct company websites.</p>
+<div class="markdown-heading" dir="auto"><h2 class="heading-element" dir="auto">🎯 What This Tool Does</h2><a id="user-content--what-this-tool-does" class="anchor" aria-label="Permalink: 🎯 What This Tool Does" href="#-what-this-tool-does"></a></div>
+<ol dir="auto">
+<li><strong>Multi-Source Scraping</strong> - Process unlimited URLs from Excel input</li>
+<li><strong>Intelligent URL Detection</strong> - Automatically classifies: listing pages, profile pages, or direct companies</li>
+<li><strong>Company Discovery</strong> - Extracts company domains from any source</li>
+<li><strong>Employee Enrichment</strong> - Finds LinkedIn profiles + Apollo.io emails</li>
+<li><strong>Excel Output</strong> - Multi-sheet reports with source tracking</li>
+<li><strong>Blacklist Support</strong> - Skip unwanted companies</li>
+</ol>
+<div class="markdown-heading" dir="auto"><h2 class="heading-element" dir="auto">📋 Features</h2><a id="user-content--features" class="anchor" aria-label="Permalink: 📋 Features" href="#-features"></a></div>
+<ul dir="auto">
+<li><strong>Multi-Source Input</strong>: Excel file with unlimited URLs to scrape</li>
+<li><strong>Auto URL Classification</strong>: Detects listing pages, profile pages, or direct companies</li>
+<li><strong>Generic Extraction</strong>: Works with any job board, portfolio page, or website</li>
+<li><strong>Jina API Integration</strong>: Clean markdown extraction from any URL</li>
+<li><strong>Google Custom Search</strong>: Finds LinkedIn profiles via Google's search API</li>
+<li><strong>Apollo.io Integration</strong>: Automatic email enrichment with credits</li>
+<li><strong>Smart Filtering</strong>: Excludes job boards, social media, and platform domains</li>
+<li><strong>Confidence Scoring</strong>: Rates extraction quality for each company</li>
+<li><strong>Source Tracking</strong>: Know where each lead came from</li>
+<li><strong>Person Identification</strong>: Unique IDs for deduplication across sources</li>
+<li><strong>Blacklist System</strong>: Skip unwanted companies across all sources</li>
+<li><strong>Excel Output</strong>: Multi-sheet reports (Companies, People, Summary)</li>
+</ul>
+<div class="markdown-heading" dir="auto"><h2 class="heading-element" dir="auto">📁 Project Structure</h2><a id="user-content--project-structure" class="anchor" aria-label="Permalink: 📁 Project Structure" href="#-project-structure"></a></div>
+<div class="snippet-clipboard-content notranslate position-relative overflow-auto" data-snippet-clipboard-copy-content=".
+├── lead_scraper.py         # Main scraper script
+├── requirements.txt        # Python dependencies
+├── sources.xlsx            # INPUT: Your source URLs (optional)
+├── sources_template.xlsx   # Template to copy
+├── .env                    # API keys (create this - see setup below)
+├── blacklist.csv          # Companies to skip (optional)
+├── leads_*.xlsx           # OUTPUT: Multi-sheet Excel reports
+└── venv/                  # Virtual environment (git-ignored)"><pre class="notranslate"><code>.
+├── lead_scraper.py         # Main scraper script
+├── requirements.txt        # Python dependencies
+├── sources.xlsx            # INPUT: Your source URLs (optional)
+├── sources_template.xlsx   # Template to copy
+├── .env                    # API keys (create this - see setup below)
+├── blacklist.csv          # Companies to skip (optional)
+├── leads_*.xlsx           # OUTPUT: Multi-sheet Excel reports
+└── venv/                  # Virtual environment (git-ignored)
+</code></pre></div>
+<div class="markdown-heading" dir="auto"><h2 class="heading-element" dir="auto">🚀 Complete Setup Guide (For Beginners)</h2><a id="user-content--complete-setup-guide-for-beginners" class="anchor" aria-label="Permalink: 🚀 Complete Setup Guide (For Beginners)" href="#-complete-setup-guide-for-beginners"></a></div>
+<div class="markdown-heading" dir="auto"><h3 class="heading-element" dir="auto">Step 1: Install Python</h3><a id="user-content-step-1-install-python" class="anchor" aria-label="Permalink: Step 1: Install Python" href="#step-1-install-python"></a></div>
+<p dir="auto">Make sure you have Python 3.7+ installed:</p>
+<div class="highlight highlight-source-shell notranslate position-relative overflow-auto" dir="auto" data-snippet-clipboard-copy-content="python3 --version"><pre>python3 --version</pre></div>
+<p dir="auto">If not installed, download from <a href="https://www.python.org/downloads/" rel="nofollow">python.org</a></p>
+<div class="markdown-heading" dir="auto"><h3 class="heading-element" dir="auto">Step 2: Clone/Download This Repository</h3><a id="user-content-step-2-clonedownload-this-repository" class="anchor" aria-label="Permalink: Step 2: Clone/Download This Repository" href="#step-2-clonedownload-this-repository"></a></div>
+<div class="highlight highlight-source-shell notranslate position-relative overflow-auto" dir="auto" data-snippet-clipboard-copy-content="git clone &lt;your-repo-url&gt;
+cd &quot;Lead Generator&quot;"><pre>git clone <span class="pl-k">&lt;</span>your-repo-url<span class="pl-k">&gt;</span>
+<span class="pl-c1">cd</span> <span class="pl-s"><span class="pl-pds">"</span>Lead Generator<span class="pl-pds">"</span></span></pre></div>
+<div class="markdown-heading" dir="auto"><h3 class="heading-element" dir="auto">Step 3: Create Virtual Environment</h3><a id="user-content-step-3-create-virtual-environment" class="anchor" aria-label="Permalink: Step 3: Create Virtual Environment" href="#step-3-create-virtual-environment"></a></div>
+<div class="highlight highlight-source-shell notranslate position-relative overflow-auto" dir="auto" data-snippet-clipboard-copy-content="# Create virtual environment
+python3 -m venv venv
+
+# Activate it (macOS/Linux)
+source venv/bin/activate
+
+# Activate it (Windows)
+venv\Scripts\activate"><pre><span class="pl-c"><span class="pl-c">#</span> Create virtual environment</span>
+python3 -m venv venv
+
+<span class="pl-c"><span class="pl-c">#</span> Activate it (macOS/Linux)</span>
+<span class="pl-c1">source</span> venv/bin/activate
+
+<span class="pl-c"><span class="pl-c">#</span> Activate it (Windows)</span>
+venv<span class="pl-cce">\S</span>cripts<span class="pl-cce">\a</span>ctivate</pre></div>
+<div class="markdown-heading" dir="auto"><h3 class="heading-element" dir="auto">Step 4: Install Dependencies</h3><a id="user-content-step-4-install-dependencies" class="anchor" aria-label="Permalink: Step 4: Install Dependencies" href="#step-4-install-dependencies"></a></div>
+<div class="highlight highlight-source-shell notranslate position-relative overflow-auto" dir="auto" data-snippet-clipboard-copy-content="pip install -r requirements.txt"><pre>pip install -r requirements.txt</pre></div>
+<div class="markdown-heading" dir="auto"><h3 class="heading-element" dir="auto">Step 5: Get API Keys</h3><a id="user-content-step-5-get-api-keys" class="anchor" aria-label="Permalink: Step 5: Get API Keys" href="#step-5-get-api-keys"></a></div>
+<p dir="auto">You need <strong>two</strong> API keys (both FREE):</p>
+<div class="markdown-heading" dir="auto"><h4 class="heading-element" dir="auto">A. Jina Reader API Key (FREE)</h4><a id="user-content-a-jina-reader-api-key-free" class="anchor" aria-label="Permalink: A. Jina Reader API Key (FREE)" href="#a-jina-reader-api-key-free"></a></div>
+<ol dir="auto">
+<li>Visit <a href="https://jina.ai/reader" rel="nofollow">jina.ai/reader</a></li>
+<li>Sign up for free account</li>
+<li>Get your API key (starts with <code>jina_...</code>)</li>
+</ol>
+<div class="markdown-heading" dir="auto"><h4 class="heading-element" dir="auto">B. Google Custom Search API (FREE - 100 searches/day)</h4><a id="user-content-b-google-custom-search-api-free---100-searchesday" class="anchor" aria-label="Permalink: B. Google Custom Search API (FREE - 100 searches/day)" href="#b-google-custom-search-api-free---100-searchesday"></a></div>
+<p dir="auto"><strong>Create Google Cloud Project:</strong></p>
+<ol dir="auto">
+<li>Go to <a href="https://console.cloud.google.com/" rel="nofollow">Google Cloud Console</a></li>
+<li>Create a new project (any name, e.g., "Lead Generator")</li>
+<li>Note your Project ID</li>
+</ol>
+<p dir="auto"><strong>Enable Custom Search API:</strong></p>
+<ol dir="auto">
+<li>In Cloud Console, go to <strong>APIs &amp; Services &gt; Library</strong></li>
+<li>Search for "Custom Search API"</li>
+<li>Click on it and press <strong>Enable</strong></li>
+</ol>
+<p dir="auto"><strong>Create API Key:</strong></p>
+<ol dir="auto">
+<li>Go to <strong>APIs &amp; Services &gt; Credentials</strong></li>
+<li>Click <strong>Create Credentials</strong> &gt; <strong>API Key</strong></li>
+<li>Copy the key (starts with <code>AIza...</code>)</li>
+<li>(Optional) Click <strong>Restrict Key</strong> and limit to Custom Search API only</li>
+</ol>
+<p dir="auto"><strong>Create Custom Search Engine:</strong></p>
+<ol dir="auto">
+<li>Go to <a href="https://programmablesearchengine.google.com/create/new" rel="nofollow">Programmable Search Engine</a></li>
+<li>Fill in:
+<ul dir="auto">
+<li><strong>Search engine name</strong>: "LinkedIn People Search" (or any name)</li>
+<li><strong>What to search</strong>: Select "Search specific sites or pages"</li>
+<li><strong>Sites to search</strong>: Enter <code>linkedin.com/in/*</code></li>
+</ul>
+</li>
+<li>Click <strong>Create</strong></li>
+<li>On the next page, copy your <strong>Search Engine ID</strong> (looks like <code>e43f38264dff14931</code>)</li>
+</ol>
+<p dir="auto"><strong>Important</strong>: The free tier gives you 100 searches/day. After that, it's $5 per 1,000 queries.</p>
+<div class="markdown-heading" dir="auto"><h3 class="heading-element" dir="auto">Step 6: Create .env File</h3><a id="user-content-step-6-create-env-file" class="anchor" aria-label="Permalink: Step 6: Create .env File" href="#step-6-create-env-file"></a></div>
+<p dir="auto">Create a file named <code>.env</code> in the project root:</p>
+<div class="highlight highlight-source-shell notranslate position-relative overflow-auto" dir="auto" data-snippet-clipboard-copy-content="# In project directory
+touch .env"><pre><span class="pl-c"><span class="pl-c">#</span> In project directory</span>
+touch .env</pre></div>
+<p dir="auto">Add your API keys to <code>.env</code>:</p>
+<div class="highlight highlight-source-dotenv notranslate position-relative overflow-auto" dir="auto" data-snippet-clipboard-copy-content="# Jina Reader API Key
+JINA_API_KEY=jina_your_actual_key_here
+
+# Google Custom Search API credentials
+GOOGLE_API_KEY=AIza_your_actual_key_here
+GOOGLE_CSE_ID=your_search_engine_id_here"><pre><span class="pl-c"><span class="pl-c">#</span> Jina Reader API Key</span>
+<span class="pl-v">JINA_API_KEY</span><span class="pl-k">=</span><span class="pl-s">jina_your_actual_key_here</span>
+
+<span class="pl-c"><span class="pl-c">#</span> Google Custom Search API credentials</span>
+<span class="pl-v">GOOGLE_API_KEY</span><span class="pl-k">=</span><span class="pl-s">AIza_your_actual_key_here</span>
+<span class="pl-v">GOOGLE_CSE_ID</span><span class="pl-k">=</span><span class="pl-s">your_search_engine_id_here</span></pre></div>
+<p dir="auto"><strong><g-emoji class="g-emoji" alias="warning">⚠️</g-emoji> Important</strong>:</p>
+<ul dir="auto">
+<li>Replace the values with YOUR actual keys</li>
+<li>Never commit <code>.env</code> to git (it's already in <code>.gitignore</code>)</li>
+<li>Keep your keys secret!</li>
+</ul>
+<div class="markdown-heading" dir="auto"><h3 class="heading-element" dir="auto">Step 7: Create Your Source URLs File (Optional)</h3><a id="user-content-step-7-create-your-source-urls-file-optional" class="anchor" aria-label="Permalink: Step 7: Create Your Source URLs File (Optional)" href="#step-7-create-your-source-urls-file-optional"></a></div>
+<p dir="auto">The scraper can handle multiple URLs from an Excel file:</p>
+<p dir="auto"><strong>Option A: Use Template (Recommended)</strong></p>
+<div class="highlight highlight-source-shell notranslate position-relative overflow-auto" dir="auto" data-snippet-clipboard-copy-content="# Copy the template
+cp sources_template.xlsx sources.xlsx
+
+# Open in Excel and edit with your URLs"><pre><span class="pl-c"><span class="pl-c">#</span> Copy the template</span>
+cp sources_template.xlsx sources.xlsx
+
+<span class="pl-c"><span class="pl-c">#</span> Open in Excel and edit with your URLs</span></pre></div>
+<p dir="auto"><strong>Option B: Create From Scratch</strong></p>
+<p dir="auto">Create <code>sources.xlsx</code> with these columns:</p>
+<markdown-accessiblity-table><table>
+<thead>
+<tr>
+<th>source_url</th>
+<th>source_name</th>
+<th>url_type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="https://jobs.a16z.com/jobs" rel="nofollow">https://jobs.a16z.com/jobs</a></td>
+<td>A16Z Portfolio</td>
+<td>auto</td>
+</tr>
+<tr>
+<td><a href="https://www.ycombinator.com/jobs" rel="nofollow">https://www.ycombinator.com/jobs</a></td>
+<td>YC Companies</td>
+<td>auto</td>
+</tr>
+<tr>
+<td><a href="https://techcorp.com" rel="nofollow">https://techcorp.com</a></td>
+<td>Tech Corp</td>
+<td>direct_company</td>
+</tr>
+</tbody>
+</table></markdown-accessiblity-table>
+<p dir="auto"><strong>Column Descriptions:</strong></p>
+<ul dir="auto">
+<li><code>source_url</code> <strong>(required)</strong>: URL to scrape</li>
+<li><code>source_name</code> <em>(optional)</em>: Friendly name for reports</li>
+<li><code>url_type</code> <em>(optional)</em>: <code>auto</code>, <code>listing_page</code>, <code>profile_page</code>, or <code>direct_company</code></li>
+</ul>
+<p dir="auto"><strong>URL Types Explained:</strong></p>
+<ul dir="auto">
+<li><code>auto</code> - Let the scraper detect (recommended)</li>
+<li><code>listing_page</code> - Multiple companies listed (e.g., job boards, portfolios)</li>
+<li><code>profile_page</code> - Single company page (e.g., company job page)</li>
+<li><code>direct_company</code> - Actual company website</li>
+</ul>
+<p dir="auto"><strong>Note:</strong> If no <code>sources.xlsx</code> exists, scraper uses default A16Z URL.</p>
+<div class="markdown-heading" dir="auto"><h3 class="heading-element" dir="auto">Step 8: Run the Scraper</h3><a id="user-content-step-8-run-the-scraper" class="anchor" aria-label="Permalink: Step 8: Run the Scraper" href="#step-8-run-the-scraper"></a></div>
+<div class="highlight highlight-source-shell notranslate position-relative overflow-auto" dir="auto" data-snippet-clipboard-copy-content="# Make sure venv is activated
+source venv/bin/activate
+
+# Run the scraper
+python3 lead_scraper.py"><pre><span class="pl-c"><span class="pl-c">#</span> Make sure venv is activated</span>
+<span class="pl-c1">source</span> venv/bin/activate
+
+<span class="pl-c"><span class="pl-c">#</span> Run the scraper</span>
+python3 lead_scraper.py</pre></div>
+<p dir="auto">The script will:</p>
+<ol dir="auto">
+<li>Load blacklist (if exists)</li>
+<li>Load sources from <code>sources.xlsx</code> (or use default A16Z)</li>
+<li>Process each source URL</li>
+<li>Auto-classify URL type</li>
+<li>Extract companies</li>
+<li>Find LinkedIn profiles + Apollo emails</li>
+<li>Save results to <code>leads_YYYY-MM-DD_HH-MM-SS.xlsx</code></li>
+</ol>
+<div class="markdown-heading" dir="auto"><h2 class="heading-element" dir="auto">📊 Output Format</h2><a id="user-content--output-format" class="anchor" aria-label="Permalink: 📊 Output Format" href="#-output-format"></a></div>
+<p dir="auto">The Excel file contains <strong>3 sheets</strong>:</p>
+<div class="markdown-heading" dir="auto"><h3 class="heading-element" dir="auto">Sheet 1: "Companies"</h3><a id="user-content-sheet-1-companies" class="anchor" aria-label="Permalink: Sheet 1: &quot;Companies&quot;" href="#sheet-1-companies"></a></div>
+<p dir="auto">Summary view with one row per company:</p>
+<markdown-accessiblity-table><table>
+<thead>
+<tr>
+<th>Column</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>company_name</code></td>
+<td>Company name</td>
+</tr>
+<tr>
+<td><code>company_url</code></td>
+<td>Company website</td>
+</tr>
+<tr>
+<td><code>company_profile_url</code></td>
+<td>Source profile page</td>
+</tr>
+<tr>
+<td><code>source_url</code></td>
+<td>Where it was found</td>
+</tr>
+<tr>
+<td><code>source_name</code></td>
+<td>Source friendly name</td>
+</tr>
+<tr>
+<td><code>people_count</code></td>
+<td># of people found</td>
+</tr>
+<tr>
+<td><code>people_with_email</code></td>
+<td># with emails</td>
+</tr>
+<tr>
+<td><code>extraction_confidence</code></td>
+<td>Quality: high/medium/low</td>
+</tr>
+</tbody>
+</table></markdown-accessiblity-table>
+<div class="markdown-heading" dir="auto"><h3 class="heading-element" dir="auto">Sheet 2: "People"</h3><a id="user-content-sheet-2-people" class="anchor" aria-label="Permalink: Sheet 2: &quot;People&quot;" href="#sheet-2-people"></a></div>
+<p dir="auto">Detailed view with one row per person:</p>
+<markdown-accessiblity-table><table>
+<thead>
+<tr>
+<th>Column</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>company_name</code></td>
+<td>Name of the company</td>
+</tr>
+<tr>
+<td><code>company_url</code></td>
+<td>Company website URL</td>
+</tr>
+<tr>
+<td><code>company_profile_url</code></td>
+<td>Source profile URL</td>
+</tr>
+<tr>
+<td><code>source_url</code></td>
+<td>Source where found</td>
+</tr>
+<tr>
+<td><code>source_name</code></td>
+<td>Source friendly name</td>
+</tr>
+<tr>
+<td><code>person_id</code></td>
+<td>Unique ID (slug from name)</td>
+</tr>
+<tr>
+<td><code>person_name</code></td>
+<td>Person's full name</td>
+</tr>
+<tr>
+<td><code>normalized_name</code></td>
+<td>Normalized for deduplication</td>
+</tr>
+<tr>
+<td><code>job_title</code></td>
+<td>Job title from LinkedIn</td>
+</tr>
+<tr>
+<td><code>linkedin_url</code></td>
+<td>LinkedIn profile URL</td>
+</tr>
+<tr>
+<td><code>email</code></td>
+<td>Email from Apollo.io</td>
+</tr>
+<tr>
+<td><code>phone</code></td>
+<td>Phone from Apollo.io</td>
+</tr>
+<tr>
+<td><code>data_source</code></td>
+<td><code>linkedin</code>, <code>apollo</code>, or <code>both</code></td>
+</tr>
+<tr>
+<td><code>snippet</code></td>
+<td>Text snippet from search result</td>
+</tr>
+</tbody>
+</table></markdown-accessiblity-table>
+<div class="markdown-heading" dir="auto"><h3 class="heading-element" dir="auto">Sheet 3: "Summary"</h3><a id="user-content-sheet-3-summary" class="anchor" aria-label="Permalink: Sheet 3: &quot;Summary&quot;" href="#sheet-3-summary"></a></div>
+<p dir="auto">Statistics for the run:</p>
+<markdown-accessiblity-table><table>
+<thead>
+<tr>
+<th>Metric</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Total Companies</td>
+<td>15</td>
+</tr>
+<tr>
+<td>Companies with URLs</td>
+<td>14</td>
+</tr>
+<tr>
+<td>Total People Found</td>
+<td>150</td>
+</tr>
+<tr>
+<td>LinkedIn Only (no email)</td>
+<td>45</td>
+</tr>
+<tr>
+<td>LinkedIn + Apollo (with email)</td>
+<td>105</td>
+</tr>
+<tr>
+<td>Email Enrichment Rate</td>
+<td>70.0%</td>
+</tr>
+</tbody>
+</table></markdown-accessiblity-table>
+<p dir="auto"><strong>If multiple sources</strong>, shows per-source breakdown.</p>
+<p dir="auto"><strong>Example Row:</strong></p>
+<markdown-accessiblity-table><table>
+<thead>
+<tr>
+<th>company_name</th>
+<th>person_name</th>
+<th>job_title</th>
+<th>linkedin_url</th>
+<th>email</th>
+<th>source_name</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>TechCorp</td>
+<td>John Smith</td>
+<td>CEO</td>
+<td>linkedin.com/in/johnsmith</td>
+<td><a href="mailto:john@techcorp.com">john@techcorp.com</a></td>
+<td>A16Z Portfolio</td>
+</tr>
+</tbody>
+</table></markdown-accessiblity-table>
+<div class="markdown-heading" dir="auto"><h2 class="heading-element" dir="auto">🚫 Blacklist System</h2><a id="user-content--blacklist-system" class="anchor" aria-label="Permalink: 🚫 Blacklist System" href="#-blacklist-system"></a></div>
+<p dir="auto">To skip specific companies:</p>
+<ol dir="auto">
+<li>Open <code>blacklist.csv</code></li>
+<li>Add company URLs (one per line):</li>
+</ol>
+<div class="highlight highlight-source-csv notranslate position-relative overflow-auto" dir="auto" data-snippet-clipboard-copy-content="company_url
+https://company-to-skip.com
+https://another-company.com/"><pre><span class="pl-en">company_url</span>
+https://company-to-skip.com
+https://another-company.com/</pre></div>
+<p dir="auto">The scraper will:</p>
+<ul dir="auto">
+<li>Load blacklist at startup</li>
+<li>Skip blacklisted companies entirely</li>
+<li>Not search LinkedIn for them</li>
+<li>Not include them in output</li>
+</ul>
+<p dir="auto"><strong>Notes:</strong></p>
+<ul dir="auto">
+<li>URLs are case-insensitive</li>
+<li>Trailing slashes are ignored</li>
+<li>Blacklist is optional (can be empty)</li>
+</ul>
+<div class="markdown-heading" dir="auto"><h2 class="heading-element" dir="auto">⚙️ Configuration</h2><a id="user-content-️-configuration" class="anchor" aria-label="Permalink: ⚙️ Configuration" href="#️-configuration"></a></div>
+<p dir="auto">Edit these settings in <code>lead_scraper.py</code> (lines 34-61):</p>
+<div class="markdown-heading" dir="auto"><h3 class="heading-element" dir="auto">Change Max Profiles Per Company</h3><a id="user-content-change-max-profiles-per-company" class="anchor" aria-label="Permalink: Change Max Profiles Per Company" href="#change-max-profiles-per-company"></a></div>
+<div class="highlight highlight-source-python notranslate position-relative overflow-auto" dir="auto" data-snippet-clipboard-copy-content="# Line 34
+MAX_PROFILES_PER_COMPANY = 10  # Change to 20, 50, etc."><pre><span class="pl-c"># Line 34</span>
+<span class="pl-c1">MAX_PROFILES_PER_COMPANY</span> <span class="pl-c1">=</span> <span class="pl-c1">10</span>  <span class="pl-c"># Change to 20, 50, etc.</span></pre></div>
+<div class="markdown-heading" dir="auto"><h3 class="heading-element" dir="auto">Modify Job Titles to Search</h3><a id="user-content-modify-job-titles-to-search" class="anchor" aria-label="Permalink: Modify Job Titles to Search" href="#modify-job-titles-to-search"></a></div>
+<div class="highlight highlight-source-python notranslate position-relative overflow-auto" dir="auto" data-snippet-clipboard-copy-content="# Lines 38-54 - Add/remove titles
+SEARCH_JOB_TITLES = [
+    &quot;Founder&quot;, &quot;CEO&quot;, &quot;CTO&quot;,  # Add your titles here
+    # ...
+]"><pre><span class="pl-c"># Lines 38-54 - Add/remove titles</span>
+<span class="pl-c1">SEARCH_JOB_TITLES</span> <span class="pl-c1">=</span> [
+    <span class="pl-s">"Founder"</span>, <span class="pl-s">"CEO"</span>, <span class="pl-s">"CTO"</span>,  <span class="pl-c"># Add your titles here</span>
+    <span class="pl-c"># ...</span>
+]</pre></div>
+<div class="markdown-heading" dir="auto"><h3 class="heading-element" dir="auto">Toggle Current Employee Filter</h3><a id="user-content-toggle-current-employee-filter" class="anchor" aria-label="Permalink: Toggle Current Employee Filter" href="#toggle-current-employee-filter"></a></div>
+<div class="highlight highlight-source-python notranslate position-relative overflow-auto" dir="auto" data-snippet-clipboard-copy-content="# Line 57
+FILTER_CURRENT_EMPLOYEES = True  # Set False to include alumni"><pre><span class="pl-c"># Line 57</span>
+<span class="pl-c1">FILTER_CURRENT_EMPLOYEES</span> <span class="pl-c1">=</span> <span class="pl-c1">True</span>  <span class="pl-c"># Set False to include alumni</span></pre></div>
+<div class="markdown-heading" dir="auto"><h3 class="heading-element" dir="auto">Adjust Rate Limiting</h3><a id="user-content-adjust-rate-limiting" class="anchor" aria-label="Permalink: Adjust Rate Limiting" href="#adjust-rate-limiting"></a></div>
+<div class="highlight highlight-source-python notranslate position-relative overflow-auto" dir="auto" data-snippet-clipboard-copy-content="# Line 60
+API_RATE_LIMIT_DELAY = 1.0  # Increase if hitting rate limits"><pre><span class="pl-c"># Line 60</span>
+<span class="pl-c1">API_RATE_LIMIT_DELAY</span> <span class="pl-c1">=</span> <span class="pl-c1">1.0</span>  <span class="pl-c"># Increase if hitting rate limits</span></pre></div>
+<div class="markdown-heading" dir="auto"><h3 class="heading-element" dir="auto">Change Target URL</h3><a id="user-content-change-target-url" class="anchor" aria-label="Permalink: Change Target URL" href="#change-target-url"></a></div>
+<div class="highlight highlight-source-python notranslate position-relative overflow-auto" dir="auto" data-snippet-clipboard-copy-content="# Line 484 in main() function
+jobs_url = &quot;https://your-target-website.com/jobs?filters=...&quot;"><pre><span class="pl-c"># Line 484 in main() function</span>
+<span class="pl-s1">jobs_url</span> <span class="pl-c1">=</span> <span class="pl-s">"https://your-target-website.com/jobs?filters=..."</span></pre></div>
+<p dir="auto">You can customize the URL to scrape from any job board or company listing page that returns company profiles.</p>
+<div class="markdown-heading" dir="auto"><h2 class="heading-element" dir="auto">🔍 How It Works</h2><a id="user-content--how-it-works" class="anchor" aria-label="Permalink: 🔍 How It Works" href="#-how-it-works"></a></div>
+<ol dir="auto">
+<li><strong>Fetch Listings Page</strong> - Gets job board page via Jina API (converts to markdown)</li>
+<li><strong>Extract Company Profiles</strong> - Uses regex patterns to find company links</li>
+<li><strong>Get Company URLs</strong> - Visits each profile to extract actual website URLs</li>
+<li><strong>Check Blacklist</strong> - Skips if company URL is blacklisted</li>
+<li><strong>LinkedIn Search</strong> - Searches Google for employee LinkedIn profiles
+<ul dir="auto">
+<li>Query: <code>site:linkedin.com/in/ "CompanyName" "current" (title1 OR title2...)</code></li>
+<li>Finds up to 10 profiles per company</li>
+</ul>
+</li>
+<li><strong>Extract Profile Data</strong> - Gets name, title, LinkedIn URL from results</li>
+<li><strong>Save to CSV</strong> - Flattens to one row per person</li>
+</ol>
+<div class="markdown-heading" dir="auto"><h2 class="heading-element" dir="auto">📈 API Usage &amp; Limits</h2><a id="user-content--api-usage--limits" class="anchor" aria-label="Permalink: 📈 API Usage &amp; Limits" href="#-api-usage--limits"></a></div>
+<div class="markdown-heading" dir="auto"><h3 class="heading-element" dir="auto">Jina API</h3><a id="user-content-jina-api" class="anchor" aria-label="Permalink: Jina API" href="#jina-api"></a></div>
+<ul dir="auto">
+<li><strong>Free Tier</strong>: Generous limits for basic usage</li>
+<li><strong>Rate Limit</strong>: Unknown (1 second delay implemented)</li>
+<li><strong>Cost</strong>: Free for moderate usage</li>
+</ul>
+<div class="markdown-heading" dir="auto"><h3 class="heading-element" dir="auto">Google Custom Search API</h3><a id="user-content-google-custom-search-api" class="anchor" aria-label="Permalink: Google Custom Search API" href="#google-custom-search-api"></a></div>
+<ul dir="auto">
+<li><strong>Free Tier</strong>: 100 searches/day</li>
+<li><strong>Rate Limit</strong>: 100 queries per 100 seconds</li>
+<li><strong>Cost</strong>: $5 per 1,000 queries after free tier</li>
+<li><strong>Monitor Usage</strong>: <a href="https://console.cloud.google.com/apis/api/customsearch.googleapis.com" rel="nofollow">Google Cloud Console</a></li>
+</ul>
+<p dir="auto"><strong>Current config</strong>: 1 search per company (10 profiles returned)</p>
+<ul dir="auto">
+<li>10 companies = 10 API calls (well within free tier)</li>
+</ul>
+<div class="markdown-heading" dir="auto"><h2 class="heading-element" dir="auto">🐛 Troubleshooting</h2><a id="user-content--troubleshooting" class="anchor" aria-label="Permalink: 🐛 Troubleshooting" href="#-troubleshooting"></a></div>
+<div class="markdown-heading" dir="auto"><h3 class="heading-element" dir="auto">"No module named 'requests'" or similar</h3><a id="user-content-no-module-named-requests-or-similar" class="anchor" aria-label="Permalink: &quot;No module named 'requests'&quot; or similar" href="#no-module-named-requests-or-similar"></a></div>
+<div class="highlight highlight-source-shell notranslate position-relative overflow-auto" dir="auto" data-snippet-clipboard-copy-content="# Make sure venv is activated
+source venv/bin/activate
+pip install -r requirements.txt"><pre><span class="pl-c"><span class="pl-c">#</span> Make sure venv is activated</span>
+<span class="pl-c1">source</span> venv/bin/activate
+pip install -r requirements.txt</pre></div>
+<div class="markdown-heading" dir="auto"><h3 class="heading-element" dir="auto">"Google API credentials not found"</h3><a id="user-content-google-api-credentials-not-found" class="anchor" aria-label="Permalink: &quot;Google API credentials not found&quot;" href="#google-api-credentials-not-found"></a></div>
+<ul dir="auto">
+<li>Check <code>.env</code> file exists in project root</li>
+<li>Verify <code>GOOGLE_API_KEY</code> and <code>GOOGLE_CSE_ID</code> are set</li>
+<li>Make sure no spaces around <code>=</code> sign</li>
+</ul>
+<div class="markdown-heading" dir="auto"><h3 class="heading-element" dir="auto">"Rate limit exceeded" or "Quota exceeded"</h3><a id="user-content-rate-limit-exceeded-or-quota-exceeded" class="anchor" aria-label="Permalink: &quot;Rate limit exceeded&quot; or &quot;Quota exceeded&quot;" href="#rate-limit-exceeded-or-quota-exceeded"></a></div>
+<ul dir="auto">
+<li>Google free tier is 100 searches/day</li>
+<li>Wait 24 hours or upgrade to paid tier</li>
+<li>Reduce <code>MAX_PROFILES_PER_COMPANY</code> to use fewer API calls</li>
+</ul>
+<div class="markdown-heading" dir="auto"><h3 class="heading-element" dir="auto">"No results returned from Google"</h3><a id="user-content-no-results-returned-from-google" class="anchor" aria-label="Permalink: &quot;No results returned from Google&quot;" href="#no-results-returned-from-google"></a></div>
+<ul dir="auto">
+<li>Company name might not match LinkedIn exactly</li>
+<li>Try adjusting <code>SEARCH_JOB_TITLES</code> list</li>
+<li>Check Google Custom Search Engine settings</li>
+</ul>
+<div class="markdown-heading" dir="auto"><h3 class="heading-element" dir="auto">Empty CSV or no people found</h3><a id="user-content-empty-csv-or-no-people-found" class="anchor" aria-label="Permalink: Empty CSV or no people found" href="#empty-csv-or-no-people-found"></a></div>
+<ul dir="auto">
+<li>Verify Google API credentials are correct</li>
+<li>Check company names are spelled correctly</li>
+<li>LinkedIn profiles might be private/not indexed</li>
+<li>Verify the target URL is accessible and returns expected format</li>
+</ul>
+<div class="markdown-heading" dir="auto"><h2 class="heading-element" dir="auto">📝 Example Usage</h2><a id="user-content--example-usage" class="anchor" aria-label="Permalink: 📝 Example Usage" href="#-example-usage"></a></div>
+<div class="markdown-heading" dir="auto"><h3 class="heading-element" dir="auto">Basic Run (Default A16Z)</h3><a id="user-content-basic-run-default-a16z" class="anchor" aria-label="Permalink: Basic Run (Default A16Z)" href="#basic-run-default-a16z"></a></div>
+<div class="highlight highlight-source-shell notranslate position-relative overflow-auto" dir="auto" data-snippet-clipboard-copy-content="python3 lead_scraper.py"><pre>python3 lead_scraper.py</pre></div>
+<p dir="auto">Output: <code>leads_2025-10-11_14-30-45.xlsx</code></p>
+<div class="markdown-heading" dir="auto"><h3 class="heading-element" dir="auto">Multi-Source Run</h3><a id="user-content-multi-source-run" class="anchor" aria-label="Permalink: Multi-Source Run" href="#multi-source-run"></a></div>
+<div class="highlight highlight-source-shell notranslate position-relative overflow-auto" dir="auto" data-snippet-clipboard-copy-content="# 1. Copy template
+cp sources_template.xlsx sources.xlsx
+
+# 2. Edit sources.xlsx with your URLs:
+#    - https://jobs.a16z.com/jobs
+#    - https://www.ycombinator.com/jobs
+#    - https://techstars.com/companies
+
+# 3. Run scraper
+python3 lead_scraper.py"><pre><span class="pl-c"><span class="pl-c">#</span> 1. Copy template</span>
+cp sources_template.xlsx sources.xlsx
+
+<span class="pl-c"><span class="pl-c">#</span> 2. Edit sources.xlsx with your URLs:</span>
+<span class="pl-c"><span class="pl-c">#</span>    - https://jobs.a16z.com/jobs</span>
+<span class="pl-c"><span class="pl-c">#</span>    - https://www.ycombinator.com/jobs</span>
+<span class="pl-c"><span class="pl-c">#</span>    - https://techstars.com/companies</span>
+
+<span class="pl-c"><span class="pl-c">#</span> 3. Run scraper</span>
+python3 lead_scraper.py</pre></div>
+<p dir="auto">Output: Excel with all companies from all sources + source tracking</p>
+<div class="markdown-heading" dir="auto"><h3 class="heading-element" dir="auto">Add Companies to Blacklist</h3><a id="user-content-add-companies-to-blacklist" class="anchor" aria-label="Permalink: Add Companies to Blacklist" href="#add-companies-to-blacklist"></a></div>
+<div class="highlight highlight-source-shell notranslate position-relative overflow-auto" dir="auto" data-snippet-clipboard-copy-content="# Edit blacklist.csv
+echo &quot;https://company-to-skip.com&quot; &gt;&gt; blacklist.csv
+
+# Run scraper (will skip blacklisted companies from ALL sources)
+python3 lead_scraper.py"><pre><span class="pl-c"><span class="pl-c">#</span> Edit blacklist.csv</span>
+<span class="pl-c1">echo</span> <span class="pl-s"><span class="pl-pds">"</span>https://company-to-skip.com<span class="pl-pds">"</span></span> <span class="pl-k">&gt;&gt;</span> blacklist.csv
+
+<span class="pl-c"><span class="pl-c">#</span> Run scraper (will skip blacklisted companies from ALL sources)</span>
+python3 lead_scraper.py</pre></div>
+<div class="markdown-heading" dir="auto"><h3 class="heading-element" dir="auto">Supported URL Types</h3><a id="user-content-supported-url-types" class="anchor" aria-label="Permalink: Supported URL Types" href="#supported-url-types"></a></div>
+<p dir="auto">The scraper handles:</p>
+<p dir="auto"><strong>Listing Pages</strong> (Multiple companies)</p>
+<ul dir="auto">
+<li>Job boards: <code>https://jobs.a16z.com/jobs</code></li>
+<li>YC directory: <code>https://www.ycombinator.com/jobs</code></li>
+<li>Portfolio pages: <code>https://vc-firm.com/portfolio</code></li>
+</ul>
+<p dir="auto"><strong>Profile Pages</strong> (Single company)</p>
+<ul dir="auto">
+<li>Company job pages: <code>https://jobs.a16z.com/jobs/figma</code></li>
+<li>YC company pages: <code>https://www.ycombinator.com/companies/stripe/jobs</code></li>
+</ul>
+<p dir="auto"><strong>Direct Companies</strong></p>
+<ul dir="auto">
+<li>Company websites: <code>https://stripe.com</code></li>
+<li>Any company domain: <code>https://figma.com</code></li>
+</ul>
+<div class="markdown-heading" dir="auto"><h2 class="heading-element" dir="auto">🎯 Use Cases</h2><a id="user-content--use-cases" class="anchor" aria-label="Permalink: 🎯 Use Cases" href="#-use-cases"></a></div>
+<ul dir="auto">
+<li>Lead generation for sales/recruitment</li>
+<li>Market research on companies and their teams</li>
+<li>Competitive intelligence gathering</li>
+<li>Investor research on portfolio companies</li>
+<li>Building contact databases for outreach</li>
+</ul>
+<div class="markdown-heading" dir="auto"><h2 class="heading-element" dir="auto">🔐 Security Notes</h2><a id="user-content--security-notes" class="anchor" aria-label="Permalink: 🔐 Security Notes" href="#-security-notes"></a></div>
+<ul dir="auto">
+<li><strong>.env is git-ignored</strong> - Your API keys won't be committed</li>
+<li><strong>Output CSVs are git-ignored</strong> - Lead data stays local</li>
+<li><strong>Never share API keys</strong> - Keep them private</li>
+<li><strong>Blacklist is tracked</strong> - Safe to commit to git</li>
+</ul>
+<div class="markdown-heading" dir="auto"><h2 class="heading-element" dir="auto">📚 Dependencies</h2><a id="user-content--dependencies" class="anchor" aria-label="Permalink: 📚 Dependencies" href="#-dependencies"></a></div>
+<ul dir="auto">
+<li><code>requests&gt;=2.31.0</code> - HTTP library for API calls</li>
+<li><code>python-dotenv&gt;=1.0.0</code> - Environment variable management</li>
+</ul>
+<div class="markdown-heading" dir="auto"><h2 class="heading-element" dir="auto">🤝 Contributing</h2><a id="user-content--contributing" class="anchor" aria-label="Permalink: 🤝 Contributing" href="#-contributing"></a></div>
+<p dir="auto">Feel free to:</p>
+<ul dir="auto">
+<li>Report issues</li>
+<li>Suggest features</li>
+<li>Submit pull requests</li>
+<li>Improve documentation</li>
+</ul>
+<div class="markdown-heading" dir="auto"><h2 class="heading-element" dir="auto">📄 License</h2><a id="user-content--license" class="anchor" aria-label="Permalink: 📄 License" href="#-license"></a></div>
+<p dir="auto">[Add your license here]</p>
+<div class="markdown-heading" dir="auto"><h2 class="heading-element" dir="auto">🆘 Support</h2><a id="user-content--support" class="anchor" aria-label="Permalink: 🆘 Support" href="#-support"></a></div>
+<p dir="auto">If you need help:</p>
+<ol dir="auto">
+<li>Check troubleshooting section above</li>
+<li>Verify API keys are correct</li>
+<li>Check API quota limits</li>
+<li>Review error messages carefully</li>
+<li>Open an issue on GitHub</li>
+</ol>
+<hr>
+<p dir="auto"><strong>Happy Lead Generating! 🚀</strong></p>
+        </div>
+      </section>
+
+      <footer>LeadScaper Platform — lead-generator</footer>
+    </main>
+  </div>
+</body>
+</html>

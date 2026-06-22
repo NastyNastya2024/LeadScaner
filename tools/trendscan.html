@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TrendScan — LeadScaper</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="header-inner">
+      <a class="logo" href="../index.html">
+        <span class="logo-icon">✦</span>
+        LeadScaper
+      </a>
+      <div class="header-actions">
+        <button class="btn-icon" type="button">⚙</button>
+      </div>
+    </div>
+  </header>
+
+  <div class="layout tool-page">
+    <main class="main">
+      <a class="back-link" href="../index.html">← Назад к архитектуре</a>
+
+      <div class="hero-card hero-card-accent tool-hero">
+        <div class="tool-icon">1.4</div>
+        <div class="tool-hero-body">
+          <div class="hero-stat-label">Слой 1 · Поиск компаний</div>
+          <h1 class="hero-stat-value tool-hero-title">TrendScan</h1>
+          <p class="hero-stat-sub">Поиск трендовых компаний</p>
+          <a class="btn-external" href="https://github.com/brightdata/trendscan" target="_blank" rel="noopener">
+            Открыть на GitHub →
+          </a>
+        </div>
+      </div>
+
+      <section class="panel">
+        <div class="panel-head">
+          <div class="panel-tag">GitHub</div>
+          <h2 class="panel-title">Описание</h2>
+        </div>
+
+        <div class="tool-stats">
+          <div class="tool-stat"><span class="tool-stat-label">Репозиторий</span><span class="tool-stat-value">brightdata/trendscan</span></div>
+          <div class="tool-stat"><span class="tool-stat-label">Stars</span><span class="tool-stat-value">4</span></div>
+          <div class="tool-stat"><span class="tool-stat-label">Язык</span><span class="tool-stat-value">Python</span></div>
+          <div class="tool-stat"><span class="tool-stat-label">Источник данных</span><span class="tool-stat-value">Crunchbase, LinkedIn, Twitter/X</span></div>
+        </div>
+
+        <div class="readme-content">
+          <div class="markdown-heading" dir="auto"><h1 class="heading-element" dir="auto">TrendScan 🔍</h1><a id="user-content-trendscan-" class="anchor" aria-label="Permalink: TrendScan 🔍" href="#trendscan-"></a></div>
+<p dir="auto"><strong>Multi‑source company intelligence platform</strong> – automated collection and AI‑powered analysis of company data from Crunchbase, LinkedIn, and Reddit.</p>
+<p dir="auto"><a target="_blank" rel="noopener noreferrer" href="https://github.com/brightdata/trendscan/blob/6e601160eef7759a26ba39751a495b3ce139ff81/assets/trendscan.gif"><img src="https://github.com/brightdata/trendscan/raw/6e601160eef7759a26ba39751a495b3ce139ff81/assets/trendscan.gif" width="800" alt="TrendScan Dashboard Demo" data-animated-image="" style="max-width: 100%;"></a></p>
+<hr>
+<div class="markdown-heading" dir="auto"><h2 class="heading-element" dir="auto">Features</h2><a id="user-content-features" class="anchor" aria-label="Permalink: Features" href="#features"></a></div>
+<ul dir="auto">
+<li>Aggregates company and social data from Crunchbase, LinkedIn, and Reddit.</li>
+<li>Automates web scraping via CrewAI agents and Bright Data MCP (handles JS rendering, proxy rotation, and CAPTCHAs)</li>
+<li>AI-powered analysis and insight generation with Gemini models</li>
+<li>Real-time visualization in a <a href="https://streamlit.io/" rel="nofollow">Streamlit</a> dashboard</li>
+<li>Modular architecture for easy addition of new data sources or workflows</li>
+</ul>
+<hr>
+<div class="markdown-heading" dir="auto"><h2 class="heading-element" dir="auto">How it works</h2><a id="user-content-how-it-works" class="anchor" aria-label="Permalink: How it works" href="#how-it-works"></a></div>
+<p dir="auto"><a target="_blank" rel="noopener noreferrer" href="https://github.com/brightdata/trendscan/blob/main/assets/trendscan-flowchart.png"><img src="https://github.com/brightdata/trendscan/raw/main/assets/trendscan-flowchart.png" width="800" alt="Architecture Diagram" style="max-width: 100%;"></a></p>
+<ol dir="auto">
+<li><strong>Initiate:</strong> Data-retrieval with specialized CrewAI agents.</li>
+<li><strong>Orchestrate:</strong> API calls &amp; dynamic scraping with Bright Data MCP – handles JS, proxies, rate limiting, CAPTCHA, more.</li>
+<li><strong>Normalize:</strong> Store and send data to Gemini AI for instant analysis.</li>
+<li><strong>Display:</strong> Results and actionable insights in Streamlit dashboard.</li>
+</ol>
+<hr>
+<div class="markdown-heading" dir="auto"><h2 class="heading-element" dir="auto">Technical Stack</h2><a id="user-content-technical-stack" class="anchor" aria-label="Permalink: Technical Stack" href="#technical-stack"></a></div>
+<ul dir="auto">
+<li><strong>Language:</strong> Python 3</li>
+<li><strong>Orchestration:</strong> <a href="https://github.com/crewAIInc/crewAI">CrewAI</a> multi‑agent framework</li>
+<li><strong>Protocol:</strong> <a href="https://modelcontextprotocol.io/introduction" rel="nofollow">Model Context Protocol (MCP)</a></li>
+<li><strong>Scraping:</strong> <a href="https://github.com/brightdata/brightdata-mcp">Bright Data MCP</a> &amp; <a href="https://brightdata.com/products/web-scraper" rel="nofollow">Web Scraper APIs</a></li>
+<li><strong>AI:</strong> <a href="https://ai.google.dev/gemini-api/docs/models" rel="nofollow">Google Gemini models</a></li>
+<li><strong>Dashboard:</strong> <a href="https://streamlit.io/" rel="nofollow">Streamlit</a></li>
+</ul>
+<hr>
+<div class="markdown-heading" dir="auto"><h2 class="heading-element" dir="auto">Data Sources</h2><a id="user-content-data-sources" class="anchor" aria-label="Permalink: Data Sources" href="#data-sources"></a></div>
+<markdown-accessiblity-table><table>
+<thead>
+<tr>
+<th>Source</th>
+<th>Data type</th>
+<th>Content</th>
+<th>Integration</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Crunchbase</td>
+<td>Company profiles</td>
+<td>Funding, team, metrics, news</td>
+<td>100% MCP</td>
+</tr>
+<tr>
+<td>LinkedIn</td>
+<td>Professional data</td>
+<td>Jobs, updates</td>
+<td>Hybrid (MCP + API)</td>
+</tr>
+<tr>
+<td>Reddit</td>
+<td>Public sentiment</td>
+<td>Discussions, opinions, reviews</td>
+<td>100% MCP</td>
+</tr>
+</tbody>
+</table></markdown-accessiblity-table>
+<hr>
+<div class="markdown-heading" dir="auto"><h2 class="heading-element" dir="auto">Use Cases</h2><a id="user-content-use-cases" class="anchor" aria-label="Permalink: Use Cases" href="#use-cases"></a></div>
+<ul dir="auto">
+<li>Competitive intelligence &amp; company research</li>
+<li>Market trend analysis</li>
+<li>Real-time sentiment &amp; topic monitoring</li>
+<li>Investment/M&amp;A targeting</li>
+<li>Multi-source data discovery for analysts</li>
+</ul>
+<hr>
+<div class="markdown-heading" dir="auto"><h2 class="heading-element" dir="auto">Prerequisites</h2><a id="user-content-prerequisites" class="anchor" aria-label="Permalink: Prerequisites" href="#prerequisites"></a></div>
+<ul dir="auto">
+<li><a href="https://www.python.org/downloads/" rel="nofollow">Python 3</a> &amp; <a href="https://nodejs.org/en/download" rel="nofollow">Node.js</a></li>
+<li><a href="https://brightdata.com/" rel="nofollow">Bright Data account</a> with <a href="https://docs.brightdata.com/api-reference/authentication" rel="nofollow">API key</a>
+<ul dir="auto">
+<li>PLUS <a href="https://docs.brightdata.com/scraping-automation/web-unlocker/quickstart" rel="nofollow">Web Unlocker</a> and <a href="https://docs.brightdata.com/scraping-automation/scraping-browser/quickstart" rel="nofollow">Browser API</a> zones</li>
+</ul>
+</li>
+<li><a href="https://aistudio.google.com/u/0/apikey" rel="nofollow">Gemini API access</a></li>
+</ul>
+<hr>
+<div class="markdown-heading" dir="auto"><h2 class="heading-element" dir="auto">Installation</h2><a id="user-content-installation" class="anchor" aria-label="Permalink: Installation" href="#installation"></a></div>
+<div class="highlight highlight-source-shell notranslate position-relative overflow-auto" dir="auto" data-snippet-clipboard-copy-content="# Clone the repo
+git clone https://github.com/brightdata/trendscan.git
+cd trendscan
+
+# Create and activate Python virtual environment
+uv venv
+
+# Install dependencies
+uv pip install -r requirements.txt"><pre><span class="pl-c"><span class="pl-c">#</span> Clone the repo</span>
+git clone https://github.com/brightdata/trendscan.git
+<span class="pl-c1">cd</span> trendscan
+
+<span class="pl-c"><span class="pl-c">#</span> Create and activate Python virtual environment</span>
+uv venv
+
+<span class="pl-c"><span class="pl-c">#</span> Install dependencies</span>
+uv pip install -r requirements.txt</pre></div>
+<hr>
+<div class="markdown-heading" dir="auto"><h2 class="heading-element" dir="auto">Configuration</h2><a id="user-content-configuration" class="anchor" aria-label="Permalink: Configuration" href="#configuration"></a></div>
+<ol dir="auto">
+<li>Open the <code>.env</code> file in your project’s root directory.</li>
+<li>Fill in your real credentials and API keys.</li>
+<li><em>(Optional)</em> To use a different Gemini model, set <code>LLM_MODEL</code> in <code>.env</code>.
+See <a href="https://ai.google.dev/gemini-api/docs/models" rel="nofollow">Gemini model docs</a>.</li>
+</ol>
+<p dir="auto"><strong>.env Variables (example):</strong></p>
+<markdown-accessiblity-table><table>
+<thead>
+<tr>
+<th>Variable</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>BRIGHT_DATA_API_KEY</td>
+<td>Your Bright Data API Key</td>
+</tr>
+<tr>
+<td>GEMINI_API_KEY</td>
+<td>Your Gemini API Key</td>
+</tr>
+<tr>
+<td>...</td>
+<td>...</td>
+</tr>
+</tbody>
+</table></markdown-accessiblity-table>
+<hr>
+<div class="markdown-heading" dir="auto"><h2 class="heading-element" dir="auto">Usage</h2><a id="user-content-usage" class="anchor" aria-label="Permalink: Usage" href="#usage"></a></div>
+<p dir="auto">Launch the Streamlit web interface with:</p>
+<div class="highlight highlight-source-shell notranslate position-relative overflow-auto" dir="auto" data-snippet-clipboard-copy-content="streamlit run streamlit_trendscan.py"><pre>streamlit run streamlit_trendscan.py</pre></div>
+<p dir="auto">You’ll be able to initiate data retrieval, run the pipeline, and interact with the dashboard in your browser.</p>
+<hr>
+<div class="markdown-heading" dir="auto"><h2 class="heading-element" dir="auto">Contributing</h2><a id="user-content-contributing" class="anchor" aria-label="Permalink: Contributing" href="#contributing"></a></div>
+<p dir="auto">PRs, feedback, and feature suggestions are welcome!</p>
+<ul dir="auto">
+<li><a href="https://github.com/brightdata/trendscan/issues">Open an issue</a> for bugs and improvements.</li>
+<li>For large contributions, please open a discussion first.</li>
+</ul>
+<hr>
+<div class="markdown-heading" dir="auto"><h2 class="heading-element" dir="auto">License</h2><a id="user-content-license" class="anchor" aria-label="Permalink: License" href="#license"></a></div>
+<p dir="auto">Distributed under the MIT License.</p>
+<hr>
+<p dir="auto"><strong>Have fun scanning trends and supercharging company intelligence!</strong></p>
+        </div>
+      </section>
+
+      <footer>LeadScaper Platform — TrendScan</footer>
+    </main>
+  </div>
+</body>
+</html>

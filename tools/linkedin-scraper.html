@@ -1,0 +1,492 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>linkedIn_scraper — LeadScaper</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="header-inner">
+      <a class="logo" href="../index.html">
+        <span class="logo-icon">✦</span>
+        LeadScaper
+      </a>
+      <div class="header-actions">
+        <button class="btn-icon" type="button">⚙</button>
+      </div>
+    </div>
+  </header>
+
+  <div class="layout tool-page">
+    <main class="main">
+      <a class="back-link" href="../index.html">← Назад к архитектуре</a>
+
+      <div class="hero-card hero-card-accent tool-hero">
+        <div class="tool-icon">2.3</div>
+        <div class="tool-hero-body">
+          <div class="hero-stat-label">Слой 2 · Сбор контактов</div>
+          <h1 class="hero-stat-value tool-hero-title">linkedIn_scraper</h1>
+          <p class="hero-stat-sub">Сбор профилей ЛПР с AI-генерацией «болевых точек»</p>
+          <a class="btn-external" href="https://github.com/haytham10/linkedIn_scraper" target="_blank" rel="noopener">
+            Открыть на GitHub →
+          </a>
+        </div>
+      </div>
+
+      <section class="panel">
+        <div class="panel-head">
+          <div class="panel-tag">GitHub</div>
+          <h2 class="panel-title">Описание</h2>
+        </div>
+
+        <div class="tool-stats">
+          <div class="tool-stat"><span class="tool-stat-label">Репозиторий</span><span class="tool-stat-value">haytham10/linkedIn_scraper</span></div>
+          <div class="tool-stat"><span class="tool-stat-label">Stars</span><span class="tool-stat-value">3</span></div>
+          <div class="tool-stat"><span class="tool-stat-label">Язык</span><span class="tool-stat-value">Python</span></div>
+          <div class="tool-stat"><span class="tool-stat-label">Источник данных</span><span class="tool-stat-value">LinkedIn</span></div>
+        </div>
+
+        <div class="readme-content">
+          <div class="markdown-heading" dir="auto"><h1 class="heading-element" dir="auto">LinkedIn Lead Scraper &amp; AI Refinement Tool</h1><a id="user-content-linkedin-lead-scraper--ai-refinement-tool" class="anchor" aria-label="Permalink: LinkedIn Lead Scraper &amp; AI Refinement Tool" href="#linkedin-lead-scraper--ai-refinement-tool"></a></div>
+<div class="markdown-heading" dir="auto"><h2 class="heading-element" dir="auto">📜 Changelog</h2><a id="user-content--changelog" class="anchor" aria-label="Permalink: 📜 Changelog" href="#-changelog"></a></div>
+<div class="markdown-heading" dir="auto"><h3 class="heading-element" dir="auto">2025-09-20</h3><a id="user-content-2025-09-20" class="anchor" aria-label="Permalink: 2025-09-20" href="#2025-09-20"></a></div>
+<ul dir="auto">
+<li>Added in-house Email Enrichment tool: <code>email_enricher.py</code>
+<ul dir="auto">
+<li>Generates likely corporate emails from first/last names + website domain</li>
+<li>Validates via MX lookup and safe SMTP RCPT (no emails are sent)</li>
+<li>Processes only rows with Status = SCRAPED</li>
+<li>Writes Email and Email Status with allowed values (all-caps):
+<ul dir="auto">
+<li>DELIVERABLE, UNDELIVERABLE, CATCH_ALL, MX_UNVERIFIABLE, HEURISTIC (when SMTP disabled)</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Domain derivation now ignores “Company URL” (since it stores LinkedIn profile URLs); prefers Website, Company Website, Website URL</li>
+<li>Email pattern priority updated: first@, first.last@, flast@, firstlast@, …</li>
+<li>Documentation updates: README Email Enrichment section and <code>.env.example</code></li>
+<li>Requirements updated: added <code>dnspython</code> and <code>tldextract</code></li>
+</ul>
+<div class="markdown-heading" dir="auto"><h3 class="heading-element" dir="auto">2025-09-19</h3><a id="user-content-2025-09-19" class="anchor" aria-label="Permalink: 2025-09-19" href="#2025-09-19"></a></div>
+<ul dir="auto">
+<li>v2 direct scraper added: <code>lead_scraper_v2.py</code> (no paid providers)
+<ul dir="auto">
+<li>Uses undetected-chromedriver for lower bot detection</li>
+<li>Reuses cookies (linkedin_cookies.json) to avoid frequent logins and 2FA</li>
+<li>Gentle rate limiting with jitter/backoff and safer status flow (NEW → IN_PROGRESS → SCRAPED/FAILED)</li>
+<li>Company data via linkedin_scraper.Company (website, industry, description) for reliability</li>
+<li>Flexible header mapping, including Company URL → official website, and separate fields for LinkedIn company profile URL</li>
+</ul>
+</li>
+</ul>
+<div class="markdown-heading" dir="auto"><h3 class="heading-element" dir="auto">2025-09-17</h3><a id="user-content-2025-09-17" class="anchor" aria-label="Permalink: 2025-09-17" href="#2025-09-17"></a></div>
+<ul dir="auto">
+<li>Company name extraction improved: removes employment type (e.g., ' · Full-time')</li>
+<li>Person data extraction now infers title, company name, and company LinkedIn URL directly from experience</li>
+</ul>
+<div class="markdown-heading" dir="auto"><h3 class="heading-element" dir="auto">2025-09-16</h3><a id="user-content-2025-09-16" class="anchor" aria-label="Permalink: 2025-09-16" href="#2025-09-16"></a></div>
+<ul dir="auto">
+<li>Initial professional code organization for GitHub publication</li>
+<li>Added Google Apps Script for AI-powered lead refinement</li>
+<li>Comprehensive README, .env.example, requirements.txt, and .gitignore added</li>
+</ul>
+<p dir="auto">A comprehensive solution for automated LinkedIn lead generation and AI-powered lead analysis. This tool scrapes LinkedIn profiles, extracts key information, and uses Google's Gemini AI to generate personalized outreach insights.</p>
+<div class="markdown-heading" dir="auto"><h2 class="heading-element" dir="auto">🚀 Features</h2><a id="user-content--features" class="anchor" aria-label="Permalink: 🚀 Features" href="#-features"></a></div>
+<div class="markdown-heading" dir="auto"><h3 class="heading-element" dir="auto">LinkedIn Scraper (Python)</h3><a id="user-content-linkedin-scraper-python" class="anchor" aria-label="Permalink: LinkedIn Scraper (Python)" href="#linkedin-scraper-python"></a></div>
+<ul dir="auto">
+<li><strong>Automated Profile Scraping</strong>: Extract names, titles, companies, and descriptions</li>
+<li><strong>Company Data Extraction</strong>: Get company websites, industries, and detailed descriptions</li>
+<li><strong>Google Sheets Integration</strong>: Automatically populate spreadsheets with scraped data</li>
+<li><strong>Smart Rate Limiting</strong>: Human-like delays to avoid detection</li>
+<li><strong>Error Recovery</strong>: Robust error handling and retry mechanisms</li>
+<li><strong>Stealth Mode</strong>: Anti-detection measures for reliable scraping</li>
+</ul>
+<p dir="auto">Two flavors:</p>
+<ul dir="auto">
+<li>v1: <code>lead_scraper.py</code> (Selenium + webdriver-manager)</li>
+<li>v2: <code>lead_scraper_v2.py</code> (undetected-chromedriver, cookie reuse, safer pacing)</li>
+</ul>
+<div class="markdown-heading" dir="auto"><h3 class="heading-element" dir="auto">AI Lead Refinement (Google Apps Script)</h3><a id="user-content-ai-lead-refinement-google-apps-script" class="anchor" aria-label="Permalink: AI Lead Refinement (Google Apps Script)" href="#ai-lead-refinement-google-apps-script"></a></div>
+<ul dir="auto">
+<li><strong>Pain Point Analysis</strong>: AI identifies likely business challenges</li>
+<li><strong>Project Type Classification</strong>: Categorizes leads by automation opportunities</li>
+<li><strong>Personalized Openers</strong>: Generates compelling email opening lines</li>
+<li><strong>Batch Processing</strong>: Handles multiple leads efficiently</li>
+<li><strong>Progress Tracking</strong>: Real-time status updates and error reporting</li>
+</ul>
+<div class="markdown-heading" dir="auto"><h2 class="heading-element" dir="auto">📋 Prerequisites</h2><a id="user-content--prerequisites" class="anchor" aria-label="Permalink: 📋 Prerequisites" href="#-prerequisites"></a></div>
+<ul dir="auto">
+<li>Python 3.7+</li>
+<li>Google Chrome browser</li>
+<li>Google Cloud account with Sheets API enabled</li>
+<li>Google Gemini API key</li>
+<li>LinkedIn account</li>
+</ul>
+<div class="markdown-heading" dir="auto"><h2 class="heading-element" dir="auto">🛠️ Installation</h2><a id="user-content-️-installation" class="anchor" aria-label="Permalink: 🛠️ Installation" href="#️-installation"></a></div>
+<div class="markdown-heading" dir="auto"><h3 class="heading-element" dir="auto">1. Clone the Repository</h3><a id="user-content-1-clone-the-repository" class="anchor" aria-label="Permalink: 1. Clone the Repository" href="#1-clone-the-repository"></a></div>
+<div class="highlight highlight-source-shell notranslate position-relative overflow-auto" dir="auto" data-snippet-clipboard-copy-content="git clone https://github.com/yourusername/linkedin-lead-scraper.git
+cd linkedin-lead-scraper"><pre>git clone https://github.com/yourusername/linkedin-lead-scraper.git
+<span class="pl-c1">cd</span> linkedin-lead-scraper</pre></div>
+<div class="markdown-heading" dir="auto"><h3 class="heading-element" dir="auto">2. Install Python Dependencies</h3><a id="user-content-2-install-python-dependencies" class="anchor" aria-label="Permalink: 2. Install Python Dependencies" href="#2-install-python-dependencies"></a></div>
+<div class="highlight highlight-source-shell notranslate position-relative overflow-auto" dir="auto" data-snippet-clipboard-copy-content="pip install -r requirements.txt"><pre>pip install -r requirements.txt</pre></div>
+<p dir="auto">This installs undetected-chromedriver for v2.</p>
+<div class="markdown-heading" dir="auto"><h3 class="heading-element" dir="auto">3. Set Up Environment Variables</h3><a id="user-content-3-set-up-environment-variables" class="anchor" aria-label="Permalink: 3. Set Up Environment Variables" href="#3-set-up-environment-variables"></a></div>
+<p dir="auto">Copy the example environment file and fill in your credentials:</p>
+<div class="highlight highlight-source-shell notranslate position-relative overflow-auto" dir="auto" data-snippet-clipboard-copy-content="cp .env.example .env"><pre>cp .env.example .env</pre></div>
+<p dir="auto">Edit <code>.env</code> with your information:</p>
+<div class="highlight highlight-source-dotenv notranslate position-relative overflow-auto" dir="auto" data-snippet-clipboard-copy-content="YOUR_SHEET_NAME=Your Google Sheet Name
+LINKEDIN_EMAIL=your.email@example.com
+LINKEDIN_PASSWORD=your_password
+HEADLESS=true  # optional, set to false to watch the browser
+# CHROME_BINARY=C:\\Path\\to\\chrome.exe  # optional override if needed"><pre><span class="pl-v">YOUR_SHEET_NAME</span><span class="pl-k">=</span><span class="pl-s">Your Google Sheet Name</span>
+<span class="pl-v">LINKEDIN_EMAIL</span><span class="pl-k">=</span><span class="pl-s">your.email@example.com</span>
+<span class="pl-v">LINKEDIN_PASSWORD</span><span class="pl-k">=</span><span class="pl-s">your_password</span>
+<span class="pl-v">HEADLESS</span><span class="pl-k">=</span><span class="pl-s">true</span>  <span class="pl-c"><span class="pl-c">#</span> optional, set to false to watch the browser</span>
+<span class="pl-c"><span class="pl-c">#</span> CHROME_BINARY=C:\\Path\\to\\chrome.exe  # optional override if needed</span></pre></div>
+<div class="markdown-heading" dir="auto"><h3 class="heading-element" dir="auto">4. Configure Google Sheets API</h3><a id="user-content-4-configure-google-sheets-api" class="anchor" aria-label="Permalink: 4. Configure Google Sheets API" href="#4-configure-google-sheets-api"></a></div>
+<ol dir="auto">
+<li>Go to <a href="https://console.cloud.google.com/" rel="nofollow">Google Cloud Console</a></li>
+<li>Create a new project or select existing one</li>
+<li>Enable the Google Sheets API</li>
+<li>Create a service account and download the JSON key</li>
+<li>Rename the key file to <code>credentials.json</code> and place it in the project directory</li>
+<li>Share your Google Sheet with the service account email</li>
+</ol>
+<div class="markdown-heading" dir="auto"><h3 class="heading-element" dir="auto">5. Set Up Google Apps Script</h3><a id="user-content-5-set-up-google-apps-script" class="anchor" aria-label="Permalink: 5. Set Up Google Apps Script" href="#5-set-up-google-apps-script"></a></div>
+<ol dir="auto">
+<li>Open your Google Sheet</li>
+<li>Go to <strong>Extensions &gt; Apps Script</strong></li>
+<li>Replace the default code with the contents of <code>lead_refinement.gs</code></li>
+<li>Go to <strong>Project Settings</strong> (gear icon)</li>
+<li>Add a new <strong>Script Property</strong>:
+<ul dir="auto">
+<li>Property: <code>GEMINI_API_KEY</code></li>
+<li>Value: Your Google Gemini API key</li>
+</ul>
+</li>
+<li>Save the project</li>
+</ol>
+<div class="markdown-heading" dir="auto"><h2 class="heading-element" dir="auto">📊 Google Sheet Setup</h2><a id="user-content--google-sheet-setup" class="anchor" aria-label="Permalink: 📊 Google Sheet Setup" href="#-google-sheet-setup"></a></div>
+<div class="markdown-heading" dir="auto"><h3 class="heading-element" dir="auto">Option 1: Use the Provided Template</h3><a id="user-content-option-1-use-the-provided-template" class="anchor" aria-label="Permalink: Option 1: Use the Provided Template" href="#option-1-use-the-provided-template"></a></div>
+<p dir="auto">We've included a ready-to-use template file: <strong><code>LinkedIn Lead Scraper Template.csv</code></strong></p>
+<ol dir="auto">
+<li>Download and open the template file</li>
+<li>Upload it to Google Sheets (File &gt; Import)</li>
+<li>Share the sheet with your Google service account email</li>
+<li>Copy the Google Sheets URL and update your <code>.env</code> file</li>
+</ol>
+<div class="markdown-heading" dir="auto"><h3 class="heading-element" dir="auto">Option 2: Create Your Own Sheet</h3><a id="user-content-option-2-create-your-own-sheet" class="anchor" aria-label="Permalink: Option 2: Create Your Own Sheet" href="#option-2-create-your-own-sheet"></a></div>
+<p dir="auto">Your Google Sheet must have these exact column headers:</p>
+<markdown-accessiblity-table><table>
+<thead>
+<tr>
+<th>A</th>
+<th>B</th>
+<th>C</th>
+<th>D</th>
+<th>E</th>
+<th>F</th>
+<th>G</th>
+<th>H</th>
+<th>I</th>
+<th>J</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>LinkedIn URL</td>
+<td>Status</td>
+<td>Company</td>
+<td>Company Website</td>
+<td>Company Industry</td>
+<td>Company Description</td>
+<td>Name</td>
+<td>Title</td>
+<td>Pain (guess)</td>
+<td>Project Type</td>
+</tr>
+</tbody>
+</table></markdown-accessiblity-table>
+<div class="markdown-heading" dir="auto"><h3 class="heading-element" dir="auto">Column Descriptions:</h3><a id="user-content-column-descriptions" class="anchor" aria-label="Permalink: Column Descriptions:" href="#column-descriptions"></a></div>
+<ul dir="auto">
+<li><strong>LinkedIn URL</strong>: The LinkedIn profile URL to scrape</li>
+<li><strong>Status</strong>: Processing status (NEW → SCRAPED → COMPLETE)</li>
+<li><strong>Company</strong>: Company name (filled by scraper)</li>
+<li><strong>Company Website</strong>: Company website URL (filled by scraper)</li>
+<li><strong>Company Industry</strong>: Industry classification (filled by scraper)</li>
+<li><strong>Company Description</strong>: Company about/description text (filled by scraper)</li>
+<li><strong>Name</strong>: Person's full name (filled by scraper)</li>
+<li><strong>Title</strong>: Job title (filled by scraper)</li>
+<li><strong>Pain (guess)</strong>: AI-identified pain points (filled by AI)</li>
+<li><strong>Project Type</strong>: Suggested automation project (filled by AI)</li>
+<li><strong>Personalized Opener</strong>: AI-generated opening line (filled by AI)</li>
+</ul>
+<p dir="auto">Header aliases supported (case-insensitive):</p>
+<ul dir="auto">
+<li>First Name/FirstName/firstName, Last Name/LastName/lastName</li>
+<li>Company/Company Name</li>
+<li>Company Website/Website/Website URL/Company URL → official company website</li>
+<li>Company Industry/Industry</li>
+<li>Company Description/Description</li>
+<li>Company LinkedIn URL/Company Linkedin URL/Company Profile → LinkedIn company profile URL</li>
+</ul>
+<div class="markdown-heading" dir="auto"><h2 class="heading-element" dir="auto">🎯 Usage</h2><a id="user-content--usage" class="anchor" aria-label="Permalink: 🎯 Usage" href="#-usage"></a></div>
+<div class="markdown-heading" dir="auto"><h3 class="heading-element" dir="auto">Step 1: Prepare Your Data</h3><a id="user-content-step-1-prepare-your-data" class="anchor" aria-label="Permalink: Step 1: Prepare Your Data" href="#step-1-prepare-your-data"></a></div>
+<ol dir="auto">
+<li>Add LinkedIn profile URLs to column A</li>
+<li>Set Status to "NEW" for profiles you want to scrape</li>
+</ol>
+<div class="markdown-heading" dir="auto"><h3 class="heading-element" dir="auto">Step 2: Run the Scraper</h3><a id="user-content-step-2-run-the-scraper" class="anchor" aria-label="Permalink: Step 2: Run the Scraper" href="#step-2-run-the-scraper"></a></div>
+<div class="highlight highlight-source-shell notranslate position-relative overflow-auto" dir="auto" data-snippet-clipboard-copy-content="# v1 (classic)
+python lead_scraper.py
+
+# v2 (direct, undetected-chromedriver + cookies)
+python lead_scraper_v2.py"><pre><span class="pl-c"><span class="pl-c">#</span> v1 (classic)</span>
+python lead_scraper.py
+
+<span class="pl-c"><span class="pl-c">#</span> v2 (direct, undetected-chromedriver + cookies)</span>
+python lead_scraper_v2.py</pre></div>
+<p dir="auto">The scraper will:</p>
+<ul dir="auto">
+<li>Process all rows with status "NEW"</li>
+<li>Set row to "IN_PROGRESS" during work (v2)</li>
+<li>Extract profile and company data</li>
+<li>Update the Google Sheet automatically</li>
+<li>Change status to "SCRAPED" when complete (or "FAILED" if nothing meaningful was extracted)</li>
+</ul>
+<div class="markdown-heading" dir="auto"><h3 class="heading-element" dir="auto">Step 3: Refine with AI</h3><a id="user-content-step-3-refine-with-ai" class="anchor" aria-label="Permalink: Step 3: Refine with AI" href="#step-3-refine-with-ai"></a></div>
+<ol dir="auto">
+<li>In Google Sheets, go to <strong>🤖 AI Lead Tools &gt; Refine Scraped Leads</strong></li>
+<li>The script will analyze all rows with status "SCRAPED"</li>
+<li>AI will generate pain points, project types, and personalized openers</li>
+<li>Status will change to "COMPLETE" when finished</li>
+</ol>
+<div class="markdown-heading" dir="auto"><h2 class="heading-element" dir="auto">✉️ Email Enrichment (In-house)</h2><a id="user-content-️-email-enrichment-in-house" class="anchor" aria-label="Permalink: ✉️ Email Enrichment (In-house)" href="#️-email-enrichment-in-house"></a></div>
+<p dir="auto">After scraping, run <code>email_enricher.py</code> to generate and validate likely corporate email addresses from first/last names plus the company website domain.</p>
+<p dir="auto">What it does</p>
+<ul dir="auto">
+<li>Normalizes Website → domain (e.g., <a href="https://www.example.com" rel="nofollow">https://www.example.com</a> → example.com)</li>
+<li>Generates common patterns: first.last@, f.last@, first@, last@, firstl@, l.first@</li>
+<li>Looks up MX records and performs a safe SMTP RCPT check (no email is sent)</li>
+<li>Updates your Google Sheet columns: Email and Email Status</li>
+</ul>
+<p dir="auto">Email Status values (all-caps to match sheet validation)</p>
+<ul dir="auto">
+<li>DELIVERABLE: RCPT accepted (very likely valid)</li>
+<li>CATCH_ALL: server accepts any address (valid domain, mailbox unconfirmed)</li>
+<li>MX_UNVERIFIABLE: couldn’t reach/verify MX</li>
+<li>UNDELIVERABLE: candidate rejected; script moved to others</li>
+<li>HEURISTIC: SMTP checks disabled; best pattern chosen</li>
+</ul>
+<p dir="auto">Requirements</p>
+<ul dir="auto">
+<li><code>requirements.txt</code> includes dnspython and tldextract</li>
+<li><code>credentials.json</code> service account has access to your sheet</li>
+</ul>
+<p dir="auto">Environment variables</p>
+<ul dir="auto">
+<li>YOUR_SHEET_NAME: Required</li>
+<li>ENRICH_SMTP_ENABLED: Default true. Set to false to skip SMTP checks and pick the best heuristic.</li>
+<li>ENRICH_SMTP_TIMEOUT_S: Default 8</li>
+<li>ENRICH_MIN_DELAY_MS / ENRICH_MAX_DELAY_MS: Jitter between SMTP attempts</li>
+</ul>
+<p dir="auto">How to run</p>
+<ol dir="auto">
+<li>Ensure <code>.env</code> has YOUR_SHEET_NAME and dependencies are installed</li>
+<li>Run the tool</li>
+</ol>
+<p dir="auto">Notes</p>
+<ul dir="auto">
+<li>Social domains (linkedin.com, facebook.com, etc.) are ignored as email domains</li>
+<li>The tool prefers Website/Company Website columns; it won’t fall back to LinkedIn profile URLs</li>
+</ul>
+<div class="markdown-heading" dir="auto"><h2 class="heading-element" dir="auto">⚙️ Configuration Options</h2><a id="user-content-️-configuration-options" class="anchor" aria-label="Permalink: ⚙️ Configuration Options" href="#️-configuration-options"></a></div>
+<div class="markdown-heading" dir="auto"><h3 class="heading-element" dir="auto">Python Scraper Settings</h3><a id="user-content-python-scraper-settings" class="anchor" aria-label="Permalink: Python Scraper Settings" href="#python-scraper-settings"></a></div>
+<p dir="auto">Edit <code>lead_scraper.py</code> (v1) to customize:</p>
+<div class="highlight highlight-source-python notranslate position-relative overflow-auto" dir="auto" data-snippet-clipboard-copy-content="# Chrome options for different environments
+chrome_options.add_argument(&quot;--headless&quot;)  # Run without browser window
+chrome_options.add_argument(&quot;--window-size=1920,1080&quot;)  # Browser size
+
+# Delay settings (seconds)
+smart_delay(8, 15)  # Delay between profiles
+smart_delay(3, 5)   # Delay for company pages"><pre><span class="pl-c"># Chrome options for different environments</span>
+<span class="pl-s1">chrome_options</span>.<span class="pl-c1">add_argument</span>(<span class="pl-s">"--headless"</span>)  <span class="pl-c"># Run without browser window</span>
+<span class="pl-s1">chrome_options</span>.<span class="pl-c1">add_argument</span>(<span class="pl-s">"--window-size=1920,1080"</span>)  <span class="pl-c"># Browser size</span>
+
+<span class="pl-c"># Delay settings (seconds)</span>
+<span class="pl-en">smart_delay</span>(<span class="pl-c1">8</span>, <span class="pl-c1">15</span>)  <span class="pl-c"># Delay between profiles</span>
+<span class="pl-en">smart_delay</span>(<span class="pl-c1">3</span>, <span class="pl-c1">5</span>)   <span class="pl-c"># Delay for company pages</span></pre></div>
+<p dir="auto">Edit <code>lead_scraper_v2.py</code> (v2) to customize:</p>
+<div class="highlight highlight-source-python notranslate position-relative overflow-auto" dir="auto" data-snippet-clipboard-copy-content="# Headless/browser
+# Use HEADLESS=false in .env to watch the browser and complete 2FA when needed
+
+# Rate limits
+smart_delay(4.5, 9.0)  # post-row pacing
+
+# Cookie persistence
+# Cookies are stored in linkedin_cookies.json; delete it if you need to re-login"><pre><span class="pl-c"># Headless/browser</span>
+<span class="pl-c"># Use HEADLESS=false in .env to watch the browser and complete 2FA when needed</span>
+
+<span class="pl-c"># Rate limits</span>
+<span class="pl-en">smart_delay</span>(<span class="pl-c1">4.5</span>, <span class="pl-c1">9.0</span>)  <span class="pl-c"># post-row pacing</span>
+
+<span class="pl-c"># Cookie persistence</span>
+<span class="pl-c"># Cookies are stored in linkedin_cookies.json; delete it if you need to re-login</span></pre></div>
+<div class="markdown-heading" dir="auto"><h3 class="heading-element" dir="auto">AI Refinement Settings</h3><a id="user-content-ai-refinement-settings" class="anchor" aria-label="Permalink: AI Refinement Settings" href="#ai-refinement-settings"></a></div>
+<p dir="auto">Edit <code>lead_refinement.gs</code> to customize:</p>
+<div class="highlight highlight-source-js notranslate position-relative overflow-auto" dir="auto" data-snippet-clipboard-copy-content="// Available project types
+PROJECT_TYPES: [
+  'Automated Reporting',
+  'CRM Data Sync', 
+  'Lead Nurturing',
+  'Client Onboarding',
+  'Internal Process Automation'
+]
+
+// Execution time limit
+MAX_EXECUTION_TIME: 4.5 * 60 * 1000 // 4.5 minutes"><pre><span class="pl-c">// Available project types</span>
+PROJECT_TYPES: <span class="pl-kos">[</span>
+  <span class="pl-s">'Automated Reporting'</span><span class="pl-kos">,</span>
+  <span class="pl-s">'CRM Data Sync'</span><span class="pl-kos">,</span> 
+  <span class="pl-s">'Lead Nurturing'</span><span class="pl-kos">,</span>
+  <span class="pl-s">'Client Onboarding'</span><span class="pl-kos">,</span>
+  <span class="pl-s">'Internal Process Automation'</span>
+<span class="pl-kos">]</span>
+
+<span class="pl-c">// Execution time limit</span>
+MAX_EXECUTION_TIME: <span class="pl-c1">4.5</span> <span class="pl-c1">*</span> <span class="pl-c1">60</span> <span class="pl-c1">*</span> <span class="pl-c1">1000</span> <span class="pl-c">// 4.5 minutes</span></pre></div>
+<div class="markdown-heading" dir="auto"><h2 class="heading-element" dir="auto">🔧 Troubleshooting</h2><a id="user-content--troubleshooting" class="anchor" aria-label="Permalink: 🔧 Troubleshooting" href="#-troubleshooting"></a></div>
+<div class="markdown-heading" dir="auto"><h3 class="heading-element" dir="auto">Common Issues</h3><a id="user-content-common-issues" class="anchor" aria-label="Permalink: Common Issues" href="#common-issues"></a></div>
+<div class="markdown-heading" dir="auto"><h4 class="heading-element" dir="auto">LinkedIn Login Problems</h4><a id="user-content-linkedin-login-problems" class="anchor" aria-label="Permalink: LinkedIn Login Problems" href="#linkedin-login-problems"></a></div>
+<ul dir="auto">
+<li><strong>Solution</strong>: Use the browser window to complete 2FA/captcha manually</li>
+<li><strong>Prevention</strong>: Use application passwords if available</li>
+</ul>
+<p dir="auto">For v2:</p>
+<ul dir="auto">
+<li>If you’re stuck on login, set <code>HEADLESS=false</code> and try again; cookies will save once you reach the feed.</li>
+<li>Delete <code>linkedin_cookies.json</code> to force a fresh login.</li>
+</ul>
+<div class="markdown-heading" dir="auto"><h4 class="heading-element" dir="auto">Chrome Driver Issues</h4><a id="user-content-chrome-driver-issues" class="anchor" aria-label="Permalink: Chrome Driver Issues" href="#chrome-driver-issues"></a></div>
+<ul dir="auto">
+<li><strong>Error</strong>: "chromedriver.exe not found"</li>
+<li><strong>Solution</strong>: The script automatically downloads the correct driver</li>
+<li><strong>Alternative</strong>: Ensure Chrome browser is installed and up to date</li>
+</ul>
+<div class="markdown-heading" dir="auto"><h4 class="heading-element" dir="auto">Google Sheets API Errors</h4><a id="user-content-google-sheets-api-errors" class="anchor" aria-label="Permalink: Google Sheets API Errors" href="#google-sheets-api-errors"></a></div>
+<ul dir="auto">
+<li><strong>Error</strong>: "Insufficient permissions"</li>
+<li><strong>Solution</strong>: Share your sheet with the service account email</li>
+<li><strong>Check</strong>: Ensure Google Sheets API is enabled in Google Cloud Console</li>
+</ul>
+<div class="markdown-heading" dir="auto"><h4 class="heading-element" dir="auto">Rate Limiting</h4><a id="user-content-rate-limiting" class="anchor" aria-label="Permalink: Rate Limiting" href="#rate-limiting"></a></div>
+<ul dir="auto">
+<li><strong>Error</strong>: Too many requests</li>
+<li><strong>Solution</strong>: Increase delays in <code>smart_delay()</code> functions</li>
+<li><strong>Recommendation</strong>: Run smaller batches during off-peak hours</li>
+<li><strong>Tip (v2)</strong>: Keep a steady trickle. The script already adds jitter and backs off; you can raise delays further if you see friction.</li>
+</ul>
+<div class="markdown-heading" dir="auto"><h3 class="heading-element" dir="auto">Debugging</h3><a id="user-content-debugging" class="anchor" aria-label="Permalink: Debugging" href="#debugging"></a></div>
+<ol dir="auto">
+<li><strong>Check Logs</strong>: Review <code>scraper.log</code> for detailed error information</li>
+<li><strong>Test Connection</strong>: Verify Google Sheets and LinkedIn access manually</li>
+<li><strong>Validate Data</strong>: Ensure all required columns exist with exact names</li>
+<li><strong>API Limits</strong>: Monitor your Gemini API usage quotas</li>
+</ol>
+<div class="markdown-heading" dir="auto"><h2 class="heading-element" dir="auto">📈 Best Practices</h2><a id="user-content--best-practices" class="anchor" aria-label="Permalink: 📈 Best Practices" href="#-best-practices"></a></div>
+<div class="markdown-heading" dir="auto"><h3 class="heading-element" dir="auto">LinkedIn Scraping</h3><a id="user-content-linkedin-scraping" class="anchor" aria-label="Permalink: LinkedIn Scraping" href="#linkedin-scraping"></a></div>
+<ul dir="auto">
+<li><strong>Respectful Usage</strong>: Don't scrape more than 50-100 profiles per session</li>
+<li><strong>Human-like Behavior</strong>: Keep random delays between requests</li>
+<li><strong>Account Safety</strong>: Use dedicated LinkedIn accounts for scraping</li>
+<li><strong>Legal Compliance</strong>: Only scrape publicly available information</li>
+</ul>
+<div class="markdown-heading" dir="auto"><h3 class="heading-element" dir="auto">Data Management</h3><a id="user-content-data-management" class="anchor" aria-label="Permalink: Data Management" href="#data-management"></a></div>
+<ul dir="auto">
+<li><strong>Regular Backups</strong>: Export your Google Sheets regularly</li>
+<li><strong>Data Validation</strong>: Review AI-generated insights before use</li>
+<li><strong>Privacy</strong>: Don't store sensitive personal information unnecessarily</li>
+<li><strong>Compliance</strong>: Follow GDPR and other data protection regulations</li>
+</ul>
+<div class="markdown-heading" dir="auto"><h2 class="heading-element" dir="auto">🔒 Security Notes</h2><a id="user-content--security-notes" class="anchor" aria-label="Permalink: 🔒 Security Notes" href="#-security-notes"></a></div>
+<ul dir="auto">
+<li><strong>Environment Variables</strong>: Never commit <code>.env</code> files to version control</li>
+<li><strong>API Keys</strong>: Keep your Gemini API key secure and rotate regularly</li>
+<li><strong>Credentials</strong>: Store Google service account keys safely</li>
+<li><strong>Access Control</strong>: Limit Google Sheet sharing to necessary users only</li>
+</ul>
+<div class="markdown-heading" dir="auto"><h2 class="heading-element" dir="auto">📄 File Structure</h2><a id="user-content--file-structure" class="anchor" aria-label="Permalink: 📄 File Structure" href="#-file-structure"></a></div>
+<div class="snippet-clipboard-content notranslate position-relative overflow-auto" data-snippet-clipboard-copy-content="linkedin-lead-scraper/
+├── lead_scraper.py                   # v1 Python scraper
+├── lead_scraper_v2.py                # v2 direct scraper (undetected-chromedriver, cookies)
+├── lead_refinement.gs                # Google Apps Script for AI analysis
+├── LinkedIn Lead Scraper Template.xlsx # Ready-to-use Google Sheets template
+├── requirements.txt                  # Python dependencies
+├── .env.example                     # Environment variables template
+├── .env                            # Your environment variables (not in repo)
+├── credentials.json                # Google service account key (not in repo)
+├── .gitignore                      # Git ignore rules
+├── scraper.log                     # v1 log file
+├── scraper_v2.log                  # v2 log file
+└── README.md                       # This file"><pre class="notranslate"><code>linkedin-lead-scraper/
+├── lead_scraper.py                   # v1 Python scraper
+├── lead_scraper_v2.py                # v2 direct scraper (undetected-chromedriver, cookies)
+├── lead_refinement.gs                # Google Apps Script for AI analysis
+├── LinkedIn Lead Scraper Template.xlsx # Ready-to-use Google Sheets template
+├── requirements.txt                  # Python dependencies
+├── .env.example                     # Environment variables template
+├── .env                            # Your environment variables (not in repo)
+├── credentials.json                # Google service account key (not in repo)
+├── .gitignore                      # Git ignore rules
+├── scraper.log                     # v1 log file
+├── scraper_v2.log                  # v2 log file
+└── README.md                       # This file
+</code></pre></div>
+<div class="markdown-heading" dir="auto"><h2 class="heading-element" dir="auto">🤝 Contributing</h2><a id="user-content--contributing" class="anchor" aria-label="Permalink: 🤝 Contributing" href="#-contributing"></a></div>
+<ol dir="auto">
+<li>Fork the repository</li>
+<li>Create a feature branch (<code>git checkout -b feature/amazing-feature</code>)</li>
+<li>Commit your changes (<code>git commit -m 'Add amazing feature'</code>)</li>
+<li>Push to the branch (<code>git push origin feature/amazing-feature</code>)</li>
+<li>Open a Pull Request</li>
+</ol>
+<div class="markdown-heading" dir="auto"><h2 class="heading-element" dir="auto">📝 License</h2><a id="user-content--license" class="anchor" aria-label="Permalink: 📝 License" href="#-license"></a></div>
+<p dir="auto">This project is licensed under the MIT License - see the <a href="LICENSE">LICENSE</a> file for details.</p>
+<div class="markdown-heading" dir="auto"><h2 class="heading-element" dir="auto"><g-emoji class="g-emoji" alias="warning">⚠️</g-emoji> Disclaimer</h2><a id="user-content-️-disclaimer" class="anchor" aria-label="Permalink: ⚠️ Disclaimer" href="#️-disclaimer"></a></div>
+<p dir="auto">This tool is for educational and legitimate business purposes only. Users are responsible for:</p>
+<ul dir="auto">
+<li>Complying with LinkedIn's Terms of Service</li>
+<li>Respecting robots.txt and rate limits</li>
+<li>Following applicable data protection laws</li>
+<li>Using scraped data ethically and legally</li>
+</ul>
+<div class="markdown-heading" dir="auto"><h2 class="heading-element" dir="auto">🆘 Support</h2><a id="user-content--support" class="anchor" aria-label="Permalink: 🆘 Support" href="#-support"></a></div>
+<p dir="auto">If you encounter issues:</p>
+<ol dir="auto">
+<li>Check the <a href="#troubleshooting">troubleshooting section</a></li>
+<li>Review the <a href="https://github.com/yourusername/linkedin-lead-scraper/issues">issues page</a></li>
+<li>Create a new issue with detailed error information</li>
+</ol>
+<div class="markdown-heading" dir="auto"><h2 class="heading-element" dir="auto">🔄 Updates</h2><a id="user-content--updates" class="anchor" aria-label="Permalink: 🔄 Updates" href="#-updates"></a></div>
+<ul dir="auto">
+<li><strong>v2.0</strong>: Added AI refinement with Google Gemini</li>
+<li><strong>v1.5</strong>: Improved error handling and logging</li>
+<li><strong>v1.0</strong>: Initial release with basic scraping functionality</li>
+</ul>
+<hr>
+<p dir="auto"><strong>Made with ❤️ for sales and marketing professionals</strong></p>
+<hr>
+        </div>
+      </section>
+
+      <footer>LeadScaper Platform — linkedIn_scraper</footer>
+    </main>
+  </div>
+</body>
+</html>

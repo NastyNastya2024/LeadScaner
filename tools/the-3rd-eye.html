@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The 3rd Eye — LeadScaper</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="header-inner">
+      <a class="logo" href="../index.html">
+        <span class="logo-icon">✦</span>
+        LeadScaper
+      </a>
+      <div class="header-actions">
+        <button class="btn-icon" type="button">⚙</button>
+      </div>
+    </div>
+  </header>
+
+  <div class="layout tool-page">
+    <main class="main">
+      <a class="back-link" href="../index.html">← Назад к архитектуре</a>
+
+      <div class="hero-card hero-card-accent tool-hero">
+        <div class="tool-icon">2.4</div>
+        <div class="tool-hero-body">
+          <div class="hero-stat-label">Слой 2 · Сбор контактов</div>
+          <h1 class="hero-stat-value tool-hero-title">The 3rd Eye</h1>
+          <p class="hero-stat-sub">Сбор цифрового следа из всех соцсетей</p>
+          <a class="btn-external" href="https://github.com/Ordinary0x/The-3rd-Eye" target="_blank" rel="noopener">
+            Открыть на GitHub →
+          </a>
+        </div>
+      </div>
+
+      <section class="panel">
+        <div class="panel-head">
+          <div class="panel-tag">GitHub</div>
+          <h2 class="panel-title">Описание</h2>
+        </div>
+
+        <div class="tool-stats">
+          <div class="tool-stat"><span class="tool-stat-label">Репозиторий</span><span class="tool-stat-value">Ordinary0x/The-3rd-Eye</span></div>
+          <div class="tool-stat"><span class="tool-stat-label">Stars</span><span class="tool-stat-value">11</span></div>
+          <div class="tool-stat"><span class="tool-stat-label">Язык</span><span class="tool-stat-value">Python</span></div>
+          <div class="tool-stat"><span class="tool-stat-label">Источник данных</span><span class="tool-stat-value">Twitter, LinkedIn, Instagram, Facebook, Telegram</span></div>
+        </div>
+
+        <div class="readme-content">
+          <div class="markdown-heading" dir="auto"><h1 class="heading-element" dir="auto">🕵️ The 3rd Eye — OSINT Intelligence Agentic Framework</h1><a id="user-content-️-the-3rd-eye--osint-intelligence-agentic-framework" class="anchor" aria-label="Permalink: 🕵️ The 3rd Eye — OSINT Intelligence Agentic Framework" href="#️-the-3rd-eye--osint-intelligence-agentic-framework"></a></div>
+<p dir="auto"><strong>The 3rd Eye</strong> is a modular Open Source Intelligence (OSINT) Agentic framework designed to collect, correlate, and analyze publicly available information and present it in a <strong>structured intelligence report</strong>.</p>
+<p dir="auto">The project emphasizes:</p>
+<ul dir="auto">
+<li>Clear investigation flow</li>
+<li>Modular agents</li>
+<li>Reproducible results</li>
+<li>Professional reporting standards</li>
+</ul>
+<hr>
+<div class="markdown-heading" dir="auto"><h2 class="heading-element" dir="auto">📌 Project Scope</h2><a id="user-content--project-scope" class="anchor" aria-label="Permalink: 📌 Project Scope" href="#-project-scope"></a></div>
+<p dir="auto">The framework assists in:</p>
+<ul dir="auto">
+<li>Discovering public digital footprints</li>
+<li>Correlating identities across platforms</li>
+<li>Identifying exposed contact information</li>
+<li>Generating analyst-ready intelligence reports</li>
+</ul>
+<p dir="auto">This tool is intended for <strong>educational, research, and defensive OSINT use</strong> only.</p>
+<hr>
+<div class="markdown-heading" dir="auto"><h2 class="heading-element" dir="auto">✨ Core Features</h2><a id="user-content--core-features" class="anchor" aria-label="Permalink: ✨ Core Features" href="#-core-features"></a></div>
+<ul dir="auto">
+<li>
+<p dir="auto"><strong>Search Agent</strong></p>
+<ul dir="auto">
+<li>Automated search execution</li>
+<li>URL filtering and relevance classification</li>
+</ul>
+</li>
+<li>
+<p dir="auto"><strong>Social Media Intelligence</strong></p>
+<ul dir="auto">
+<li>LinkedIn profile extraction</li>
+<li>Instagram public data &amp; media</li>
+<li>Twitter (X) profile and activity</li>
+<li>Facebook public profile data</li>
+</ul>
+</li>
+<li>
+<p dir="auto"><strong>Username Enumeration</strong></p>
+<ul dir="auto">
+<li>Cross-platform discovery using Maigret</li>
+</ul>
+</li>
+<li>
+<p dir="auto"><strong>Contact Intelligence</strong></p>
+<ul dir="auto">
+<li>Email extraction &amp; analysis</li>
+<li>Phone number discovery (in progress)</li>
+</ul>
+</li>
+<li>
+<p dir="auto"><strong>Media Collection</strong></p>
+<ul dir="auto">
+<li>Profile images</li>
+<li>Banners</li>
+<li>Publicly accessible photos</li>
+</ul>
+</li>
+<li>
+<p dir="auto"><strong>Intelligence Report Generation</strong></p>
+<ul dir="auto">
+<li>Fixed professional report structure</li>
+<li>Executive summary</li>
+<li>Location intelligence</li>
+<li>Exposure &amp; risk assessment</li>
+<li>Markdown output (PDF optional)</li>
+</ul>
+</li>
+</ul>
+<hr>
+<div class="markdown-heading" dir="auto"><h2 class="heading-element" dir="auto">🧠 Architecture Overview</h2><a id="user-content--architecture-overview" class="anchor" aria-label="Permalink: 🧠 Architecture Overview" href="#-architecture-overview"></a></div>
+<p dir="auto">The project follows a <strong>graph-based agent architecture</strong> using LangGraph.</p>
+<div class="markdown-heading" dir="auto"><h3 class="heading-element" dir="auto">Key Components</h3><a id="user-content-key-components" class="anchor" aria-label="Permalink: Key Components" href="#key-components"></a></div>
+<ul dir="auto">
+<li>Search Agent</li>
+<li>URL Classification Module</li>
+<li>Platform-Specific Scrapers</li>
+<li>Analysis Modules (Email, Phone, Username)</li>
+<li>Report Synthesis</li>
+</ul>
+<div class="markdown-heading" dir="auto"><h2 class="heading-element" dir="auto">🏗 Architecture</h2><a id="user-content--architecture" class="anchor" aria-label="Permalink: 🏗 Architecture" href="#-architecture"></a></div>
+<p dir="auto">🔹 Current Architecture</p>
+<p dir="auto"><a target="_blank" rel="noopener noreferrer" href="architecture_images/present_status.png"><img src="architecture_images/present_status.png" alt="status" style="max-width: 100%;"></a></p>
+<p dir="auto">🔹 Search Agent Architecture</p>
+<p dir="auto"><a target="_blank" rel="noopener noreferrer" href="architecture_images/Search_Agent.png"><img src="architecture_images/Search_Agent.png" alt="search_agent" style="max-width: 100%;"></a></p>
+<p dir="auto">🔹 Final Mission</p>
+<p dir="auto"><a target="_blank" rel="noopener noreferrer" href="architecture_images/Mission.png"><img src="architecture_images/Mission.png" alt="mission" style="max-width: 100%;"></a></p>
+<p dir="auto">📌 Architecture diagrams are provided in the repository (<code>/architecture_images</code>).</p>
+<hr>
+<div class="markdown-heading" dir="auto"><h2 class="heading-element" dir="auto">🧰 Tools &amp; Libraries</h2><a id="user-content--tools--libraries" class="anchor" aria-label="Permalink: 🧰 Tools &amp; Libraries" href="#-tools--libraries"></a></div>
+<p dir="auto">This project integrates established OSINT tools and libraries:</p>
+<ul dir="auto">
+<li>
+<p dir="auto"><strong>Maigret</strong>
+<a href="https://github.com/soxoj/maigret">https://github.com/soxoj/maigret</a></p>
+</li>
+<li>
+<p dir="auto"><strong>linkedin-scraper</strong>
+<a href="https://github.com/joeyism/linkedin_scraper.git">https://github.com/joeyism/linkedin_scraper.git</a></p>
+</li>
+<li>
+<p dir="auto"><strong>Instaloader</strong>
+<a href="https://instaloader.github.io/" rel="nofollow">https://instaloader.github.io/</a></p>
+</li>
+<li>
+<p dir="auto"><strong>twscrape</strong>
+<a href="https://github.com/vladkens/twscrape">https://github.com/vladkens/twscrape</a></p>
+</li>
+<li>
+<p dir="auto"><strong>Holehe</strong>
+<a href="https://github.com/megadose/holehe">https://github.com/megadose/holehe</a></p>
+</li>
+<li>
+<p dir="auto"><strong>facebook-scraper</strong>
+<a href="https://github.com/kevinzg/facebook-scraper.git">https://github.com/kevinzg/facebook-scraper.git</a></p>
+</li>
+<li>
+<p dir="auto"><strong>LangGraph</strong> (agent orchestration)</p>
+</li>
+<li>
+<p dir="auto"><strong>Google Gemini 2.5</strong> (intelligence synthesis)</p>
+</li>
+</ul>
+<hr>
+<div class="markdown-heading" dir="auto"><h2 class="heading-element" dir="auto">🔑 API Configuration</h2><a id="user-content--api-configuration" class="anchor" aria-label="Permalink: 🔑 API Configuration" href="#-api-configuration"></a></div>
+<div class="markdown-heading" dir="auto"><h3 class="heading-element" dir="auto">Required</h3><a id="user-content-required" class="anchor" aria-label="Permalink: Required" href="#required"></a></div>
+<div class="highlight highlight-source-dotenv notranslate position-relative overflow-auto" dir="auto" data-snippet-clipboard-copy-content="GOOGLE_API_KEY=your_gemini_2.5_free_api_key"><pre><span class="pl-v">GOOGLE_API_KEY</span><span class="pl-k">=</span><span class="pl-s">your_gemini_2.5_free_api_key</span></pre></div>
+<div class="markdown-heading" dir="auto"><h3 class="heading-element" dir="auto">Optional (Enhancement APIs)</h3><a id="user-content-optional-enhancement-apis" class="anchor" aria-label="Permalink: Optional (Enhancement APIs)" href="#optional-enhancement-apis"></a></div>
+<div class="highlight highlight-source-dotenv notranslate position-relative overflow-auto" dir="auto" data-snippet-clipboard-copy-content="HIBP_API_KEY=your_key
+BREACHDIRECTORY_API_KEY=your_key
+INTELX_KEY=your_key"><pre><span class="pl-v">HIBP_API_KEY</span><span class="pl-k">=</span><span class="pl-s">your_key</span>
+<span class="pl-v">BREACHDIRECTORY_API_KEY</span><span class="pl-k">=</span><span class="pl-s">your_key</span>
+<span class="pl-v">INTELX_KEY</span><span class="pl-k">=</span><span class="pl-s">your_key</span></pre></div>
+<blockquote>
+<p dir="auto">Optional APIs improve depth of analysis but are <strong>not mandatory</strong>.</p>
+</blockquote>
+<hr>
+<div class="markdown-heading" dir="auto"><h2 class="heading-element" dir="auto">📄 Report Output</h2><a id="user-content--report-output" class="anchor" aria-label="Permalink: 📄 Report Output" href="#-report-output"></a></div>
+<p dir="auto">Reports are generated in <strong>Markdown</strong> format with a fixed outline.</p>
+<p dir="auto">Example output structure:</p>
+<div class="snippet-clipboard-content notranslate position-relative overflow-auto" data-snippet-clipboard-copy-content="target_name/
+    ├── photos/
+    │   ├── profile.jpg
+    │   ├── banner.jpg
+    └── final_report.md"><pre class="notranslate"><code>target_name/
+    ├── photos/
+    │   ├── profile.jpg
+    │   ├── banner.jpg
+    └── final_report.md
+</code></pre></div>
+<hr>
+<div class="markdown-heading" dir="auto"><h2 class="heading-element" dir="auto">🚀 Installation</h2><a id="user-content--installation" class="anchor" aria-label="Permalink: 🚀 Installation" href="#-installation"></a></div>
+<div class="markdown-heading" dir="auto"><h3 class="heading-element" dir="auto">1️⃣ Clone the Repository</h3><a id="user-content-1️⃣-clone-the-repository" class="anchor" aria-label="Permalink: 1️⃣ Clone the Repository" href="#1️⃣-clone-the-repository"></a></div>
+<div class="highlight highlight-source-shell notranslate position-relative overflow-auto" dir="auto" data-snippet-clipboard-copy-content="git clone https://github.com/your-username/the-3rd-eye.git
+cd the-3rd-eye"><pre>git clone https://github.com/your-username/the-3rd-eye.git
+<span class="pl-c1">cd</span> the-3rd-eye</pre></div>
+<hr>
+<div class="markdown-heading" dir="auto"><h3 class="heading-element" dir="auto">2️⃣ Install Dependencies</h3><a id="user-content-2️⃣-install-dependencies" class="anchor" aria-label="Permalink: 2️⃣ Install Dependencies" href="#2️⃣-install-dependencies"></a></div>
+<div class="markdown-heading" dir="auto"><h4 class="heading-element" dir="auto">Option A: Using <code>uv</code> (Recommended)</h4><a id="user-content-option-a-using-uv-recommended" class="anchor" aria-label="Permalink: Option A: Using uv (Recommended)" href="#option-a-using-uv-recommended"></a></div>
+<div class="highlight highlight-source-shell notranslate position-relative overflow-auto" dir="auto" data-snippet-clipboard-copy-content="uv venv
+source .venv/bin/activate
+uv pip install -r requirements.txt"><pre>uv venv
+<span class="pl-c1">source</span> .venv/bin/activate
+uv pip install -r requirements.txt</pre></div>
+<div class="markdown-heading" dir="auto"><h4 class="heading-element" dir="auto">Option B: Using <code>pip</code></h4><a id="user-content-option-b-using-pip" class="anchor" aria-label="Permalink: Option B: Using pip" href="#option-b-using-pip"></a></div>
+<div class="highlight highlight-source-shell notranslate position-relative overflow-auto" dir="auto" data-snippet-clipboard-copy-content="python3 -m venv .venv
+source .venv/bin/activate
+pip install -r requirements.txt"><pre>python3 -m venv .venv
+<span class="pl-c1">source</span> .venv/bin/activate
+pip install -r requirements.txt</pre></div>
+<hr>
+<div class="markdown-heading" dir="auto"><h3 class="heading-element" dir="auto">3️⃣ Environment Variables</h3><a id="user-content-3️⃣-environment-variables" class="anchor" aria-label="Permalink: 3️⃣ Environment Variables" href="#3️⃣-environment-variables"></a></div>
+<p dir="auto">Create a <code>.env</code> file:</p>
+<div class="highlight highlight-source-shell notranslate position-relative overflow-auto" dir="auto" data-snippet-clipboard-copy-content="cp .env.example .env"><pre>cp .env.example .env</pre></div>
+<p dir="auto">Add required API keys.</p>
+<hr>
+<div class="markdown-heading" dir="auto"><h3 class="heading-element" dir="auto">4️⃣ Run the Tool</h3><a id="user-content-4️⃣-run-the-tool" class="anchor" aria-label="Permalink: 4️⃣ Run the Tool" href="#4️⃣-run-the-tool"></a></div>
+<div class="highlight highlight-source-shell notranslate position-relative overflow-auto" dir="auto" data-snippet-clipboard-copy-content="python main.py"><pre>python main.py</pre></div>
+<hr>
+<div class="markdown-heading" dir="auto"><h2 class="heading-element" dir="auto">🧪 Project Status</h2><a id="user-content--project-status" class="anchor" aria-label="Permalink: 🧪 Project Status" href="#-project-status"></a></div>
+<ul dir="auto">
+<li>✅ Search Agent</li>
+<li>✅ URL Classification</li>
+<li>✅ Core Social Media Scrapers</li>
+<li>✅ Email Analysis</li>
+<li>⚠ Phone Number Intelligence (WIP)</li>
+<li>⚠ Maigret Full Automation (WIP)</li>
+<li>⚠ Image Analysis (Planned)</li>
+</ul>
+<hr>
+<div class="markdown-heading" dir="auto"><h2 class="heading-element" dir="auto">🔭 Future Work</h2><a id="user-content--future-work" class="anchor" aria-label="Permalink: 🔭 Future Work" href="#-future-work"></a></div>
+<p dir="auto">Planned enhancements include:</p>
+<ul dir="auto">
+<li>Ollama (local LLM) support</li>
+<li>Multi-agent intelligence workflows</li>
+<li>Image analysis (object &amp; face detection &amp; Backgroung detection)</li>
+<li>Entity relationship graphs</li>
+<li>Timeline reconstruction</li>
+<li>Confidence scoring</li>
+<li>CLI automation modes</li>
+</ul>
+<hr>
+<div class="markdown-heading" dir="auto"><h2 class="heading-element" dir="auto">🎯 Project Vision</h2><a id="user-content--project-vision" class="anchor" aria-label="Permalink: 🎯 Project Vision" href="#-project-vision"></a></div>
+<p dir="auto">The long-term goal is to build a <strong>robust, extensible OSINT framework</strong> that:</p>
+<ul dir="auto">
+<li>Scales from simple investigations to advanced research</li>
+<li>Encourages responsible OSINT practices</li>
+<li>Supports community-driven improvements</li>
+</ul>
+<hr>
+<div class="markdown-heading" dir="auto"><h2 class="heading-element" dir="auto">🤝 Contributions</h2><a id="user-content--contributions" class="anchor" aria-label="Permalink: 🤝 Contributions" href="#-contributions"></a></div>
+<p dir="auto">Contributions are welcome.</p>
+<p dir="auto">Areas where help is appreciated:</p>
+<ul dir="auto">
+<li>OSINT tooling</li>
+<li>Debuging present errors</li>
+<li>Making a website</li>
+<li>Data analysis</li>
+<li>Visualization</li>
+<li>Documentation</li>
+</ul>
+<p dir="auto">Please open an issue or discussion before submitting major changes.</p>
+<hr>
+<div class="markdown-heading" dir="auto"><h2 class="heading-element" dir="auto">❓ Questions or Suggestions?</h2><a id="user-content--questions-or-suggestions" class="anchor" aria-label="Permalink: ❓ Questions or Suggestions?" href="#-questions-or-suggestions"></a></div>
+<p dir="auto">If you have:</p>
+<ul dir="auto">
+<li>Feature ideas</li>
+<li>Architecture suggestions</li>
+<li>Tool integrations</li>
+<li>Research improvements</li>
+</ul>
+<p dir="auto">Feel free to open an issue or start a discussion.</p>
+<hr>
+        </div>
+      </section>
+
+      <footer>LeadScaper Platform — The 3rd Eye</footer>
+    </main>
+  </div>
+</body>
+</html>

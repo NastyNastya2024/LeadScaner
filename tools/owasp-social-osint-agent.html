@@ -1,0 +1,879 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>OWASP SocialOSINTAgent — LeadScaper</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="header-inner">
+      <a class="logo" href="../index.html">
+        <span class="logo-icon">✦</span>
+        LeadScaper
+      </a>
+      <div class="header-actions">
+        <button class="btn-icon" type="button">⚙</button>
+      </div>
+    </div>
+  </header>
+
+  <div class="layout tool-page">
+    <main class="main">
+      <a class="back-link" href="../index.html">← Назад к архитектуре</a>
+
+      <div class="hero-card hero-card-accent tool-hero">
+        <div class="tool-icon">3.2</div>
+        <div class="tool-hero-body">
+          <div class="hero-stat-label">Слой 3 · Анализ данных</div>
+          <h1 class="hero-stat-value tool-hero-title">OWASP SocialOSINTAgent</h1>
+          <p class="hero-stat-sub">Анализ текста и изображений из соцсетей, создание отчётов</p>
+          <a class="btn-external" href="https://github.com/bm-github/owasp-social-osint-agent" target="_blank" rel="noopener">
+            Открыть на GitHub →
+          </a>
+        </div>
+      </div>
+
+      <section class="panel">
+        <div class="panel-head">
+          <div class="panel-tag">GitHub</div>
+          <h2 class="panel-title">Описание</h2>
+        </div>
+
+        <div class="tool-stats">
+          <div class="tool-stat"><span class="tool-stat-label">Репозиторий</span><span class="tool-stat-value">bm-github/owasp-social-osint-agent</span></div>
+          <div class="tool-stat"><span class="tool-stat-label">Stars</span><span class="tool-stat-value">82</span></div>
+          <div class="tool-stat"><span class="tool-stat-label">Язык</span><span class="tool-stat-value">Python</span></div>
+          <div class="tool-stat"><span class="tool-stat-label">Источник данных</span><span class="tool-stat-value">X, Reddit, GitHub, YouTube</span></div>
+        </div>
+
+        <div class="readme-content">
+          <p dir="auto"><a href="https://github.com/bm-github/owasp-social-osint-agent/releases/latest"><img src="https://camo.githubusercontent.com/e7d36c27904aef45f63e229d3c67d6d0600eb8983b3b22e49471d7f4bfb3b939/68747470733a2f2f696d672e736869656c64732e696f2f6769746875622f762f72656c656173652f626d2d6769746875622f6f776173702d736f6369616c2d6f73696e742d6167656e74" alt="GitHub release (latest by date)" data-canonical-src="https://img.shields.io/github/v/release/bm-github/owasp-social-osint-agent" style="max-width: 100%;"></a>
+<a href="https://bm-github.github.io/owasp-social-osint-agent/demo.html" rel="nofollow"><img src="https://camo.githubusercontent.com/5274b4e2c45a4fe1b80fbce179f9d2a9c6f930ffd1abd2fa823b9530b42194fd/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f64656d6f2d6c6976652d627269676874677265656e" alt="Live Demo" data-canonical-src="https://img.shields.io/badge/demo-live-brightgreen" style="max-width: 100%;"></a></p>
+<div class="markdown-heading" dir="auto"><h1 class="heading-element" dir="auto">🕵️ owasp-social-osint-agent</h1><a id="user-content-️-owasp-social-osint-agent" class="anchor" aria-label="Permalink: 🕵️ owasp-social-osint-agent" href="#️-owasp-social-osint-agent"></a></div>
+<p dir="auto"><strong>OWASP Social OSINT Agent</strong> is an intelligent, autonomous agent designed for open-source intelligence (OSINT) investigations. It leverages both text and vision-capable Large Language Models (LLMs) via any OpenAI-compatible API to autonomously gather, analyze, and synthesize user activity across single or multiple social media platforms. The final output is a structured analytical report that turns scattered public data into coherent, actionable intelligence.</p>
+<p dir="auto">The agent can be driven through a <strong>web interface</strong> (recommended) or a <strong>command-line interface</strong>, both backed by the same engine. Each interface has its own isolated data directory so they never share or overwrite each other's data.</p>
+<div class="markdown-heading" dir="auto"><h2 class="heading-element" dir="auto">🎮 Live Demo</h2><a id="user-content--live-demo" class="anchor" aria-label="Permalink: 🎮 Live Demo" href="#-live-demo"></a></div>
+<p dir="auto"><strong>Try it instantly — no installation required.</strong></p>
+<p dir="auto"><a href="https://bm-github.github.io/owasp-social-osint-agent/demo.html" rel="nofollow"><img src="https://camo.githubusercontent.com/431cfc0813d63de9535deb631552c99e604a806c09f9ba8ba7c9ebfdc82349c3/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f4f70656e253230496e74657261637469766525323044656d6f2d2545322538362539322d3338626466383f7374796c653d666f722d7468652d6261646765266c6f676f3d676974687562" alt="OSINT Agent – Interactive Demo" data-canonical-src="https://img.shields.io/badge/Open%20Interactive%20Demo-%E2%86%92-38bdf8?style=for-the-badge&amp;logo=github" style="max-width: 100%;"></a></p>
+<p dir="auto">The <a href="https://bm-github.github.io/owasp-social-osint-agent/demo.html" rel="nofollow">interactive demo</a> runs entirely in your browser with pre-loaded investigation data — no backend, no API keys, no Docker required. It showcases the full web UI including:</p>
+<ul dir="auto">
+<li><strong>Session management</strong> with two pre-loaded example investigations</li>
+<li><strong>Analysis reports</strong> rendered from realistic mock OSINT data</li>
+<li><strong>Network contact graph</strong> (D3 force-directed) showing target relationships</li>
+<li><strong>Chronological activity chart</strong> and <strong>Pattern of Life heatmap</strong> (day × hour)</li>
+<li><strong>Entity extraction</strong> panel (locations, emails, crypto addresses, aliases)</li>
+<li><strong>Media analysis</strong> thumbnails with simulated vision-LLM annotations</li>
+<li><strong>Live progress stream</strong> simulation — run your own queries against the demo data</li>
+</ul>
+<blockquote>
+<p dir="auto">The demo uses pre-canned data to illustrate the interface. The real system performs live API fetching, LLM synthesis, vision analysis, and prompt-injection-hardened processing against actual social platforms.</p>
+</blockquote>
+<div class="markdown-heading" dir="auto"><h2 class="heading-element" dir="auto">🌟 Key Features</h2><a id="user-content--key-features" class="anchor" aria-label="Permalink: 🌟 Key Features" href="#-key-features"></a></div>
+<p dir="auto">✅ <strong>Web Interface:</strong> A browser-based UI at <code>http://localhost:8000</code> for managing sessions, running queries, and reviewing reports — no terminal required.</p>
+<p dir="auto">✅ <strong>Session Management:</strong> Save and revisit named investigation sessions, each with their own target list, query history, and full report archive.</p>
+<p dir="auto">✅ <strong>Network Contact Discovery:</strong> Automatically extracts and surfaces accounts your targets interact with (mentions, retweets, repo interactions) so you can expand an investigation without manual trawling. Discovered contacts can be dismissed or promoted directly to active targets from the web UI.</p>
+<p dir="auto">✅ <strong>Multi-Platform Data Collection:</strong> Aggregates data from Twitter/X, Reddit, Bluesky, GitHub, Hacker News, and Mastodon. Captures immutable identifiers (e.g., Bluesky DIDs) to ensure targets can be tracked even if they change their handles.</p>
+<p dir="auto">✅ <strong>High-Fidelity OSINT Extraction:</strong> Goes beyond basic text to capture platform-specific intelligence, including GitHub commit messages/star events, Reddit karma breakdowns/subreddit contexts, Twitter location/verified status, and HackerNews user reputation.</p>
+<p dir="auto">✅ <strong>AI-Powered Analysis:</strong> Utilises configurable models via OpenAI-compatible APIs for sophisticated text and image analysis. Employs externalized, easily editable prompt files.</p>
+<p dir="auto">✅ <strong>Efficient Two-Phase Analysis:</strong> The agent first fetches all textual data and downloads all media across all targets. Only after all data collection is complete does it begin the (slower) vision analysis phase, ensuring maximum efficiency.</p>
+<p dir="auto">✅ <strong>Cross-Account Comparison:</strong> Analyze profiles across multiple selected platforms simultaneously.</p>
+<p dir="auto">✅ <strong>Robust Error Handling:</strong> Individual fetch or image analysis failures don't crash the entire pipeline. The agent gracefully degrades, providing partial results when some targets are unavailable.</p>
+<p dir="auto">✅ <strong>Unified Platform Architecture:</strong> All platform fetchers use a consistent base class pattern, ensuring uniform error handling, pagination, and caching behavior across Twitter, Reddit, Bluesky, GitHub, Mastodon, and HackerNews.</p>
+<p dir="auto">✅ <strong>Indirect Injection Mitigation:</strong> Robustly wraps untrusted social media data in structured XML tags within the LLM prompt. This clarifies the boundary between "system instructions" and "untrusted data," helping to mitigate indirect prompt injection attacks hidden in social posts or image descriptions.</p>
+<p dir="auto">✅ <strong>Accurate Temporal Analysis:</strong> Injects the current, real-world UTC timestamp into every analysis prompt, forcing the LLM to understand the timeline of events correctly.</p>
+<p dir="auto">✅ <strong>Structured AI Prompts:</strong> Employs detailed system prompts for objective, evidence-based analysis focusing on behavior, semantics, interests, and communication style.</p>
+<p dir="auto">✅ <strong>Vision-Capable Image Analysis:</strong> Analyzes downloaded images (<code>JPEG, PNG, GIF, WEBP</code>) for OSINT insights using a vision-enabled LLM.</p>
+<p dir="auto">✅ <strong>Flexible Fetch Control:</strong> Interactively set a default fetch count for all targets and use the <code>loadmore</code> command to incrementally fetch more data for specific users.</p>
+<p dir="auto">✅ <strong>Linked Image Analysis:</strong> Each AI-generated image analysis in the final report includes a direct, clickable link to the source image, making it easy to cross-reference and verify findings.</p>
+<p dir="auto">✅ <strong>Shared Domain Analysis:</strong> Automatically extracts all external links shared by a user, counts the frequency of each domain, and includes a "Top Shared Domains" summary in the final report.</p>
+<p dir="auto">✅ <strong>Offline Mode (<code>--offline</code>):</strong> Run analysis using only locally cached data. Skips all external network requests.</p>
+<p dir="auto">✅ <strong>Intelligent Rate Limit Handling:</strong> Detects API rate limits from social platforms and LLM providers, provides informative feedback, and prevents excessive requests.</p>
+<p dir="auto">✅ <strong>Robust Caching System:</strong> Caches fetched text data for 24 hours (<code>data-web/cache/</code> or <code>data-agent/cache/</code>) and media files (<code>data-web/media/</code> or <code>data-agent/media/</code>) to reduce API calls and speed up subsequent analyses. Vision analysis results are also cached.</p>
+<p dir="auto">✅ <strong>Cache Management:</strong> View a summary of all cached data or purge specific types from the web UI or interactive CLI commands.</p>
+<p dir="auto">✅ <strong>Interactive CLI &amp; Docker Support:</strong> User-friendly command-line interface with rich formatting that runs both locally and within a fully containerized Docker environment.</p>
+<p dir="auto">✅ <strong>Programmatic/Batch Mode:</strong> Supports input via JSON from stdin for automated workflows (<code>--stdin</code>).</p>
+<p dir="auto">✅ <strong>Secure Environment Variable Configuration:</strong> All secrets and configurations are managed via a <code>.env</code> file.</p>
+<div class="markdown-heading" dir="auto"><h2 class="heading-element" dir="auto">🌐 Web Interface</h2><a id="user-content--web-interface" class="anchor" aria-label="Permalink: 🌐 Web Interface" href="#-web-interface"></a></div>
+<p dir="auto">The web interface provides a full browser-based investigation environment that requires no terminal interaction after startup.</p>
+<blockquote>
+<p dir="auto"><strong>Want to see it before installing?</strong> Check out the <a href="https://bm-github.github.io/owasp-social-osint-agent/demo.html" rel="nofollow">interactive demo</a> — it runs in your browser with no setup required.</p>
+</blockquote>
+<div class="markdown-heading" dir="auto"><h3 class="heading-element" dir="auto">Starting the web server</h3><a id="user-content-starting-the-web-server" class="anchor" aria-label="Permalink: Starting the web server" href="#starting-the-web-server"></a></div>
+<div class="highlight highlight-source-shell notranslate position-relative overflow-auto" dir="auto" data-snippet-clipboard-copy-content="docker compose up -d web"><pre>docker compose up -d web</pre></div>
+<p dir="auto">Then open <code>http://localhost:8000</code> in your browser. The image is built automatically on first run.</p>
+<div class="markdown-heading" dir="auto"><h3 class="heading-element" dir="auto">Web UI features at a glance</h3><a id="user-content-web-ui-features-at-a-glance" class="anchor" aria-label="Permalink: Web UI features at a glance" href="#web-ui-features-at-a-glance"></a></div>
+<p dir="auto"><strong>Navigation sidebar (left)</strong></p>
+<ul dir="auto">
+<li><strong>Dashboard</strong> — overview with session stats, recent reports, and quick actions</li>
+<li><strong>Cache</strong> — view and manage all cached platform data with freshness indicators</li>
+<li><strong>Report Data</strong> (collapsible) — expand to access <strong>Contacts</strong> and <strong>Media</strong>, which are per-report data views</li>
+</ul>
+<p dir="auto"><strong>Sessions panel (left sidebar, below navigation)</strong></p>
+<ul dir="auto">
+<li>Create named investigation sessions; each has its own target list, query history, and report archive</li>
+<li>Sessions persist across server restarts — pick up where you left off</li>
+<li>Rename sessions inline by clicking the title</li>
+<li>Delete sessions you no longer need</li>
+</ul>
+<p dir="auto"><strong>Target chips bar</strong></p>
+<ul dir="auto">
+<li>Add or remove platforms/usernames at any time using the chip bar above the query input</li>
+<li>Each chip shows a colour-coded freshness dot (green = fresh cache, amber = stale, grey = not yet fetched)</li>
+<li>Clicking × on a chip removes that target from the session immediately</li>
+</ul>
+<p dir="auto"><strong>Query bar</strong></p>
+<ul dir="auto">
+<li>Type a natural language query and press <strong>Run Analysis</strong> (or <code>Ctrl+Enter</code>)</li>
+<li>Set the number of posts to fetch per target with the <strong>Posts</strong> counter</li>
+<li>Toggle <strong>Force refresh</strong> to bypass the 24-hour cache and re-fetch live data</li>
+</ul>
+<p dir="auto"><strong>Live progress stream</strong></p>
+<ul dir="auto">
+<li>Analysis progress streams to the browser in real time via Server-Sent Events</li>
+<li>Each stage (data fetch → image analysis → LLM synthesis) is logged as it happens</li>
+<li>If you reload the page mid-analysis the browser reconnects and replays all events so far</li>
+</ul>
+<p dir="auto"><strong>Report panel (centre)</strong></p>
+<ul dir="auto">
+<li>Reports render as styled Markdown with clickable image links</li>
+<li>Report header shows generation time, token usage (text/vision breakdown), model, and mode</li>
+<li>Switch between the <strong>Report</strong> tab and the <strong>Timeline</strong> tab at any time</li>
+<li><strong>Download MD</strong> saves the current report as a Markdown file (includes generation time and token stats in the header)</li>
+<li>The full-session <strong>Export Full Report</strong> button produces a single consolidated Markdown document covering every query in the session, all extracted entities, and the top network contacts</li>
+</ul>
+<p dir="auto"><strong>Query history sidebar</strong></p>
+<ul dir="auto">
+<li>Every query and its full report is preserved in the session</li>
+<li>Click any history entry to re-display its report without re-running the analysis</li>
+</ul>
+<p dir="auto"><strong>Timeline tab</strong></p>
+<ul dir="auto">
+<li><strong>Chronological Activity</strong> — bar chart of post volume over calendar time using D3</li>
+<li><strong>Pattern of Life</strong> — day-of-week × hour-of-day heatmap (UTC) showing when targets are most active</li>
+</ul>
+<p dir="auto"><strong>Contacts panel (right panel, Contacts tab)</strong></p>
+<ul dir="auto">
+<li>Lists all accounts your targets mention, retweet, reply to, or interact with via repos</li>
+<li>A force-directed network graph shows the relationships visually</li>
+<li>Contacts are ranked by interaction weight</li>
+<li><strong>+ button</strong> promotes a contact to an active session target in one click</li>
+<li><strong>× button</strong> dismisses a contact; it will not reappear on subsequent loads (reversible)</li>
+<li>Filter contacts by name or platform using the search box</li>
+</ul>
+<p dir="auto"><strong>Entities tab</strong></p>
+<ul dir="auto">
+<li>Extracts and displays structured intelligence selectors from the latest analysis: locations, email addresses, phone numbers, cryptocurrency addresses, and aliases</li>
+</ul>
+<p dir="auto"><strong>Media tab</strong></p>
+<ul dir="auto">
+<li>Shows thumbnails of all images downloaded for the current session's targets</li>
+<li>Hover over a thumbnail to reveal the LLM vision analysis for that image</li>
+</ul>
+<p dir="auto"><strong>Navigation sidebar</strong></p>
+<ul dir="auto">
+<li><strong>Dashboard</strong> and <strong>Cache</strong> are top-level navigation items</li>
+<li><strong>Contacts</strong> and <strong>Media</strong> are nested under a collapsible <strong>Report Data</strong> section — click to expand/collapse, auto-expands when a child page is selected</li>
+<li><strong>Cache</strong> page shows every cached target with post count and freshness status, with filter controls and bulk purge</li>
+</ul>
+<div class="markdown-heading" dir="auto"><h3 class="heading-element" dir="auto">Remote access</h3><a id="user-content-remote-access" class="anchor" aria-label="Permalink: Remote access" href="#remote-access"></a></div>
+<p dir="auto">The server binds to <code>127.0.0.1:8000</code> (localhost only) by default. To access it from another machine, use an SSH tunnel:</p>
+<div class="highlight highlight-source-shell notranslate position-relative overflow-auto" dir="auto" data-snippet-clipboard-copy-content="ssh -L 8000:localhost:8000 user@your-server"><pre>ssh -L 8000:localhost:8000 user@your-server</pre></div>
+<p dir="auto">Then open <code>http://localhost:8000</code> locally.</p>
+<div class="markdown-heading" dir="auto"><h3 class="heading-element" dir="auto">Authentication</h3><a id="user-content-authentication" class="anchor" aria-label="Permalink: Authentication" href="#authentication"></a></div>
+<p dir="auto">Set <code>OSINT_WEB_USER</code> and <code>OSINT_WEB_PASSWORD</code> in your <code>.env</code> file to enable HTTP Basic Auth. If these are not set the server runs open — only appropriate for localhost use via SSH tunnel.</p>
+<div class="markdown-heading" dir="auto"><h2 class="heading-element" dir="auto">🗺️ Visual Workflow: How the Agent Thinks</h2><a id="user-content-️-visual-workflow-how-the-agent-thinks" class="anchor" aria-label="Permalink: 🗺️ Visual Workflow: How the Agent Thinks" href="#️-visual-workflow-how-the-agent-thinks"></a></div>
+<p dir="auto">To understand the agent's decision-making process from start to finish, you can explore the detailed workflow flowchart below.</p>
+<details>
+<summary><b>➡️ Click to expand the full interactive flowchart</b></summary>
+<section class="js-render-needs-enrichment render-needs-enrichment position-relative" data-identity="3810cba0-4e67-43b2-9ba2-764d7324d064" data-host="https://viewscreen.githubusercontent.com" data-src="https://viewscreen.githubusercontent.com/markdown/mermaid?docs_host=https%3A%2F%2Fdocs.github.com" data-type="mermaid" aria-label="mermaid rendered output container">
+  <div class="js-render-enrichment-target" data-json="{&quot;data&quot;:&quot;flowchart TD\n    %% Initialization\n    A([Start owasp-social-osint-agent]) --&amp;gt; AA{{Setup Directories &amp;amp; API Clients&amp;lt;br/&amp;gt;Verify Environment}}\n    \n    %% Mode Selection\n    AA --&amp;gt; B{Interactive or&amp;lt;br/&amp;gt;Stdin Mode?}\n    \n    %% Interactive Mode Path\n    B --&amp;gt;|Interactive| C[/Display Platform Menu/]\n    C --&amp;gt; D{Platform&amp;lt;br/&amp;gt;Selection}\n    \n    %% Platform-Specific Branches\n    D --&amp;gt;|Twitter| E1([Twitter])\n    D --&amp;gt;|Reddit| E2([Reddit])\n    D --&amp;gt;|HackerNews| E3([HackerNews])\n    D --&amp;gt;|Bluesky| E4([Bluesky])\n    D --&amp;gt;|Mastodon| E5([Mastodon])\n    D --&amp;gt;|GitHub| E7([GitHub])\n    D --&amp;gt;|Cross-Platform| E6([Multiple Platforms])\n    D --&amp;gt;|Purge Data| PD([Purge Data])\n    PD --&amp;gt; C\n    D --&amp;gt;|Cache Status| CS([Cache Status])\n    CS --&amp;gt; C\n    \n    %% Stdin Mode Path\n    B --&amp;gt;|Stdin| F([Parse JSON Input])\n    F --&amp;gt; G([Extract Platforms &amp;amp; Query])\n    \n    %% Analysis Loop Entry Points\n    E1 --&amp;gt; H([Enter Analysis Loop])\n    E2 --&amp;gt; H\n    E3 --&amp;gt; H\n    E4 --&amp;gt; H\n    E5 --&amp;gt; H\n    E7 --&amp;gt; H\n    E6 --&amp;gt; H\n    G --&amp;gt; J([Run Analysis])\n    \n    %% Command Processing in Analysis Loop\n    H --&amp;gt;|Query Input| I{Command&amp;lt;br/&amp;gt;Type}\n    I --&amp;gt;|Analysis Query| J\n    I --&amp;gt;|exit| Z([End Session])\n    I --&amp;gt;|refresh| Y([Force Refresh Cache])\n    Y --&amp;gt; H\n    \n    %% PHASE 1: Data Fetching and Caching\n    J --&amp;gt; K{Cache&amp;lt;br/&amp;gt;Available?}\n    K --&amp;gt;|Yes| M([Load Cached Data])\n    K --&amp;gt;|No| L([Fetch Platform Data&amp;lt;br/&amp;gt;&amp;amp; Download Media])\n    \n    %% API &amp;amp; Rate Limit Handling for Fetching\n    L --&amp;gt; L1{Rate&amp;lt;br/&amp;gt;Limited?}\n    L1 --&amp;gt;|Yes| L2([Handle Rate Limit])\n    L2 --&amp;gt; L5([Abort or Retry])\n    L1 --&amp;gt;|No| L3([Extract Text &amp;amp; URLs])\n    L3 --&amp;gt; L4([Save to Cache])\n    L4 --&amp;gt; M\n    \n    %% Data Consolidation Point\n    M --&amp;gt; N([Consolidate All&amp;lt;br/&amp;gt;Fetched Data])\n    \n    %% PHASE 2: Vision Analysis\n    N --&amp;gt; O{Any Images&amp;lt;br/&amp;gt;Need Analysis?}\n    O --&amp;gt;|Yes| P([Analyze Images via Vision LLM])\n    P --&amp;gt; P1([Update Cache with&amp;lt;br/&amp;gt;Vision Analysis Results])\n    P1 --&amp;gt; Q\n    O --&amp;gt;|No| Q\n    \n    %% Data Formatting &amp;amp; Final Synthesis\n    Q([Format Text, Links &amp;amp;&amp;lt;br/&amp;gt;Vision Data for LLM]) --&amp;gt; S([Call Text Analysis LLM&amp;lt;br/&amp;gt;with Query and All Data])\n    \n    %% Output Generation\n    S --&amp;gt; T([Format Final Report])\n    T --&amp;gt; V1{Auto-Save&amp;lt;br/&amp;gt;Enabled?}\n    \n    %% Handle Saving\n    V1 --&amp;gt;|Yes| WA([Save Results Automatically])\n    WA --&amp;gt; H\n    V1 --&amp;gt;|No| WB{Prompt User to Save?}\n    WB --&amp;gt;|Yes| WC([Save Results])\n    WC --&amp;gt; H\n    WB --&amp;gt;|No| H\n    \n    classDef startClass fill:#E8F5E8,stroke:#4CAF50,stroke-width:3px,color:#2E7D32\n    classDef setupClass fill:#E3F2FD,stroke:#2196F3,stroke-width:2px,color:#1565C0\n    classDef decisionClass fill:#FFF3E0,stroke:#FF9800,stroke-width:2px,color:#E65100\n    classDef inputClass fill:#F3E5F5,stroke:#9C27B0,stroke-width:2px,color:#6A1B9A\n    classDef menuClass fill:#E8EAF6,stroke:#3F51B5,stroke-width:2px,color:#283593\n    classDef twitterClass fill:#1DA1F2,stroke:#0D47A1,stroke-width:3px,color:#FFF\n    classDef redditClass fill:#FF4500,stroke:#CC3600,stroke-width:3px,color:#FFF\n    classDef hnClass fill:#FF6600,stroke:#E55A00,stroke-width:3px,color:#FFF\n    classDef bskyClass fill:#00D4FF,stroke:#0099CC,stroke-width:3px,color:#FFF\n    classDef mastodonClass fill:#6364FF,stroke:#4F50CC,stroke-width:3px,color:#FFF\n    classDef githubClass fill:#24292e,stroke:#000,stroke-width:3px,color:#FFF\n    classDef multiClass fill:#4CAF50,stroke:#388E3C,stroke-width:3px,color:#FFF\n    classDef purgeClass fill:#F44336,stroke:#D32F2F,stroke-width:3px,color:#FFF\n    classDef cacheStatusClass fill:#A5D6A7,stroke:#388E3C,stroke-width:2px,color:#1B5E20\n    classDef loopClass fill:#E1BEE7,stroke:#8E24AA,stroke-width:2px,color:#4A148C\n    classDef analysisClass fill:#BBDEFB,stroke:#1976D2,stroke-width:2px,color:#0D47A1\n    classDef cacheClass fill:#B2DFDB,stroke:#00695C,stroke-width:2px,color:#004D40\n    classDef apiClass fill:#C8E6C9,stroke:#2E7D32,stroke-width:2px,color:#1B5E20\n    classDef errorClass fill:#FFCDD2,stroke:#D32F2F,stroke-width:2px,color:#B71C1C\n    classDef dataClass fill:#DCEDC8,stroke:#689F38,stroke-width:2px,color:#33691E\n    classDef llmClass fill:#FFF8E1,stroke:#FFA000,stroke-width:2px,color:#E65100\n    classDef outputClass fill:#F1F8E9,stroke:#558B2F,stroke-width:2px,color:#33691E\n    classDef endClass fill:#FFEBEE,stroke:#E53935,stroke-width:2px,color:#C62828\n    classDef refreshClass fill:#E0F2F1,stroke:#00796B,stroke-width:2px,color:#004D40\n    \n    class A startClass; class AA setupClass; class B,D,I,K,L1,O,V1,WB decisionClass\n    class C menuClass; class H loopClass; class J,P,S llmClass; class L,L4 apiClass\n    class M,P1 cacheClass; class L2,L5 errorClass; class N,Q dataClass\n    class T,WA,WC outputClass; class Z endClass; class Y refreshClass\n    class E1 twitterClass; class E2 redditClass; class E3 hnClass; class E4 bskyClass; class E5 mastodonClass; class E6 multiClass; class E7 githubClass\n    class PD purgeClass; class CS cacheStatusClass; class F,G inputClass\n&quot;}" data-plain="flowchart TD
+    %% Initialization
+    A([Start owasp-social-osint-agent]) --&gt; AA{{Setup Directories &amp; API Clients&lt;br/&gt;Verify Environment}}
+    
+    %% Mode Selection
+    AA --&gt; B{Interactive or&lt;br/&gt;Stdin Mode?}
+    
+    %% Interactive Mode Path
+    B --&gt;|Interactive| C[/Display Platform Menu/]
+    C --&gt; D{Platform&lt;br/&gt;Selection}
+    
+    %% Platform-Specific Branches
+    D --&gt;|Twitter| E1([Twitter])
+    D --&gt;|Reddit| E2([Reddit])
+    D --&gt;|HackerNews| E3([HackerNews])
+    D --&gt;|Bluesky| E4([Bluesky])
+    D --&gt;|Mastodon| E5([Mastodon])
+    D --&gt;|GitHub| E7([GitHub])
+    D --&gt;|Cross-Platform| E6([Multiple Platforms])
+    D --&gt;|Purge Data| PD([Purge Data])
+    PD --&gt; C
+    D --&gt;|Cache Status| CS([Cache Status])
+    CS --&gt; C
+    
+    %% Stdin Mode Path
+    B --&gt;|Stdin| F([Parse JSON Input])
+    F --&gt; G([Extract Platforms &amp; Query])
+    
+    %% Analysis Loop Entry Points
+    E1 --&gt; H([Enter Analysis Loop])
+    E2 --&gt; H
+    E3 --&gt; H
+    E4 --&gt; H
+    E5 --&gt; H
+    E7 --&gt; H
+    E6 --&gt; H
+    G --&gt; J([Run Analysis])
+    
+    %% Command Processing in Analysis Loop
+    H --&gt;|Query Input| I{Command&lt;br/&gt;Type}
+    I --&gt;|Analysis Query| J
+    I --&gt;|exit| Z([End Session])
+    I --&gt;|refresh| Y([Force Refresh Cache])
+    Y --&gt; H
+    
+    %% PHASE 1: Data Fetching and Caching
+    J --&gt; K{Cache&lt;br/&gt;Available?}
+    K --&gt;|Yes| M([Load Cached Data])
+    K --&gt;|No| L([Fetch Platform Data&lt;br/&gt;&amp; Download Media])
+    
+    %% API &amp; Rate Limit Handling for Fetching
+    L --&gt; L1{Rate&lt;br/&gt;Limited?}
+    L1 --&gt;|Yes| L2([Handle Rate Limit])
+    L2 --&gt; L5([Abort or Retry])
+    L1 --&gt;|No| L3([Extract Text &amp; URLs])
+    L3 --&gt; L4([Save to Cache])
+    L4 --&gt; M
+    
+    %% Data Consolidation Point
+    M --&gt; N([Consolidate All&lt;br/&gt;Fetched Data])
+    
+    %% PHASE 2: Vision Analysis
+    N --&gt; O{Any Images&lt;br/&gt;Need Analysis?}
+    O --&gt;|Yes| P([Analyze Images via Vision LLM])
+    P --&gt; P1([Update Cache with&lt;br/&gt;Vision Analysis Results])
+    P1 --&gt; Q
+    O --&gt;|No| Q
+    
+    %% Data Formatting &amp; Final Synthesis
+    Q([Format Text, Links &amp;&lt;br/&gt;Vision Data for LLM]) --&gt; S([Call Text Analysis LLM&lt;br/&gt;with Query and All Data])
+    
+    %% Output Generation
+    S --&gt; T([Format Final Report])
+    T --&gt; V1{Auto-Save&lt;br/&gt;Enabled?}
+    
+    %% Handle Saving
+    V1 --&gt;|Yes| WA([Save Results Automatically])
+    WA --&gt; H
+    V1 --&gt;|No| WB{Prompt User to Save?}
+    WB --&gt;|Yes| WC([Save Results])
+    WC --&gt; H
+    WB --&gt;|No| H
+    
+    classDef startClass fill:#E8F5E8,stroke:#4CAF50,stroke-width:3px,color:#2E7D32
+    classDef setupClass fill:#E3F2FD,stroke:#2196F3,stroke-width:2px,color:#1565C0
+    classDef decisionClass fill:#FFF3E0,stroke:#FF9800,stroke-width:2px,color:#E65100
+    classDef inputClass fill:#F3E5F5,stroke:#9C27B0,stroke-width:2px,color:#6A1B9A
+    classDef menuClass fill:#E8EAF6,stroke:#3F51B5,stroke-width:2px,color:#283593
+    classDef twitterClass fill:#1DA1F2,stroke:#0D47A1,stroke-width:3px,color:#FFF
+    classDef redditClass fill:#FF4500,stroke:#CC3600,stroke-width:3px,color:#FFF
+    classDef hnClass fill:#FF6600,stroke:#E55A00,stroke-width:3px,color:#FFF
+    classDef bskyClass fill:#00D4FF,stroke:#0099CC,stroke-width:3px,color:#FFF
+    classDef mastodonClass fill:#6364FF,stroke:#4F50CC,stroke-width:3px,color:#FFF
+    classDef githubClass fill:#24292e,stroke:#000,stroke-width:3px,color:#FFF
+    classDef multiClass fill:#4CAF50,stroke:#388E3C,stroke-width:3px,color:#FFF
+    classDef purgeClass fill:#F44336,stroke:#D32F2F,stroke-width:3px,color:#FFF
+    classDef cacheStatusClass fill:#A5D6A7,stroke:#388E3C,stroke-width:2px,color:#1B5E20
+    classDef loopClass fill:#E1BEE7,stroke:#8E24AA,stroke-width:2px,color:#4A148C
+    classDef analysisClass fill:#BBDEFB,stroke:#1976D2,stroke-width:2px,color:#0D47A1
+    classDef cacheClass fill:#B2DFDB,stroke:#00695C,stroke-width:2px,color:#004D40
+    classDef apiClass fill:#C8E6C9,stroke:#2E7D32,stroke-width:2px,color:#1B5E20
+    classDef errorClass fill:#FFCDD2,stroke:#D32F2F,stroke-width:2px,color:#B71C1C
+    classDef dataClass fill:#DCEDC8,stroke:#689F38,stroke-width:2px,color:#33691E
+    classDef llmClass fill:#FFF8E1,stroke:#FFA000,stroke-width:2px,color:#E65100
+    classDef outputClass fill:#F1F8E9,stroke:#558B2F,stroke-width:2px,color:#33691E
+    classDef endClass fill:#FFEBEE,stroke:#E53935,stroke-width:2px,color:#C62828
+    classDef refreshClass fill:#E0F2F1,stroke:#00796B,stroke-width:2px,color:#004D40
+    
+    class A startClass; class AA setupClass; class B,D,I,K,L1,O,V1,WB decisionClass
+    class C menuClass; class H loopClass; class J,P,S llmClass; class L,L4 apiClass
+    class M,P1 cacheClass; class L2,L5 errorClass; class N,Q dataClass
+    class T,WA,WC outputClass; class Z endClass; class Y refreshClass
+    class E1 twitterClass; class E2 redditClass; class E3 hnClass; class E4 bskyClass; class E5 mastodonClass; class E6 multiClass; class E7 githubClass
+    class PD purgeClass; class CS cacheStatusClass; class F,G inputClass
+" dir="auto">
+    <div class="render-plaintext-hidden" dir="auto">
+      <pre lang="mermaid" aria-label="Raw mermaid code">flowchart TD
+    %% Initialization
+    A([Start owasp-social-osint-agent]) --&gt; AA{{Setup Directories &amp; API Clients&lt;br/&gt;Verify Environment}}
+    
+    %% Mode Selection
+    AA --&gt; B{Interactive or&lt;br/&gt;Stdin Mode?}
+    
+    %% Interactive Mode Path
+    B --&gt;|Interactive| C[/Display Platform Menu/]
+    C --&gt; D{Platform&lt;br/&gt;Selection}
+    
+    %% Platform-Specific Branches
+    D --&gt;|Twitter| E1([Twitter])
+    D --&gt;|Reddit| E2([Reddit])
+    D --&gt;|HackerNews| E3([HackerNews])
+    D --&gt;|Bluesky| E4([Bluesky])
+    D --&gt;|Mastodon| E5([Mastodon])
+    D --&gt;|GitHub| E7([GitHub])
+    D --&gt;|Cross-Platform| E6([Multiple Platforms])
+    D --&gt;|Purge Data| PD([Purge Data])
+    PD --&gt; C
+    D --&gt;|Cache Status| CS([Cache Status])
+    CS --&gt; C
+    
+    %% Stdin Mode Path
+    B --&gt;|Stdin| F([Parse JSON Input])
+    F --&gt; G([Extract Platforms &amp; Query])
+    
+    %% Analysis Loop Entry Points
+    E1 --&gt; H([Enter Analysis Loop])
+    E2 --&gt; H
+    E3 --&gt; H
+    E4 --&gt; H
+    E5 --&gt; H
+    E7 --&gt; H
+    E6 --&gt; H
+    G --&gt; J([Run Analysis])
+    
+    %% Command Processing in Analysis Loop
+    H --&gt;|Query Input| I{Command&lt;br/&gt;Type}
+    I --&gt;|Analysis Query| J
+    I --&gt;|exit| Z([End Session])
+    I --&gt;|refresh| Y([Force Refresh Cache])
+    Y --&gt; H
+    
+    %% PHASE 1: Data Fetching and Caching
+    J --&gt; K{Cache&lt;br/&gt;Available?}
+    K --&gt;|Yes| M([Load Cached Data])
+    K --&gt;|No| L([Fetch Platform Data&lt;br/&gt;&amp; Download Media])
+    
+    %% API &amp; Rate Limit Handling for Fetching
+    L --&gt; L1{Rate&lt;br/&gt;Limited?}
+    L1 --&gt;|Yes| L2([Handle Rate Limit])
+    L2 --&gt; L5([Abort or Retry])
+    L1 --&gt;|No| L3([Extract Text &amp; URLs])
+    L3 --&gt; L4([Save to Cache])
+    L4 --&gt; M
+    
+    %% Data Consolidation Point
+    M --&gt; N([Consolidate All&lt;br/&gt;Fetched Data])
+    
+    %% PHASE 2: Vision Analysis
+    N --&gt; O{Any Images&lt;br/&gt;Need Analysis?}
+    O --&gt;|Yes| P([Analyze Images via Vision LLM])
+    P --&gt; P1([Update Cache with&lt;br/&gt;Vision Analysis Results])
+    P1 --&gt; Q
+    O --&gt;|No| Q
+    
+    %% Data Formatting &amp; Final Synthesis
+    Q([Format Text, Links &amp;&lt;br/&gt;Vision Data for LLM]) --&gt; S([Call Text Analysis LLM&lt;br/&gt;with Query and All Data])
+    
+    %% Output Generation
+    S --&gt; T([Format Final Report])
+    T --&gt; V1{Auto-Save&lt;br/&gt;Enabled?}
+    
+    %% Handle Saving
+    V1 --&gt;|Yes| WA([Save Results Automatically])
+    WA --&gt; H
+    V1 --&gt;|No| WB{Prompt User to Save?}
+    WB --&gt;|Yes| WC([Save Results])
+    WC --&gt; H
+    WB --&gt;|No| H
+    
+    classDef startClass fill:#E8F5E8,stroke:#4CAF50,stroke-width:3px,color:#2E7D32
+    classDef setupClass fill:#E3F2FD,stroke:#2196F3,stroke-width:2px,color:#1565C0
+    classDef decisionClass fill:#FFF3E0,stroke:#FF9800,stroke-width:2px,color:#E65100
+    classDef inputClass fill:#F3E5F5,stroke:#9C27B0,stroke-width:2px,color:#6A1B9A
+    classDef menuClass fill:#E8EAF6,stroke:#3F51B5,stroke-width:2px,color:#283593
+    classDef twitterClass fill:#1DA1F2,stroke:#0D47A1,stroke-width:3px,color:#FFF
+    classDef redditClass fill:#FF4500,stroke:#CC3600,stroke-width:3px,color:#FFF
+    classDef hnClass fill:#FF6600,stroke:#E55A00,stroke-width:3px,color:#FFF
+    classDef bskyClass fill:#00D4FF,stroke:#0099CC,stroke-width:3px,color:#FFF
+    classDef mastodonClass fill:#6364FF,stroke:#4F50CC,stroke-width:3px,color:#FFF
+    classDef githubClass fill:#24292e,stroke:#000,stroke-width:3px,color:#FFF
+    classDef multiClass fill:#4CAF50,stroke:#388E3C,stroke-width:3px,color:#FFF
+    classDef purgeClass fill:#F44336,stroke:#D32F2F,stroke-width:3px,color:#FFF
+    classDef cacheStatusClass fill:#A5D6A7,stroke:#388E3C,stroke-width:2px,color:#1B5E20
+    classDef loopClass fill:#E1BEE7,stroke:#8E24AA,stroke-width:2px,color:#4A148C
+    classDef analysisClass fill:#BBDEFB,stroke:#1976D2,stroke-width:2px,color:#0D47A1
+    classDef cacheClass fill:#B2DFDB,stroke:#00695C,stroke-width:2px,color:#004D40
+    classDef apiClass fill:#C8E6C9,stroke:#2E7D32,stroke-width:2px,color:#1B5E20
+    classDef errorClass fill:#FFCDD2,stroke:#D32F2F,stroke-width:2px,color:#B71C1C
+    classDef dataClass fill:#DCEDC8,stroke:#689F38,stroke-width:2px,color:#33691E
+    classDef llmClass fill:#FFF8E1,stroke:#FFA000,stroke-width:2px,color:#E65100
+    classDef outputClass fill:#F1F8E9,stroke:#558B2F,stroke-width:2px,color:#33691E
+    classDef endClass fill:#FFEBEE,stroke:#E53935,stroke-width:2px,color:#C62828
+    classDef refreshClass fill:#E0F2F1,stroke:#00796B,stroke-width:2px,color:#004D40
+    
+    class A startClass; class AA setupClass; class B,D,I,K,L1,O,V1,WB decisionClass
+    class C menuClass; class H loopClass; class J,P,S llmClass; class L,L4 apiClass
+    class M,P1 cacheClass; class L2,L5 errorClass; class N,Q dataClass
+    class T,WA,WC outputClass; class Z endClass; class Y refreshClass
+    class E1 twitterClass; class E2 redditClass; class E3 hnClass; class E4 bskyClass; class E5 mastodonClass; class E6 multiClass; class E7 githubClass
+    class PD purgeClass; class CS cacheStatusClass; class F,G inputClass
+</pre>
+    </div>
+  </div>
+  <span class="js-render-enrichment-loader d-flex flex-justify-center flex-items-center width-full" style="min-height:100px" role="presentation">
+    <span data-view-component="true">
+      <span class="sr-only">Loading</span>
+</span>
+  </span>
+</section>
+
+<p dir="auto"><em>Flowchart Description Note:</em> In <strong>Offline Mode (<code>--offline</code>)</strong>, the "Fetch Platform Data" step and the "Analyze Images" step are both <em>bypassed</em>. The analysis proceeds only with information already available in the local cache.</p>
+</details>
+<div class="markdown-heading" dir="auto"><h2 class="heading-element" dir="auto">🏗️ Docker Architecture</h2><a id="user-content-️-docker-architecture" class="anchor" aria-label="Permalink: 🏗️ Docker Architecture" href="#️-docker-architecture"></a></div>
+<p dir="auto">The project ships two container images, each with its own isolated data directory:</p>
+<div class="snippet-clipboard-content notranslate position-relative overflow-auto" data-snippet-clipboard-copy-content="┌──────────────────────────────────────────────────────────┐
+│  docker compose                                          │
+│                                                          │
+│  ┌─────────────────────┐   ┌─────────────────────────┐  │
+│  │  web (port 8000)     │   │  agent                  │  │
+│  │  Dockerfile.web      │   │  Dockerfile.agent       │  │
+│  │                     │   │                         │  │
+│  │  FastAPI + uvicorn  │   │  CLI (python -m …)      │  │
+│  │  + static frontend  │   │  --stdin / --offline     │  │
+│  │  runs as appuser    │   │  runs as appuser         │  │
+│  └────────┬────────────┘   └────────────┬────────────┘  │
+│           │                             │                │
+│           ▼                             ▼                │
+│     ./data-web/                  ./data-agent/           │
+│     ├── cache/                   ├── cache/              │
+│     ├── media/                   ├── media/              │
+│     ├── outputs/                 ├── outputs/            │
+│     └── sessions/                └──                     │
+└──────────────────────────────────────────────────────────┘"><pre class="notranslate"><code>┌──────────────────────────────────────────────────────────┐
+│  docker compose                                          │
+│                                                          │
+│  ┌─────────────────────┐   ┌─────────────────────────┐  │
+│  │  web (port 8000)     │   │  agent                  │  │
+│  │  Dockerfile.web      │   │  Dockerfile.agent       │  │
+│  │                     │   │                         │  │
+│  │  FastAPI + uvicorn  │   │  CLI (python -m …)      │  │
+│  │  + static frontend  │   │  --stdin / --offline     │  │
+│  │  runs as appuser    │   │  runs as appuser         │  │
+│  └────────┬────────────┘   └────────────┬────────────┘  │
+│           │                             │                │
+│           ▼                             ▼                │
+│     ./data-web/                  ./data-agent/           │
+│     ├── cache/                   ├── cache/              │
+│     ├── media/                   ├── media/              │
+│     ├── outputs/                 ├── outputs/            │
+│     └── sessions/                └──                     │
+└──────────────────────────────────────────────────────────┘
+</code></pre></div>
+<ul dir="auto">
+<li><strong><code>web</code></strong> — Start with <code>docker compose up -d web</code>. Serves the browser UI and REST API. Runs on port 8000 (localhost only). Data stored in <code>./data-web/</code>.</li>
+<li><strong><code>agent</code></strong> — Run on-demand with <code>docker compose --profile cli run --rm -it agent</code> for interactive terminal sessions or batch/stdin processing. Uses the <code>cli</code> profile so it never starts unintentionally alongside the web server. Data stored in <code>./data-agent/</code>.</li>
+<li><strong>Isolated data</strong> — Each service has its own data directory so cached platform data, downloaded media, and saved reports are kept completely separate.</li>
+</ul>
+<div class="markdown-heading" dir="auto"><h2 class="heading-element" dir="auto">🛠 Installation</h2><a id="user-content--installation" class="anchor" aria-label="Permalink: 🛠 Installation" href="#-installation"></a></div>
+<div class="markdown-heading" dir="auto"><h3 class="heading-element" dir="auto">Prerequisites</h3><a id="user-content-prerequisites" class="anchor" aria-label="Permalink: Prerequisites" href="#prerequisites"></a></div>
+<ul dir="auto">
+<li><strong>Docker and Docker Compose</strong> (Recommended)</li>
+<li><strong>Python 3.11+</strong> and Pip (for local development)</li>
+</ul>
+<div class="markdown-heading" dir="auto"><h3 class="heading-element" dir="auto">1. Clone the Repository</h3><a id="user-content-1-clone-the-repository" class="anchor" aria-label="Permalink: 1. Clone the Repository" href="#1-clone-the-repository"></a></div>
+<div class="highlight highlight-source-shell notranslate position-relative overflow-auto" dir="auto" data-snippet-clipboard-copy-content="git clone https://github.com/bm-github/owasp-social-osint-agent.git
+cd owasp-social-osint-agent"><pre>git clone https://github.com/bm-github/owasp-social-osint-agent.git
+<span class="pl-c1">cd</span> owasp-social-osint-agent</pre></div>
+<div class="markdown-heading" dir="auto"><h3 class="heading-element" dir="auto">2. Configure Environment Variables</h3><a id="user-content-2-configure-environment-variables" class="anchor" aria-label="Permalink: 2. Configure Environment Variables" href="#2-configure-environment-variables"></a></div>
+<p dir="auto">Create a <code>.env</code> file in the project root by copying the example file (<code>env.example</code>). Then, fill in your own API keys and credentials.</p>
+<div class="highlight highlight-source-shell notranslate position-relative overflow-auto" dir="auto" data-snippet-clipboard-copy-content="cp env.example .env
+# Now edit the .env file with your secrets"><pre>cp env.example .env
+<span class="pl-c"><span class="pl-c">#</span> Now edit the .env file with your secrets</span></pre></div>
+<div class="highlight highlight-source-dotenv notranslate position-relative overflow-auto" dir="auto" data-snippet-clipboard-copy-content="# .env
+
+# --- LLM Configuration (Required) ---
+LLM_API_KEY=&quot;your_llm_api_key&quot;
+LLM_API_BASE_URL=&quot;https://api.example.com/v1&quot; # e.g., https://openrouter.ai/api/v1
+ANALYSIS_MODEL=&quot;your_text_analysis_model_name&quot;
+IMAGE_ANALYSIS_MODEL=&quot;your_vision_model_name&quot;
+
+# --- Optional: OpenRouter Specific Headers ---
+# OPENROUTER_REFERER=&quot;http://localhost:3000&quot;
+# OPENROUTER_X_TITLE=&quot;owasp-social-osint-agent&quot;
+
+# --- Platform API Keys (as needed) ---
+# Twitter/X
+TWITTER_BEARER_TOKEN=&quot;your_twitter_v2_bearer_token&quot;
+# Reddit
+REDDIT_CLIENT_ID=&quot;your_reddit_client_id&quot;
+REDDIT_CLIENT_SECRET=&quot;your_reddit_client_secret&quot;
+REDDIT_USER_AGENT=&quot;YourAppName/1.0 by YourUsername&quot;
+# Bluesky
+BLUESKY_IDENTIFIER=&quot;your-handle.bsky.social&quot;
+BLUESKY_APP_SECRET=&quot;xxxx-xxxx-xxxx-xxxx&quot;
+# GitHub
+GITHUB_TOKEN=&quot;your_github_personal_access_token&quot;
+# Mastodon Multi-Instance Support
+MASTODON_INSTANCE_1_URL=&quot;https://mastodon.social&quot;
+MASTODON_INSTANCE_1_TOKEN=&quot;YOUR_ACCESS_TOKEN_FOR_MASTODON_SOCIAL&quot;
+MASTODON_INSTANCE_1_DEFAULT=&quot;true&quot;
+
+# --- Optional: Web Interface Authentication ---
+# If set, the web UI will require HTTP Basic Auth.
+# Recommended whenever the server is accessible beyond localhost.
+OSINT_WEB_USER=&quot;your_username&quot;
+OSINT_WEB_PASSWORD=&quot;your_password&quot;
+
+# Security: Media Download Restrictions
+# By default, only trusted CDNs are allowed. Override with additional domains:
+# EXTRA_TWITTER_CDNS=&quot;custom.cdn.example.com&quot;
+# EXTRA_REDDIT_CDNS=&quot;i.imgur.com,custom.cdn2.com&quot;
+# EXTRA_BLUESKY_CDNS=&quot;custom.bsky.cdn.com&quot;
+# EXTRA_MASTODON_CDNS=&quot;media.myinstance.org&quot;"><pre><span class="pl-c"><span class="pl-c">#</span> .env</span>
+
+<span class="pl-c"><span class="pl-c">#</span> --- LLM Configuration (Required) ---</span>
+<span class="pl-v">LLM_API_KEY</span><span class="pl-k">=</span><span class="pl-s"><span class="pl-pds">"</span>your_llm_api_key<span class="pl-pds">"</span></span>
+<span class="pl-v">LLM_API_BASE_URL</span><span class="pl-k">=</span><span class="pl-s"><span class="pl-pds">"</span>https://api.example.com/v1<span class="pl-pds">"</span></span> <span class="pl-c"><span class="pl-c">#</span> e.g., https://openrouter.ai/api/v1</span>
+<span class="pl-v">ANALYSIS_MODEL</span><span class="pl-k">=</span><span class="pl-s"><span class="pl-pds">"</span>your_text_analysis_model_name<span class="pl-pds">"</span></span>
+<span class="pl-v">IMAGE_ANALYSIS_MODEL</span><span class="pl-k">=</span><span class="pl-s"><span class="pl-pds">"</span>your_vision_model_name<span class="pl-pds">"</span></span>
+
+<span class="pl-c"><span class="pl-c">#</span> --- Optional: OpenRouter Specific Headers ---</span>
+<span class="pl-c"><span class="pl-c">#</span> OPENROUTER_REFERER="http://localhost:3000"</span>
+<span class="pl-c"><span class="pl-c">#</span> OPENROUTER_X_TITLE="owasp-social-osint-agent"</span>
+
+<span class="pl-c"><span class="pl-c">#</span> --- Platform API Keys (as needed) ---</span>
+<span class="pl-c"><span class="pl-c">#</span> Twitter/X</span>
+<span class="pl-v">TWITTER_BEARER_TOKEN</span><span class="pl-k">=</span><span class="pl-s"><span class="pl-pds">"</span>your_twitter_v2_bearer_token<span class="pl-pds">"</span></span>
+<span class="pl-c"><span class="pl-c">#</span> Reddit</span>
+<span class="pl-v">REDDIT_CLIENT_ID</span><span class="pl-k">=</span><span class="pl-s"><span class="pl-pds">"</span>your_reddit_client_id<span class="pl-pds">"</span></span>
+<span class="pl-v">REDDIT_CLIENT_SECRET</span><span class="pl-k">=</span><span class="pl-s"><span class="pl-pds">"</span>your_reddit_client_secret<span class="pl-pds">"</span></span>
+<span class="pl-v">REDDIT_USER_AGENT</span><span class="pl-k">=</span><span class="pl-s"><span class="pl-pds">"</span>YourAppName/1.0 by YourUsername<span class="pl-pds">"</span></span>
+<span class="pl-c"><span class="pl-c">#</span> Bluesky</span>
+<span class="pl-v">BLUESKY_IDENTIFIER</span><span class="pl-k">=</span><span class="pl-s"><span class="pl-pds">"</span>your-handle.bsky.social<span class="pl-pds">"</span></span>
+<span class="pl-v">BLUESKY_APP_SECRET</span><span class="pl-k">=</span><span class="pl-s"><span class="pl-pds">"</span>xxxx-xxxx-xxxx-xxxx<span class="pl-pds">"</span></span>
+<span class="pl-c"><span class="pl-c">#</span> GitHub</span>
+<span class="pl-v">GITHUB_TOKEN</span><span class="pl-k">=</span><span class="pl-s"><span class="pl-pds">"</span>your_github_personal_access_token<span class="pl-pds">"</span></span>
+<span class="pl-c"><span class="pl-c">#</span> Mastodon Multi-Instance Support</span>
+<span class="pl-v">MASTODON_INSTANCE_1_URL</span><span class="pl-k">=</span><span class="pl-s"><span class="pl-pds">"</span>https://mastodon.social<span class="pl-pds">"</span></span>
+<span class="pl-v">MASTODON_INSTANCE_1_TOKEN</span><span class="pl-k">=</span><span class="pl-s"><span class="pl-pds">"</span>YOUR_ACCESS_TOKEN_FOR_MASTODON_SOCIAL<span class="pl-pds">"</span></span>
+<span class="pl-v">MASTODON_INSTANCE_1_DEFAULT</span><span class="pl-k">=</span><span class="pl-s"><span class="pl-pds">"</span>true<span class="pl-pds">"</span></span>
+
+<span class="pl-c"><span class="pl-c">#</span> --- Optional: Web Interface Authentication ---</span>
+<span class="pl-c"><span class="pl-c">#</span> If set, the web UI will require HTTP Basic Auth.</span>
+<span class="pl-c"><span class="pl-c">#</span> Recommended whenever the server is accessible beyond localhost.</span>
+<span class="pl-v">OSINT_WEB_USER</span><span class="pl-k">=</span><span class="pl-s"><span class="pl-pds">"</span>your_username<span class="pl-pds">"</span></span>
+<span class="pl-v">OSINT_WEB_PASSWORD</span><span class="pl-k">=</span><span class="pl-s"><span class="pl-pds">"</span>your_password<span class="pl-pds">"</span></span>
+
+<span class="pl-c"><span class="pl-c">#</span> Security: Media Download Restrictions</span>
+<span class="pl-c"><span class="pl-c">#</span> By default, only trusted CDNs are allowed. Override with additional domains:</span>
+<span class="pl-c"><span class="pl-c">#</span> EXTRA_TWITTER_CDNS="custom.cdn.example.com"</span>
+<span class="pl-c"><span class="pl-c">#</span> EXTRA_REDDIT_CDNS="i.imgur.com,custom.cdn2.com"</span>
+<span class="pl-c"><span class="pl-c">#</span> EXTRA_BLUESKY_CDNS="custom.bsky.cdn.com"</span>
+<span class="pl-c"><span class="pl-c">#</span> EXTRA_MASTODON_CDNS="media.myinstance.org"</span></pre></div>
+<p dir="auto"><em>Note: HackerNews does not require API keys. GitHub can run in a limited, unauthenticated mode but a token is recommended.</em></p>
+<div class="markdown-heading" dir="auto"><h2 class="heading-element" dir="auto">🚀 Usage</h2><a id="user-content--usage" class="anchor" aria-label="Permalink: 🚀 Usage" href="#-usage"></a></div>
+<p dir="auto">There are three ways to run the agent: the <strong>web interface</strong>, the <strong>interactive CLI</strong>, or <strong>programmatic/stdin mode</strong>.</p>
+<div class="markdown-heading" dir="auto"><h3 class="heading-element" dir="auto">Recommended: Web Interface</h3><a id="user-content-recommended-web-interface" class="anchor" aria-label="Permalink: Recommended: Web Interface" href="#recommended-web-interface"></a></div>
+<p dir="auto">The web interface provides a full browser-based UI for managing investigation sessions, running queries, and reviewing past reports.</p>
+<ol dir="auto">
+<li>
+<p dir="auto"><strong>Start the web server:</strong></p>
+<div class="highlight highlight-source-shell notranslate position-relative overflow-auto" dir="auto" data-snippet-clipboard-copy-content="docker compose up -d web"><pre>docker compose up -d web</pre></div>
+<p dir="auto">This builds the image automatically on first run — no separate build step needed.</p>
+</li>
+<li>
+<p dir="auto"><strong>Open the interface:</strong>
+Navigate to <code>http://localhost:8000</code> in your browser.</p>
+</li>
+<li>
+<p dir="auto"><strong>Remote access:</strong>
+The server binds to <code>127.0.0.1</code> (localhost only) by default. To access it from another machine, use an SSH tunnel:</p>
+<div class="highlight highlight-source-shell notranslate position-relative overflow-auto" dir="auto" data-snippet-clipboard-copy-content="ssh -L 8000:localhost:8000 user@your-server"><pre>ssh -L 8000:localhost:8000 user@your-server</pre></div>
+<p dir="auto">Then open <code>http://localhost:8000</code> locally.</p>
+</li>
+<li>
+<p dir="auto"><strong>Authentication:</strong>
+Set <code>OSINT_WEB_USER</code> and <code>OSINT_WEB_PASSWORD</code> in your <code>.env</code> file to enable HTTP Basic Auth. If these are not set, the server runs open — only appropriate for localhost use.</p>
+</li>
+</ol>
+<div class="markdown-heading" dir="auto"><h3 class="heading-element" dir="auto">Docker CLI (Interactive)</h3><a id="user-content-docker-cli-interactive" class="anchor" aria-label="Permalink: Docker CLI (Interactive)" href="#docker-cli-interactive"></a></div>
+<p dir="auto">For terminal-based use, the <code>agent</code> service runs the original interactive CLI. It uses the <code>cli</code> profile so it is excluded from <code>docker compose up</code> and must be run on-demand:</p>
+<div class="highlight highlight-source-shell notranslate position-relative overflow-auto" dir="auto" data-snippet-clipboard-copy-content="# Interactive session (fetches live data)
+docker compose --profile cli run --rm -it agent
+
+# Offline mode — uses only cached data, no network requests other than LLM
+docker compose --profile cli run --rm -it agent --offline
+
+# Override log level inside the container
+docker compose --profile cli run --rm -it agent --log-level DEBUG
+
+# Allow media downloads from non-standard CDNs
+docker compose --profile cli run --rm -it agent --unsafe-allow-external-media"><pre><span class="pl-c"><span class="pl-c">#</span> Interactive session (fetches live data)</span>
+docker compose --profile cli run --rm -it agent
+
+<span class="pl-c"><span class="pl-c">#</span> Offline mode — uses only cached data, no network requests other than LLM</span>
+docker compose --profile cli run --rm -it agent --offline
+
+<span class="pl-c"><span class="pl-c">#</span> Override log level inside the container</span>
+docker compose --profile cli run --rm -it agent --log-level DEBUG
+
+<span class="pl-c"><span class="pl-c">#</span> Allow media downloads from non-standard CDNs</span>
+docker compose --profile cli run --rm -it agent --unsafe-allow-external-media</pre></div>
+<p dir="auto">Offline mode is useful for reviewing previously fetched data without making any API calls. The agent stores its data in <code>./data-agent/</code>, completely separate from the web server's <code>./data-web/</code>.</p>
+<p dir="auto">After each analysis, the CLI displays a <strong>Report Stats</strong> panel showing generation time, LLM token usage (text and vision breakdown), and fetch source counts.</p>
+<div class="markdown-heading" dir="auto"><h3 class="heading-element" dir="auto">Docker CLI (Programmatic / Stdin)</h3><a id="user-content-docker-cli-programmatic--stdin" class="anchor" aria-label="Permalink: Docker CLI (Programmatic / Stdin)" href="#docker-cli-programmatic--stdin"></a></div>
+<p dir="auto">You can pipe a JSON file directly to the agent for automated workflows. <em>Note the use of the <code>-T</code> flag, which is required when piping data into a Docker container.</em></p>
+<div class="highlight highlight-source-shell notranslate position-relative overflow-auto" dir="auto" data-snippet-clipboard-copy-content="docker compose --profile cli run --rm -T agent --stdin &lt; input.json"><pre>docker compose --profile cli run --rm -T agent --stdin <span class="pl-k">&lt;</span> input.json</pre></div>
+<p dir="auto"><em>Example <code>input.json</code>:</em></p>
+<div class="highlight highlight-source-json notranslate position-relative overflow-auto" dir="auto" data-snippet-clipboard-copy-content="{
+  &quot;platforms&quot;: {
+    &quot;twitter&quot;: [&quot;twitterhandle&quot;],
+    &quot;github&quot;: [&quot;torvalds&quot;]
+  },
+  &quot;query&quot;: &quot;What are the primary technical interests and contributions of these users?&quot;,
+  &quot;fetch_options&quot;: {
+    &quot;default_count&quot;: 50
+  }
+}"><pre>{
+  <span class="pl-ent">"platforms"</span>: {
+    <span class="pl-ent">"twitter"</span>: [<span class="pl-s"><span class="pl-pds">"</span>twitterhandle<span class="pl-pds">"</span></span>],
+    <span class="pl-ent">"github"</span>: [<span class="pl-s"><span class="pl-pds">"</span>torvalds<span class="pl-pds">"</span></span>]
+  },
+  <span class="pl-ent">"query"</span>: <span class="pl-s"><span class="pl-pds">"</span>What are the primary technical interests and contributions of these users?<span class="pl-pds">"</span></span>,
+  <span class="pl-ent">"fetch_options"</span>: {
+    <span class="pl-ent">"default_count"</span>: <span class="pl-c1">50</span>
+  }
+}</pre></div>
+<p dir="auto"><em>You can also pipe directly via <code>echo</code>:</em></p>
+<div class="highlight highlight-source-shell notranslate position-relative overflow-auto" dir="auto" data-snippet-clipboard-copy-content="echo '{
+  &quot;platforms&quot;: { &quot;hackernews&quot;: [&quot;pg&quot;] },
+  &quot;query&quot;: &quot;Summary?&quot;
+}' | docker compose --profile cli run --rm -T agent --stdin"><pre><span class="pl-c1">echo</span> <span class="pl-s"><span class="pl-pds">'</span>{</span>
+<span class="pl-s">  "platforms": { "hackernews": ["pg"] },</span>
+<span class="pl-s">  "query": "Summary?"</span>
+<span class="pl-s">}<span class="pl-pds">'</span></span> <span class="pl-k">|</span> docker compose --profile cli run --rm -T agent --stdin</pre></div>
+<div class="markdown-heading" dir="auto"><h3 class="heading-element" dir="auto">The Wrapper Script</h3><a id="user-content-the-wrapper-script" class="anchor" aria-label="Permalink: The Wrapper Script" href="#the-wrapper-script"></a></div>
+<p dir="auto">If typing <code>docker compose ...</code> gets tedious, create a small executable script in your project folder to make the Docker container feel exactly like a native Python CLI.</p>
+<p dir="auto">Create a file named <code>osint</code> (no extension):</p>
+<div class="highlight highlight-source-shell notranslate position-relative overflow-auto" dir="auto" data-snippet-clipboard-copy-content="#!/bin/bash
+# If data is being piped in (like a file), use -T. Otherwise use -it for interactive.
+if [ -t 0 ]; then
+    docker compose --profile cli run --rm -it agent &quot;$@&quot;
+else
+    docker compose --profile cli run --rm -T agent &quot;$@&quot;
+fi"><pre><span class="pl-c"><span class="pl-c">#!</span>/bin/bash</span>
+<span class="pl-c"><span class="pl-c">#</span> If data is being piped in (like a file), use -T. Otherwise use -it for interactive.</span>
+<span class="pl-k">if</span> [ <span class="pl-k">-t</span> 0 ]<span class="pl-k">;</span> <span class="pl-k">then</span>
+    docker compose --profile cli run --rm -it agent <span class="pl-s"><span class="pl-pds">"</span><span class="pl-smi">$@</span><span class="pl-pds">"</span></span>
+<span class="pl-k">else</span>
+    docker compose --profile cli run --rm -T agent <span class="pl-s"><span class="pl-pds">"</span><span class="pl-smi">$@</span><span class="pl-pds">"</span></span>
+<span class="pl-k">fi</span></pre></div>
+<p dir="auto">Make it executable:</p>
+<div class="highlight highlight-source-shell notranslate position-relative overflow-auto" dir="auto" data-snippet-clipboard-copy-content="chmod +x osint"><pre>chmod +x osint</pre></div>
+<p dir="auto">Now you can run the tool beautifully:</p>
+<div class="highlight highlight-source-shell notranslate position-relative overflow-auto" dir="auto" data-snippet-clipboard-copy-content="./osint                             # Interactive menu
+./osint --offline                   # Interactive menu in offline mode
+./osint --stdin &lt; query.json        # Automated JSON mode"><pre>./osint                             <span class="pl-c"><span class="pl-c">#</span> Interactive menu</span>
+./osint --offline                   <span class="pl-c"><span class="pl-c">#</span> Interactive menu in offline mode</span>
+./osint --stdin <span class="pl-k">&lt;</span> query.json        <span class="pl-c"><span class="pl-c">#</span> Automated JSON mode</span></pre></div>
+<div class="markdown-heading" dir="auto"><h3 class="heading-element" dir="auto">Local Development Mode</h3><a id="user-content-local-development-mode" class="anchor" aria-label="Permalink: Local Development Mode" href="#local-development-mode"></a></div>
+<p dir="auto">Useful for development and debugging without Docker.</p>
+<ol dir="auto">
+<li><strong>Create a virtual environment:</strong>
+<div class="highlight highlight-source-shell notranslate position-relative overflow-auto" dir="auto" data-snippet-clipboard-copy-content="python -m venv .venv
+source .venv/bin/activate  # On Windows: .venv\Scripts\activate"><pre>python -m venv .venv
+<span class="pl-c1">source</span> .venv/bin/activate  <span class="pl-c"><span class="pl-c">#</span> On Windows: .venv\Scripts\activate</span></pre></div>
+</li>
+<li><strong>Install dependencies:</strong>
+<div class="highlight highlight-source-shell notranslate position-relative overflow-auto" dir="auto" data-snippet-clipboard-copy-content="pip install -r requirements.txt -r requirements-web.txt
+# For running tests, also install:
+pip install -r requirements-dev.txt"><pre>pip install -r requirements.txt -r requirements-web.txt
+<span class="pl-c"><span class="pl-c">#</span> For running tests, also install:</span>
+pip install -r requirements-dev.txt</pre></div>
+</li>
+<li><strong>Run the web server:</strong>
+<div class="highlight highlight-source-shell notranslate position-relative overflow-auto" dir="auto" data-snippet-clipboard-copy-content="uvicorn socialosintagent.web_server:app --host 127.0.0.1 --port 8000 --reload"><pre>uvicorn socialosintagent.web_server:app --host 127.0.0.1 --port 8000 --reload</pre></div>
+</li>
+<li><strong>Or run the CLI agent:</strong>
+<div class="highlight highlight-source-shell notranslate position-relative overflow-auto" dir="auto" data-snippet-clipboard-copy-content="python -m socialosintagent.main"><pre>python -m socialosintagent.main</pre></div>
+</li>
+</ol>
+<div class="markdown-heading" dir="auto"><h3 class="heading-element" dir="auto">Command-line Arguments (CLI only)</h3><a id="user-content-command-line-arguments-cli-only" class="anchor" aria-label="Permalink: Command-line Arguments (CLI only)" href="#command-line-arguments-cli-only"></a></div>
+<ul dir="auto">
+<li><code>--stdin</code>: Read analysis configuration from standard input as a JSON object.</li>
+<li><code>--format [json|markdown]</code>: Specifies the output format when saving results (default: <code>markdown</code>).</li>
+<li><code>--no-auto-save</code>: Disable automatic saving of reports.</li>
+<li><code>--log-level [DEBUG|INFO|WARNING|ERROR|CRITICAL]</code>: Set the logging level (default: <code>WARNING</code>).</li>
+<li><code>--offline</code>: Run in offline mode. Uses only cached data.</li>
+<li><code>--unsafe-allow-external-media</code>: <strong>Security:</strong> Allow downloading media from domains outside of known social media CDNs.</li>
+</ul>
+<div class="markdown-heading" dir="auto"><h3 class="heading-element" dir="auto">Special Commands (Interactive CLI Mode)</h3><a id="user-content-special-commands-interactive-cli-mode" class="anchor" aria-label="Permalink: Special Commands (Interactive CLI Mode)" href="#special-commands-interactive-cli-mode"></a></div>
+<p dir="auto">Within the analysis session, you can use these commands instead of an analysis query:</p>
+<ul dir="auto">
+<li><code>/loadmore [&lt;platform/user&gt;] &lt;count&gt;</code>: Fetch additional items for a target.</li>
+<li><code>/refresh</code>: Re-fetch data for all targets, ignoring the 24-hour cache.</li>
+<li><code>/add &lt;platform/user[/count]&gt;</code>: Add a new target to the current session.</li>
+<li><code>/remove &lt;platform/user&gt;</code>: Remove a target from the current session.</li>
+<li><code>/status</code>: Show all active targets with post counts and cache freshness.</li>
+<li><code>/help</code>: Displays available commands.</li>
+<li><code>/exit</code>: Returns to the main platform selection menu.</li>
+</ul>
+<div class="markdown-heading" dir="auto"><h2 class="heading-element" dir="auto">⚡ Cache System</h2><a id="user-content--cache-system" class="anchor" aria-label="Permalink: ⚡ Cache System" href="#-cache-system"></a></div>
+<ul dir="auto">
+<li><strong>Text/API Data:</strong> Fetched platform data is cached for <strong>24 hours</strong> as JSON files (<code>data-web/cache/</code> for web, <code>data-agent/cache/</code> for CLI).</li>
+<li><strong>Media Files:</strong> Downloaded images and media are stored in <code>data-web/media/</code> or <code>data-agent/media/</code>.</li>
+<li><strong>Vision Analysis:</strong> AI-generated image analyses are saved back into the corresponding user's cache file, preventing re-analysis of the same image.</li>
+<li>Each service has its own isolated data directory — cached data is not shared between web and CLI.</li>
+<li>Use <code>/refresh</code> in the CLI or the "force refresh" toggle in the web UI to bypass the cache. Use "Purge All" in the web UI or "Purge Data" in the CLI to clear media files.</li>
+</ul>
+<div class="markdown-heading" dir="auto"><h2 class="heading-element" dir="auto">🤖 AI Analysis Details</h2><a id="user-content--ai-analysis-details" class="anchor" aria-label="Permalink: 🤖 AI Analysis Details" href="#-ai-analysis-details"></a></div>
+<ul dir="auto">
+<li><strong>Efficient Architecture:</strong> The agent uses a two-phase process. It first rapidly collects all text data and downloads media from all specified targets. Only after this data gathering is complete does it begin the vision analysis phase.</li>
+<li><strong>Post-Bound Evidence:</strong> Text and image analyses are kept together as atomic evidence units in the LLM prompt. A post saying "going on holiday" paired with a beach photo conveys different intelligence than the same text paired with a military facility — splitting text and vision into separate blocks would lose that binding.</li>
+<li><strong>Externalized Prompts:</strong> All prompts used to guide the LLM are stored in the <code>socialosintagent/prompts/</code> directory, allowing for easy customization without changing code.</li>
+<li><strong>Accurate Timestamps:</strong> The tool injects the current, real-world UTC timestamp into the analysis prompt.</li>
+<li><strong>Generation Stats:</strong> Each report records its total generation time (seconds) and LLM token usage (text and vision breakdown). These stats are displayed in the web UI report header and in the CLI after each analysis completes.</li>
+<li><strong>Data Synthesis:</strong> The final analysis is performed by an LLM guided by a detailed system prompt. It synthesizes insights from the user's text, image analyses, and shared domain summary to build a comprehensive profile.</li>
+<li><strong>Intelligence Selectors:</strong> At the end of each analysis the LLM extracts structured selectors (locations, emails, phone numbers, cryptocurrency addresses, aliases) into a dedicated JSON block, which is surfaced separately in the web UI Entities panel.</li>
+</ul>
+<div class="markdown-heading" dir="auto"><h2 class="heading-element" dir="auto">🌐 REST API</h2><a id="user-content--rest-api" class="anchor" aria-label="Permalink: 🌐 REST API" href="#-rest-api"></a></div>
+<p dir="auto">The web server exposes a versioned REST API at <code>/api/v1/</code> that powers the frontend. The same endpoints are available for programmatic or headless use. Interactive documentation is served at <code>/api/docs</code> (Swagger UI) and <code>/api/redoc</code>.</p>
+<markdown-accessiblity-table><table>
+<thead>
+<tr>
+<th>Method</th>
+<th>Path</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>GET</code></td>
+<td><code>/api/v1/platforms</code></td>
+<td>List configured platforms and their availability</td>
+</tr>
+<tr>
+<td><code>GET</code></td>
+<td><code>/api/v1/sessions</code></td>
+<td>List all sessions (summaries)</td>
+</tr>
+<tr>
+<td><code>POST</code></td>
+<td><code>/api/v1/sessions</code></td>
+<td>Create a new session</td>
+</tr>
+<tr>
+<td><code>GET</code></td>
+<td><code>/api/v1/sessions/{id}</code></td>
+<td>Get full session (includes query history)</td>
+</tr>
+<tr>
+<td><code>DELETE</code></td>
+<td><code>/api/v1/sessions/{id}</code></td>
+<td>Delete a session</td>
+</tr>
+<tr>
+<td><code>PATCH</code></td>
+<td><code>/api/v1/sessions/{id}/rename</code></td>
+<td>Rename a session</td>
+</tr>
+<tr>
+<td><code>PUT</code></td>
+<td><code>/api/v1/sessions/{id}/targets</code></td>
+<td>Replace session targets</td>
+</tr>
+<tr>
+<td><code>POST</code></td>
+<td><code>/api/v1/sessions/{id}/analyse</code></td>
+<td>Start an analysis job (returns <code>job_id</code>)</td>
+</tr>
+<tr>
+<td><code>GET</code></td>
+<td><code>/api/v1/jobs/{job_id}</code></td>
+<td>Poll job status</td>
+</tr>
+<tr>
+<td><code>GET</code></td>
+<td><code>/api/v1/jobs/{job_id}/stream</code></td>
+<td>SSE stream of live job progress</td>
+</tr>
+<tr>
+<td><code>GET</code></td>
+<td><code>/api/v1/sessions/{id}/contacts</code></td>
+<td>Discovered network contacts</td>
+</tr>
+<tr>
+<td><code>POST</code></td>
+<td><code>/api/v1/sessions/{id}/contacts/dismiss</code></td>
+<td>Dismiss a contact</td>
+</tr>
+<tr>
+<td><code>POST</code></td>
+<td><code>/api/v1/sessions/{id}/contacts/undismiss</code></td>
+<td>Restore a dismissed contact</td>
+</tr>
+<tr>
+<td><code>GET</code></td>
+<td><code>/api/v1/sessions/{id}/timeline</code></td>
+<td>Post timestamps for charting</td>
+</tr>
+<tr>
+<td><code>GET</code></td>
+<td><code>/api/v1/sessions/{id}/media</code></td>
+<td>Downloaded media paths and analyses</td>
+</tr>
+<tr>
+<td><code>GET</code></td>
+<td><code>/api/v1/sessions/{id}/media/file</code></td>
+<td>Serve a local media file</td>
+</tr>
+<tr>
+<td><code>GET</code></td>
+<td><code>/api/v1/sessions/{id}/export</code></td>
+<td>Export full session as JSON</td>
+</tr>
+<tr>
+<td><code>GET</code></td>
+<td><code>/api/v1/cache</code></td>
+<td>Cache status (all entries)</td>
+</tr>
+<tr>
+<td><code>POST</code></td>
+<td><code>/api/v1/cache/purge</code></td>
+<td>Purge cache/media/outputs</td>
+</tr>
+</tbody>
+</table></markdown-accessiblity-table>
+<div class="markdown-heading" dir="auto"><h2 class="heading-element" dir="auto">🛡️ Error Handling &amp; Resilience</h2><a id="user-content-️-error-handling--resilience" class="anchor" aria-label="Permalink: 🛡️ Error Handling &amp; Resilience" href="#️-error-handling--resilience"></a></div>
+<ul dir="auto">
+<li><strong>Individual Target Failures</strong>: If one user's data can't be fetched (deleted account, rate limit, permissions), analysis continues for other targets</li>
+<li><strong>Image Analysis Failures</strong>: Individual image processing errors don't stop the entire vision analysis batch</li>
+<li><strong>Rate Limit Management</strong>: The agent detects rate limits, provides informative feedback with reset times, and continues with cached data when available</li>
+<li><strong>Partial Results</strong>: You'll receive analysis based on whatever data was successfully collected, with clear indication of any failures</li>
+</ul>
+<div class="markdown-heading" dir="auto"><h2 class="heading-element" dir="auto">🔒 Security Considerations</h2><a id="user-content--security-considerations" class="anchor" aria-label="Permalink: 🔒 Security Considerations" href="#-security-considerations"></a></div>
+<ul dir="auto">
+<li><strong>API Keys:</strong> All secrets should be stored in the <code>.env</code> file and <strong>never</strong> committed to version control.</li>
+<li><strong>Web Authentication:</strong> Set <code>OSINT_WEB_USER</code> and <code>OSINT_WEB_PASSWORD</code> to enable Basic Auth on the web interface. Without these, the server runs open — only suitable for localhost access via SSH tunnel.</li>
+<li><strong>Network Exposure:</strong> The web server binds to <code>127.0.0.1</code> by default. Do not change this to <code>0.0.0.0</code> on a public server without also enabling authentication and placing it behind a reverse proxy with TLS.</li>
+<li><strong>Container Hardening:</strong> Both Docker images run as a non-root <code>appuser</code> user. Platform names and usernames are validated against an allow-list and sanitized before being used in file paths to prevent directory traversal.</li>
+<li><strong>Media Downloads:</strong> By default, images are only downloaded from known platform CDNs. Use <code>--unsafe-allow-external-media</code> (CLI) or the equivalent fetch option to override this when targets use custom hosting.</li>
+<li><strong>Data Caching:</strong> Fetched data and downloaded media are stored locally in <code>data-web/</code> (web) and <code>data-agent/</code> (CLI). Secure these directories appropriately given the sensitivity of the subjects being investigated.</li>
+<li><strong>Terms of Service:</strong> Ensure your use of the tool complies with the Terms of Service of each social media platform and your chosen LLM API provider.</li>
+</ul>
+<div class="markdown-heading" dir="auto"><h2 class="heading-element" dir="auto">🤝 Contributing</h2><a id="user-content--contributing" class="anchor" aria-label="Permalink: 🤝 Contributing" href="#-contributing"></a></div>
+<p dir="auto">Contributions are welcome! Please feel free to submit pull requests, report issues, or suggest enhancements via the project's issue tracker.</p>
+<div class="markdown-heading" dir="auto"><h2 class="heading-element" dir="auto">📜 License</h2><a id="user-content--license" class="anchor" aria-label="Permalink: 📜 License" href="#-license"></a></div>
+<p dir="auto">This project is licensed under the <strong>MIT License</strong>.</p>
+        </div>
+      </section>
+
+      <footer>LeadScaper Platform — OWASP SocialOSINTAgent</footer>
+    </main>
+  </div>
+</body>
+</html>

@@ -1,0 +1,574 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Agent-X (TuitBot) — LeadScaper</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="header-inner">
+      <a class="logo" href="../index.html">
+        <span class="logo-icon">✦</span>
+        LeadScaper
+      </a>
+      <div class="header-actions">
+        <button class="btn-icon" type="button">⚙</button>
+      </div>
+    </div>
+  </header>
+
+  <div class="layout tool-page">
+    <main class="main">
+      <a class="back-link" href="../index.html">← Назад к архитектуре</a>
+
+      <div class="hero-card hero-card-accent tool-hero">
+        <div class="tool-icon">4.1</div>
+        <div class="tool-hero-body">
+          <div class="hero-stat-label">Слой 4 · Вовлечение в соцсетях</div>
+          <h1 class="hero-stat-value tool-hero-title">Agent-X (TuitBot)</h1>
+          <p class="hero-stat-sub">Мониторинг ключевых слов, AI-ответы на посты с одобрением</p>
+          <a class="btn-external" href="https://github.com/aramirez087/TuitBot" target="_blank" rel="noopener">
+            Открыть на GitHub →
+          </a>
+        </div>
+      </div>
+
+      <section class="panel">
+        <div class="panel-head">
+          <div class="panel-tag">GitHub</div>
+          <h2 class="panel-title">Описание</h2>
+        </div>
+
+        <div class="tool-stats">
+          <div class="tool-stat"><span class="tool-stat-label">Репозиторий</span><span class="tool-stat-value">aramirez087/TuitBot</span></div>
+          <div class="tool-stat"><span class="tool-stat-label">Stars</span><span class="tool-stat-value">3</span></div>
+          <div class="tool-stat"><span class="tool-stat-label">Язык</span><span class="tool-stat-value">Rust</span></div>
+          <div class="tool-stat"><span class="tool-stat-label">Источник данных</span><span class="tool-stat-value">X (Twitter)</span></div>
+          <div class="tool-stat"><span class="tool-stat-label">Платформа</span><span class="tool-stat-value">X (Twitter)</span></div>
+        </div>
+
+        <div class="readme-content">
+          <div align="center" dir="auto">
+<a target="_blank" rel="noopener noreferrer" href="assets/logo.svg"><img src="assets/logo.svg" alt="Tuitbot Logo" width="120" style="max-width: 100%;"></a>
+<div class="markdown-heading" dir="auto"><h1 class="heading-element" dir="auto">Tuitbot</h1><a id="user-content-tuitbot" class="anchor" aria-label="Permalink: Tuitbot" href="#tuitbot"></a></div>
+<p dir="auto"><strong>Your AI-powered X (Twitter) growth co-pilot.</strong></p>
+<p dir="auto"><a href="https://www.rust-lang.org/" rel="nofollow"><img src="https://camo.githubusercontent.com/1b35b85bcfdc6d82aa11dcd8ff25c1fb97b240c339239b4ac6b765b66ff2be14/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f6275696c745f776974682d527573742d6433323832323f7374796c653d666f722d7468652d6261646765266c6f676f3d72757374" alt="Rust" data-canonical-src="https://img.shields.io/badge/built_with-Rust-d32822?style=for-the-badge&amp;logo=rust" style="max-width: 100%;"></a>
+<a href="https://opensource.org/licenses/MIT" rel="nofollow"><img src="https://camo.githubusercontent.com/1736263e7abccd5448e130c257555354792cbceae6b18535e86d6157f95b906f/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f4c6963656e73652d4d49542d626c75653f7374796c653d666f722d7468652d6261646765" alt="License: MIT" data-canonical-src="https://img.shields.io/badge/License-MIT-blue?style=for-the-badge" style="max-width: 100%;"></a>
+<a href="https://developer.x.com" rel="nofollow"><img src="https://camo.githubusercontent.com/e4cf2035010bb4aac3796b02cf8ebeaad0cb35e6fc3ed2b3b74e433aa6f5c188/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f585f4150492d52656164792d626c61636b3f7374796c653d666f722d7468652d6261646765266c6f676f3d78" alt="X API" data-canonical-src="https://img.shields.io/badge/X_API-Ready-black?style=for-the-badge&amp;logo=x" style="max-width: 100%;"></a>
+<a href="https://github.com/aramirez087/TuitBot/actions/workflows/ci.yml"><img src="https://camo.githubusercontent.com/f982f9c399e9e8b564c1dfdf8a5636c107c6aefaf1bb74a777c1849067af55f5/68747470733a2f2f696d672e736869656c64732e696f2f6769746875622f616374696f6e732f776f726b666c6f772f7374617475732f6172616d6972657a3038372f54756974426f742f63692e796d6c3f6272616e63683d6d61696e267374796c653d666f722d7468652d6261646765266c6162656c3d4349" alt="CI" data-canonical-src="https://img.shields.io/github/actions/workflow/status/aramirez087/TuitBot/ci.yml?branch=main&amp;style=for-the-badge&amp;label=CI" style="max-width: 100%;"></a>
+<a href="https://codecov.io/gh/aramirez087/TuitBot" rel="nofollow"><img src="https://camo.githubusercontent.com/fc84c3e46a87fade6b17f290b82df65a79d1d6188a9fc6ed7f6eddf4dd4f5dbd/68747470733a2f2f636f6465636f762e696f2f67682f6172616d6972657a3038372f54756974426f742f6272616e63682f6d61696e2f67726170682f62616467652e7376673f7374796c653d666f722d7468652d6261646765" alt="codecov" data-canonical-src="https://codecov.io/gh/aramirez087/TuitBot/branch/main/graph/badge.svg?style=for-the-badge" style="max-width: 100%;"></a>
+<a href="https://github.com/aramirez087/TuitBot/releases"><img src="https://camo.githubusercontent.com/950aa4108ace665c02e87b534608b5444a0b41ef6a7e611e4472bf5bbaf29026/68747470733a2f2f696d672e736869656c64732e696f2f6769746875622f762f72656c656173652f6172616d6972657a3038372f54756974426f743f7374796c653d666f722d7468652d6261646765" alt="Releases" data-canonical-src="https://img.shields.io/github/v/release/aramirez087/TuitBot?style=for-the-badge" style="max-width: 100%;"></a></p>
+<p dir="auto">Tuitbot discovers relevant conversations, drafts genuinely helpful replies, and queues everything for your review. When you're ready, flip the switch to let it post autonomously within strict safety guardrails. <strong>Think of it as a growth-focused writing partner</strong> that handles the research so you can focus on building.</p>
+<p dir="auto">Built for <strong>founders</strong>, <strong>indie hackers</strong>, and <strong>solo makers</strong> who'd rather build their product than spend hours on X.</p>
+<p dir="auto"><a href="#mcp-setup">MCP Setup</a> · <a href="#growth-co-pilot">Growth Co-Pilot</a> · <a href="#features">Features</a> · <a href="#getting-started">Getting Started</a> · <a href="https://aramirez087.github.io/TuitBot/" rel="nofollow">Full Docs</a></p>
+</div>
+<hr>
+<div class="markdown-heading" dir="auto"><h2 class="heading-element" dir="auto">Choose Your Path</h2><a id="user-content-choose-your-path" class="anchor" aria-label="Permalink: Choose Your Path" href="#choose-your-path"></a></div>
+<markdown-accessiblity-table><table>
+<thead>
+<tr>
+<th>I want…</th>
+<th>Start here</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>X API tools for my AI assistant</strong> (Claude Code, Cursor, etc.)</td>
+<td><a href="#mcp-setup">MCP Setup</a> — 2 commands</td>
+</tr>
+<tr>
+<td><strong>An autonomous growth co-pilot</strong> (desktop app, CLI, self-hosted)</td>
+<td><a href="#growth-co-pilot">Growth Co-Pilot</a></td>
+</tr>
+<tr>
+<td><strong>Try without an X API key</strong> (discovery + drafting, no posting)</td>
+<td><a href="#5-local-no-key-mode-no-x-api-credentials">Local No-Key Mode</a></td>
+</tr>
+</tbody>
+</table></markdown-accessiblity-table>
+<hr>
+<div class="markdown-heading" dir="auto"><h2 class="heading-element" dir="auto">MCP Setup</h2><a id="user-content-mcp-setup" class="anchor" aria-label="Permalink: MCP Setup" href="#mcp-setup"></a></div>
+<p dir="auto">Tuitbot's MCP server exposes up to <strong>140 typed tools</strong> covering the X API v2 public surface plus enterprise APIs (DMs, Ads, Compliance, Stream Rules) — ready for Claude Code, Cursor, or any MCP-compatible agent.</p>
+<p dir="auto"><strong>Install:</strong></p>
+<div class="highlight highlight-source-shell notranslate position-relative overflow-auto" dir="auto" data-snippet-clipboard-copy-content="# One-liner (Linux / macOS) — detects OS/arch, verifies SHA256, installs to PATH
+curl -fsSL https://raw.githubusercontent.com/aramirez087/TuitBot/main/scripts/install.sh | bash"><pre><span class="pl-c"><span class="pl-c">#</span> One-liner (Linux / macOS) — detects OS/arch, verifies SHA256, installs to PATH</span>
+curl -fsSL https://raw.githubusercontent.com/aramirez087/TuitBot/main/scripts/install.sh <span class="pl-k">|</span> bash</pre></div>
+<div class="highlight highlight-source-shell notranslate position-relative overflow-auto" dir="auto" data-snippet-clipboard-copy-content="cargo install tuitbot-cli --locked   # or grab a binary from Releases"><pre>cargo install tuitbot-cli --locked   <span class="pl-c"><span class="pl-c">#</span> or grab a binary from Releases</span></pre></div>
+<p dir="auto"><strong>Interactive setup (recommended — auto-registers with Claude Code):</strong></p>
+<div class="highlight highlight-source-shell notranslate position-relative overflow-auto" dir="auto" data-snippet-clipboard-copy-content="tuitbot mcp setup"><pre>tuitbot mcp setup</pre></div>
+<p dir="auto">Walks you through config → X API auth → Claude Code registration in one command.</p>
+<p dir="auto"><strong>Non-interactive one-liner:</strong></p>
+<div class="highlight highlight-source-shell notranslate position-relative overflow-auto" dir="auto" data-snippet-clipboard-copy-content="claude mcp add -s user -e TUITBOT_X_API__CLIENT_ID=your_client_id tuitbot -- tuitbot mcp serve"><pre>claude mcp add -s user -e TUITBOT_X_API__CLIENT_ID=your_client_id tuitbot -- tuitbot mcp serve</pre></div>
+<p dir="auto"><strong>Profiles:</strong></p>
+<markdown-accessiblity-table><table>
+<thead>
+<tr>
+<th>Profile</th>
+<th>Flag</th>
+<th>Tools</th>
+<th>Use case</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Write</strong> (default)</td>
+<td><em>(none)</em></td>
+<td>112</td>
+<td>Full growth co-pilot: reads, writes, DMs, analytics, content gen</td>
+</tr>
+<tr>
+<td><strong>Admin</strong></td>
+<td><code>--profile admin</code></td>
+<td>139</td>
+<td>Superset of Write — adds Ads API, Compliance, Stream Rules</td>
+</tr>
+<tr>
+<td><strong>API read-only</strong></td>
+<td><code>--profile api-readonly</code></td>
+<td>45</td>
+<td>X API reads + DM reads, no mutations</td>
+</tr>
+<tr>
+<td><strong>Read-only</strong></td>
+<td><code>--profile readonly</code></td>
+<td>14</td>
+<td>Read-only X tools + config and health — no mutations</td>
+</tr>
+</tbody>
+</table></markdown-accessiblity-table>
+<p dir="auto"><strong>Example Claude Code config (Write — default):</strong></p>
+<div class="highlight highlight-source-json notranslate position-relative overflow-auto" dir="auto" data-snippet-clipboard-copy-content="{
+  &quot;mcpServers&quot;: {
+    &quot;tuitbot&quot;: {
+      &quot;command&quot;: &quot;tuitbot&quot;,
+      &quot;args&quot;: [&quot;mcp&quot;, &quot;serve&quot;]
+    }
+  }
+}"><pre>{
+  <span class="pl-ent">"mcpServers"</span>: {
+    <span class="pl-ent">"tuitbot"</span>: {
+      <span class="pl-ent">"command"</span>: <span class="pl-s"><span class="pl-pds">"</span>tuitbot<span class="pl-pds">"</span></span>,
+      <span class="pl-ent">"args"</span>: [<span class="pl-s"><span class="pl-pds">"</span>mcp<span class="pl-pds">"</span></span>, <span class="pl-s"><span class="pl-pds">"</span>serve<span class="pl-pds">"</span></span>]
+    }
+  }
+}</pre></div>
+<p dir="auto">Full tool reference, response envelopes, and enterprise APIs → <a href="https://aramirez087.github.io/TuitBot/mcp-reference/" rel="nofollow">MCP Reference</a>.</p>
+<hr>
+<div class="markdown-heading" dir="auto"><h2 class="heading-element" dir="auto">Growth Co-Pilot</h2><a id="user-content-growth-co-pilot" class="anchor" aria-label="Permalink: Growth Co-Pilot" href="#growth-co-pilot"></a></div>
+<div class="markdown-heading" dir="auto"><h3 class="heading-element" dir="auto">Deployment Modes</h3><a id="user-content-deployment-modes" class="anchor" aria-label="Permalink: Deployment Modes" href="#deployment-modes"></a></div>
+<p dir="auto">Tuitbot supports multiple ways to run — all using the exact same core automation engine:</p>
+<markdown-accessiblity-table><table>
+<thead>
+<tr>
+<th>Mode</th>
+<th>How it runs</th>
+<th>Dashboard access</th>
+<th>Best for</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Desktop App</strong></td>
+<td>Native window (Tauri) on macOS/Windows.</td>
+<td>Built-in native UI</td>
+<td>Users who want a beautiful app with point-and-click settings.</td>
+</tr>
+<tr>
+<td><strong>LAN Mode</strong></td>
+<td>Server on a local machine (Pi, NAS, spare laptop). <code>--host 0.0.0.0</code></td>
+<td>Browser → <code>http://&lt;server-ip&gt;:3001</code></td>
+<td>Access from any device on your network without keeping a laptop open.</td>
+</tr>
+<tr>
+<td><strong>Self-Hosted</strong></td>
+<td><code>docker compose up</code> on a VPS.</td>
+<td>Browser → <code>http://localhost:3001</code></td>
+<td>Technical users who want 24/7 automation and full control.</td>
+</tr>
+<tr>
+<td><strong>Cloud Tier</strong></td>
+<td>Fully managed by us.</td>
+<td>Browser → <code>app.tuitbot.dev</code></td>
+<td>Zero setup, always-on automation.</td>
+</tr>
+</tbody>
+</table></markdown-accessiblity-table>
+<div class="markdown-heading" dir="auto"><h3 class="heading-element" dir="auto">Desktop App (Native GUI)</h3><a id="user-content-desktop-app-native-gui" class="anchor" aria-label="Permalink: Desktop App (Native GUI)" href="#desktop-app-native-gui"></a></div>
+<p dir="auto">The easiest way to use Tuitbot. Built with Tauri and SvelteKit, the desktop app provides a beautiful, data-rich dashboard:</p>
+<ul dir="auto">
+<li><strong>Analytics:</strong> 30-day follower charts, engagement stats, and top-performing topics.</li>
+<li><strong>Visual Approval Queue:</strong> Edit, review, and manually approve AI-generated replies and tweets.</li>
+<li><strong>Content Calendar:</strong> Schedule threads and tweets visually alongside autonomous content.</li>
+<li><strong>Target Accounts Manager:</strong> Track relationships and view interaction history.</li>
+<li><strong>Settings Editor:</strong> Configure your business profile, adjust LLM settings, and manipulate the 6-signal scoring engine without touching a <code>.toml</code> file.</li>
+<li><strong>Strategy Dashboard:</strong> Weekly growth scorecard with follower trends, reply acceptance rates, top/bottom topics, and AI-generated recommendations for what to post more (or less) of.</li>
+</ul>
+<div class="markdown-heading" dir="auto"><h3 class="heading-element" dir="auto">CLI &amp; Scheduler-Driven Modes</h3><a id="user-content-cli--scheduler-driven-modes" class="anchor" aria-label="Permalink: CLI &amp; Scheduler-Driven Modes" href="#cli--scheduler-driven-modes"></a></div>
+<p dir="auto">For power users and self-hosters, Tuitbot still provides the robust <code>tuitbot-cli</code>:</p>
+<ul dir="auto">
+<li><code>tuitbot run</code>: Long-running daemon with internal scheduling.</li>
+<li><code>tuitbot tick</code>: Idempotent execution for external schedulers (cron, systemd, OpenClaw).</li>
+</ul>
+<hr>
+<div class="markdown-heading" dir="auto"><h2 class="heading-element" dir="auto">Features</h2><a id="user-content-features" class="anchor" aria-label="Permalink: Features" href="#features"></a></div>
+<p dir="auto">Tuitbot runs background loops — discovering conversations, drafting content, and routing everything through your approval queue (or posting automatically in Autopilot mode). You can monitor all of this through the <strong>Dashboard's Live Activity Feed</strong>, which provides real-time visibility into the AI's decision-making process.</p>
+<div class="markdown-heading" dir="auto"><h3 class="heading-element" dir="auto">1. Finds Conversations That Matter</h3><a id="user-content-1-finds-conversations-that-matter" class="anchor" aria-label="Permalink: 1. Finds Conversations That Matter" href="#1-finds-conversations-that-matter"></a></div>
+<p dir="auto">Searches X for tweets matching your product's keywords. Tuitbot uses a <strong>6-signal scoring engine</strong> (configurable via the GUI) to find the perfect interactions:</p>
+<ul dir="auto">
+<li><strong>Keyword relevance</strong> · <strong>Follower sweet spot (1K-5K)</strong> · <strong>Recency</strong> · <strong>Engagement rate</strong> · <strong>Reply count</strong> · <strong>Content type</strong>.</li>
+</ul>
+<div class="markdown-heading" dir="auto"><h3 class="heading-element" dir="auto">2. Replies With Genuinely Helpful Content</h3><a id="user-content-2-replies-with-genuinely-helpful-content" class="anchor" aria-label="Permalink: 2. Replies With Genuinely Helpful Content" href="#2-replies-with-genuinely-helpful-content"></a></div>
+<p dir="auto">When it finds a high-scoring tweet, Tuitbot drafts a natural, helpful reply and queues it for your review. In the <strong>Visual Approval Queue</strong>, you can edit, approve, or reject before anything is posted. (In Autopost Mode, replies post automatically within your configured limits.)</p>
+<div class="markdown-heading" dir="auto"><h3 class="heading-element" dir="auto">3. Posts Educational Tweets &amp; Threads</h3><a id="user-content-3-posts-educational-tweets--threads" class="anchor" aria-label="Permalink: 3. Posts Educational Tweets &amp; Threads" href="#3-posts-educational-tweets--threads"></a></div>
+<p dir="auto">Tuitbot posts original tweets and weekly threads. Through the <strong>Content Calendar</strong>, you can visualize scheduled autonomous posts and compose your own manual tweets to interleave with the AI-generated content.</p>
+<div class="markdown-heading" dir="auto"><h3 class="heading-element" dir="auto">4. Monitors Mentions &amp; Tracks Targets</h3><a id="user-content-4-monitors-mentions--tracks-targets" class="anchor" aria-label="Permalink: 4. Monitors Mentions &amp; Tracks Targets" href="#4-monitors-mentions--tracks-targets"></a></div>
+<ul dir="auto">
+<li>Drafts thoughtful replies when someone @-mentions you, queued for your review.</li>
+<li>Uses the <strong>Target Accounts CRM</strong> to monitor specific people, build relationships over time, and visually track interaction history.</li>
+</ul>
+<div class="markdown-heading" dir="auto"><h3 class="heading-element" dir="auto">5. Rich Analytics</h3><a id="user-content-5-rich-analytics" class="anchor" aria-label="Permalink: 5. Rich Analytics" href="#5-rich-analytics"></a></div>
+<p dir="auto">Snapshots your follower count daily and measures engagement after 24 hours. The <strong>Analytics Dashboard</strong> visualizes this data with beautiful charts and top-performing topic breakdowns.</p>
+<div class="markdown-heading" dir="auto"><h3 class="heading-element" dir="auto">6. Weekly Strategy Reports</h3><a id="user-content-6-weekly-strategy-reports" class="anchor" aria-label="Permalink: 6. Weekly Strategy Reports" href="#6-weekly-strategy-reports"></a></div>
+<p dir="auto">Tuitbot generates a weekly scorecard that aggregates your engagement data into actionable insights. The <strong>Strategy Dashboard</strong> shows your growth loop — inputs, engine, outputs, and metrics — in a single view. An 8-rule recommendation engine automatically identifies winning topics to double down on, underperformers to cut, follower stalls, and engagement regressions.</p>
+<div class="markdown-heading" dir="auto"><h3 class="heading-element" dir="auto">7. Composer Mode: AI-Assisted Writing</h3><a id="user-content-7-composer-mode-ai-assisted-writing" class="anchor" aria-label="Permalink: 7. Composer Mode: AI-Assisted Writing" href="#7-composer-mode-ai-assisted-writing"></a></div>
+<p dir="auto">When you want to stay in the driver's seat, switch to Composer mode for a hands-on writing experience powered by the same AI engine:</p>
+<ul dir="auto">
+<li><strong>AI Assist</strong> — generate tweets, replies, and threads on demand; improve existing drafts with one click.</li>
+<li><strong>Draft System</strong> — create, edit, schedule, and publish content at your own pace.</li>
+<li><strong>Discovery Feed</strong> — browse scored conversations and compose replies manually instead of letting the agent queue them.</li>
+</ul>
+<hr>
+<div class="markdown-heading" dir="auto"><h2 class="heading-element" dir="auto">Two Operating Modes</h2><a id="user-content-two-operating-modes" class="anchor" aria-label="Permalink: Two Operating Modes" href="#two-operating-modes"></a></div>
+<markdown-accessiblity-table><table>
+<thead>
+<tr>
+<th>Mode</th>
+<th>Behavior</th>
+<th>Recommended for</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Autopilot</strong> (default)</td>
+<td>Discovers conversations and drafts content autonomously. Posts automatically when <code>approval_mode = false</code>, or queues for review when <code>approval_mode = true</code>.</td>
+<td>Established accounts that trust the AI's tone.</td>
+</tr>
+<tr>
+<td><strong>Composer</strong></td>
+<td>Autonomous loops are disabled. Discovery runs read-only to feed the Discovery Feed. Approval mode is always on. You write and schedule content with AI Assist, drafts, and the Discovery Feed.</td>
+<td>New accounts, cautious users, anyone who wants full creative control.</td>
+</tr>
+</tbody>
+</table></markdown-accessiblity-table>
+<div class="highlight highlight-source-toml notranslate position-relative overflow-auto" dir="auto" data-snippet-clipboard-copy-content="# config.toml
+mode = &quot;composer&quot;   # or &quot;autopilot&quot; (default)"><pre><span class="pl-c"><span class="pl-c">#</span> config.toml</span>
+<span class="pl-smi">mode</span> = <span class="pl-s"><span class="pl-pds">"</span>composer<span class="pl-pds">"</span></span>   <span class="pl-c"><span class="pl-c">#</span> or "autopilot" (default)</span></pre></div>
+<p dir="auto"><strong>Start in Composer mode.</strong> Graduate to Autopilot after you've reviewed enough AI-generated content to trust the tone and quality. You can switch between modes at any time without losing drafts, scheduled posts, or approval queue items.</p>
+<hr>
+<div class="markdown-heading" dir="auto"><h2 class="heading-element" dir="auto">Built-In Safety &amp; Anti-Spam</h2><a id="user-content-built-in-safety--anti-spam" class="anchor" aria-label="Permalink: Built-In Safety &amp; Anti-Spam" href="#built-in-safety--anti-spam"></a></div>
+<p dir="auto">Tuitbot is engineered to keep your account safe and maintain your reputation:</p>
+<markdown-accessiblity-table><table>
+<thead>
+<tr>
+<th>Feature</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Approval Mode</strong></td>
+<td>Enabled by default — all posts are queued for human review before posting. Always on in Composer mode.</td>
+</tr>
+<tr>
+<td><strong>Conservative Limits</strong></td>
+<td>Defaults to <strong>5 replies/day</strong>, <strong>6 tweets/day</strong>, <strong>1 thread/week</strong>.</td>
+</tr>
+<tr>
+<td><strong>Anti-Harassment</strong></td>
+<td>Maximum 1 reply per author per day.</td>
+</tr>
+<tr>
+<td><strong>Spam Filter</strong></td>
+<td>Automatically blocks replies containing salesy phrases.</td>
+</tr>
+<tr>
+<td><strong>Active Hours</strong></td>
+<td>Sleeps completely outside your active hours (default 8 AM - 10 PM).</td>
+</tr>
+<tr>
+<td><strong>Human-like Jitter</strong></td>
+<td>Intervals and post delays are randomized (45-180s), matching natural human posting cadence.</td>
+</tr>
+<tr>
+<td><strong>Deduplication</strong></td>
+<td>Never replies to the same tweet twice; detects and prevents repetitive phrasing.</td>
+</tr>
+<tr>
+<td><strong>Process Lock</strong></td>
+<td>Only one instance runs at a time — no accidental double-posting.</td>
+</tr>
+</tbody>
+</table></markdown-accessiblity-table>
+<hr>
+<div class="markdown-heading" dir="auto"><h2 class="heading-element" dir="auto">X Platform Compliance</h2><a id="user-content-x-platform-compliance" class="anchor" aria-label="Permalink: X Platform Compliance" href="#x-platform-compliance"></a></div>
+<p dir="auto">Tuitbot is designed to operate within X's <a href="https://help.x.com/en/rules-and-policies/x-automation" rel="nofollow">Automation Rules</a> and <a href="https://developer.x.com/en/developer-terms/agreement-and-policy" rel="nofollow">Developer Agreement</a>. The following behaviors are <strong>not implemented and never will be</strong>:</p>
+<markdown-accessiblity-table><table>
+<thead>
+<tr>
+<th>Forbidden behavior</th>
+<th>How Tuitbot prevents it</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Auto-follow / auto-like / auto-retweet</strong></td>
+<td>Not in the codebase. Tuitbot only posts original text content.</td>
+</tr>
+<tr>
+<td><strong>Trend-jacking</strong></td>
+<td>Discovery uses your configured keywords only — never the Trending API.</td>
+</tr>
+<tr>
+<td><strong>Duplicate or near-duplicate content</strong></td>
+<td>The dedup engine (Jaccard similarity &gt;= 0.8) blocks repetitive phrasing across all posts.</td>
+</tr>
+<tr>
+<td><strong>Mass-reply patterns</strong></td>
+<td>Hard cap of 5 replies/day (default) and 1 reply per author per day.</td>
+</tr>
+<tr>
+<td><strong>Engagement manipulation</strong></td>
+<td>No coordinated behavior, vote manipulation, or artificial amplification.</td>
+</tr>
+<tr>
+<td><strong>DM spam</strong></td>
+<td>TuitBot provides typed DM API tools for legitimate conversation management (Admin/Write profiles), but does not send unsolicited bulk DMs. DM mutations are policy-gated and audit-logged.</td>
+</tr>
+<tr>
+<td><strong>Autonomous ad spend</strong></td>
+<td>TuitBot provides typed Ads API tools for campaign reads and management (Admin profile only), but does not autonomously create or fund ad campaigns. All Ads mutations require explicit invocation and are audit-logged.</td>
+</tr>
+</tbody>
+</table></markdown-accessiblity-table>
+<p dir="auto">All generated content is original — created per-request by your configured LLM, not from templates or recycled text.</p>
+<blockquote>
+<p dir="auto"><strong>You are responsible</strong> for reviewing Tuitbot's output and ensuring compliance with X's Terms of Service and your local regulations. Tuitbot is a tool, not a compliance guarantee.</p>
+</blockquote>
+<hr>
+<div class="markdown-heading" dir="auto"><h2 class="heading-element" dir="auto">Getting Started</h2><a id="user-content-getting-started" class="anchor" aria-label="Permalink: Getting Started" href="#getting-started"></a></div>
+<div class="markdown-heading" dir="auto"><h3 class="heading-element" dir="auto">1. The Desktop App (Recommended)</h3><a id="user-content-1-the-desktop-app-recommended" class="anchor" aria-label="Permalink: 1. The Desktop App (Recommended)" href="#1-the-desktop-app-recommended"></a></div>
+<p dir="auto">The easiest way to get started is by downloading the desktop app. You don't need to touch the terminal.</p>
+<ol dir="auto">
+<li>Download the latest <code>.dmg</code> (macOS), <code>.exe</code> (Windows), or <code>.AppImage</code> (Linux) from the <a href="https://github.com/aramirez087/TuitBot/releases">Releases</a> page.</li>
+<li>Open the app and follow the interactive <strong>Onboarding Wizard</strong>.</li>
+<li>The app will guide you through connecting your X account, configuring your AI provider (OpenAI, Anthropic, or local Ollama), and setting up your business profile.</li>
+</ol>
+<p dir="auto">The app will run quietly as a system tray icon, discovering and drafting content for your review.</p>
+<div class="markdown-heading" dir="auto"><h3 class="heading-element" dir="auto">2. LAN Mode (Run on a Pi, access from anywhere on your network)</h3><a id="user-content-2-lan-mode-run-on-a-pi-access-from-anywhere-on-your-network" class="anchor" aria-label="Permalink: 2. LAN Mode (Run on a Pi, access from anywhere on your network)" href="#2-lan-mode-run-on-a-pi-access-from-anywhere-on-your-network"></a></div>
+<p dir="auto">Run the server on any always-on machine and access the dashboard from your phone, tablet, or laptop:</p>
+<div class="highlight highlight-source-shell notranslate position-relative overflow-auto" dir="auto" data-snippet-clipboard-copy-content="cargo run -p tuitbot-server -- --host 0.0.0.0"><pre>cargo run -p tuitbot-server -- --host 0.0.0.0</pre></div>
+<p dir="auto">The server prints a 4-word passphrase to the terminal on first start. Open <code>http://&lt;server-ip&gt;:3001</code> from any device on your network and enter the passphrase to log in. Sessions last 30 days. Full setup guide: <a href="https://aramirez087.github.io/TuitBot/lan-mode/" rel="nofollow">LAN Mode</a>.</p>
+<div class="markdown-heading" dir="auto"><h3 class="heading-element" dir="auto">3. Self-Hosted Docker</h3><a id="user-content-3-self-hosted-docker" class="anchor" aria-label="Permalink: 3. Self-Hosted Docker" href="#3-self-hosted-docker"></a></div>
+<p dir="auto">For users who want to run Tuitbot on a cloud VPS (like Hetzner or DigitalOcean) for 24/7 uptime without keeping a laptop open:</p>
+<div class="highlight highlight-source-shell notranslate position-relative overflow-auto" dir="auto" data-snippet-clipboard-copy-content="git clone https://github.com/aramirez087/TuitBot.git
+cd TuitBot
+cp .env.example .env
+# Edit .env to add your API keys
+docker compose up -d"><pre>git clone https://github.com/aramirez087/TuitBot.git
+<span class="pl-c1">cd</span> TuitBot
+cp .env.example .env
+<span class="pl-c"><span class="pl-c">#</span> Edit .env to add your API keys</span>
+docker compose up -d</pre></div>
+<p dir="auto">Then navigate to <code>http://localhost:3001</code> to access the full graphical dashboard in your browser.</p>
+<div class="markdown-heading" dir="auto"><h3 class="heading-element" dir="auto">4. Command Line Interface (CLI)</h3><a id="user-content-4-command-line-interface-cli" class="anchor" aria-label="Permalink: 4. Command Line Interface (CLI)" href="#4-command-line-interface-cli"></a></div>
+<p dir="auto">For power users who prefer the terminal. <strong>Hello world in under 2 minutes:</strong></p>
+<div class="highlight highlight-source-shell notranslate position-relative overflow-auto" dir="auto" data-snippet-clipboard-copy-content="# Option A: one-liner installer (Linux / macOS, no Rust required)
+curl -fsSL https://raw.githubusercontent.com/aramirez087/TuitBot/main/scripts/install.sh | bash
+
+# Option B: build from source with Cargo
+cargo install tuitbot-cli --locked
+
+tuitbot init                         # guided setup: config → auth → test → preview"><pre><span class="pl-c"><span class="pl-c">#</span> Option A: one-liner installer (Linux / macOS, no Rust required)</span>
+curl -fsSL https://raw.githubusercontent.com/aramirez087/TuitBot/main/scripts/install.sh <span class="pl-k">|</span> bash
+
+<span class="pl-c"><span class="pl-c">#</span> Option B: build from source with Cargo</span>
+cargo install tuitbot-cli --locked
+
+tuitbot init                         <span class="pl-c"><span class="pl-c">#</span> guided setup: config → auth → test → preview</span></pre></div>
+<p dir="auto">That's it — one command. <code>init</code> asks 5 questions (product name, keywords, LLM provider, API key, X Client ID), validates your LLM connection, then walks you through auth, validation, and a dry-run preview. Everything else gets safe defaults. Customize later with <code>tuitbot settings</code> or <code>tuitbot init --advanced</code> for full control.</p>
+<p dir="auto">Individual commands (<code>tuitbot auth</code>, <code>tuitbot test</code>, <code>tuitbot tick --dry-run</code>) still work standalone if you prefer step-by-step setup.</p>
+<div class="markdown-heading" dir="auto"><h3 class="heading-element" dir="auto">5. Local No-Key Mode (No X API Credentials)</h3><a id="user-content-5-local-no-key-mode-no-x-api-credentials" class="anchor" aria-label="Permalink: 5. Local No-Key Mode (No X API Credentials)" href="#5-local-no-key-mode-no-x-api-credentials"></a></div>
+<p dir="auto">Don't have an X Developer Portal account? Tuitbot can run discovery and
+content drafting without any API credentials:</p>
+<div class="highlight highlight-source-shell notranslate position-relative overflow-auto" dir="auto" data-snippet-clipboard-copy-content="tuitbot init  # select &quot;Local No-Key Mode&quot; when prompted"><pre>tuitbot init  <span class="pl-c"><span class="pl-c">#</span> select "Local No-Key Mode" when prompted</span></pre></div>
+<p dir="auto">Or set it manually in <code>config.toml</code>:</p>
+<div class="highlight highlight-source-toml notranslate position-relative overflow-auto" dir="auto" data-snippet-clipboard-copy-content="[x_api]
+provider_backend = &quot;scraper&quot;"><pre>[<span class="pl-en">x_api</span>]
+<span class="pl-smi">provider_backend</span> = <span class="pl-s"><span class="pl-pds">"</span>scraper<span class="pl-pds">"</span></span></pre></div>
+<p dir="auto"><strong>What works:</strong> Tweet discovery (public data), conversation scoring,
+LLM-powered reply/tweet/thread drafting, approval queue staging, thread
+planning.</p>
+<p dir="auto"><strong>What doesn't:</strong> Posting, liking, following, mentions, home timeline,
+bookmarks, analytics, media upload. These require the Official X API —
+you can switch anytime in Settings.</p>
+<p dir="auto"><strong>Tradeoffs vs. Official API:</strong></p>
+<ul dir="auto">
+<li>Data comes from public endpoints, not the authenticated API. Results
+may be less complete.</li>
+<li>Write operations are blocked by default (<code>scraper_allow_mutations = false</code>).
+Enabling them carries elevated risk of account restrictions.</li>
+<li>Only available in desktop and self-hosted modes (not cloud).</li>
+</ul>
+<blockquote>
+<p dir="auto"><strong>Note:</strong> The scraper transport is under active development. Discovery
+will return "transport unavailable" errors until the transport backend
+ships in a future release. The infrastructure is fully wired — the
+config, settings UI, onboarding flow, and runtime branching all work
+today.</p>
+</blockquote>
+<blockquote>
+<p dir="auto"><strong>Recommendation:</strong> Start with Local No-Key Mode to evaluate Tuitbot's
+UI and drafting capabilities, then upgrade to the Official X API when
+you're ready to post.</p>
+</blockquote>
+<hr>
+<div class="markdown-heading" dir="auto"><h2 class="heading-element" dir="auto">Quick Commands</h2><a id="user-content-quick-commands" class="anchor" aria-label="Permalink: Quick Commands" href="#quick-commands"></a></div>
+<div class="highlight highlight-source-shell notranslate position-relative overflow-auto" dir="auto" data-snippet-clipboard-copy-content="# Setup (hello world path)
+tuitbot init                               # 5-question quickstart
+tuitbot init --advanced                    # full 8-step wizard
+tuitbot auth                               # OAuth 2.0 with X
+tuitbot test                               # validate config + connectivity
+tuitbot tick --dry-run                     # preview what the bot would do
+
+# Run
+tuitbot run                                # long-running daemon
+tuitbot tick --output json                 # single pass for cron/schedulers
+tuitbot tick --loops discovery,content     # run specific loops only
+
+# Configure
+tuitbot settings                           # interactive editor
+tuitbot settings enrich                    # guided profile enrichment
+tuitbot settings --show                    # read-only config view
+
+# Operations
+tuitbot approve --list                     # review queued posts
+tuitbot stats --output json                # analytics snapshot
+tuitbot backup                             # back up database
+tuitbot update                             # update CLI + server binaries"><pre><span class="pl-c"><span class="pl-c">#</span> Setup (hello world path)</span>
+tuitbot init                               <span class="pl-c"><span class="pl-c">#</span> 5-question quickstart</span>
+tuitbot init --advanced                    <span class="pl-c"><span class="pl-c">#</span> full 8-step wizard</span>
+tuitbot auth                               <span class="pl-c"><span class="pl-c">#</span> OAuth 2.0 with X</span>
+tuitbot <span class="pl-c1">test</span>                               <span class="pl-c"><span class="pl-c">#</span> validate config + connectivity</span>
+tuitbot tick --dry-run                     <span class="pl-c"><span class="pl-c">#</span> preview what the bot would do</span>
+
+<span class="pl-c"><span class="pl-c">#</span> Run</span>
+tuitbot run                                <span class="pl-c"><span class="pl-c">#</span> long-running daemon</span>
+tuitbot tick --output json                 <span class="pl-c"><span class="pl-c">#</span> single pass for cron/schedulers</span>
+tuitbot tick --loops discovery,content     <span class="pl-c"><span class="pl-c">#</span> run specific loops only</span>
+
+<span class="pl-c"><span class="pl-c">#</span> Configure</span>
+tuitbot settings                           <span class="pl-c"><span class="pl-c">#</span> interactive editor</span>
+tuitbot settings enrich                    <span class="pl-c"><span class="pl-c">#</span> guided profile enrichment</span>
+tuitbot settings --show                    <span class="pl-c"><span class="pl-c">#</span> read-only config view</span>
+
+<span class="pl-c"><span class="pl-c">#</span> Operations</span>
+tuitbot approve --list                     <span class="pl-c"><span class="pl-c">#</span> review queued posts</span>
+tuitbot stats --output json                <span class="pl-c"><span class="pl-c">#</span> analytics snapshot</span>
+tuitbot backup                             <span class="pl-c"><span class="pl-c">#</span> back up database</span>
+tuitbot update                             <span class="pl-c"><span class="pl-c">#</span> update CLI + server binaries</span></pre></div>
+<hr>
+<div class="markdown-heading" dir="auto"><h2 class="heading-element" dir="auto">Architecture</h2><a id="user-content-architecture" class="anchor" aria-label="Permalink: Architecture" href="#architecture"></a></div>
+<p dir="auto">Tuitbot's core is organized into three layers with strict dependency rules:</p>
+<markdown-accessiblity-table><table>
+<thead>
+<tr>
+<th>Layer</th>
+<th>Module</th>
+<th>Role</th>
+<th>Dependencies</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Toolkit</strong></td>
+<td><code>core::toolkit/</code></td>
+<td>Stateless X API utilities (read, write, engage, media)</td>
+<td><code>&amp;dyn XApiClient</code> only</td>
+</tr>
+<tr>
+<td><strong>Workflow</strong></td>
+<td><code>core::workflow/</code></td>
+<td>Stateful composites (discover, draft, queue, publish, orchestrate)</td>
+<td>DB + LLM + Toolkit</td>
+</tr>
+<tr>
+<td><strong>Autopilot</strong></td>
+<td><code>core::automation/</code></td>
+<td>Scheduled loops (discovery, mentions, content, threads, analytics)</td>
+<td>Workflow + Toolkit</td>
+</tr>
+</tbody>
+</table></markdown-accessiblity-table>
+<p dir="auto">Every layer only calls the layer below it. Toolkit functions are usable from any context (MCP, CLI, tests) without DB or LLM initialization. Workflow functions compose toolkit calls with state. Autopilot schedules workflow cycles on timers. MCP handlers and HTTP routes are thin adapters over these layers.</p>
+<p dir="auto">Four workspace crates: <code>tuitbot-core</code> (all business logic), <code>tuitbot-cli</code> (CLI), <code>tuitbot-mcp</code> (MCP server, 140 tools), <code>tuitbot-server</code> (HTTP/WS API). Full details in <a href="https://aramirez087.github.io/TuitBot/architecture/" rel="nofollow">Architecture</a>.</p>
+<hr>
+<div class="markdown-heading" dir="auto"><h2 class="heading-element" dir="auto">Documentation</h2><a id="user-content-documentation" class="anchor" aria-label="Permalink: Documentation" href="#documentation"></a></div>
+<p dir="auto">This README is intentionally concise. The full system docs are on GitHub Pages:</p>
+<ul dir="auto">
+<li><a href="https://aramirez087.github.io/TuitBot/" rel="nofollow">Docs Home</a> - complete map</li>
+<li><a href="https://aramirez087.github.io/TuitBot/getting-started/" rel="nofollow">Getting Started</a> - install and first run</li>
+<li><a href="https://aramirez087.github.io/TuitBot/configuration/" rel="nofollow">Configuration</a> - config model and production guidance</li>
+<li><a href="https://aramirez087.github.io/TuitBot/cli-reference/" rel="nofollow">CLI Reference</a> - command reference</li>
+<li><a href="https://aramirez087.github.io/TuitBot/mcp-reference/" rel="nofollow">MCP Reference</a> - AI agent integration</li>
+<li><a href="https://aramirez087.github.io/TuitBot/lan-mode/" rel="nofollow">LAN Mode</a> - access the dashboard from any device on your network</li>
+<li><a href="https://aramirez087.github.io/TuitBot/composer-mode/" rel="nofollow">Composer Mode</a> - AI-assisted writing, drafts, and discovery feed</li>
+<li><a href="https://aramirez087.github.io/TuitBot/operations/" rel="nofollow">Operations</a> - deployment and runbook</li>
+<li><a href="https://aramirez087.github.io/TuitBot/release-and-publishing/" rel="nofollow">Release and Publishing</a> - release-plz and crates.io</li>
+</ul>
+<hr>
+<div class="markdown-heading" dir="auto"><h2 class="heading-element" dir="auto">Release Strategy (CI)</h2><a id="user-content-release-strategy-ci" class="anchor" aria-label="Permalink: Release Strategy (CI)" href="#release-strategy-ci"></a></div>
+<p dir="auto">Releases are fully automated in GitHub Actions and follow a release-PR model:</p>
+<ol dir="auto">
+<li>Every push to <code>main</code> runs <code>.github/workflows/release.yml</code>.</li>
+<li><code>release-plz</code> keeps a release PR open with version/changelog updates (<code>CHANGELOG.md</code>).</li>
+<li>Merging that release PR triggers:
+<ul dir="auto">
+<li>crates.io publish for workspace crates (<code>tuitbot-core</code>, <code>tuitbot-mcp</code>, <code>tuitbot-cli</code>)</li>
+<li>Tag + GitHub release for CLI (<code>tuitbot-cli-vX.Y.Z</code>)</li>
+<li>Cross-platform binary builds for <code>tuitbot</code> and <code>tuitbot-server</code> (<code>linux</code>, <code>macOS Intel</code>, <code>macOS Apple Silicon</code>, <code>windows</code>)</li>
+<li>Asset uploads + <code>SHA256SUMS</code> checksum file</li>
+</ul>
+</li>
+<li>If a release contains only library crate updates and no <code>tuitbot-cli</code> release, binary asset jobs are skipped automatically.
+To keep versioning clean, use Conventional Commit prefixes (<code>feat:</code>, <code>fix:</code>, <code>chore:</code>, etc.) and <code>!</code> for breaking changes.
+Repository setup required once: enable <code>Settings -&gt; Actions -&gt; General -&gt; Allow GitHub Actions to create and approve pull requests</code>.
+Set a <code>CARGO_REGISTRY_TOKEN</code> secret from crates.io (<code>Account Settings -&gt; API Tokens</code>) so CI can publish crates.
+Optional but recommended: set a <code>RELEASE_PLZ_TOKEN</code> (PAT) secret so workflows also run on release PRs created by automation.</li>
+</ol>
+<p dir="auto">Full details: <a href="https://aramirez087.github.io/TuitBot/release-and-publishing/" rel="nofollow">Release and Publishing</a>.</p>
+<hr>
+<div class="markdown-heading" dir="auto"><h2 class="heading-element" dir="auto">Troubleshooting</h2><a id="user-content-troubleshooting" class="anchor" aria-label="Permalink: Troubleshooting" href="#troubleshooting"></a></div>
+<ul dir="auto">
+<li>Auth issues: callback URL must be exactly <code>http://127.0.0.1:8080/callback</code>.</li>
+<li>Lock issues on <code>tick</code>: ensure no other <code>tuitbot run</code> or <code>tuitbot tick</code> process is active.</li>
+<li>Debug logs: <code>RUST_LOG=tuitbot_core=debug tuitbot run</code>.</li>
+<li>Full troubleshooting guide: <a href="https://aramirez087.github.io/TuitBot/troubleshooting/" rel="nofollow">Troubleshooting</a>.</li>
+</ul>
+<hr>
+<div align="center" dir="auto">
+  <p dir="auto">Built with Rust.</p>
+  <p dir="auto">Released under the <a href="LICENSE">MIT License</a>.</p>
+</div>
+        </div>
+      </section>
+
+      <footer>LeadScaper Platform — Agent-X (TuitBot)</footer>
+    </main>
+  </div>
+</body>
+</html>

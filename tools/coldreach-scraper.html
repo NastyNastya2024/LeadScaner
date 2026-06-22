@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ColdReach-Scraper — LeadScaper</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="header-inner">
+      <a class="logo" href="../index.html">
+        <span class="logo-icon">✦</span>
+        LeadScaper
+      </a>
+      <div class="header-actions">
+        <button class="btn-icon" type="button">⚙</button>
+      </div>
+    </div>
+  </header>
+
+  <div class="layout tool-page">
+    <main class="main">
+      <a class="back-link" href="../index.html">← Назад к архитектуре</a>
+
+      <div class="hero-card hero-card-accent tool-hero">
+        <div class="tool-icon">2.1</div>
+        <div class="tool-hero-body">
+          <div class="hero-stat-label">Слой 2 · Сбор контактов</div>
+          <h1 class="hero-stat-value tool-hero-title">ColdReach-Scraper</h1>
+          <p class="hero-stat-sub">Скрапинг сайта: контакты, миссия, услуги</p>
+          <a class="btn-external" href="https://github.com/sspomeroy-banyanlabs/ColdReach-Scraper" target="_blank" rel="noopener">
+            Открыть на GitHub →
+          </a>
+        </div>
+      </div>
+
+      <section class="panel">
+        <div class="panel-head">
+          <div class="panel-tag">GitHub</div>
+          <h2 class="panel-title">Описание</h2>
+        </div>
+
+        <div class="tool-stats">
+          <div class="tool-stat"><span class="tool-stat-label">Репозиторий</span><span class="tool-stat-value">sspomeroy-banyanlabs/ColdReach-Scraper</span></div>
+          <div class="tool-stat"><span class="tool-stat-label">Stars</span><span class="tool-stat-value">0</span></div>
+          <div class="tool-stat"><span class="tool-stat-label">Язык</span><span class="tool-stat-value">Python</span></div>
+          <div class="tool-stat"><span class="tool-stat-label">Источник данных</span><span class="tool-stat-value">Сайт компании</span></div>
+        </div>
+
+        <div class="readme-content">
+          <p dir="auto">ColdReach-Scraper 🤝
+Automated company website scraping to identify high-value partnership opportunities and business development prospects.
+Overview
+ColdReach-Scraper systematically identifies and qualifies potential business partners, clients, and collaboration opportunities by analyzing company websites, directories, and business databases. Perfect for agencies looking to build strategic partnerships or expand their client base.
+🚀 Quick Start
+Prerequisites
+•	Python 3.8+
+•	ClickUp API access
+•	Virtual environment recommended
+Installation
+git clone <a href="mailto:git@github.com">git@github.com</a>:sspomeroy-banyanlabs/ColdReach-Scraper.git
+cd ColdReach-Scraper
+python -m venv .venv
+source .venv/bin/activate  # On Windows: .venv\Scripts\activate
+pip install -r requirements.txt
+Configuration</p>
+<ol dir="auto">
+<li>Copy .env.example to .env</li>
+<li>Add your ClickUp API token:
+CLICKUP_API_TOKEN=your_token_here
+COLDREACH_CRM_ID=901317209338
+Run a Test Scrape</li>
+</ol>
+<div class="markdown-heading" dir="auto"><h1 class="heading-element" dir="auto">Test company data processing</h1><a id="user-content-test-company-data-processing" class="anchor" aria-label="Permalink: Test company data processing" href="#test-company-data-processing"></a></div>
+<p dir="auto">python test_coldreach_pipeline.py</p>
+<div class="markdown-heading" dir="auto"><h1 class="heading-element" dir="auto">Process leads to ClickUp</h1><a id="user-content-process-leads-to-clickup" class="anchor" aria-label="Permalink: Process leads to ClickUp" href="#process-leads-to-clickup"></a></div>
+<p dir="auto">python src/processors/coldreach_processor.py --csv-file data/raw/company_prospects.csv --test-mode
+🎯 Features
+Current Capabilities
+•	Company Website Analysis: Extract mission, services, contact info
+•	Directory Scraping: Business directories and listings
+•	Universal Processor: Handles any CSV format intelligently
+•	Partnership Scoring: Identify collaboration potential
+•	ClickUp Integration: Direct import to CRM with rich data
+•	Contact Enrichment: Multiple phone/email discovery
+Lead Data Captured
+•	Company name and industry
+•	Business mission/description
+•	Multiple contact methods (phone, email)
+•	Company size and location
+•	LinkedIn profiles (company &amp; contacts)
+•	Partnership potential scoring
+•	Website and social presence
+🏗️ Architecture
+ColdReach-Scraper/
+├── src/
+│   ├── scrapers/              # Website scrapers
+│   │   ├── company_scraper.py     # Company website analysis
+│   │   ├── directory_scraper.py   # Business directory scraping
+│   │   └── base_scraper.py        # Base scraper class
+│   ├── processors/            # Data processing
+│   │   └── coldreach_processor.py
+│   └── utils/                # Shared utilities
+│       └── lead_models.py
+├── data/
+│   ├── raw/                  # Scraped data
+│   └── processed/            # Cleaned data
+└── scripts/                  # Automation scripts
+└── run_scraper.py
+🔧 Usage
+Manual Processing</p>
+<div class="markdown-heading" dir="auto"><h1 class="heading-element" dir="auto">Process company data from CSV</h1><a id="user-content-process-company-data-from-csv" class="anchor" aria-label="Permalink: Process company data from CSV" href="#process-company-data-from-csv"></a></div>
+<p dir="auto">python src/processors/coldreach_processor.py --csv-file data/raw/companies.csv</p>
+<div class="markdown-heading" dir="auto"><h1 class="heading-element" dir="auto">Test mode (only process 2 leads)</h1><a id="user-content-test-mode-only-process-2-leads" class="anchor" aria-label="Permalink: Test mode (only process 2 leads)" href="#test-mode-only-process-2-leads"></a></div>
+<p dir="auto">python src/processors/coldreach_processor.py --csv-file data/raw/companies.csv --test-mode
+Automated Pipeline</p>
+<div class="markdown-heading" dir="auto"><h1 class="heading-element" dir="auto">Full pipeline: scrape → process → upload</h1><a id="user-content-full-pipeline-scrape--process--upload" class="anchor" aria-label="Permalink: Full pipeline: scrape → process → upload" href="#full-pipeline-scrape--process--upload"></a></div>
+<p dir="auto">python scripts/run_scraper.py --source directory --industry "technology"
+📊 Value Proposition
+For Business Development
+•	Strategic Partnerships: Identify complementary businesses
+•	Client Acquisition: Target companies needing your services
+•	Market Research: Understand competitive landscape
+•	Relationship Building: Warm introductions with context
+Lead Quality Indicators
+•	Company mission alignment
+•	Industry compatibility
+•	Growth stage indicators
+•	Contact accessibility
+•	Partnership potential score
+🎯 Use Cases
+Agency Partnerships
+•	Marketing Agencies: Find complementary service providers
+•	Dev Agencies: Partner with design/marketing firms
+•	Consulting: Identify implementation partners
+Client Acquisition
+•	Service Providers: Companies needing specific services
+•	Technology Companies: Businesses ready for digital transformation
+•	Consultants: Organizations with growth challenges
+Market Intelligence
+•	Competitive Analysis: Track industry players
+•	Trend Identification: Emerging business models
+•	Partnership Mapping: Industry relationship networks
+🚀 Roadmap
+Phase 1 (Current) ✅
+•	[x] Company website data extraction
+•	[x] Universal processor integration
+•	[x] ClickUp CRM connection
+•	[x] Multi-contact discovery
+Phase 2 (Next) 🚧
+•	[ ] Business directory automation
+•	[ ] LinkedIn company enrichment
+•	[ ] Partnership scoring algorithm
+•	[ ] Email template integration
+Phase 3 (Future) 🔮
+•	[ ] Social media presence analysis
+•	[ ] Financial health indicators
+•	[ ] Technology stack detection
+•	[ ] Automated outreach sequences
+🤝 Integration
+ClickUp CRM Fields
+•	Contact Name: Key decision makers
+•	Company: Organization details
+•	Business Mission Statement: Company purpose/services
+•	Notes: Detailed company description
+•	Phone/Email: Multiple contact methods
+•	Opportunity Type: Partnership category
+•	Qualification: Partnership fit score
+N8N Automation
+Compatible with N8N workflows for:
+•	Scheduled company research
+•	Partnership outreach automation
+•	Lead qualification workflows
+•	Follow-up management
+⚡ Performance
+Current Stats
+•	Processing Speed: ~50 companies/hour with enrichment
+•	Contact Discovery: 70% phone, 85% email coverage
+•	Data Quality: 95% accurate company info
+•	Partnership Scoring: 80% accuracy in fit assessment
+🛠️ Development
+Adding New Data Sources</p>
+<ol dir="auto">
+<li>Create new scraper in src/scrapers/</li>
+<li>Inherit from BaseScraper</li>
+<li>Implement data extraction methods</li>
+<li>Add to processor pipeline
+Data Model
+class ColdReachLead:
+company_name: str
+industry: str
+mission_statement: str
+contact_info: List[Contact]
+partnership_potential: float
+website: str
+linkedin_profile: str
+Testing</li>
+</ol>
+<div class="markdown-heading" dir="auto"><h1 class="heading-element" dir="auto">Test company processor</h1><a id="user-content-test-company-processor" class="anchor" aria-label="Permalink: Test company processor" href="#test-company-processor"></a></div>
+<p dir="auto">python test_coldreach_pipeline.py</p>
+<div class="markdown-heading" dir="auto"><h1 class="heading-element" dir="auto">Test with real data</h1><a id="user-content-test-with-real-data" class="anchor" aria-label="Permalink: Test with real data" href="#test-with-real-data"></a></div>
+<p dir="auto">python src/processors/coldreach_processor.py --csv-file test_data.csv --test-mode
+📊 Analytics
+Lead Scoring Factors
+•	Industry Alignment: Complementary services (weight: 30%)
+•	Company Size: Appropriate partnership scale (weight: 25%)
+•	Growth Indicators: Hiring, funding, expansion (weight: 20%)
+•	Technology Match: Compatible tech stacks (weight: 15%)
+•	Geographic Proximity: Local/regional preference (weight: 10%)
+Success Metrics
+•	Partnership response rates
+•	Meeting conversion rates
+•	Deal closure percentages
+•	Long-term relationship value
+🔒 Data Privacy
+Compliance
+•	Respects robots.txt
+•	Rate limiting to avoid overload
+•	GDPR/CCPA compliant data handling
+•	Opt-out mechanism support
+Best Practices
+•	Ethical scraping practices
+•	Data minimization principles
+•	Secure storage protocols
+•	Regular data cleanup
+📝 Contributing</p>
+<ol dir="auto">
+<li>Fork the repository</li>
+<li>Create feature branch (git checkout -b feature/new-directory)</li>
+<li>Test thoroughly with sample data</li>
+<li>Submit pull request with clear description
+📄 License
+MIT License - See LICENSE file for details
+🆘 Support
+•	Issues: GitHub Issues
+•	Documentation: Wiki
+•	Contact: Samantha Pomeroy</li>
+</ol>
+<hr>
+<p dir="auto">Built with 🤝 for strategic business development</p>
+        </div>
+      </section>
+
+      <footer>LeadScaper Platform — ColdReach-Scraper</footer>
+    </main>
+  </div>
+</body>
+</html>

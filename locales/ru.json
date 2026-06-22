@@ -1,0 +1,313 @@
+{
+  "meta": {
+    "title": "LeadScaper — Архитектура платформы"
+  },
+  "ui": {
+    "settings": "Настройки",
+    "back": "← Назад к архитектуре",
+    "description": "Описание",
+    "openOn": "Открыть на {source} →",
+    "details": "Подробнее",
+    "repo": "Репозиторий",
+    "stars": "Stars",
+    "language": "Язык",
+    "dataSource": "Источник данных",
+    "platform": "Платформа",
+    "active": "Active",
+    "footer": "LeadScaper Platform — Architecture Documentation"
+  },
+  "nav": {
+    "overview": "Обзор",
+    "layer1": "Слой 1 — Поиск",
+    "layer2": "Слой 2 — Сбор",
+    "layer3": "Слой 3 — Анализ",
+    "layer4": "Слой 4 — Вовлечение",
+    "fullArch": "Архитектура",
+    "dataFlow": "Data Flow",
+    "tech": "Техстек",
+    "links": "Все инструменты"
+  },
+  "hero": {
+    "label": "LeadScaper Platform",
+    "title": "4 слоя",
+    "desc": "Многослойная AI-платформа для автоматического поиска B2B-клиентов, сбора данных о компаниях и ЛПР, мониторинга соцсетей и генерации персонализированных предложений.",
+    "cta": "→ Исследовать архитектуру",
+    "agents": "Agents"
+  },
+  "overview": {
+    "tag": "Overview",
+    "title": "Общая концепция",
+    "desc": "Четыре последовательных слоя обработки данных — от поиска компаний до вовлечения в соцсетях."
+  },
+  "pipeline": [
+    {
+      "num": "Слой 1",
+      "title": "Поиск<br>Компаний"
+    },
+    {
+      "num": "Слой 2",
+      "title": "Сбор<br>Контактов"
+    },
+    {
+      "num": "Слой 3",
+      "title": "Анализ<br>Данных"
+    },
+    {
+      "num": "Слой 4",
+      "title": "Действие<br>Вовлечение"
+    }
+  ],
+  "layers": {
+    "1": {
+      "tag": "Слой 1 · Discovery",
+      "title": "Поиск компаний",
+      "desc": "Найти все возможные компании-клиенты по заданным критериям.",
+      "archTitle": ""
+    },
+    "2": {
+      "tag": "Слой 2 · Enrichment",
+      "title": "Сбор контактов и соцсетей",
+      "desc": "Для каждой найденной компании собрать контакты, соцсети и публичные данные.",
+      "archTitle": "Архитектура слоя 2"
+    },
+    "3": {
+      "tag": "Слой 3 · Analysis",
+      "title": "Анализ и генерация инсайтов",
+      "desc": "Анализ данных для поиска триггерных слов, ЛПР и генерации персонализированных сообщений.",
+      "archTitle": "Архитектура слоя 3"
+    },
+    "4": {
+      "tag": "Слой 4 · Engagement",
+      "title": "Вовлечение в соцсетях",
+      "desc": "Автоматический мониторинг и вовлечение аудитории по триггерным словам.",
+      "archTitle": "Архитектура слоя 4"
+    }
+  },
+  "tools": {
+    "ai-find-customer": {
+      "desc": "Поиск компаний через AI-агентов по ключевым словам, отрасли, геолокации",
+      "meta": "Google, B2B-платформы"
+    },
+    "github-lead-signals": {
+      "desc": "Поиск компаний по технологическому стеку (GitHub активности)",
+      "meta": "GitHub API"
+    },
+    "clutch-profile-scraper": {
+      "desc": "Сбор компаний из B2B-каталога",
+      "meta": "Clutch.co"
+    },
+    "trendscan": {
+      "desc": "Поиск трендовых компаний",
+      "meta": "Crunchbase, LinkedIn, X"
+    },
+    "icp-researcher": {
+      "desc": "Определение Ideal Customer Profile и поиск по нему",
+      "meta": "Веб-поиск, LinkedIn"
+    },
+    "coldreach-scraper": {
+      "desc": "Скрапинг сайта: контакты, миссия, услуги",
+      "meta": "Сайт компании"
+    },
+    "lead-generator": {
+      "desc": "Поиск LinkedIn-профилей сотрудников и обогащение email",
+      "meta": "LinkedIn, Apollo.io"
+    },
+    "linkedin-scraper": {
+      "desc": "Сбор профилей ЛПР с AI-генерацией «болевых точек»",
+      "meta": "LinkedIn"
+    },
+    "the-3rd-eye": {
+      "desc": "Сбор цифрового следа из всех соцсетей",
+      "meta": "Соцсети"
+    },
+    "business-researcher": {
+      "desc": "Глубокое исследование: финансы, структура, рынок",
+      "meta": "Tavily API"
+    },
+    "automated-decision-making-discovery": {
+      "desc": "Выявление ЛПР (CEO, CTO, Head of X) с валидацией контактов",
+      "meta": "LinkedIn, AI"
+    },
+    "owasp-social-osint-agent": {
+      "desc": "Анализ текста и изображений из соцсетей, создание отчётов",
+      "meta": "X, Reddit, GitHub"
+    },
+    "obsei": {
+      "desc": "Анализ тональности и классификация сообщений",
+      "meta": "X, Reddit, Facebook"
+    },
+    "company-research-agent-tavily": {
+      "desc": "Глубокий анализ и генерация отчётов в PDF/Markdown",
+      "meta": "Tavily, Anthropic"
+    },
+    "agent-x-tuitbot": {
+      "desc": "Мониторинг ключевых слов, AI-ответы на посты с одобрением",
+      "meta": "X (Twitter)"
+    },
+    "redsignal": {
+      "desc": "Поиск «тёплых» лидов, AI-фильтрация релевантности",
+      "meta": "Reddit"
+    },
+    "n8n-workflow": {
+      "desc": "Мультиплатформенный мониторинг и уведомления",
+      "meta": "Multi-platform"
+    },
+    "awesome-n8n-templates": {
+      "desc": "Коллекция готовых шаблонов автоматизации для соцсетей и мониторинга",
+      "meta": "Reddit, LinkedIn, X, Instagram"
+    }
+  },
+  "arch": {
+    "tag": "Architecture",
+    "title": "Полная архитектурная схема",
+    "desc": "Взаимодействие слоёв, оркестрации и хранилища данных.",
+    "ui": "User Interface — Dashboard / Reports / Notifications",
+    "orch": "Orchestration Layer — CrewAI / LangGraph / n8n",
+    "data": "Data Lake & CRM — PostgreSQL / SQLite + HubSpot / Salesforce",
+    "l1": "Слой 1 — Поиск",
+    "l2": "Слой 2 — Сбор",
+    "l3": "Слой 3 — Анализ",
+    "l4": "Слой 4 — Вовлечение"
+  },
+  "flow": {
+    "tag": "Data Flow",
+    "title": "Процесс обработки данных",
+    "steps": [
+      "Поиск компаний (Слой 1)",
+      "Обогащение данными (Слой 2)",
+      "Анализ и генерация инсайтов (Слой 3)",
+      "Запись в CRM (PostgreSQL / Salesforce)",
+      "Мониторинг соцсетей по триггерным словам (Слой 4)",
+      "AI-фильтрация и классификация (Obsei + OWASP)",
+      "Генерация персонализированных сообщений (Agent-X / RedSignal)",
+      "Вовлечение и отправка в CRM"
+    ]
+  },
+  "tech": {
+    "tag": "Tech Stack",
+    "title": "Технические рекомендации",
+    "col1": "Компонент",
+    "col2": "Технология",
+    "col3": "Назначение",
+    "rows": [
+      {
+        "name": "Orchestration",
+        "purpose": "Управление агентами и потоками данных"
+      },
+      {
+        "name": "Backend API",
+        "purpose": "REST API для взаимодействия с клиентами"
+      },
+      {
+        "name": "Frontend",
+        "purpose": "Дашборд для просмотра результатов"
+      },
+      {
+        "name": "Database",
+        "purpose": "Хранение компаний, контактов, отчётов"
+      },
+      {
+        "name": "Queue",
+        "purpose": "Асинхронная обработка задач"
+      },
+      {
+        "name": "AI/LLM",
+        "purpose": "Анализ, генерация сообщений"
+      },
+      {
+        "name": "Search APIs",
+        "purpose": "Поиск данных о компаниях"
+      },
+      {
+        "name": "Cron/Scheduler",
+        "purpose": "Регулярный запуск мониторинга"
+      },
+      {
+        "name": "Notifications",
+        "purpose": "Уведомления о новых лидах"
+      }
+    ]
+  },
+  "links": {
+    "tag": "All Tools",
+    "title": "Все инструменты",
+    "cat1": "Слой 1 — Поиск компаний",
+    "cat2": "Слой 2 — Сбор контактов",
+    "cat3": "Слой 3 — Анализ данных",
+    "cat4": "Слой 4 — Вовлечение"
+  },
+  "toolsPage": {
+    "ai-find-customer": {
+      "role": "Поиск компаний через AI-агентов по ключевым словам, отрасли, геолокации",
+      "layerName": "Поиск компаний"
+    },
+    "github-lead-signals": {
+      "role": "Поиск компаний по технологическому стеку (GitHub активности)",
+      "layerName": "Поиск компаний"
+    },
+    "clutch-profile-scraper": {
+      "role": "Сбор компаний из B2B-каталога",
+      "layerName": "Поиск компаний"
+    },
+    "trendscan": {
+      "role": "Поиск трендовых компаний",
+      "layerName": "Поиск компаний"
+    },
+    "icp-researcher": {
+      "role": "Определение Ideal Customer Profile и поиск по нему",
+      "layerName": "Поиск компаний"
+    },
+    "coldreach-scraper": {
+      "role": "Скрапинг сайта: контакты, миссия, услуги",
+      "layerName": "Сбор контактов"
+    },
+    "lead-generator": {
+      "role": "Поиск LinkedIn-профилей сотрудников и обогащение email",
+      "layerName": "Сбор контактов"
+    },
+    "linkedin-scraper": {
+      "role": "Сбор профилей ЛПР с AI-генерацией «болевых точек»",
+      "layerName": "Сбор контактов"
+    },
+    "the-3rd-eye": {
+      "role": "Сбор цифрового следа из всех соцсетей",
+      "layerName": "Сбор контактов"
+    },
+    "business-researcher": {
+      "role": "Глубокое исследование: финансы, структура, рынок",
+      "layerName": "Сбор контактов"
+    },
+    "automated-decision-making-discovery": {
+      "role": "Выявление ЛПР (CEO, CTO, Head of X) с валидацией контактов",
+      "layerName": "Анализ данных"
+    },
+    "owasp-social-osint-agent": {
+      "role": "Анализ текста и изображений из соцсетей, создание отчётов",
+      "layerName": "Анализ данных"
+    },
+    "obsei": {
+      "role": "Анализ тональности и классификация сообщений; мониторинг упоминаний",
+      "layerName": "Анализ данных"
+    },
+    "company-research-agent-tavily": {
+      "role": "Глубокий анализ и генерация отчётов в PDF/Markdown",
+      "layerName": "Анализ данных"
+    },
+    "agent-x-tuitbot": {
+      "role": "Мониторинг ключевых слов, AI-ответы на посты с одобрением",
+      "layerName": "Вовлечение в соцсетях"
+    },
+    "redsignal": {
+      "role": "Поиск «тёплых» лидов, AI-фильтрация релевантности",
+      "layerName": "Вовлечение в соцсетях"
+    },
+    "n8n-workflow": {
+      "role": "Мультиплатформенный мониторинг и уведомления",
+      "layerName": "Вовлечение в соцсетях"
+    },
+    "awesome-n8n-templates": {
+      "role": "Коллекция готовых шаблонов автоматизации для соцсетей и мониторинга",
+      "layerName": "Вовлечение в соцсетях"
+    }
+  }
+}

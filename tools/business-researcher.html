@@ -1,0 +1,578 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Business Researcher — LeadScaper</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="header-inner">
+      <a class="logo" href="../index.html">
+        <span class="logo-icon">✦</span>
+        LeadScaper
+      </a>
+      <div class="header-actions">
+        <button class="btn-icon" type="button">⚙</button>
+      </div>
+    </div>
+  </header>
+
+  <div class="layout tool-page">
+    <main class="main">
+      <a class="back-link" href="../index.html">← Назад к архитектуре</a>
+
+      <div class="hero-card hero-card-accent tool-hero">
+        <div class="tool-icon">2.5</div>
+        <div class="tool-hero-body">
+          <div class="hero-stat-label">Слой 2 · Сбор контактов</div>
+          <h1 class="hero-stat-value tool-hero-title">Business Researcher</h1>
+          <p class="hero-stat-sub">Глубокое исследование: финансы, структура, рынок</p>
+          <a class="btn-external" href="https://github.com/bgunyel/business-researcher" target="_blank" rel="noopener">
+            Открыть на GitHub →
+          </a>
+        </div>
+      </div>
+
+      <section class="panel">
+        <div class="panel-head">
+          <div class="panel-tag">GitHub</div>
+          <h2 class="panel-title">Описание</h2>
+        </div>
+
+        <div class="tool-stats">
+          <div class="tool-stat"><span class="tool-stat-label">Репозиторий</span><span class="tool-stat-value">bgunyel/business-researcher</span></div>
+          <div class="tool-stat"><span class="tool-stat-label">Stars</span><span class="tool-stat-value">2</span></div>
+          <div class="tool-stat"><span class="tool-stat-label">Язык</span><span class="tool-stat-value">Python</span></div>
+          <div class="tool-stat"><span class="tool-stat-label">Источник данных</span><span class="tool-stat-value">Tavily API, веб-поиск</span></div>
+        </div>
+
+        <div class="readme-content">
+          <div class="markdown-heading" dir="auto"><h1 class="heading-element" dir="auto">Business Researcher</h1><a id="user-content-business-researcher" class="anchor" aria-label="Permalink: Business Researcher" href="#business-researcher"></a></div>
+<p dir="auto">An AI-powered business research tool that automates the process of gathering comprehensive information about professionals and companies using web search and LLM-based analysis.</p>
+<div class="markdown-heading" dir="auto"><h2 class="heading-element" dir="auto">Overview</h2><a id="user-content-overview" class="anchor" aria-label="Permalink: Overview" href="#overview"></a></div>
+<p dir="auto">Business Researcher is an AI-driven research platform that combines web search capabilities with advanced language models to deliver structured business intelligence. The system uses a multi-agent workflow approach to ensure accuracy and reliability in research outputs.</p>
+<div class="markdown-heading" dir="auto"><h3 class="heading-element" dir="auto">Key Capabilities</h3><a id="user-content-key-capabilities" class="anchor" aria-label="Permalink: Key Capabilities" href="#key-capabilities"></a></div>
+<ul dir="auto">
+<li><strong>Automated Research Pipeline</strong>: End-to-end automation from query generation to final output</li>
+<li><strong>Multi-Source Data Integration</strong>: Combines web search and various online sources</li>
+<li><strong>Quality Assurance</strong>: Built-in validation and review mechanisms for data accuracy</li>
+<li><strong>Token Usage Tracking</strong>: Cost monitoring and optimization across different LLM providers</li>
+<li><strong>State-based Workflow</strong>: LangGraph-powered workflow management for complex research tasks</li>
+<li><strong>Structured Output</strong>: Pydantic-validated schemas for consistent data formats</li>
+</ul>
+<div class="markdown-heading" dir="auto"><h2 class="heading-element" dir="auto">Features</h2><a id="user-content-features" class="anchor" aria-label="Permalink: Features" href="#features"></a></div>
+<div class="markdown-heading" dir="auto"><h3 class="heading-element" dir="auto">Research Capabilities</h3><a id="user-content-research-capabilities" class="anchor" aria-label="Permalink: Research Capabilities" href="#research-capabilities"></a></div>
+<p dir="auto"><strong>Person Research:</strong></p>
+<ul dir="auto">
+<li><strong>Professional Profile</strong>: LinkedIn profile analysis, current role, and work email discovery</li>
+<li><strong>Career Intelligence</strong>: Work history, experience timeline, and career progression</li>
+<li><strong>Contact Information</strong>: Email addresses, phone numbers, and professional contact details</li>
+<li><strong>Location Data</strong>: Current location, previous locations, and geographic insights</li>
+<li><strong>Company Affiliations</strong>: Current and past employers, role progression, and organizational context</li>
+<li><strong>Educational Background</strong>: Academic credentials, certifications, and professional development</li>
+<li><strong>Achievement Tracking</strong>: Awards, publications, speaking engagements, and notable accomplishments</li>
+</ul>
+<p dir="auto"><strong>Company Research:</strong></p>
+<ul dir="auto">
+<li><strong>Corporate Intelligence</strong>: Official company details, website, LinkedIn, and Crunchbase profiles</li>
+<li><strong>Leadership Analysis</strong>: C-suite executives, board members, and key personnel identification</li>
+<li><strong>Product Portfolio</strong>: Comprehensive product and service catalog with market positioning</li>
+<li><strong>Financial Intelligence</strong>: Funding rounds, investment amounts, valuation history, and financial metrics</li>
+<li><strong>Market Position</strong>: Competitive analysis, market share, and differentiation factors</li>
+<li><strong>Organizational Structure</strong>: Department organization, team sizes, and reporting structures</li>
+<li><strong>Growth Metrics</strong>: Employee count trends, revenue projections, and expansion indicators</li>
+<li><strong>Partnership Network</strong>: Strategic partnerships, vendor relationships, and business alliances</li>
+</ul>
+<div class="markdown-heading" dir="auto"><h3 class="heading-element" dir="auto">Architecture</h3><a id="user-content-architecture" class="anchor" aria-label="Permalink: Architecture" href="#architecture"></a></div>
+<p dir="auto">Built using <strong>LangGraph</strong> as a state-based workflow orchestrator with a sophisticated multi-step research pipeline:</p>
+<ol dir="auto">
+<li><strong>Query Writer</strong> - Generates optimized, contextual search queries based on research objectives</li>
+<li><strong>Web Search</strong> - Executes comprehensive searches using Tavily API with intelligent source selection</li>
+<li><strong>Note Taker</strong> - Extracts structured information from search results using schema-validated LLM processing</li>
+<li><strong>Note Reviewer</strong> - Validates, refines, and enhances extracted data with iterative quality improvement</li>
+<li><strong>LinkedIn Finder</strong> - Specialized LinkedIn profile discovery and validation component</li>
+<li><strong>Routing Logic</strong> - Intelligent workflow routing based on research progress and quality metrics</li>
+</ol>
+<div class="markdown-heading" dir="auto"><h3 class="heading-element" dir="auto">Data Processing Pipeline</h3><a id="user-content-data-processing-pipeline" class="anchor" aria-label="Permalink: Data Processing Pipeline" href="#data-processing-pipeline"></a></div>
+<p dir="auto">The system employs a sophisticated data processing approach:</p>
+<ul dir="auto">
+<li><strong>Source Deduplication</strong>: Prevents redundant processing of identical sources</li>
+<li><strong>Content Aggregation</strong>: Intelligent merging of information from multiple sources</li>
+<li><strong>Schema Validation</strong>: Pydantic-based validation ensures data structure consistency</li>
+<li><strong>Quality Scoring</strong>: Automated assessment of information completeness and reliability</li>
+<li><strong>Iterative Refinement</strong>: Multi-pass processing for enhanced accuracy and detail</li>
+</ul>
+<div class="markdown-heading" dir="auto"><h2 class="heading-element" dir="auto">Technical Stack</h2><a id="user-content-technical-stack" class="anchor" aria-label="Permalink: Technical Stack" href="#technical-stack"></a></div>
+<div class="markdown-heading" dir="auto"><h3 class="heading-element" dir="auto">Core Frameworks</h3><a id="user-content-core-frameworks" class="anchor" aria-label="Permalink: Core Frameworks" href="#core-frameworks"></a></div>
+<ul dir="auto">
+<li><strong>LangGraph</strong>: Advanced workflow orchestration and state management</li>
+<li><strong>LangChain</strong>: LLM integrations, model abstraction, and chain composition</li>
+<li><strong>Pydantic</strong>: Data validation, serialization, and structured outputs</li>
+<li><strong>Rich</strong>: Enhanced console output formatting and progress visualization</li>
+</ul>
+<div class="markdown-heading" dir="auto"><h3 class="heading-element" dir="auto">External Services</h3><a id="user-content-external-services" class="anchor" aria-label="Permalink: External Services" href="#external-services"></a></div>
+<ul dir="auto">
+<li><strong>Tavily</strong>: Professional web search API for real-time information gathering</li>
+</ul>
+<div class="markdown-heading" dir="auto"><h3 class="heading-element" dir="auto">Development Tools</h3><a id="user-content-development-tools" class="anchor" aria-label="Permalink: Development Tools" href="#development-tools"></a></div>
+<ul dir="auto">
+<li><strong>uv</strong>: Fast Python package management and dependency resolution</li>
+<li><strong>Makefile</strong>: Automated build and development workflow management</li>
+<li><strong>Type Hints</strong>: Comprehensive type annotations for better code reliability</li>
+</ul>
+<div class="markdown-heading" dir="auto"><h2 class="heading-element" dir="auto">Supported LLM Providers</h2><a id="user-content-supported-llm-providers" class="anchor" aria-label="Permalink: Supported LLM Providers" href="#supported-llm-providers"></a></div>
+<div class="markdown-heading" dir="auto"><h3 class="heading-element" dir="auto">Production-Ready Providers</h3><a id="user-content-production-ready-providers" class="anchor" aria-label="Permalink: Production-Ready Providers" href="#production-ready-providers"></a></div>
+<ul dir="auto">
+<li><strong>Groq</strong>:
+<ul dir="auto">
+<li>Llama-3.3-70b-versatile (high performance, cost-effective)</li>
+<li>DeepSeek-R1-distill (reasoning-optimized model)</li>
+</ul>
+</li>
+<li><strong>OpenAI</strong>:
+<ul dir="auto">
+<li>GPT-4.1 (high accuracy, comprehensive reasoning)</li>
+<li>O3 reasoning model (advanced problem-solving capabilities)</li>
+</ul>
+</li>
+</ul>
+<div class="markdown-heading" dir="auto"><h3 class="heading-element" dir="auto">Development and Testing</h3><a id="user-content-development-and-testing" class="anchor" aria-label="Permalink: Development and Testing" href="#development-and-testing"></a></div>
+<ul dir="auto">
+<li><strong>vLLM</strong>: Custom model endpoints for specialized use cases</li>
+<li><strong>Ollama</strong>: Local model deployment for development and testing</li>
+</ul>
+<div class="markdown-heading" dir="auto"><h3 class="heading-element" dir="auto">Model Selection Guidance</h3><a id="user-content-model-selection-guidance" class="anchor" aria-label="Permalink: Model Selection Guidance" href="#model-selection-guidance"></a></div>
+<ul dir="auto">
+<li><strong>Groq Llama-3.3-70b</strong>: Recommended for cost-effective, high-volume research</li>
+<li><strong>DeepSeek-R1</strong>: Optimal for research tasks requiring deep analytical thinking</li>
+<li><strong>OpenAI GPT-4.1</strong>: Best for complex reasoning and high-accuracy requirements</li>
+</ul>
+<div class="markdown-heading" dir="auto"><h2 class="heading-element" dir="auto">Installation</h2><a id="user-content-installation" class="anchor" aria-label="Permalink: Installation" href="#installation"></a></div>
+<div class="markdown-heading" dir="auto"><h3 class="heading-element" dir="auto">Prerequisites</h3><a id="user-content-prerequisites" class="anchor" aria-label="Permalink: Prerequisites" href="#prerequisites"></a></div>
+<ul dir="auto">
+<li>Python 3.11 or higher</li>
+<li>Git for repository cloning</li>
+<li>API keys for required services (Groq/OpenAI, Tavily)</li>
+</ul>
+<div class="markdown-heading" dir="auto"><h3 class="heading-element" dir="auto">Quick Start</h3><a id="user-content-quick-start" class="anchor" aria-label="Permalink: Quick Start" href="#quick-start"></a></div>
+<div class="highlight highlight-source-shell notranslate position-relative overflow-auto" dir="auto" data-snippet-clipboard-copy-content="# Clone the repository
+git clone https://github.com/bgunyel/business-researcher.git
+cd business-researcher
+
+# Install dependencies using uv (recommended)
+uv sync --upgrade
+
+# Alternative: Use Makefile for dependency management
+make sync"><pre><span class="pl-c"><span class="pl-c">#</span> Clone the repository</span>
+git clone https://github.com/bgunyel/business-researcher.git
+<span class="pl-c1">cd</span> business-researcher
+
+<span class="pl-c"><span class="pl-c">#</span> Install dependencies using uv (recommended)</span>
+uv sync --upgrade
+
+<span class="pl-c"><span class="pl-c">#</span> Alternative: Use Makefile for dependency management</span>
+make sync</pre></div>
+<div class="markdown-heading" dir="auto"><h2 class="heading-element" dir="auto">Configuration</h2><a id="user-content-configuration" class="anchor" aria-label="Permalink: Configuration" href="#configuration"></a></div>
+<div class="markdown-heading" dir="auto"><h3 class="heading-element" dir="auto">Environment Variables</h3><a id="user-content-environment-variables" class="anchor" aria-label="Permalink: Environment Variables" href="#environment-variables"></a></div>
+<p dir="auto">Set up your API keys as environment variables:</p>
+<div class="highlight highlight-source-shell notranslate position-relative overflow-auto" dir="auto" data-snippet-clipboard-copy-content="# Required API Keys
+export GROQ_API_KEY=&quot;your-groq-api-key&quot;
+export OPENAI_API_KEY=&quot;your-openai-api-key&quot; 
+export TAVILY_API_KEY=&quot;your-tavily-api-key&quot;"><pre><span class="pl-c"><span class="pl-c">#</span> Required API Keys</span>
+<span class="pl-k">export</span> GROQ_API_KEY=<span class="pl-s"><span class="pl-pds">"</span>your-groq-api-key<span class="pl-pds">"</span></span>
+<span class="pl-k">export</span> OPENAI_API_KEY=<span class="pl-s"><span class="pl-pds">"</span>your-openai-api-key<span class="pl-pds">"</span></span> 
+<span class="pl-k">export</span> TAVILY_API_KEY=<span class="pl-s"><span class="pl-pds">"</span>your-tavily-api-key<span class="pl-pds">"</span></span></pre></div>
+<div class="markdown-heading" dir="auto"><h3 class="heading-element" dir="auto">Environment File</h3><a id="user-content-environment-file" class="anchor" aria-label="Permalink: Environment File" href="#environment-file"></a></div>
+<p dir="auto">Create a <code>.env</code> file with your API keys:</p>
+<div class="highlight highlight-source-shell notranslate position-relative overflow-auto" dir="auto" data-snippet-clipboard-copy-content="GROQ_API_KEY=your-groq-api-key
+OPENAI_API_KEY=your-openai-api-key
+TAVILY_API_KEY=your-tavily-api-key"><pre>GROQ_API_KEY=your-groq-api-key
+OPENAI_API_KEY=your-openai-api-key
+TAVILY_API_KEY=your-tavily-api-key</pre></div>
+<div class="markdown-heading" dir="auto"><h3 class="heading-element" dir="auto">Required API Keys and Setup</h3><a id="user-content-required-api-keys-and-setup" class="anchor" aria-label="Permalink: Required API Keys and Setup" href="#required-api-keys-and-setup"></a></div>
+<div class="markdown-heading" dir="auto"><h4 class="heading-element" dir="auto">Groq API Key</h4><a id="user-content-groq-api-key" class="anchor" aria-label="Permalink: Groq API Key" href="#groq-api-key"></a></div>
+<ol dir="auto">
+<li>Visit <a href="https://console.groq.com/" rel="nofollow">Groq Console</a></li>
+<li>Create account and generate API key</li>
+<li>Set <code>GROQ_API_KEY</code> environment variable</li>
+</ol>
+<div class="markdown-heading" dir="auto"><h4 class="heading-element" dir="auto">OpenAI API Key</h4><a id="user-content-openai-api-key" class="anchor" aria-label="Permalink: OpenAI API Key" href="#openai-api-key"></a></div>
+<ol dir="auto">
+<li>Visit <a href="https://platform.openai.com/" rel="nofollow">OpenAI Platform</a></li>
+<li>Generate API key in your account settings</li>
+<li>Set <code>OPENAI_API_KEY</code> environment variable</li>
+</ol>
+<div class="markdown-heading" dir="auto"><h4 class="heading-element" dir="auto">Tavily API Key</h4><a id="user-content-tavily-api-key" class="anchor" aria-label="Permalink: Tavily API Key" href="#tavily-api-key"></a></div>
+<ol dir="auto">
+<li>Visit <a href="https://tavily.com/" rel="nofollow">Tavily</a></li>
+<li>Sign up for API access</li>
+<li>Set <code>TAVILY_API_KEY</code> environment variable</li>
+</ol>
+<div class="markdown-heading" dir="auto"><h2 class="heading-element" dir="auto">Usage</h2><a id="user-content-usage" class="anchor" aria-label="Permalink: Usage" href="#usage"></a></div>
+<div class="highlight highlight-source-python notranslate position-relative overflow-auto" dir="auto" data-snippet-clipboard-copy-content="import asyncio
+from business_researcher import BusinessResearcher
+from business_researcher.state import SearchState, Person, Company
+from business_researcher.enums import SearchType
+from config import settings
+
+# Custom LLM configuration
+llm_config = {
+        'language_model': {
+            'model': 'llama-3.3-70b-versatile',
+            'model_provider': LlmServers.GROQ.value,
+            'api_key': settings.GROQ_API_KEY,
+            'model_args': {
+                'temperature': 0,
+                'max_retries': 5,
+                'max_tokens': 32768,
+                'model_kwargs': {
+                    'top_p': 0.95,
+                    'service_tier': &quot;auto&quot;,
+                }
+            }
+        },
+        'reasoning_model': {
+            'model': 'deepseek-r1-distill-llama-70b',
+            'model_provider': LlmServers.GROQ.value,
+            'api_key': settings.GROQ_API_KEY,
+            'model_args': {
+                'temperature': 0,
+                'max_retries': 5,
+                'max_tokens': 32768,
+                'model_kwargs': {
+                    'top_p': 0.95,
+                    'service_tier': &quot;auto&quot;,
+                }
+            }
+        }
+    }
+    
+# Custom research configuration
+config = {
+        &quot;configurable&quot;: {
+            'thread_id': str(uuid4()),
+            'max_iterations': 3,
+            'max_results_per_query': 4,
+            'max_tokens_per_source': 10000,
+            'number_of_days_back': 1e6,
+            'number_of_queries': 3,
+            'search_category': 'general',
+        }
+    }
+
+# Initialize with custom LLM config
+researcher = BusinessResearcher(
+    llm_config=llm_config,
+    web_search_api_key=&quot;your-tavily-key&quot;,
+)
+
+# Detailed person research
+person = {
+    	&quot;name&quot;: &quot;Jane Smith&quot;,
+    	&quot;company&quot;: &quot;Innovation Labs&quot;,
+    	&quot;search_type&quot;: SearchType.PERSON,
+	}
+
+# Execute the research
+event_loop = asyncio.new_event_loop()
+out_dict = event_loop.run_until_complete(business_researcher.run(input_dict=person, config=config))
+event_loop.close()"><pre><span class="pl-k">import</span> <span class="pl-s1">asyncio</span>
+<span class="pl-k">from</span> <span class="pl-s1">business_researcher</span> <span class="pl-k">import</span> <span class="pl-v">BusinessResearcher</span>
+<span class="pl-k">from</span> <span class="pl-s1">business_researcher</span>.<span class="pl-s1">state</span> <span class="pl-k">import</span> <span class="pl-v">SearchState</span>, <span class="pl-v">Person</span>, <span class="pl-v">Company</span>
+<span class="pl-k">from</span> <span class="pl-s1">business_researcher</span>.<span class="pl-s1">enums</span> <span class="pl-k">import</span> <span class="pl-v">SearchType</span>
+<span class="pl-k">from</span> <span class="pl-s1">config</span> <span class="pl-k">import</span> <span class="pl-s1">settings</span>
+
+<span class="pl-c"># Custom LLM configuration</span>
+<span class="pl-s1">llm_config</span> <span class="pl-c1">=</span> {
+        <span class="pl-s">'language_model'</span>: {
+            <span class="pl-s">'model'</span>: <span class="pl-s">'llama-3.3-70b-versatile'</span>,
+            <span class="pl-s">'model_provider'</span>: <span class="pl-v">LlmServers</span>.<span class="pl-c1">GROQ</span>.<span class="pl-c1">value</span>,
+            <span class="pl-s">'api_key'</span>: <span class="pl-s1">settings</span>.<span class="pl-c1">GROQ_API_KEY</span>,
+            <span class="pl-s">'model_args'</span>: {
+                <span class="pl-s">'temperature'</span>: <span class="pl-c1">0</span>,
+                <span class="pl-s">'max_retries'</span>: <span class="pl-c1">5</span>,
+                <span class="pl-s">'max_tokens'</span>: <span class="pl-c1">32768</span>,
+                <span class="pl-s">'model_kwargs'</span>: {
+                    <span class="pl-s">'top_p'</span>: <span class="pl-c1">0.95</span>,
+                    <span class="pl-s">'service_tier'</span>: <span class="pl-s">"auto"</span>,
+                }
+            }
+        },
+        <span class="pl-s">'reasoning_model'</span>: {
+            <span class="pl-s">'model'</span>: <span class="pl-s">'deepseek-r1-distill-llama-70b'</span>,
+            <span class="pl-s">'model_provider'</span>: <span class="pl-v">LlmServers</span>.<span class="pl-c1">GROQ</span>.<span class="pl-c1">value</span>,
+            <span class="pl-s">'api_key'</span>: <span class="pl-s1">settings</span>.<span class="pl-c1">GROQ_API_KEY</span>,
+            <span class="pl-s">'model_args'</span>: {
+                <span class="pl-s">'temperature'</span>: <span class="pl-c1">0</span>,
+                <span class="pl-s">'max_retries'</span>: <span class="pl-c1">5</span>,
+                <span class="pl-s">'max_tokens'</span>: <span class="pl-c1">32768</span>,
+                <span class="pl-s">'model_kwargs'</span>: {
+                    <span class="pl-s">'top_p'</span>: <span class="pl-c1">0.95</span>,
+                    <span class="pl-s">'service_tier'</span>: <span class="pl-s">"auto"</span>,
+                }
+            }
+        }
+    }
+    
+<span class="pl-c"># Custom research configuration</span>
+<span class="pl-s1">config</span> <span class="pl-c1">=</span> {
+        <span class="pl-s">"configurable"</span>: {
+            <span class="pl-s">'thread_id'</span>: <span class="pl-en">str</span>(<span class="pl-en">uuid4</span>()),
+            <span class="pl-s">'max_iterations'</span>: <span class="pl-c1">3</span>,
+            <span class="pl-s">'max_results_per_query'</span>: <span class="pl-c1">4</span>,
+            <span class="pl-s">'max_tokens_per_source'</span>: <span class="pl-c1">10000</span>,
+            <span class="pl-s">'number_of_days_back'</span>: <span class="pl-c1">1e6</span>,
+            <span class="pl-s">'number_of_queries'</span>: <span class="pl-c1">3</span>,
+            <span class="pl-s">'search_category'</span>: <span class="pl-s">'general'</span>,
+        }
+    }
+
+<span class="pl-c"># Initialize with custom LLM config</span>
+<span class="pl-s1">researcher</span> <span class="pl-c1">=</span> <span class="pl-en">BusinessResearcher</span>(
+    <span class="pl-s1">llm_config</span><span class="pl-c1">=</span><span class="pl-s1">llm_config</span>,
+    <span class="pl-s1">web_search_api_key</span><span class="pl-c1">=</span><span class="pl-s">"your-tavily-key"</span>,
+)
+
+<span class="pl-c"># Detailed person research</span>
+<span class="pl-s1">person</span> <span class="pl-c1">=</span> {
+    	<span class="pl-s">"name"</span>: <span class="pl-s">"Jane Smith"</span>,
+    	<span class="pl-s">"company"</span>: <span class="pl-s">"Innovation Labs"</span>,
+    	<span class="pl-s">"search_type"</span>: <span class="pl-v">SearchType</span>.<span class="pl-c1">PERSON</span>,
+	}
+
+<span class="pl-c"># Execute the research</span>
+<span class="pl-s1">event_loop</span> <span class="pl-c1">=</span> <span class="pl-s1">asyncio</span>.<span class="pl-c1">new_event_loop</span>()
+<span class="pl-s1">out_dict</span> <span class="pl-c1">=</span> <span class="pl-s1">event_loop</span>.<span class="pl-c1">run_until_complete</span>(<span class="pl-s1">business_researcher</span>.<span class="pl-c1">run</span>(<span class="pl-s1">input_dict</span><span class="pl-c1">=</span><span class="pl-s1">person</span>, <span class="pl-s1">config</span><span class="pl-c1">=</span><span class="pl-s1">config</span>))
+<span class="pl-s1">event_loop</span>.<span class="pl-c1">close</span>()</pre></div>
+<div class="markdown-heading" dir="auto"><h2 class="heading-element" dir="auto">Output Schema</h2><a id="user-content-output-schema" class="anchor" aria-label="Permalink: Output Schema" href="#output-schema"></a></div>
+<div class="markdown-heading" dir="auto"><h3 class="heading-element" dir="auto">Person Research Output</h3><a id="user-content-person-research-output" class="anchor" aria-label="Permalink: Person Research Output" href="#person-research-output"></a></div>
+<div class="highlight highlight-source-json notranslate position-relative overflow-auto" dir="auto" data-snippet-clipboard-copy-content="{
+  &quot;name&quot;: &quot;John Doe&quot;,
+  &quot;linkedin&quot;: &quot;https://linkedin.com/in/johndoe&quot;,
+  &quot;role&quot;: &quot;Senior Software Engineer&quot;,
+  &quot;work_email&quot;: &quot;john.doe@techcorp.com&quot;,
+  &quot;current_location&quot;: &quot;San Francisco, CA&quot;,
+  &quot;company&quot;: &quot;Tech Corp&quot;,
+  &quot;work_history&quot;: [
+    {
+      &quot;company&quot;: &quot;Tech Corp&quot;,
+      &quot;role&quot;: &quot;Senior Software Engineer&quot;,
+      &quot;duration&quot;: &quot;2021-Present&quot;,
+      &quot;description&quot;: &quot;Lead developer for cloud infrastructure&quot;
+    }
+  ],
+  &quot;years_of_experience&quot;: 8,
+  &quot;contact_info&quot;: {
+    &quot;email&quot;: &quot;john.doe@techcorp.com&quot;,
+    &quot;phone&quot;: &quot;+1-555-0123&quot;
+  },
+  &quot;education&quot;: &quot;BS Computer Science, Stanford University&quot;,
+  &quot;skills&quot;: [&quot;Python&quot;, &quot;AWS&quot;, &quot;Kubernetes&quot;],
+  &quot;achievements&quot;: [&quot;AWS Certified Solutions Architect&quot;]
+}"><pre>{
+  <span class="pl-ent">"name"</span>: <span class="pl-s"><span class="pl-pds">"</span>John Doe<span class="pl-pds">"</span></span>,
+  <span class="pl-ent">"linkedin"</span>: <span class="pl-s"><span class="pl-pds">"</span>https://linkedin.com/in/johndoe<span class="pl-pds">"</span></span>,
+  <span class="pl-ent">"role"</span>: <span class="pl-s"><span class="pl-pds">"</span>Senior Software Engineer<span class="pl-pds">"</span></span>,
+  <span class="pl-ent">"work_email"</span>: <span class="pl-s"><span class="pl-pds">"</span>john.doe@techcorp.com<span class="pl-pds">"</span></span>,
+  <span class="pl-ent">"current_location"</span>: <span class="pl-s"><span class="pl-pds">"</span>San Francisco, CA<span class="pl-pds">"</span></span>,
+  <span class="pl-ent">"company"</span>: <span class="pl-s"><span class="pl-pds">"</span>Tech Corp<span class="pl-pds">"</span></span>,
+  <span class="pl-ent">"work_history"</span>: [
+    {
+      <span class="pl-ent">"company"</span>: <span class="pl-s"><span class="pl-pds">"</span>Tech Corp<span class="pl-pds">"</span></span>,
+      <span class="pl-ent">"role"</span>: <span class="pl-s"><span class="pl-pds">"</span>Senior Software Engineer<span class="pl-pds">"</span></span>,
+      <span class="pl-ent">"duration"</span>: <span class="pl-s"><span class="pl-pds">"</span>2021-Present<span class="pl-pds">"</span></span>,
+      <span class="pl-ent">"description"</span>: <span class="pl-s"><span class="pl-pds">"</span>Lead developer for cloud infrastructure<span class="pl-pds">"</span></span>
+    }
+  ],
+  <span class="pl-ent">"years_of_experience"</span>: <span class="pl-c1">8</span>,
+  <span class="pl-ent">"contact_info"</span>: {
+    <span class="pl-ent">"email"</span>: <span class="pl-s"><span class="pl-pds">"</span>john.doe@techcorp.com<span class="pl-pds">"</span></span>,
+    <span class="pl-ent">"phone"</span>: <span class="pl-s"><span class="pl-pds">"</span>+1-555-0123<span class="pl-pds">"</span></span>
+  },
+  <span class="pl-ent">"education"</span>: <span class="pl-s"><span class="pl-pds">"</span>BS Computer Science, Stanford University<span class="pl-pds">"</span></span>,
+  <span class="pl-ent">"skills"</span>: [<span class="pl-s"><span class="pl-pds">"</span>Python<span class="pl-pds">"</span></span>, <span class="pl-s"><span class="pl-pds">"</span>AWS<span class="pl-pds">"</span></span>, <span class="pl-s"><span class="pl-pds">"</span>Kubernetes<span class="pl-pds">"</span></span>],
+  <span class="pl-ent">"achievements"</span>: [<span class="pl-s"><span class="pl-pds">"</span>AWS Certified Solutions Architect<span class="pl-pds">"</span></span>]
+}</pre></div>
+<div class="markdown-heading" dir="auto"><h3 class="heading-element" dir="auto">Company Research Output</h3><a id="user-content-company-research-output" class="anchor" aria-label="Permalink: Company Research Output" href="#company-research-output"></a></div>
+<div class="highlight highlight-source-json notranslate position-relative overflow-auto" dir="auto" data-snippet-clipboard-copy-content="{
+  &quot;name&quot;: &quot;Tech Corp&quot;,
+  &quot;website&quot;: &quot;https://techcorp.com&quot;,
+  &quot;linkedin&quot;: &quot;https://linkedin.com/company/techcorp&quot;,
+  &quot;crunchbase&quot;: &quot;https://crunchbase.com/organization/techcorp&quot;,
+  &quot;leadership&quot;: [
+    {
+      &quot;name&quot;: &quot;Alice Johnson&quot;,
+      &quot;role&quot;: &quot;CEO&quot;,
+      &quot;linkedin&quot;: &quot;https://linkedin.com/in/alicejohnson&quot;
+    }
+  ],
+  &quot;products_services&quot;: [
+    &quot;Cloud Infrastructure Platform&quot;,
+    &quot;DevOps Automation Tools&quot;
+  ],
+  &quot;company_overview&quot;: &quot;Leading provider of cloud infrastructure solutions&quot;,
+  &quot;funding_info&quot;: {
+    &quot;total_funding&quot;: &quot;$50M&quot;,
+    &quot;latest_round&quot;: &quot;Series B&quot;,
+    &quot;latest_amount&quot;: &quot;$25M&quot;,
+    &quot;latest_date&quot;: &quot;2023-06-15&quot;,
+    &quot;investors&quot;: [&quot;Venture Capital Firm A&quot;, &quot;Angel Investor Group&quot;]
+  },
+  &quot;employee_count&quot;: &quot;150-200&quot;,
+  &quot;industry&quot;: &quot;Cloud Computing&quot;,
+  &quot;founded_year&quot;: 2018,
+  &quot;headquarters&quot;: &quot;San Francisco, CA&quot;
+}"><pre>{
+  <span class="pl-ent">"name"</span>: <span class="pl-s"><span class="pl-pds">"</span>Tech Corp<span class="pl-pds">"</span></span>,
+  <span class="pl-ent">"website"</span>: <span class="pl-s"><span class="pl-pds">"</span>https://techcorp.com<span class="pl-pds">"</span></span>,
+  <span class="pl-ent">"linkedin"</span>: <span class="pl-s"><span class="pl-pds">"</span>https://linkedin.com/company/techcorp<span class="pl-pds">"</span></span>,
+  <span class="pl-ent">"crunchbase"</span>: <span class="pl-s"><span class="pl-pds">"</span>https://crunchbase.com/organization/techcorp<span class="pl-pds">"</span></span>,
+  <span class="pl-ent">"leadership"</span>: [
+    {
+      <span class="pl-ent">"name"</span>: <span class="pl-s"><span class="pl-pds">"</span>Alice Johnson<span class="pl-pds">"</span></span>,
+      <span class="pl-ent">"role"</span>: <span class="pl-s"><span class="pl-pds">"</span>CEO<span class="pl-pds">"</span></span>,
+      <span class="pl-ent">"linkedin"</span>: <span class="pl-s"><span class="pl-pds">"</span>https://linkedin.com/in/alicejohnson<span class="pl-pds">"</span></span>
+    }
+  ],
+  <span class="pl-ent">"products_services"</span>: [
+    <span class="pl-s"><span class="pl-pds">"</span>Cloud Infrastructure Platform<span class="pl-pds">"</span></span>,
+    <span class="pl-s"><span class="pl-pds">"</span>DevOps Automation Tools<span class="pl-pds">"</span></span>
+  ],
+  <span class="pl-ent">"company_overview"</span>: <span class="pl-s"><span class="pl-pds">"</span>Leading provider of cloud infrastructure solutions<span class="pl-pds">"</span></span>,
+  <span class="pl-ent">"funding_info"</span>: {
+    <span class="pl-ent">"total_funding"</span>: <span class="pl-s"><span class="pl-pds">"</span>$50M<span class="pl-pds">"</span></span>,
+    <span class="pl-ent">"latest_round"</span>: <span class="pl-s"><span class="pl-pds">"</span>Series B<span class="pl-pds">"</span></span>,
+    <span class="pl-ent">"latest_amount"</span>: <span class="pl-s"><span class="pl-pds">"</span>$25M<span class="pl-pds">"</span></span>,
+    <span class="pl-ent">"latest_date"</span>: <span class="pl-s"><span class="pl-pds">"</span>2023-06-15<span class="pl-pds">"</span></span>,
+    <span class="pl-ent">"investors"</span>: [<span class="pl-s"><span class="pl-pds">"</span>Venture Capital Firm A<span class="pl-pds">"</span></span>, <span class="pl-s"><span class="pl-pds">"</span>Angel Investor Group<span class="pl-pds">"</span></span>]
+  },
+  <span class="pl-ent">"employee_count"</span>: <span class="pl-s"><span class="pl-pds">"</span>150-200<span class="pl-pds">"</span></span>,
+  <span class="pl-ent">"industry"</span>: <span class="pl-s"><span class="pl-pds">"</span>Cloud Computing<span class="pl-pds">"</span></span>,
+  <span class="pl-ent">"founded_year"</span>: <span class="pl-c1">2018</span>,
+  <span class="pl-ent">"headquarters"</span>: <span class="pl-s"><span class="pl-pds">"</span>San Francisco, CA<span class="pl-pds">"</span></span>
+}</pre></div>
+<div class="markdown-heading" dir="auto"><h2 class="heading-element" dir="auto">Project Structure</h2><a id="user-content-project-structure" class="anchor" aria-label="Permalink: Project Structure" href="#project-structure"></a></div>
+<div class="snippet-clipboard-content notranslate position-relative overflow-auto" data-snippet-clipboard-copy-content="business-researcher/
+├── Makefile                     # Build and dependency management
+├── pyproject.toml              # Project configuration and dependencies
+├── uv.lock                     # Dependency lock file
+├── .env                        # Environment variables (create this)
+├── out/                        # Output directory for research results
+└── src/
+    ├── business_researcher/
+    │   ├── components/              # Individual processing components
+    │   │   ├── query_writer.py      # Search query generation
+    │   │   ├── note_taker.py        # Information extraction
+    │   │   ├── note_reviewer.py     # Quality validation
+    │   │   ├── linkedin_finder.py   # LinkedIn profile validation
+    │   │   ├── routing.py           # Workflow routing logic
+    │   │   └── utils.py             # Utility functions
+    │   ├── researcher.py            # Main orchestrator class
+    │   ├── schema.py               # Data models and validation
+    │   ├── state.py                # Workflow state management
+    │   ├── enums.py                # Type definitions
+    │   ├── configuration.py        # Configuration management
+    │   └── __init__.py             # Package initialization
+    ├── config.py                   # Global configuration
+    └── main_dev.py                 # Development entry point"><pre class="notranslate"><code>business-researcher/
+├── Makefile                     # Build and dependency management
+├── pyproject.toml              # Project configuration and dependencies
+├── uv.lock                     # Dependency lock file
+├── .env                        # Environment variables (create this)
+├── out/                        # Output directory for research results
+└── src/
+    ├── business_researcher/
+    │   ├── components/              # Individual processing components
+    │   │   ├── query_writer.py      # Search query generation
+    │   │   ├── note_taker.py        # Information extraction
+    │   │   ├── note_reviewer.py     # Quality validation
+    │   │   ├── linkedin_finder.py   # LinkedIn profile validation
+    │   │   ├── routing.py           # Workflow routing logic
+    │   │   └── utils.py             # Utility functions
+    │   ├── researcher.py            # Main orchestrator class
+    │   ├── schema.py               # Data models and validation
+    │   ├── state.py                # Workflow state management
+    │   ├── enums.py                # Type definitions
+    │   ├── configuration.py        # Configuration management
+    │   └── __init__.py             # Package initialization
+    ├── config.py                   # Global configuration
+    └── main_dev.py                 # Development entry point
+</code></pre></div>
+<div class="markdown-heading" dir="auto"><h2 class="heading-element" dir="auto">Development</h2><a id="user-content-development" class="anchor" aria-label="Permalink: Development" href="#development"></a></div>
+<div class="markdown-heading" dir="auto"><h3 class="heading-element" dir="auto">Setting Up Development Environment</h3><a id="user-content-setting-up-development-environment" class="anchor" aria-label="Permalink: Setting Up Development Environment" href="#setting-up-development-environment"></a></div>
+<div class="highlight highlight-source-shell notranslate position-relative overflow-auto" dir="auto" data-snippet-clipboard-copy-content="# Clone and setup
+git clone https://github.com/bgunyel/business-researcher
+cd business-researcher
+uv sync --upgrade
+
+# Create environment file with your API keys
+cp .env.example .env  # Create .env file if it doesn't exist
+# Edit .env with your API keys"><pre><span class="pl-c"><span class="pl-c">#</span> Clone and setup</span>
+git clone https://github.com/bgunyel/business-researcher
+<span class="pl-c1">cd</span> business-researcher
+uv sync --upgrade
+
+<span class="pl-c"><span class="pl-c">#</span> Create environment file with your API keys</span>
+cp .env.example .env  <span class="pl-c"><span class="pl-c">#</span> Create .env file if it doesn't exist</span>
+<span class="pl-c"><span class="pl-c">#</span> Edit .env with your API keys</span></pre></div>
+<div class="markdown-heading" dir="auto"><h3 class="heading-element" dir="auto">Code Quality</h3><a id="user-content-code-quality" class="anchor" aria-label="Permalink: Code Quality" href="#code-quality"></a></div>
+<p dir="auto">The project maintains high code quality standards:</p>
+<ul dir="auto">
+<li><strong>Type Hints</strong>: Comprehensive type annotations throughout codebase</li>
+<li><strong>Pydantic Validation</strong>: Structured data validation for all inputs/outputs</li>
+<li><strong>Code Formatting</strong>: Consistent code style</li>
+<li><strong>Documentation</strong>: Detailed docstrings and comprehensive README</li>
+</ul>
+<div class="markdown-heading" dir="auto"><h2 class="heading-element" dir="auto">Performance Features</h2><a id="user-content-performance-features" class="anchor" aria-label="Permalink: Performance Features" href="#performance-features"></a></div>
+<ul dir="auto">
+<li><strong>Token Usage Tracking</strong>: Smart token usage tracking and optimization</li>
+<li><strong>Source Deduplication</strong>: Prevents redundant processing of identical sources</li>
+<li><strong>Iterative Refinement</strong>: Multi-pass processing for enhanced accuracy</li>
+</ul>
+<div class="markdown-heading" dir="auto"><h2 class="heading-element" dir="auto">Troubleshooting</h2><a id="user-content-troubleshooting" class="anchor" aria-label="Permalink: Troubleshooting" href="#troubleshooting"></a></div>
+<div class="markdown-heading" dir="auto"><h3 class="heading-element" dir="auto">Common Issues</h3><a id="user-content-common-issues" class="anchor" aria-label="Permalink: Common Issues" href="#common-issues"></a></div>
+<p dir="auto"><strong>API Key Issues:</strong></p>
+<div class="highlight highlight-source-shell notranslate position-relative overflow-auto" dir="auto" data-snippet-clipboard-copy-content="# Verify API keys are set
+echo $GROQ_API_KEY
+echo $TAVILY_API_KEY
+
+# Test API connectivity
+python -c &quot;import os; from groq import Groq; print(Groq(api_key=os.getenv('GROQ_API_KEY')).models.list())&quot;"><pre><span class="pl-c"><span class="pl-c">#</span> Verify API keys are set</span>
+<span class="pl-c1">echo</span> <span class="pl-smi">$GROQ_API_KEY</span>
+<span class="pl-c1">echo</span> <span class="pl-smi">$TAVILY_API_KEY</span>
+
+<span class="pl-c"><span class="pl-c">#</span> Test API connectivity</span>
+python -c <span class="pl-s"><span class="pl-pds">"</span>import os; from groq import Groq; print(Groq(api_key=os.getenv('GROQ_API_KEY')).models.list())<span class="pl-pds">"</span></span></pre></div>
+<p dir="auto"><strong>Installation Issues:</strong></p>
+<div class="highlight highlight-source-shell notranslate position-relative overflow-auto" dir="auto" data-snippet-clipboard-copy-content="# Clear uv cache
+uv cache clean
+
+# Reinstall dependencies
+rm uv.lock
+uv sync --upgrade"><pre><span class="pl-c"><span class="pl-c">#</span> Clear uv cache</span>
+uv cache clean
+
+<span class="pl-c"><span class="pl-c">#</span> Reinstall dependencies</span>
+rm uv.lock
+uv sync --upgrade</pre></div>
+<p dir="auto"><strong>Research Quality Issues:</strong></p>
+<ul dir="auto">
+<li>Check API key configuration</li>
+<li>Verify internet connectivity</li>
+<li>Review search query parameters</li>
+</ul>
+<div class="markdown-heading" dir="auto"><h2 class="heading-element" dir="auto">License</h2><a id="user-content-license" class="anchor" aria-label="Permalink: License" href="#license"></a></div>
+<p dir="auto">This project is licensed under the MIT License.</p>
+        </div>
+      </section>
+
+      <footer>LeadScaper Platform — Business Researcher</footer>
+    </main>
+  </div>
+</body>
+</html>

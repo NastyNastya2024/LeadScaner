@@ -1,0 +1,490 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Company Research Agent (Tavily) — LeadScaper</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="header-inner">
+      <a class="logo" href="../index.html">
+        <span class="logo-icon">✦</span>
+        LeadScaper
+      </a>
+      <div class="header-actions">
+        <button class="btn-icon" type="button">⚙</button>
+      </div>
+    </div>
+  </header>
+
+  <div class="layout tool-page">
+    <main class="main">
+      <a class="back-link" href="../index.html">← Назад к архитектуре</a>
+
+      <div class="hero-card hero-card-accent tool-hero">
+        <div class="tool-icon">3.4</div>
+        <div class="tool-hero-body">
+          <div class="hero-stat-label">Слой 3 · Анализ данных</div>
+          <h1 class="hero-stat-value tool-hero-title">Company Research Agent (Tavily)</h1>
+          <p class="hero-stat-sub">Глубокий анализ и генерация отчётов в PDF/Markdown</p>
+          <a class="btn-external" href="https://github.com/BunsDev/company-research-agent-tavily" target="_blank" rel="noopener">
+            Открыть на GitHub →
+          </a>
+        </div>
+      </div>
+
+      <section class="panel">
+        <div class="panel-head">
+          <div class="panel-tag">GitHub</div>
+          <h2 class="panel-title">Описание</h2>
+        </div>
+
+        <div class="tool-stats">
+          <div class="tool-stat"><span class="tool-stat-label">Репозиторий</span><span class="tool-stat-value">BunsDev/company-research-agent-tavily</span></div>
+          <div class="tool-stat"><span class="tool-stat-label">Stars</span><span class="tool-stat-value">1</span></div>
+          <div class="tool-stat"><span class="tool-stat-label">Язык</span><span class="tool-stat-value">—</span></div>
+          <div class="tool-stat"><span class="tool-stat-label">Источник данных</span><span class="tool-stat-value">Tavily API, Anthropic API</span></div>
+        </div>
+
+        <div class="readme-content">
+          <p dir="auto"><a href="https://github.com/pogjester/company-research-agent/blob/main/README.md"><img src="https://camo.githubusercontent.com/9687410941adb91c2f673c9d50ef38544f3e9a38a6b9f9367cac918a8d3e2a41/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f6c616e672d656e2d7265642e737667" alt="en" data-canonical-src="https://img.shields.io/badge/lang-en-red.svg" style="max-width: 100%;"></a>
+<a href="https://github.com/pogjester/company-research-agent/blob/main/README.zh.md"><img src="https://camo.githubusercontent.com/64a8cdb999b14352c6299cff305111fa0786ffc13eb53d7c508772c21845e0e5/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f6c616e672d7a682d677265656e2e737667" alt="zh" data-canonical-src="https://img.shields.io/badge/lang-zh-green.svg" style="max-width: 100%;"></a>
+<a href="https://github.com/pogjester/company-research-agent/blob/main/README.fr.md"><img src="https://camo.githubusercontent.com/27ea3c15722f1b106d46a5fe35c13c3580dc4722a11d1bb2b659f92ed502a25d/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f6c616e672d66722d626c75652e737667" alt="fr" data-canonical-src="https://img.shields.io/badge/lang-fr-blue.svg" style="max-width: 100%;"></a>
+<a href="https://github.com/pogjester/company-research-agent/blob/main/README.es.md"><img src="https://camo.githubusercontent.com/836476cfed52d44b1c1aab20b7c942af38e6f73421e52eba781ee89904ec919a/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f6c616e672d65732d79656c6c6f772e737667" alt="es" data-canonical-src="https://img.shields.io/badge/lang-es-yellow.svg" style="max-width: 100%;"></a>
+<a href="https://github.com/pogjester/company-research-agent/blob/main/README.jp.md"><img src="https://camo.githubusercontent.com/e57d428c58916e4cb5b58c1cdc92775cd09dd2823881e7a0c8a8fd4c0fcde6f6/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f6c616e672d6a702d6f72616e67652e737667" alt="jp" data-canonical-src="https://img.shields.io/badge/lang-jp-orange.svg" style="max-width: 100%;"></a>
+<a href="https://github.com/pogjester/company-research-agent/blob/main/README.kr.md"><img src="https://camo.githubusercontent.com/2f37aed6ae2b9f526cd2982a943b0b04b777fad4516b73eec1c116dc50d4a3c9/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f6c616e672d6b6f2d707572706c652e737667" alt="kr" data-canonical-src="https://img.shields.io/badge/lang-ko-purple.svg" style="max-width: 100%;"></a></p>
+<div class="markdown-heading" dir="auto"><h1 class="heading-element" dir="auto">Agentic Company Researcher 🔍</h1><a id="user-content-agentic-company-researcher-" class="anchor" aria-label="Permalink: Agentic Company Researcher 🔍" href="#agentic-company-researcher-"></a></div>
+<p dir="auto"><a target="_blank" rel="noopener noreferrer" href="static/ui-1.png"><img src="static/ui-1.png" alt="web ui" style="max-width: 100%;"></a></p>
+<p dir="auto">A multi-agent tool that generates comprehensive company research reports. The platform uses a pipeline of AI agents to gather, curate, and synthesize information about any company.</p>
+<p dir="auto">✨Check it out online! <a href="https://companyresearcher.tavily.com" rel="nofollow">https://companyresearcher.tavily.com</a> ✨</p>
+<details open="" class="details-reset border rounded-2">
+  <summary class="tmp-px-3 py-2">
+    
+    <span class="m-1">demo.mp4</span>
+    <span class="dropdown-caret"></span>
+  </summary>
+
+  <video src="https://private-user-images.githubusercontent.com/23711215/440950900-0e373146-26a7-4391-b973-224ded3182a9.mp4?jwt=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3ODIxMjA1NTQsIm5iZiI6MTc4MjEyMDI1NCwicGF0aCI6Ii8yMzcxMTIxNS80NDA5NTA5MDAtMGUzNzMxNDYtMjZhNy00MzkxLWI5NzMtMjI0ZGVkMzE4MmE5Lm1wND9YLUFtei1BbGdvcml0aG09QVdTNC1ITUFDLVNIQTI1NiZYLUFtei1DcmVkZW50aWFsPUFLSUFWQ09EWUxTQTUzUFFLNFpBJTJGMjAyNjA2MjIlMkZ1cy1lYXN0LTElMkZzMyUyRmF3czRfcmVxdWVzdCZYLUFtei1EYXRlPTIwMjYwNjIyVDA5MjQxNFomWC1BbXotRXhwaXJlcz0zMDAmWC1BbXotU2lnbmF0dXJlPWMyODA2YjYxZjVmMDRlZTdhMWM2MGI1YjViOTJhMTViMzYwNWFhY2FjMTFlNjg4ODdlZGMyOTM4MzUyM2FlOTcmWC1BbXotU2lnbmVkSGVhZGVycz1ob3N0JnJlc3BvbnNlLWNvbnRlbnQtdHlwZT12aWRlbyUyRm1wNCJ9.oMNnxq5RkiFgnKHdrP9MYTcfbA-c0L5XIstw2uGDIEo" data-canonical-src="https://private-user-images.githubusercontent.com/23711215/440950900-0e373146-26a7-4391-b973-224ded3182a9.mp4?jwt=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3ODIxMjA1NTQsIm5iZiI6MTc4MjEyMDI1NCwicGF0aCI6Ii8yMzcxMTIxNS80NDA5NTA5MDAtMGUzNzMxNDYtMjZhNy00MzkxLWI5NzMtMjI0ZGVkMzE4MmE5Lm1wND9YLUFtei1BbGdvcml0aG09QVdTNC1ITUFDLVNIQTI1NiZYLUFtei1DcmVkZW50aWFsPUFLSUFWQ09EWUxTQTUzUFFLNFpBJTJGMjAyNjA2MjIlMkZ1cy1lYXN0LTElMkZzMyUyRmF3czRfcmVxdWVzdCZYLUFtei1EYXRlPTIwMjYwNjIyVDA5MjQxNFomWC1BbXotRXhwaXJlcz0zMDAmWC1BbXotU2lnbmF0dXJlPWMyODA2YjYxZjVmMDRlZTdhMWM2MGI1YjViOTJhMTViMzYwNWFhY2FjMTFlNjg4ODdlZGMyOTM4MzUyM2FlOTcmWC1BbXotU2lnbmVkSGVhZGVycz1ob3N0JnJlc3BvbnNlLWNvbnRlbnQtdHlwZT12aWRlbyUyRm1wNCJ9.oMNnxq5RkiFgnKHdrP9MYTcfbA-c0L5XIstw2uGDIEo" controls="controls" muted="muted" class="d-block rounded-bottom-2 border-top width-fit" style="max-height:640px; min-height: 200px">
+
+  </video>
+</details>
+
+<div class="markdown-heading" dir="auto"><h2 class="heading-element" dir="auto">Features</h2><a id="user-content-features" class="anchor" aria-label="Permalink: Features" href="#features"></a></div>
+<ul dir="auto">
+<li><strong>Multi-Source Research</strong>: Gathers data from various sources including company websites, news articles, financial reports, and industry analyses</li>
+<li><strong>AI-Powered Content Filtering</strong>: Uses Tavily's relevance scoring for content curation</li>
+<li><strong>Real-Time Progress Streaming</strong>: Uses WebSocket connections to stream research progress and results</li>
+<li><strong>Dual Model Architecture</strong>:
+<ul dir="auto">
+<li>Gemini 2.0 Flash for high-context research synthesis</li>
+<li>GPT-4.1 for precise report formatting and editing</li>
+</ul>
+</li>
+<li><strong>Modern React Frontend</strong>: Responsive UI with real-time updates, progress tracking, and download options</li>
+<li><strong>Modular Architecture</strong>: Built using a pipeline of specialized research and processing nodes</li>
+</ul>
+<div class="markdown-heading" dir="auto"><h2 class="heading-element" dir="auto">Agent Framework</h2><a id="user-content-agent-framework" class="anchor" aria-label="Permalink: Agent Framework" href="#agent-framework"></a></div>
+<div class="markdown-heading" dir="auto"><h3 class="heading-element" dir="auto">Research Pipeline</h3><a id="user-content-research-pipeline" class="anchor" aria-label="Permalink: Research Pipeline" href="#research-pipeline"></a></div>
+<p dir="auto">The platform follows an agentic framework with specialized nodes that process data sequentially:</p>
+<ol dir="auto">
+<li>
+<p dir="auto"><strong>Research Nodes</strong>:</p>
+<ul dir="auto">
+<li><code>CompanyAnalyzer</code>: Researches core business information</li>
+<li><code>IndustryAnalyzer</code>: Analyzes market position and trends</li>
+<li><code>FinancialAnalyst</code>: Gathers financial metrics and performance data</li>
+<li><code>NewsScanner</code>: Collects recent news and developments</li>
+</ul>
+</li>
+<li>
+<p dir="auto"><strong>Processing Nodes</strong>:</p>
+<ul dir="auto">
+<li><code>Collector</code>: Aggregates research data from all analyzers</li>
+<li><code>Curator</code>: Implements content filtering and relevance scoring</li>
+<li><code>Briefing</code>: Generates category-specific summaries using Gemini 2.0 Flash</li>
+<li><code>Editor</code>: Compiles and formats the briefings into a final report using GPT-4.1-mini</li>
+</ul>
+<p dir="auto"><a target="_blank" rel="noopener noreferrer" href="static/agent-flow.png"><img src="static/agent-flow.png" alt="web ui" style="max-width: 100%;"></a></p>
+</li>
+</ol>
+<div class="markdown-heading" dir="auto"><h3 class="heading-element" dir="auto">Content Generation Architecture</h3><a id="user-content-content-generation-architecture" class="anchor" aria-label="Permalink: Content Generation Architecture" href="#content-generation-architecture"></a></div>
+<p dir="auto">The platform leverages separate models for optimal performance:</p>
+<ol dir="auto">
+<li>
+<p dir="auto"><strong>Gemini 2.0 Flash</strong> (<code>briefing.py</code>):</p>
+<ul dir="auto">
+<li>Handles high-context research synthesis tasks</li>
+<li>Excels at processing and summarizing large volumes of data</li>
+<li>Used for generating initial category briefings</li>
+<li>Efficient at maintaining context across multiple documents</li>
+</ul>
+</li>
+<li>
+<p dir="auto"><strong>GPT-4.1 mini</strong> (<code>editor.py</code>):</p>
+<ul dir="auto">
+<li>Specializes in precise formatting and editing tasks</li>
+<li>Handles markdown structure and consistency</li>
+<li>Superior at following exact formatting instructions</li>
+<li>Used for:
+<ul dir="auto">
+<li>Final report compilation</li>
+<li>Content deduplication</li>
+<li>Markdown formatting</li>
+<li>Real-time report streaming</li>
+</ul>
+</li>
+</ul>
+</li>
+</ol>
+<p dir="auto">This approach combines Gemini's strength in handling large context windows with GPT-4.1-mini's precision in following specific formatting instructions.</p>
+<div class="markdown-heading" dir="auto"><h3 class="heading-element" dir="auto">Content Curation System</h3><a id="user-content-content-curation-system" class="anchor" aria-label="Permalink: Content Curation System" href="#content-curation-system"></a></div>
+<p dir="auto">The platform uses a content filtering system in <code>curator.py</code>:</p>
+<ol dir="auto">
+<li>
+<p dir="auto"><strong>Relevance Scoring</strong>:</p>
+<ul dir="auto">
+<li>Documents are scored by Tavily's AI-powered search</li>
+<li>A minimum threshold (default 0.4) is required to proceed</li>
+<li>Scores reflect relevance to the specific research query</li>
+<li>Higher scores indicate better matches to the research intent</li>
+</ul>
+</li>
+<li>
+<p dir="auto"><strong>Document Processing</strong>:</p>
+<ul dir="auto">
+<li>Content is normalized and cleaned</li>
+<li>URLs are deduplicated and standardized</li>
+<li>Documents are sorted by relevance scores</li>
+<li>Real-time progress updates are sent via WebSocket</li>
+</ul>
+</li>
+</ol>
+<div class="markdown-heading" dir="auto"><h3 class="heading-element" dir="auto">Real-Time Communication System</h3><a id="user-content-real-time-communication-system" class="anchor" aria-label="Permalink: Real-Time Communication System" href="#real-time-communication-system"></a></div>
+<p dir="auto">The platform implements a WebSocket-based real-time communication system:</p>
+<p dir="auto"><a target="_blank" rel="noopener noreferrer" href="static/ui-2.png"><img src="static/ui-2.png" alt="web ui" style="max-width: 100%;"></a></p>
+<ol dir="auto">
+<li>
+<p dir="auto"><strong>Backend Implementation</strong>:</p>
+<ul dir="auto">
+<li>Uses FastAPI's WebSocket support</li>
+<li>Maintains persistent connections per research job</li>
+<li>Sends structured status updates for various events:
+<div class="highlight highlight-source-python notranslate position-relative overflow-auto" dir="auto" data-snippet-clipboard-copy-content="await websocket_manager.send_status_update(
+    job_id=job_id,
+    status=&quot;processing&quot;,
+    message=f&quot;Generating {category} briefing&quot;,
+    result={
+        &quot;step&quot;: &quot;Briefing&quot;,
+        &quot;category&quot;: category,
+        &quot;total_docs&quot;: len(docs)
+    }
+)"><pre><span class="pl-k">await</span> <span class="pl-s1">websocket_manager</span>.<span class="pl-c1">send_status_update</span>(
+    <span class="pl-s1">job_id</span><span class="pl-c1">=</span><span class="pl-s1">job_id</span>,
+    <span class="pl-s1">status</span><span class="pl-c1">=</span><span class="pl-s">"processing"</span>,
+    <span class="pl-s1">message</span><span class="pl-c1">=</span><span class="pl-s">f"Generating <span class="pl-s1"><span class="pl-kos">{</span><span class="pl-s1">category</span><span class="pl-kos">}</span></span> briefing"</span>,
+    <span class="pl-s1">result</span><span class="pl-c1">=</span>{
+        <span class="pl-s">"step"</span>: <span class="pl-s">"Briefing"</span>,
+        <span class="pl-s">"category"</span>: <span class="pl-s1">category</span>,
+        <span class="pl-s">"total_docs"</span>: <span class="pl-en">len</span>(<span class="pl-s1">docs</span>)
+    }
+)</pre></div>
+</li>
+</ul>
+</li>
+<li>
+<p dir="auto"><strong>Frontend Integration</strong>:</p>
+<ul dir="auto">
+<li>React components subscribe to WebSocket updates</li>
+<li>Updates are processed and displayed in real-time</li>
+<li>Different UI components handle specific update types:
+<ul dir="auto">
+<li>Query generation progress</li>
+<li>Document curation statistics</li>
+<li>Briefing completion status</li>
+<li>Report generation progress</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p dir="auto"><strong>Status Types</strong>:</p>
+<ul dir="auto">
+<li><code>query_generating</code>: Real-time query creation updates</li>
+<li><code>document_kept</code>: Document curation progress</li>
+<li><code>briefing_start/complete</code>: Briefing generation status</li>
+<li><code>report_chunk</code>: Streaming report generation</li>
+<li><code>curation_complete</code>: Final document statistics</li>
+</ul>
+</li>
+</ol>
+<div class="markdown-heading" dir="auto"><h2 class="heading-element" dir="auto">Setup</h2><a id="user-content-setup" class="anchor" aria-label="Permalink: Setup" href="#setup"></a></div>
+<div class="markdown-heading" dir="auto"><h3 class="heading-element" dir="auto">Quick Setup (Recommended)</h3><a id="user-content-quick-setup-recommended" class="anchor" aria-label="Permalink: Quick Setup (Recommended)" href="#quick-setup-recommended"></a></div>
+<p dir="auto">The easiest way to get started is using the setup script, which automatically detects and uses <code>uv</code> for faster Python package installation when available:</p>
+<ol dir="auto">
+<li>Clone the repository:</li>
+</ol>
+<div class="highlight highlight-source-shell notranslate position-relative overflow-auto" dir="auto" data-snippet-clipboard-copy-content="git clone https://github.com/pogjester/tavily-company-research.git
+cd tavily-company-research"><pre>git clone https://github.com/pogjester/tavily-company-research.git
+<span class="pl-c1">cd</span> tavily-company-research</pre></div>
+<ol start="2" dir="auto">
+<li>Make the setup script executable and run it:</li>
+</ol>
+<div class="highlight highlight-source-shell notranslate position-relative overflow-auto" dir="auto" data-snippet-clipboard-copy-content="chmod +x setup.sh
+./setup.sh"><pre>chmod +x setup.sh
+./setup.sh</pre></div>
+<p dir="auto">The setup script will:</p>
+<ul dir="auto">
+<li>Detect and use <code>uv</code> for faster Python package installation (if available)</li>
+<li>Check for required Python and Node.js versions</li>
+<li>Optionally create a Python virtual environment (recommended)</li>
+<li>Install all dependencies (Python and Node.js)</li>
+<li>Guide you through setting up your environment variables</li>
+<li>Optionally start both backend and frontend servers</li>
+</ul>
+<blockquote>
+<p dir="auto"><strong>💡 Pro Tip</strong>: Install <a href="https://github.com/astral-sh/uv">uv</a> for significantly faster Python package installation:</p>
+<div class="highlight highlight-source-shell notranslate position-relative overflow-auto" dir="auto" data-snippet-clipboard-copy-content="curl -LsSf https://astral.sh/uv/install.sh | sh"><pre>curl -LsSf https://astral.sh/uv/install.sh <span class="pl-k">|</span> sh</pre></div>
+</blockquote>
+<p dir="auto">You'll need the following API keys ready:</p>
+<ul dir="auto">
+<li>Tavily API Key</li>
+<li>Google Gemini API Key</li>
+<li>OpenAI API Key</li>
+<li>Google Maps API Key</li>
+<li>MongoDB URI (optional)</li>
+</ul>
+<div class="markdown-heading" dir="auto"><h3 class="heading-element" dir="auto">Manual Setup</h3><a id="user-content-manual-setup" class="anchor" aria-label="Permalink: Manual Setup" href="#manual-setup"></a></div>
+<p dir="auto">If you prefer to set up manually, follow these steps:</p>
+<ol dir="auto">
+<li>Clone the repository:</li>
+</ol>
+<div class="highlight highlight-source-shell notranslate position-relative overflow-auto" dir="auto" data-snippet-clipboard-copy-content="git clone https://github.com/pogjester/tavily-company-research.git
+cd tavily-company-research"><pre>git clone https://github.com/pogjester/tavily-company-research.git
+<span class="pl-c1">cd</span> tavily-company-research</pre></div>
+<ol start="2" dir="auto">
+<li>Install backend dependencies:</li>
+</ol>
+<div class="highlight highlight-source-shell notranslate position-relative overflow-auto" dir="auto" data-snippet-clipboard-copy-content="# Optional: Create and activate virtual environment
+# With uv (faster - recommended if available):
+uv venv .venv
+source .venv/bin/activate
+
+# Or with standard Python:
+# python -m venv .venv
+# source .venv/bin/activate
+
+# Install Python dependencies
+# With uv (faster):
+uv pip install -r requirements.txt
+
+# Or with pip:
+# pip install -r requirements.txt"><pre><span class="pl-c"><span class="pl-c">#</span> Optional: Create and activate virtual environment</span>
+<span class="pl-c"><span class="pl-c">#</span> With uv (faster - recommended if available):</span>
+uv venv .venv
+<span class="pl-c1">source</span> .venv/bin/activate
+
+<span class="pl-c"><span class="pl-c">#</span> Or with standard Python:</span>
+<span class="pl-c"><span class="pl-c">#</span> python -m venv .venv</span>
+<span class="pl-c"><span class="pl-c">#</span> source .venv/bin/activate</span>
+
+<span class="pl-c"><span class="pl-c">#</span> Install Python dependencies</span>
+<span class="pl-c"><span class="pl-c">#</span> With uv (faster):</span>
+uv pip install -r requirements.txt
+
+<span class="pl-c"><span class="pl-c">#</span> Or with pip:</span>
+<span class="pl-c"><span class="pl-c">#</span> pip install -r requirements.txt</span></pre></div>
+<ol start="3" dir="auto">
+<li>Install frontend dependencies:</li>
+</ol>
+<div class="highlight highlight-source-shell notranslate position-relative overflow-auto" dir="auto" data-snippet-clipboard-copy-content="cd ui
+npm install"><pre><span class="pl-c1">cd</span> ui
+npm install</pre></div>
+<ol start="4" dir="auto">
+<li><strong>Set up Environment Variables</strong>:</li>
+</ol>
+<p dir="auto">This project requires two separate <code>.env</code> files for the backend and frontend.</p>
+<p dir="auto"><strong>For the Backend:</strong></p>
+<p dir="auto">Create a <code>.env</code> file in the project's root directory and add your backend API keys:</p>
+<div class="highlight highlight-source-dotenv notranslate position-relative overflow-auto" dir="auto" data-snippet-clipboard-copy-content="TAVILY_API_KEY=your_tavily_key
+GEMINI_API_KEY=your_gemini_key
+OPENAI_API_KEY=your_openai_key
+
+# Optional: Enable MongoDB persistence
+# MONGODB_URI=your_mongodb_connection_string"><pre><span class="pl-v">TAVILY_API_KEY</span><span class="pl-k">=</span><span class="pl-s">your_tavily_key</span>
+<span class="pl-v">GEMINI_API_KEY</span><span class="pl-k">=</span><span class="pl-s">your_gemini_key</span>
+<span class="pl-v">OPENAI_API_KEY</span><span class="pl-k">=</span><span class="pl-s">your_openai_key</span>
+
+<span class="pl-c"><span class="pl-c">#</span> Optional: Enable MongoDB persistence</span>
+<span class="pl-c"><span class="pl-c">#</span> MONGODB_URI=your_mongodb_connection_string</span></pre></div>
+<p dir="auto"><strong>For the Frontend:</strong></p>
+<p dir="auto">Create a <code>.env</code> file inside the <code>ui</code> directory. You can copy the example file first:</p>
+<div class="highlight highlight-source-shell notranslate position-relative overflow-auto" dir="auto" data-snippet-clipboard-copy-content="cp ui/.env.development.example ui/.env"><pre>cp ui/.env.development.example ui/.env</pre></div>
+<p dir="auto">Then, open <code>ui/.env</code> and add your frontend environment variables:</p>
+<div class="highlight highlight-source-dotenv notranslate position-relative overflow-auto" dir="auto" data-snippet-clipboard-copy-content="VITE_API_URL=http://localhost:8000
+VITE_WS_URL=ws://localhost:8000
+VITE_GOOGLE_MAPS_API_KEY=your_google_maps_api_key_here"><pre><span class="pl-v">VITE_API_URL</span><span class="pl-k">=</span><span class="pl-s">http://localhost:8000</span>
+<span class="pl-v">VITE_WS_URL</span><span class="pl-k">=</span><span class="pl-s">ws://localhost:8000</span>
+<span class="pl-v">VITE_GOOGLE_MAPS_API_KEY</span><span class="pl-k">=</span><span class="pl-s">your_google_maps_api_key_here</span></pre></div>
+<div class="markdown-heading" dir="auto"><h3 class="heading-element" dir="auto">Docker Setup</h3><a id="user-content-docker-setup" class="anchor" aria-label="Permalink: Docker Setup" href="#docker-setup"></a></div>
+<p dir="auto">The application can be run using Docker and Docker Compose:</p>
+<ol dir="auto">
+<li>Clone the repository:</li>
+</ol>
+<div class="highlight highlight-source-shell notranslate position-relative overflow-auto" dir="auto" data-snippet-clipboard-copy-content="git clone https://github.com/pogjester/tavily-company-research.git
+cd tavily-company-research"><pre>git clone https://github.com/pogjester/tavily-company-research.git
+<span class="pl-c1">cd</span> tavily-company-research</pre></div>
+<ol start="2" dir="auto">
+<li><strong>Set up Environment Variables</strong>:</li>
+</ol>
+<p dir="auto">The Docker setup uses two separate <code>.env</code> files.</p>
+<p dir="auto"><strong>For the Backend:</strong></p>
+<p dir="auto">Create a <code>.env</code> file in the project's root directory with your backend API keys:</p>
+<div class="highlight highlight-source-dotenv notranslate position-relative overflow-auto" dir="auto" data-snippet-clipboard-copy-content="TAVILY_API_KEY=your_tavily_key
+GEMINI_API_KEY=your_gemini_key
+OPENAI_API_KEY=your_openai_key
+
+# Optional: Enable MongoDB persistence
+# MONGODB_URI=your_mongodb_connection_string"><pre><span class="pl-v">TAVILY_API_KEY</span><span class="pl-k">=</span><span class="pl-s">your_tavily_key</span>
+<span class="pl-v">GEMINI_API_KEY</span><span class="pl-k">=</span><span class="pl-s">your_gemini_key</span>
+<span class="pl-v">OPENAI_API_KEY</span><span class="pl-k">=</span><span class="pl-s">your_openai_key</span>
+
+<span class="pl-c"><span class="pl-c">#</span> Optional: Enable MongoDB persistence</span>
+<span class="pl-c"><span class="pl-c">#</span> MONGODB_URI=your_mongodb_connection_string</span></pre></div>
+<p dir="auto"><strong>For the Frontend:</strong></p>
+<p dir="auto">Create a <code>.env</code> file inside the <code>ui</code> directory. You can copy the example file first:</p>
+<div class="highlight highlight-source-shell notranslate position-relative overflow-auto" dir="auto" data-snippet-clipboard-copy-content="cp ui/.env.development.example ui/.env"><pre>cp ui/.env.development.example ui/.env</pre></div>
+<p dir="auto">Then, open <code>ui/.env</code> and add your frontend environment variables:</p>
+<div class="highlight highlight-source-dotenv notranslate position-relative overflow-auto" dir="auto" data-snippet-clipboard-copy-content="VITE_API_URL=http://localhost:8000
+VITE_WS_URL=ws://localhost:8000
+VITE_GOOGLE_MAPS_API_KEY=your_google_maps_api_key_here"><pre><span class="pl-v">VITE_API_URL</span><span class="pl-k">=</span><span class="pl-s">http://localhost:8000</span>
+<span class="pl-v">VITE_WS_URL</span><span class="pl-k">=</span><span class="pl-s">ws://localhost:8000</span>
+<span class="pl-v">VITE_GOOGLE_MAPS_API_KEY</span><span class="pl-k">=</span><span class="pl-s">your_google_maps_api_key_here</span></pre></div>
+<ol start="3" dir="auto">
+<li>Build and start the containers:</li>
+</ol>
+<div class="highlight highlight-source-shell notranslate position-relative overflow-auto" dir="auto" data-snippet-clipboard-copy-content="docker compose up --build"><pre>docker compose up --build</pre></div>
+<p dir="auto">This will start both the backend and frontend services:</p>
+<ul dir="auto">
+<li>Backend API will be available at <code>http://localhost:8000</code></li>
+<li>Frontend will be available at <code>http://localhost:5174</code></li>
+</ul>
+<p dir="auto">To stop the services:</p>
+<div class="highlight highlight-source-shell notranslate position-relative overflow-auto" dir="auto" data-snippet-clipboard-copy-content="docker compose down"><pre>docker compose down</pre></div>
+<p dir="auto">Note: When updating environment variables in <code>.env</code>, you'll need to restart the containers:</p>
+<div class="highlight highlight-source-shell notranslate position-relative overflow-auto" dir="auto" data-snippet-clipboard-copy-content="docker compose down &amp;&amp; docker compose up"><pre>docker compose down <span class="pl-k">&amp;&amp;</span> docker compose up</pre></div>
+<div class="markdown-heading" dir="auto"><h3 class="heading-element" dir="auto">Running the Application</h3><a id="user-content-running-the-application" class="anchor" aria-label="Permalink: Running the Application" href="#running-the-application"></a></div>
+<ol dir="auto">
+<li>Start the backend server (choose one):</li>
+</ol>
+<div class="highlight highlight-source-shell notranslate position-relative overflow-auto" dir="auto" data-snippet-clipboard-copy-content="# Option 1: Direct Python Module
+python -m application.py
+
+# Option 2: FastAPI with Uvicorn
+uvicorn application:app --reload --port 8000"><pre><span class="pl-c"><span class="pl-c">#</span> Option 1: Direct Python Module</span>
+python -m application.py
+
+<span class="pl-c"><span class="pl-c">#</span> Option 2: FastAPI with Uvicorn</span>
+uvicorn application:app --reload --port 8000</pre></div>
+<ol start="2" dir="auto">
+<li>In a new terminal, start the frontend:</li>
+</ol>
+<div class="highlight highlight-source-shell notranslate position-relative overflow-auto" dir="auto" data-snippet-clipboard-copy-content="cd ui
+npm run dev"><pre><span class="pl-c1">cd</span> ui
+npm run dev</pre></div>
+<ol start="3" dir="auto">
+<li>Access the application at <code>http://localhost:5173</code></li>
+</ol>
+<div class="markdown-heading" dir="auto"><h2 class="heading-element" dir="auto">Usage</h2><a id="user-content-usage" class="anchor" aria-label="Permalink: Usage" href="#usage"></a></div>
+<div class="markdown-heading" dir="auto"><h3 class="heading-element" dir="auto">Local Development</h3><a id="user-content-local-development" class="anchor" aria-label="Permalink: Local Development" href="#local-development"></a></div>
+<ol dir="auto">
+<li>
+<p dir="auto">Start the backend server (choose one option):</p>
+<p dir="auto"><strong>Option 1: Direct Python Module</strong></p>
+<div class="highlight highlight-source-shell notranslate position-relative overflow-auto" dir="auto" data-snippet-clipboard-copy-content="python -m application.py"><pre>python -m application.py</pre></div>
+<p dir="auto"><strong>Option 2: FastAPI with Uvicorn</strong></p>
+<div class="highlight highlight-source-shell notranslate position-relative overflow-auto" dir="auto" data-snippet-clipboard-copy-content="# Install uvicorn if not already installed
+# With uv (faster):
+uv pip install uvicorn
+# Or with pip:
+# pip install uvicorn
+
+# Run the FastAPI application with hot reload
+uvicorn application:app --reload --port 8000"><pre><span class="pl-c"><span class="pl-c">#</span> Install uvicorn if not already installed</span>
+<span class="pl-c"><span class="pl-c">#</span> With uv (faster):</span>
+uv pip install uvicorn
+<span class="pl-c"><span class="pl-c">#</span> Or with pip:</span>
+<span class="pl-c"><span class="pl-c">#</span> pip install uvicorn</span>
+
+<span class="pl-c"><span class="pl-c">#</span> Run the FastAPI application with hot reload</span>
+uvicorn application:app --reload --port 8000</pre></div>
+<p dir="auto">The backend will be available at:</p>
+<ul dir="auto">
+<li>API Endpoint: <code>http://localhost:8000</code></li>
+<li>WebSocket Endpoint: <code>ws://localhost:8000/research/ws/{job_id}</code></li>
+</ul>
+</li>
+<li>
+<p dir="auto">Start the frontend development server:</p>
+<div class="highlight highlight-source-shell notranslate position-relative overflow-auto" dir="auto" data-snippet-clipboard-copy-content="cd ui
+npm run dev"><pre><span class="pl-c1">cd</span> ui
+npm run dev</pre></div>
+</li>
+<li>
+<p dir="auto">Access the application at <code>http://localhost:5173</code></p>
+</li>
+</ol>
+<blockquote>
+<p dir="auto"><strong>⚡ Performance Note</strong>: If you used <code>uv</code> during setup, you'll benefit from significantly faster package installation and dependency resolution. <code>uv</code> is a modern Python package manager written in Rust that can be 10-100x faster than pip.</p>
+</blockquote>
+<div class="markdown-heading" dir="auto"><h3 class="heading-element" dir="auto">Deployment Options</h3><a id="user-content-deployment-options" class="anchor" aria-label="Permalink: Deployment Options" href="#deployment-options"></a></div>
+<p dir="auto">The application can be deployed to various cloud platforms. Here are some common options:</p>
+<div class="markdown-heading" dir="auto"><h4 class="heading-element" dir="auto">AWS Elastic Beanstalk</h4><a id="user-content-aws-elastic-beanstalk" class="anchor" aria-label="Permalink: AWS Elastic Beanstalk" href="#aws-elastic-beanstalk"></a></div>
+<ol dir="auto">
+<li>
+<p dir="auto">Install the EB CLI:</p>
+<div class="highlight highlight-source-shell notranslate position-relative overflow-auto" dir="auto" data-snippet-clipboard-copy-content="pip install awsebcli"><pre>pip install awsebcli</pre></div>
+</li>
+<li>
+<p dir="auto">Initialize EB application:</p>
+<div class="highlight highlight-source-shell notranslate position-relative overflow-auto" dir="auto" data-snippet-clipboard-copy-content="eb init -p python-3.11 tavily-research"><pre>eb init -p python-3.11 tavily-research</pre></div>
+</li>
+<li>
+<p dir="auto">Create and deploy:</p>
+<div class="highlight highlight-source-shell notranslate position-relative overflow-auto" dir="auto" data-snippet-clipboard-copy-content="eb create tavily-research-prod"><pre>eb create tavily-research-prod</pre></div>
+</li>
+</ol>
+<div class="markdown-heading" dir="auto"><h4 class="heading-element" dir="auto">Other Deployment Options</h4><a id="user-content-other-deployment-options" class="anchor" aria-label="Permalink: Other Deployment Options" href="#other-deployment-options"></a></div>
+<ul dir="auto">
+<li><strong>Docker</strong>: The application includes a Dockerfile for containerized deployment</li>
+<li><strong>Heroku</strong>: Deploy directly from GitHub with the Python buildpack</li>
+<li><strong>Google Cloud Run</strong>: Suitable for containerized deployment with automatic scaling</li>
+</ul>
+<p dir="auto">Choose the platform that best suits your needs. The application is platform-agnostic and can be hosted anywhere that supports Python web applications.</p>
+<div class="markdown-heading" dir="auto"><h2 class="heading-element" dir="auto">Contributing</h2><a id="user-content-contributing" class="anchor" aria-label="Permalink: Contributing" href="#contributing"></a></div>
+<ol dir="auto">
+<li>Fork the repository</li>
+<li>Create a feature branch (<code>git checkout -b feature/amazing-feature</code>)</li>
+<li>Commit your changes (<code>git commit -m 'Add amazing feature'</code>)</li>
+<li>Push to the branch (<code>git push origin feature/amazing-feature</code>)</li>
+<li>Open a Pull Request</li>
+</ol>
+<div class="markdown-heading" dir="auto"><h2 class="heading-element" dir="auto">License</h2><a id="user-content-license" class="anchor" aria-label="Permalink: License" href="#license"></a></div>
+<p dir="auto">This project is licensed under the MIT License - see the <a href="LICENSE">LICENSE</a> file for details.</p>
+<div class="markdown-heading" dir="auto"><h2 class="heading-element" dir="auto">Acknowledgments</h2><a id="user-content-acknowledgments" class="anchor" aria-label="Permalink: Acknowledgments" href="#acknowledgments"></a></div>
+<ul dir="auto">
+<li><a href="https://tavily.com/" rel="nofollow">Tavily</a> for the research API</li>
+<li>All other open-source libraries and their contributors</li>
+</ul>
+        </div>
+      </section>
+
+      <footer>LeadScaper Platform — Company Research Agent (Tavily)</footer>
+    </main>
+  </div>
+</body>
+</html>
