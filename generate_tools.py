@@ -415,7 +415,6 @@ def render_tool(tool: dict) -> str:
         LeadScaper
       </a>
       <div class="header-actions">
-        <button class="btn-icon" type="button" data-i18n-aria="ui.settings">⚙</button>
         <div class="lang-switch" role="group" aria-label="Language">
           <button class="lang-btn active" type="button" data-lang="ru">RU</button>
           <button class="lang-btn" type="button" data-lang="en">EN</button>
