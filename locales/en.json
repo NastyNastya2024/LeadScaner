@@ -14,9 +14,11 @@
     "dataSource": "Data source",
     "platform": "Platform",
     "active": "Active",
-    "footer": "LeadScaper Platform — Architecture Documentation"
+    "footer": "LeadScaper Platform — Architecture Documentation",
+    "layerLabel": "Layer {n} · {name}"
   },
   "nav": {
+    "label": "Navigation",
     "overview": "Overview",
     "layer1": "Layer 1 — Discovery",
     "layer2": "Layer 2 — Enrichment",
@@ -134,6 +136,10 @@
     },
     "obsei": {
       "desc": "Sentiment analysis and message classification",
+      "meta": "X, Reddit, Facebook"
+    },
+    "obsei-l4": {
+      "desc": "Sentiment analysis for brand mentions",
       "meta": "X, Reddit, Facebook"
     },
     "company-research-agent-tavily": {

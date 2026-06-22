@@ -336,8 +336,23 @@ def fetch_github_readme_html(repo: str) -> str:
     return raw.strip()
 
 
-def enrich_tool(tool: dict) -> dict:
+def read_existing_readme(slug: str) -> str | None:
+    path = TOOLS_DIR / f"{slug}.html"
+    if not path.exists():
+        return None
+    text = path.read_text(encoding="utf-8")
+    match = re.search(r'<div class="readme-content">\s*(.*?)\s*</div>\s*\n\s*</section>', text, re.S)
+    return match.group(1).strip() if match else None
+
+
+def enrich_tool(tool: dict, local_only: bool = False) -> dict:
     enriched = dict(tool)
+    if local_only:
+        existing = read_existing_readme(tool["slug"])
+        if existing:
+            enriched["readme_html"] = existing
+            enriched.setdefault("short_description", tool.get("description", ""))
+            return enriched
     if tool.get("github"):
         try:
             meta = fetch_github_meta(tool["github"])
@@ -450,10 +465,11 @@ def render_tool(tool: dict) -> str:
 
 
 def main():
+    local_only = "--local" in sys.argv
     TOOLS_DIR.mkdir(exist_ok=True)
     for tool in TOOLS:
-        print(f"Fetching {tool['slug']}...")
-        enriched = enrich_tool(tool)
+        print(f"{'Rendering' if local_only else 'Fetching'} {tool['slug']}...")
+        enriched = enrich_tool(tool, local_only=local_only)
         path = TOOLS_DIR / f"{tool['slug']}.html"
         path.write_text(render_tool(enriched), encoding="utf-8")
         print(f"Wrote {path}")

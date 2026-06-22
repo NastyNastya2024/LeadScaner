@@ -9,7 +9,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="../styles.css">
 </head>
-<body>
+<body class="tool-page" data-tool-slug="company-research-agent-tavily">
   <header class="site-header">
     <div class="header-inner">
       <a class="logo" href="../index.html">
@@ -17,23 +17,27 @@
         LeadScaper
       </a>
       <div class="header-actions">
-        <button class="btn-icon" type="button">⚙</button>
+        <button class="btn-icon" type="button" data-i18n-aria="ui.settings">⚙</button>
+        <div class="lang-switch" role="group" aria-label="Language">
+          <button class="lang-btn active" type="button" data-lang="ru">RU</button>
+          <button class="lang-btn" type="button" data-lang="en">EN</button>
+        </div>
       </div>
     </div>
   </header>
 
   <div class="layout tool-page">
     <main class="main">
-      <a class="back-link" href="../index.html">← Назад к архитектуре</a>
+      <a class="back-link" href="../index.html" data-i18n="ui.back"></a>
 
       <div class="hero-card hero-card-accent tool-hero">
         <div class="tool-icon">3.4</div>
         <div class="tool-hero-body">
-          <div class="hero-stat-label">Слой 3 · Анализ данных</div>
+          <div class="hero-stat-label" data-i18n-tool-layer data-layer="3"></div>
           <h1 class="hero-stat-value tool-hero-title">Company Research Agent (Tavily)</h1>
-          <p class="hero-stat-sub">Глубокий анализ и генерация отчётов в PDF/Markdown</p>
-          <a class="btn-external" href="https://github.com/BunsDev/company-research-agent-tavily" target="_blank" rel="noopener">
-            Открыть на GitHub →
+          <p class="hero-stat-sub" data-i18n-tool-role></p>
+          <a class="btn-external" href="https://github.com/BunsDev/company-research-agent-tavily" target="_blank" rel="noopener" data-i18n-open data-source="GitHub">
+            Open on GitHub →
           </a>
         </div>
       </div>
@@ -41,14 +45,14 @@
       <section class="panel">
         <div class="panel-head">
           <div class="panel-tag">GitHub</div>
-          <h2 class="panel-title">Описание</h2>
+          <h2 class="panel-title" data-i18n="ui.description"></h2>
         </div>
 
         <div class="tool-stats">
-          <div class="tool-stat"><span class="tool-stat-label">Репозиторий</span><span class="tool-stat-value">BunsDev/company-research-agent-tavily</span></div>
-          <div class="tool-stat"><span class="tool-stat-label">Stars</span><span class="tool-stat-value">1</span></div>
-          <div class="tool-stat"><span class="tool-stat-label">Язык</span><span class="tool-stat-value">—</span></div>
-          <div class="tool-stat"><span class="tool-stat-label">Источник данных</span><span class="tool-stat-value">Tavily API, Anthropic API</span></div>
+          <div class="tool-stat"><span class="tool-stat-label" data-i18n="ui.repo"></span><span class="tool-stat-value">BunsDev/company-research-agent-tavily</span></div>
+          <div class="tool-stat"><span class="tool-stat-label" data-i18n="ui.stars"></span><span class="tool-stat-value">1</span></div>
+          <div class="tool-stat"><span class="tool-stat-label" data-i18n="ui.language"></span><span class="tool-stat-value">—</span></div>
+          <div class="tool-stat"><span class="tool-stat-label" data-i18n="ui.dataSource"></span><span class="tool-stat-value">Tavily API, Anthropic API</span></div>
         </div>
 
         <div class="readme-content">
@@ -483,8 +487,9 @@ npm run dev</pre></div>
         </div>
       </section>
 
-      <footer>LeadScaper Platform — Company Research Agent (Tavily)</footer>
+      <footer data-i18n="ui.footer"></footer>
     </main>
   </div>
+  <script src="../i18n.js"></script>
 </body>
 </html>

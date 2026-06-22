@@ -14,9 +14,11 @@
     "dataSource": "Источник данных",
     "platform": "Платформа",
     "active": "Active",
-    "footer": "LeadScaper Platform — Architecture Documentation"
+    "footer": "LeadScaper Platform — Architecture Documentation",
+    "layerLabel": "Слой {n} · {name}"
   },
   "nav": {
+    "label": "Навигация",
     "overview": "Обзор",
     "layer1": "Слой 1 — Поиск",
     "layer2": "Слой 2 — Сбор",
@@ -134,6 +136,10 @@
     },
     "obsei": {
       "desc": "Анализ тональности и классификация сообщений",
+      "meta": "X, Reddit, Facebook"
+    },
+    "obsei-l4": {
+      "desc": "Анализ тональности упоминаний",
       "meta": "X, Reddit, Facebook"
     },
     "company-research-agent-tavily": {

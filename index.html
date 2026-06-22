@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>LeadScaper — Архитектура платформы</title>
+  <title>LeadScaper — Platform Architecture</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -17,25 +17,28 @@
         LeadScaper
       </a>
       <div class="header-actions">
-        <button class="btn-icon" type="button" aria-label="Настройки">⚙</button>
-        <button class="btn-ghost" type="button">Platform</button>
+        <button class="btn-icon" type="button" data-i18n-aria="ui.settings">⚙</button>
+        <div class="lang-switch" role="group" aria-label="Language">
+          <button class="lang-btn active" type="button" data-lang="ru">RU</button>
+          <button class="lang-btn" type="button" data-lang="en">EN</button>
+        </div>
       </div>
     </div>
   </header>
 
   <div class="layout">
     <aside class="sidebar">
-      <div class="sidebar-label">Навигация</div>
+      <div class="sidebar-label" data-i18n="nav.label"></div>
       <ul class="sidebar-nav">
-        <li><a href="#overview" class="active">Обзор</a></li>
-        <li><a href="#layer-1">Слой 1 — Поиск</a></li>
-        <li><a href="#layer-2">Слой 2 — Сбор</a></li>
-        <li><a href="#layer-3">Слой 3 — Анализ</a></li>
-        <li><a href="#layer-4">Слой 4 — Вовлечение</a></li>
-        <li><a href="#full-arch">Архитектура</a></li>
-        <li><a href="#data-flow">Data Flow</a></li>
-        <li><a href="#tech">Техстек</a></li>
-        <li><a href="#links">Все инструменты</a></li>
+        <li><a href="#overview" class="active" data-i18n="nav.overview"></a></li>
+        <li><a href="#layer-1" data-i18n="nav.layer1"></a></li>
+        <li><a href="#layer-2" data-i18n="nav.layer2"></a></li>
+        <li><a href="#layer-3" data-i18n="nav.layer3"></a></li>
+        <li><a href="#layer-4" data-i18n="nav.layer4"></a></li>
+        <li><a href="#full-arch" data-i18n="nav.fullArch"></a></li>
+        <li><a href="#data-flow" data-i18n="nav.dataFlow"></a></li>
+        <li><a href="#tech" data-i18n="nav.tech"></a></li>
+        <li><a href="#links" data-i18n="nav.links"></a></li>
       </ul>
     </aside>
 
@@ -44,43 +47,43 @@
     <div class="stats-row">
       <div class="hero-card">
         <div>
-          <div class="hero-stat-label">LeadScaper Platform</div>
-          <div class="hero-stat-value">4 слоя</div>
-          <p class="hero-stat-sub">Многослойная AI-платформа для автоматического поиска B2B-клиентов, сбора данных о компаниях и ЛПР, мониторинга соцсетей и генерации персонализированных предложений.</p>
-          <a class="btn-dark" href="#layer-1">→ Исследовать архитектуру</a>
+          <div class="hero-stat-label" data-i18n="hero.label"></div>
+          <div class="hero-stat-value" data-i18n="hero.title"></div>
+          <p class="hero-stat-sub" data-i18n="hero.desc"></p>
+          <a class="btn-dark" href="#layer-1" data-i18n="hero.cta"></a>
         </div>
       </div>
       <div class="stat-pill">
         <div class="stat-pill-value">18</div>
-        <div class="stat-pill-label">Agents</div>
+        <div class="stat-pill-label" data-i18n="hero.agents"></div>
       </div>
     </div>
 
     <section id="overview" class="panel">
       <div class="panel-head">
-        <div class="panel-tag">Overview</div>
-        <h2 class="panel-title">Общая концепция</h2>
-        <p class="section-desc">Четыре последовательных слоя обработки данных — от поиска компаний до вовлечения в соцсетях.</p>
+        <div class="panel-tag" data-i18n="overview.tag"></div>
+        <h2 class="panel-title" data-i18n="overview.title"></h2>
+        <p class="section-desc" data-i18n="overview.desc"></p>
       </div>
       <div class="pipeline">
         <div class="pipeline-step">
-          <div class="pipeline-num">Слой 1</div>
-          <div class="pipeline-title">Поиск<br>Компаний</div>
+          <div class="pipeline-num" data-i18n="pipeline.0.num"></div>
+          <div class="pipeline-title" data-i18n="pipeline.0.title" data-i18n-html="true"></div>
           <div class="pipeline-bar"></div>
         </div>
         <div class="pipeline-step">
-          <div class="pipeline-num">Слой 2</div>
-          <div class="pipeline-title">Сбор<br>Контактов</div>
+          <div class="pipeline-num" data-i18n="pipeline.1.num"></div>
+          <div class="pipeline-title" data-i18n="pipeline.1.title" data-i18n-html="true"></div>
           <div class="pipeline-bar"></div>
         </div>
         <div class="pipeline-step">
-          <div class="pipeline-num">Слой 3</div>
-          <div class="pipeline-title">Анализ<br>Данных</div>
+          <div class="pipeline-num" data-i18n="pipeline.2.num"></div>
+          <div class="pipeline-title" data-i18n="pipeline.2.title" data-i18n-html="true"></div>
           <div class="pipeline-bar"></div>
         </div>
         <div class="pipeline-step">
-          <div class="pipeline-num">Слой 4</div>
-          <div class="pipeline-title">Действие<br>Вовлечение</div>
+          <div class="pipeline-num" data-i18n="pipeline.3.num"></div>
+          <div class="pipeline-title" data-i18n="pipeline.3.title" data-i18n-html="true"></div>
           <div class="pipeline-bar"></div>
         </div>
       </div>
@@ -88,88 +91,88 @@
 
     <section id="layer-1" class="panel">
       <div class="panel-head">
-        <div class="panel-tag">Слой 1 · Discovery</div>
-        <h2 class="panel-title">Поиск компаний</h2>
-        <p class="section-desc">Найти все возможные компании-клиенты по заданным критериям. <span class="badge-active">Active</span></p>
+        <div class="panel-tag" data-i18n="layers.1.tag"></div>
+        <h2 class="panel-title" data-i18n="layers.1.title"></h2>
+        <p class="section-desc"><span data-i18n="layers.1.desc"></span> <span class="badge-active" data-i18n="ui.active"></span></p>
       </div>
       <div class="tool-list">
         <div class="tool-row">
           <div class="tool-icon">1.1</div>
-          <div><div class="tool-name"><a href="tools/ai-find-customer.html">AI_Find_Customer</a></div><div class="tool-meta">Google, B2B-платформы</div></div>
-          <div class="tool-desc-col">Поиск компаний через AI-агентов по ключевым словам, отрасли, геолокации</div>
-          <a class="btn-soft" href="tools/ai-find-customer.html">Подробнее</a>
+          <div><div class="tool-name"><a href="tools/ai-find-customer.html">AI_Find_Customer</a></div><div class="tool-meta" data-i18n="tools.ai-find-customer.meta"></div></div>
+          <div class="tool-desc-col" data-i18n="tools.ai-find-customer.desc"></div>
+          <a class="btn-soft" href="tools/ai-find-customer.html" data-i18n="ui.details"></a>
         </div>
         <div class="tool-row">
           <div class="tool-icon">1.2</div>
-          <div><div class="tool-name"><a href="tools/github-lead-signals.html">GitHub Lead Signals</a></div><div class="tool-meta">GitHub API</div></div>
-          <div class="tool-desc-col">Поиск компаний по технологическому стеку (GitHub активности)</div>
-          <a class="btn-soft" href="tools/github-lead-signals.html">Подробнее</a>
+          <div><div class="tool-name"><a href="tools/github-lead-signals.html">GitHub Lead Signals</a></div><div class="tool-meta" data-i18n="tools.github-lead-signals.meta"></div></div>
+          <div class="tool-desc-col" data-i18n="tools.github-lead-signals.desc"></div>
+          <a class="btn-soft" href="tools/github-lead-signals.html" data-i18n="ui.details"></a>
         </div>
         <div class="tool-row">
           <div class="tool-icon">1.3</div>
-          <div><div class="tool-name"><a href="tools/clutch-profile-scraper.html">Clutch Profile Scraper</a></div><div class="tool-meta">Clutch.co</div></div>
-          <div class="tool-desc-col">Сбор компаний из B2B-каталога</div>
-          <a class="btn-soft" href="tools/clutch-profile-scraper.html">Подробнее</a>
+          <div><div class="tool-name"><a href="tools/clutch-profile-scraper.html">Clutch Profile Scraper</a></div><div class="tool-meta" data-i18n="tools.clutch-profile-scraper.meta"></div></div>
+          <div class="tool-desc-col" data-i18n="tools.clutch-profile-scraper.desc"></div>
+          <a class="btn-soft" href="tools/clutch-profile-scraper.html" data-i18n="ui.details"></a>
         </div>
         <div class="tool-row">
           <div class="tool-icon">1.4</div>
-          <div><div class="tool-name"><a href="tools/trendscan.html">TrendScan</a></div><div class="tool-meta">Crunchbase, LinkedIn, X</div></div>
-          <div class="tool-desc-col">Поиск трендовых компаний</div>
-          <a class="btn-soft" href="tools/trendscan.html">Подробнее</a>
+          <div><div class="tool-name"><a href="tools/trendscan.html">TrendScan</a></div><div class="tool-meta" data-i18n="tools.trendscan.meta"></div></div>
+          <div class="tool-desc-col" data-i18n="tools.trendscan.desc"></div>
+          <a class="btn-soft" href="tools/trendscan.html" data-i18n="ui.details"></a>
         </div>
         <div class="tool-row">
           <div class="tool-icon">1.5</div>
-          <div><div class="tool-name"><a href="tools/icp-researcher.html">ICP Researcher</a></div><div class="tool-meta">Веб-поиск, LinkedIn</div></div>
-          <div class="tool-desc-col">Определение Ideal Customer Profile и поиск по нему</div>
-          <a class="btn-soft" href="tools/icp-researcher.html">Подробнее</a>
+          <div><div class="tool-name"><a href="tools/icp-researcher.html">ICP Researcher</a></div><div class="tool-meta" data-i18n="tools.icp-researcher.meta"></div></div>
+          <div class="tool-desc-col" data-i18n="tools.icp-researcher.desc"></div>
+          <a class="btn-soft" href="tools/icp-researcher.html" data-i18n="ui.details"></a>
         </div>
       </div>
     </section>
 
     <section id="layer-2" class="panel">
       <div class="panel-head">
-        <div class="panel-tag">Слой 2 · Enrichment</div>
-        <h2 class="panel-title">Сбор контактов и соцсетей</h2>
-        <p class="section-desc">Для каждой найденной компании собрать контакты, соцсети и публичные данные.</p>
+        <div class="panel-tag" data-i18n="layers.2.tag"></div>
+        <h2 class="panel-title" data-i18n="layers.2.title"></h2>
+        <p class="section-desc"><span data-i18n="layers.2.desc"></span></p>
       </div>
       <div class="tool-list">
         <div class="tool-row">
           <div class="tool-icon">2.1</div>
-          <div><div class="tool-name"><a href="tools/coldreach-scraper.html">ColdReach-Scraper</a></div><div class="tool-meta">Сайт компании</div></div>
-          <div class="tool-desc-col">Скрапинг сайта: контакты, миссия, услуги</div>
-          <a class="btn-soft" href="tools/coldreach-scraper.html">Подробнее</a>
+          <div><div class="tool-name"><a href="tools/coldreach-scraper.html">ColdReach-Scraper</a></div><div class="tool-meta" data-i18n="tools.coldreach-scraper.meta"></div></div>
+          <div class="tool-desc-col" data-i18n="tools.coldreach-scraper.desc"></div>
+          <a class="btn-soft" href="tools/coldreach-scraper.html" data-i18n="ui.details"></a>
         </div>
         <div class="tool-row">
           <div class="tool-icon">2.2</div>
-          <div><div class="tool-name"><a href="tools/lead-generator.html">lead-generator</a></div><div class="tool-meta">LinkedIn, Apollo.io</div></div>
-          <div class="tool-desc-col">Поиск LinkedIn-профилей сотрудников и обогащение email</div>
-          <a class="btn-soft" href="tools/lead-generator.html">Подробнее</a>
+          <div><div class="tool-name"><a href="tools/lead-generator.html">lead-generator</a></div><div class="tool-meta" data-i18n="tools.lead-generator.meta"></div></div>
+          <div class="tool-desc-col" data-i18n="tools.lead-generator.desc"></div>
+          <a class="btn-soft" href="tools/lead-generator.html" data-i18n="ui.details"></a>
         </div>
         <div class="tool-row">
           <div class="tool-icon">2.3</div>
-          <div><div class="tool-name"><a href="tools/linkedin-scraper.html">linkedIn_scraper</a></div><div class="tool-meta">LinkedIn</div></div>
-          <div class="tool-desc-col">Сбор профилей ЛПР с AI-генерацией «болевых точек»</div>
-          <a class="btn-soft" href="tools/linkedin-scraper.html">Подробнее</a>
+          <div><div class="tool-name"><a href="tools/linkedin-scraper.html">linkedIn_scraper</a></div><div class="tool-meta" data-i18n="tools.linkedin-scraper.meta"></div></div>
+          <div class="tool-desc-col" data-i18n="tools.linkedin-scraper.desc"></div>
+          <a class="btn-soft" href="tools/linkedin-scraper.html" data-i18n="ui.details"></a>
         </div>
         <div class="tool-row">
           <div class="tool-icon">2.4</div>
-          <div><div class="tool-name"><a href="tools/the-3rd-eye.html">The 3rd Eye</a></div><div class="tool-meta">Соцсети</div></div>
-          <div class="tool-desc-col">Сбор цифрового следа из всех соцсетей</div>
-          <a class="btn-soft" href="tools/the-3rd-eye.html">Подробнее</a>
+          <div><div class="tool-name"><a href="tools/the-3rd-eye.html">The 3rd Eye</a></div><div class="tool-meta" data-i18n="tools.the-3rd-eye.meta"></div></div>
+          <div class="tool-desc-col" data-i18n="tools.the-3rd-eye.desc"></div>
+          <a class="btn-soft" href="tools/the-3rd-eye.html" data-i18n="ui.details"></a>
         </div>
         <div class="tool-row">
           <div class="tool-icon">2.5</div>
-          <div><div class="tool-name"><a href="tools/business-researcher.html">Business Researcher</a></div><div class="tool-meta">Tavily API</div></div>
-          <div class="tool-desc-col">Глубокое исследование: финансы, структура, рынок</div>
-          <a class="btn-soft" href="tools/business-researcher.html">Подробнее</a>
+          <div><div class="tool-name"><a href="tools/business-researcher.html">Business Researcher</a></div><div class="tool-meta" data-i18n="tools.business-researcher.meta"></div></div>
+          <div class="tool-desc-col" data-i18n="tools.business-researcher.desc"></div>
+          <a class="btn-soft" href="tools/business-researcher.html" data-i18n="ui.details"></a>
         </div>
       </div>
-      <h3>Архитектура слоя 2</h3>
+      <h3 data-i18n="layers.2.archTitle"></h3>
       <div class="diagram">
         <div class="diagram-label">Company URL List</div>
         <div class="diagram-row">
-          <div class="diagram-box highlight">ColdReach-Scraper<br><small style="color:var(--text-muted)">Сайт</small></div>
-          <div class="diagram-box highlight">The 3rd Eye<br><small style="color:var(--text-muted)">Соцсети</small></div>
+          <div class="diagram-box highlight">ColdReach-Scraper<br><small style="color:var(--text-muted)">Website</small></div>
+          <div class="diagram-box highlight">The 3rd Eye<br><small style="color:var(--text-muted)">Social</small></div>
           <div class="diagram-box highlight">lead-generator<br><small style="color:var(--text-muted)">LinkedIn</small></div>
         </div>
         <div class="diagram-arrow">↓</div>
@@ -179,37 +182,37 @@
 
     <section id="layer-3" class="panel">
       <div class="panel-head">
-        <div class="panel-tag">Слой 3 · Analysis</div>
-        <h2 class="panel-title">Анализ и генерация инсайтов</h2>
-        <p class="section-desc">Анализ данных для поиска триггерных слов, ЛПР и генерации персонализированных сообщений.</p>
+        <div class="panel-tag" data-i18n="layers.3.tag"></div>
+        <h2 class="panel-title" data-i18n="layers.3.title"></h2>
+        <p class="section-desc"><span data-i18n="layers.3.desc"></span></p>
       </div>
       <div class="tool-list">
         <div class="tool-row">
           <div class="tool-icon">3.1</div>
-          <div><div class="tool-name"><a href="tools/automated-decision-making-discovery.html">Automated-Decision-Making-Discovery</a></div><div class="tool-meta">LinkedIn, AI</div></div>
-          <div class="tool-desc-col">Выявление ЛПР (CEO, CTO, Head of X) с валидацией контактов</div>
-          <a class="btn-soft" href="tools/automated-decision-making-discovery.html">Подробнее</a>
+          <div><div class="tool-name"><a href="tools/automated-decision-making-discovery.html">Automated-Decision-Making-Discovery</a></div><div class="tool-meta" data-i18n="tools.automated-decision-making-discovery.meta"></div></div>
+          <div class="tool-desc-col" data-i18n="tools.automated-decision-making-discovery.desc"></div>
+          <a class="btn-soft" href="tools/automated-decision-making-discovery.html" data-i18n="ui.details"></a>
         </div>
         <div class="tool-row">
           <div class="tool-icon">3.2</div>
-          <div><div class="tool-name"><a href="tools/owasp-social-osint-agent.html">OWASP SocialOSINTAgent</a></div><div class="tool-meta">X, Reddit, GitHub</div></div>
-          <div class="tool-desc-col">Анализ текста и изображений из соцсетей, создание отчётов</div>
-          <a class="btn-soft" href="tools/owasp-social-osint-agent.html">Подробнее</a>
+          <div><div class="tool-name"><a href="tools/owasp-social-osint-agent.html">OWASP SocialOSINTAgent</a></div><div class="tool-meta" data-i18n="tools.owasp-social-osint-agent.meta"></div></div>
+          <div class="tool-desc-col" data-i18n="tools.owasp-social-osint-agent.desc"></div>
+          <a class="btn-soft" href="tools/owasp-social-osint-agent.html" data-i18n="ui.details"></a>
         </div>
         <div class="tool-row">
-          <div class="tool-icon">3.3</div>
-          <div><div class="tool-name"><a href="tools/obsei.html">Obsei</a></div><div class="tool-meta">X, Reddit, Facebook</div></div>
-          <div class="tool-desc-col">Анализ тональности и классификация сообщений</div>
-          <a class="btn-soft" href="tools/obsei.html">Подробнее</a>
+          <div class="tool-icon">3.3 / 4.4</div>
+          <div><div class="tool-name"><a href="tools/obsei.html">Obsei</a></div><div class="tool-meta" data-i18n="tools.obsei.meta"></div></div>
+          <div class="tool-desc-col" data-i18n="tools.obsei.desc"></div>
+          <a class="btn-soft" href="tools/obsei.html" data-i18n="ui.details"></a>
         </div>
         <div class="tool-row">
           <div class="tool-icon">3.4</div>
-          <div><div class="tool-name"><a href="tools/company-research-agent-tavily.html">Company Research Agent (Tavily)</a></div><div class="tool-meta">Tavily, Anthropic</div></div>
-          <div class="tool-desc-col">Глубокий анализ и генерация отчётов в PDF/Markdown</div>
-          <a class="btn-soft" href="tools/company-research-agent-tavily.html">Подробнее</a>
+          <div><div class="tool-name"><a href="tools/company-research-agent-tavily.html">Company Research Agent (Tavily)</a></div><div class="tool-meta" data-i18n="tools.company-research-agent-tavily.meta"></div></div>
+          <div class="tool-desc-col" data-i18n="tools.company-research-agent-tavily.desc"></div>
+          <a class="btn-soft" href="tools/company-research-agent-tavily.html" data-i18n="ui.details"></a>
         </div>
       </div>
-      <h3>Архитектура слоя 3</h3>
+      <h3 data-i18n="layers.3.archTitle"></h3>
       <div class="diagram">
         <div class="diagram-label">Data Ingest — Company profiles + Social media + OSINT</div>
         <div class="diagram-arrow">↓</div>
@@ -222,43 +225,43 @@
           <div class="diagram-box">Pain Points</div>
         </div>
         <div class="diagram-arrow">↓</div>
-        <div class="diagram-row"><div class="diagram-box highlight">Unified Output — ЛПР, pain points, sentiment, PDF</div></div>
+        <div class="diagram-row"><div class="diagram-box highlight">Unified Output — DMs, pain points, sentiment, PDF</div></div>
       </div>
     </section>
 
     <section id="layer-4" class="panel">
       <div class="panel-head">
-        <div class="panel-tag">Слой 4 · Engagement</div>
-        <h2 class="panel-title">Вовлечение в соцсетях</h2>
-        <p class="section-desc">Автоматический мониторинг и вовлечение аудитории по триггерным словам.</p>
+        <div class="panel-tag" data-i18n="layers.4.tag"></div>
+        <h2 class="panel-title" data-i18n="layers.4.title"></h2>
+        <p class="section-desc"><span data-i18n="layers.4.desc"></span></p>
       </div>
       <div class="tool-list">
         <div class="tool-row">
           <div class="tool-icon">4.1</div>
-          <div><div class="tool-name"><a href="tools/agent-x-tuitbot.html">Agent-X (TuitBot)</a></div><div class="tool-meta">X (Twitter)</div></div>
-          <div class="tool-desc-col">Мониторинг ключевых слов, AI-ответы на посты с одобрением</div>
-          <a class="btn-soft" href="tools/agent-x-tuitbot.html">Подробнее</a>
+          <div><div class="tool-name"><a href="tools/agent-x-tuitbot.html">Agent-X (TuitBot)</a></div><div class="tool-meta" data-i18n="tools.agent-x-tuitbot.meta"></div></div>
+          <div class="tool-desc-col" data-i18n="tools.agent-x-tuitbot.desc"></div>
+          <a class="btn-soft" href="tools/agent-x-tuitbot.html" data-i18n="ui.details"></a>
         </div>
         <div class="tool-row">
           <div class="tool-icon">4.2</div>
-          <div><div class="tool-name"><a href="tools/redsignal.html">RedSignal</a></div><div class="tool-meta">Reddit</div></div>
-          <div class="tool-desc-col">Поиск «тёплых» лидов, AI-фильтрация релевантности</div>
-          <a class="btn-soft" href="tools/redsignal.html">Подробнее</a>
+          <div><div class="tool-name"><a href="tools/redsignal.html">RedSignal</a></div><div class="tool-meta" data-i18n="tools.redsignal.meta"></div></div>
+          <div class="tool-desc-col" data-i18n="tools.redsignal.desc"></div>
+          <a class="btn-soft" href="tools/redsignal.html" data-i18n="ui.details"></a>
         </div>
         <div class="tool-row">
           <div class="tool-icon">4.3</div>
-          <div><div class="tool-name"><a href="tools/n8n-workflow.html">n8n workflow</a></div><div class="tool-meta">Multi-platform</div></div>
-          <div class="tool-desc-col">Мультиплатформенный мониторинг и уведомления</div>
-          <a class="btn-soft" href="tools/n8n-workflow.html">Подробнее</a>
+          <div><div class="tool-name"><a href="tools/n8n-workflow.html">n8n workflow</a></div><div class="tool-meta" data-i18n="tools.n8n-workflow.meta"></div></div>
+          <div class="tool-desc-col" data-i18n="tools.n8n-workflow.desc"></div>
+          <a class="btn-soft" href="tools/n8n-workflow.html" data-i18n="ui.details"></a>
         </div>
         <div class="tool-row">
-          <div class="tool-icon">4.4</div>
-          <div><div class="tool-name"><a href="tools/obsei.html">Obsei</a></div><div class="tool-meta">X, Reddit, Facebook</div></div>
-          <div class="tool-desc-col">Анализ тональности упоминаний</div>
-          <a class="btn-soft" href="tools/obsei.html">Подробнее</a>
+          <div class="tool-icon">3.3 / 4.4</div>
+          <div><div class="tool-name"><a href="tools/obsei.html">Obsei</a></div><div class="tool-meta" data-i18n="tools.obsei-l4.meta"></div></div>
+          <div class="tool-desc-col" data-i18n="tools.obsei-l4.desc"></div>
+          <a class="btn-soft" href="tools/obsei.html" data-i18n="ui.details"></a>
         </div>
       </div>
-      <h3>Архитектура слоя 4</h3>
+      <h3 data-i18n="layers.4.archTitle"></h3>
       <div class="diagram">
         <div class="diagram-label">Trigger Keywords</div>
         <div class="diagram-arrow">↓</div>
@@ -281,16 +284,16 @@
 
     <section id="full-arch" class="panel">
       <div class="panel-head">
-        <div class="panel-tag">Architecture</div>
-        <h2 class="panel-title">Полная архитектурная схема</h2>
-        <p class="section-desc">Взаимодействие слоёв, оркестрации и хранилища данных.</p>
+        <div class="panel-tag" data-i18n="arch.tag"></div>
+        <h2 class="panel-title" data-i18n="arch.title"></h2>
+        <p class="section-desc" data-i18n="arch.desc"></p>
       </div>
-      <div class="arch-bar">User Interface — Dashboard / Reports / Notifications</div>
+      <div class="arch-bar" data-i18n="arch.ui"></div>
       <div class="diagram-arrow">↓</div>
-      <div class="arch-bar muted">Orchestration Layer — CrewAI / LangGraph / n8n</div>
+      <div class="arch-bar muted" data-i18n="arch.orch"></div>
       <div class="arch-grid">
         <div class="arch-layer">
-          <strong>Слой 1 — Поиск</strong>
+          <strong data-i18n="arch.l1"></strong>
           <ul>
             <li><a href="tools/ai-find-customer.html">AI_Find_Customer</a></li>
             <li><a href="tools/github-lead-signals.html">GitHub Lead Signals</a></li>
@@ -300,7 +303,7 @@
           </ul>
         </div>
         <div class="arch-layer">
-          <strong>Слой 2 — Сбор</strong>
+          <strong data-i18n="arch.l2"></strong>
           <ul>
             <li><a href="tools/coldreach-scraper.html">ColdReach</a></li>
             <li><a href="tools/lead-generator.html">lead-generator</a></li>
@@ -310,7 +313,7 @@
           </ul>
         </div>
         <div class="arch-layer">
-          <strong>Слой 3 — Анализ</strong>
+          <strong data-i18n="arch.l3"></strong>
           <ul>
             <li><a href="tools/automated-decision-making-discovery.html">Decision Maker</a></li>
             <li><a href="tools/owasp-social-osint-agent.html">OWASP OSINT</a></li>
@@ -319,7 +322,7 @@
           </ul>
         </div>
         <div class="arch-layer">
-          <strong>Слой 4 — Вовлечение</strong>
+          <strong data-i18n="arch.l4"></strong>
           <ul>
             <li><a href="tools/agent-x-tuitbot.html">Agent-X</a></li>
             <li><a href="tools/redsignal.html">RedSignal</a></li>
@@ -329,44 +332,44 @@
         </div>
       </div>
       <div class="diagram-arrow">↓</div>
-      <div class="arch-bar muted">Data Lake &amp; CRM — PostgreSQL / SQLite + HubSpot / Salesforce</div>
+      <div class="arch-bar muted" data-i18n="arch.data"></div>
     </section>
 
     <section id="data-flow" class="panel">
       <div class="panel-head">
-        <div class="panel-tag">Data Flow</div>
-        <h2 class="panel-title">Процесс обработки данных</h2>
+        <div class="panel-tag" data-i18n="flow.tag"></div>
+        <h2 class="panel-title" data-i18n="flow.title"></h2>
       </div>
       <div class="flow">
-        <div class="flow-step"><span class="flow-num">1</span><span class="flow-text">Поиск компаний (Слой 1)</span></div>
-        <div class="flow-step"><span class="flow-num">2</span><span class="flow-text">Обогащение данными (Слой 2)</span></div>
-        <div class="flow-step"><span class="flow-num">3</span><span class="flow-text">Анализ и генерация инсайтов (Слой 3)</span></div>
-        <div class="flow-step"><span class="flow-num">4</span><span class="flow-text">Запись в CRM (PostgreSQL / Salesforce)</span></div>
-        <div class="flow-step"><span class="flow-num">5</span><span class="flow-text">Мониторинг соцсетей по триггерным словам (Слой 4)</span></div>
-        <div class="flow-step"><span class="flow-num">6</span><span class="flow-text">AI-фильтрация и классификация (Obsei + OWASP)</span></div>
-        <div class="flow-step"><span class="flow-num">7</span><span class="flow-text">Генерация персонализированных сообщений (Agent-X / RedSignal)</span></div>
-        <div class="flow-step"><span class="flow-num">8</span><span class="flow-text">Вовлечение и отправка в CRM</span></div>
+        <div class="flow-step"><span class="flow-num">1</span><span class="flow-text" data-i18n="flow.steps.0"></span></div>
+        <div class="flow-step"><span class="flow-num">2</span><span class="flow-text" data-i18n="flow.steps.1"></span></div>
+        <div class="flow-step"><span class="flow-num">3</span><span class="flow-text" data-i18n="flow.steps.2"></span></div>
+        <div class="flow-step"><span class="flow-num">4</span><span class="flow-text" data-i18n="flow.steps.3"></span></div>
+        <div class="flow-step"><span class="flow-num">5</span><span class="flow-text" data-i18n="flow.steps.4"></span></div>
+        <div class="flow-step"><span class="flow-num">6</span><span class="flow-text" data-i18n="flow.steps.5"></span></div>
+        <div class="flow-step"><span class="flow-num">7</span><span class="flow-text" data-i18n="flow.steps.6"></span></div>
+        <div class="flow-step"><span class="flow-num">8</span><span class="flow-text" data-i18n="flow.steps.7"></span></div>
       </div>
     </section>
 
     <section id="tech" class="panel">
       <div class="panel-head">
-        <div class="panel-tag">Tech Stack</div>
-        <h2 class="panel-title">Технические рекомендации</h2>
+        <div class="panel-tag" data-i18n="tech.tag"></div>
+        <h2 class="panel-title" data-i18n="tech.title"></h2>
       </div>
       <div class="table-wrap">
         <table>
-          <thead><tr><th>Компонент</th><th>Технология</th><th>Назначение</th></tr></thead>
+          <thead><tr><th data-i18n="tech.col1"></th><th data-i18n="tech.col2"></th><th data-i18n="tech.col3"></th></tr></thead>
           <tbody>
-            <tr><td>Orchestration</td><td><span class="badge">CrewAI</span> <span class="badge">LangGraph</span></td><td>Управление агентами и потоками данных</td></tr>
-            <tr><td>Backend API</td><td><span class="badge">Python (FastAPI)</span></td><td>REST API для взаимодействия с клиентами</td></tr>
-            <tr><td>Frontend</td><td><span class="badge">Streamlit</span> <span class="badge">Next.js</span></td><td>Дашборд для просмотра результатов</td></tr>
-            <tr><td>Database</td><td><span class="badge">PostgreSQL</span> <span class="badge">SQLite</span></td><td>Хранение компаний, контактов, отчётов</td></tr>
-            <tr><td>Queue</td><td><span class="badge">Celery</span> <span class="badge">Redis</span></td><td>Асинхронная обработка задач</td></tr>
-            <tr><td>AI/LLM</td><td><span class="badge">OpenAI</span> <span class="badge">Anthropic</span> <span class="badge">Gemini</span></td><td>Анализ, генерация сообщений</td></tr>
-            <tr><td>Search APIs</td><td><span class="badge">Tavily</span> <span class="badge">Exa.ai</span> <span class="badge">Google Search</span></td><td>Поиск данных о компаниях</td></tr>
-            <tr><td>Cron/Scheduler</td><td><span class="badge">APScheduler</span> <span class="badge">Celery Beat</span></td><td>Регулярный запуск мониторинга</td></tr>
-            <tr><td>Notifications</td><td><span class="badge">Slack</span> <span class="badge">Telegram</span> <span class="badge">Email</span></td><td>Уведомления о новых лидах</td></tr>
+            <tr><td data-i18n="tech.rows.0.name"></td><td><span class="badge">CrewAI</span> <span class="badge">LangGraph</span></td><td data-i18n="tech.rows.0.purpose"></td></tr>
+            <tr><td data-i18n="tech.rows.1.name"></td><td><span class="badge">Python (FastAPI)</span></td><td data-i18n="tech.rows.1.purpose"></td></tr>
+            <tr><td data-i18n="tech.rows.2.name"></td><td><span class="badge">Streamlit</span> <span class="badge">Next.js</span></td><td data-i18n="tech.rows.2.purpose"></td></tr>
+            <tr><td data-i18n="tech.rows.3.name"></td><td><span class="badge">PostgreSQL</span> <span class="badge">SQLite</span></td><td data-i18n="tech.rows.3.purpose"></td></tr>
+            <tr><td data-i18n="tech.rows.4.name"></td><td><span class="badge">Celery</span> <span class="badge">Redis</span></td><td data-i18n="tech.rows.4.purpose"></td></tr>
+            <tr><td data-i18n="tech.rows.5.name"></td><td><span class="badge">OpenAI</span> <span class="badge">Anthropic</span> <span class="badge">Gemini</span></td><td data-i18n="tech.rows.5.purpose"></td></tr>
+            <tr><td data-i18n="tech.rows.6.name"></td><td><span class="badge">Tavily</span> <span class="badge">Exa.ai</span> <span class="badge">Google Search</span></td><td data-i18n="tech.rows.6.purpose"></td></tr>
+            <tr><td data-i18n="tech.rows.7.name"></td><td><span class="badge">APScheduler</span> <span class="badge">Celery Beat</span></td><td data-i18n="tech.rows.7.purpose"></td></tr>
+            <tr><td data-i18n="tech.rows.8.name"></td><td><span class="badge">Slack</span> <span class="badge">Telegram</span> <span class="badge">Email</span></td><td data-i18n="tech.rows.8.purpose"></td></tr>
           </tbody>
         </table>
       </div>
@@ -374,10 +377,10 @@
 
     <section id="links" class="panel">
       <div class="panel-head">
-        <div class="panel-tag">All Tools</div>
-        <h2 class="panel-title">Все инструменты</h2>
+        <div class="panel-tag" data-i18n="links.tag"></div>
+        <h2 class="panel-title" data-i18n="links.title"></h2>
       </div>
-      <div class="link-cat">Слой 1 — Поиск компаний</div>
+      <div class="link-cat" data-i18n="links.cat1"></div>
       <div class="links-grid">
         <div class="link-item"><a href="tools/ai-find-customer.html">AI_Find_Customer</a></div>
         <div class="link-item"><a href="tools/github-lead-signals.html">GitHub Lead Signals</a></div>
@@ -385,7 +388,7 @@
         <div class="link-item"><a href="tools/trendscan.html">TrendScan</a></div>
         <div class="link-item"><a href="tools/icp-researcher.html">ICP Researcher</a></div>
       </div>
-      <div class="link-cat">Слой 2 — Сбор контактов</div>
+      <div class="link-cat" data-i18n="links.cat2"></div>
       <div class="links-grid">
         <div class="link-item"><a href="tools/coldreach-scraper.html">ColdReach-Scraper</a></div>
         <div class="link-item"><a href="tools/lead-generator.html">lead-generator</a></div>
@@ -393,25 +396,26 @@
         <div class="link-item"><a href="tools/the-3rd-eye.html">The 3rd Eye</a></div>
         <div class="link-item"><a href="tools/business-researcher.html">Business Researcher</a></div>
       </div>
-      <div class="link-cat">Слой 3 — Анализ данных</div>
+      <div class="link-cat" data-i18n="links.cat3"></div>
       <div class="links-grid">
         <div class="link-item"><a href="tools/automated-decision-making-discovery.html">Automated-Decision-Making-Discovery</a></div>
         <div class="link-item"><a href="tools/owasp-social-osint-agent.html">OWASP SocialOSINTAgent</a></div>
         <div class="link-item"><a href="tools/obsei.html">Obsei</a></div>
-        <div class="link-item"><a href="tools/company-research-agent-tavily.html">Company Research Agent</a></div>
+        <div class="link-item"><a href="tools/company-research-agent-tavily.html">Company Research Agent (Tavily)</a></div>
       </div>
-      <div class="link-cat">Слой 4 — Вовлечение</div>
+      <div class="link-cat" data-i18n="links.cat4"></div>
       <div class="links-grid">
-        <div class="link-item"><a href="tools/agent-x-tuitbot.html">Agent-X — TuitBot</a></div>
+        <div class="link-item"><a href="tools/agent-x-tuitbot.html">Agent-X (TuitBot)</a></div>
         <div class="link-item"><a href="tools/redsignal.html">RedSignal</a></div>
         <div class="link-item"><a href="tools/n8n-workflow.html">n8n workflow</a></div>
         <div class="link-item"><a href="tools/awesome-n8n-templates.html">awesome-n8n-templates</a></div>
       </div>
     </section>
 
-    <footer>LeadScaper Platform — Architecture Documentation</footer>
+    <footer data-i18n="ui.footer"></footer>
     </main>
   </div>
+  <script src="i18n.js"></script>
   <script src="app.js"></script>
 </body>
 </html>
