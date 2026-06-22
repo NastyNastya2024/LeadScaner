@@ -245,11 +245,13 @@
   "toolsPage": {
     "ai-find-customer": {
       "role": "Discover companies via AI agents using keywords, industry, and geolocation",
-      "layerName": "Company Discovery"
+      "layerName": "Company Discovery",
+      "about": "<p><strong>AI_Find_Customer</strong> (AI Hunter) is an open-source automated B2B lead discovery system for export and B2B sales, built on FastAPI, LangGraph, a multi-agent pipeline, and multi-model LLM support.</p><p>Provide your company website, product documents, or keywords plus a target market—the system automatically analyzes the company, generates search queries, runs web search, extracts leads, and discovers contact details.</p><h2>Key features</h2><ul><li>Multi-agent pipeline: Insight → KeywordGen → Search → LeadExtract → Evaluate</li><li>Dual-model setup: a reasoning model for ReAct decisions, a standard model for extraction and generation</li><li>Flexible input: website URL, PDF/Excel/CSV/Word/Markdown/TXT files, or keywords alone</li><li>Multi-channel search: Google Search, Google Maps, B2B platforms</li><li>Contact discovery: email, phone, address, social links</li><li>AI email sequences: 3-step outreach drafts based on ICP and website insights</li><li>Real-time progress via SSE; Langfuse integration for cost observability</li><li>Models via LiteLLM: OpenAI, Anthropic, OpenRouter, Groq, GLM, Moonshot, MiniMax</li></ul><h2>Stack</h2><p>Backend: FastAPI + LangGraph. Frontend: React + Vite. Storage: SQLite/JSON.</p>"
     },
     "github-lead-signals": {
       "role": "Find companies by technology stack (GitHub activity signals)",
-      "layerName": "Company Discovery"
+      "layerName": "Company Discovery",
+      "about": "<p><strong>GitHub Lead Signals</strong> is an Apify Actor for B2B prospecting based on GitHub technology signals. It analyzes public developer and organization activity—repositories, language stacks, commit patterns, and engagement—and uses AI to surface companies already using or adopting your target technologies.</p><p>It is a practical way to find product teams, SaaS startups, and dev-tool vendors for outbound sales, integrations, and partnerships—without manually browsing GitHub.</p><h2>What it does</h2><ul><li>Discovers organizations and developers by tech stack</li><li>Analyzes repository patterns and programming languages</li><li>Scores activity and engagement with AI</li><li>Exports company lists for enrichment in the LeadScaper pipeline</li></ul><h2>Data source</h2><p>GitHub API via Apify—a ready-to-run cloud Actor with no infrastructure to maintain.</p>"
     },
     "clutch-profile-scraper": {
       "role": "Collect companies from a B2B directory",

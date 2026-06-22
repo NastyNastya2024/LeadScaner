@@ -470,22 +470,108 @@ TOOL_ROLES_EN = {
     "awesome-n8n-templates": "Curated automation templates for social media and monitoring",
 }
 
+TOOL_ABOUT_RU = {
+    "github-lead-signals": (
+        "<p><strong>GitHub Lead Signals</strong> — Apify Actor для поиска B2B-клиентов по технологическим "
+        "сигналам из GitHub. Инструмент анализирует публичную активность разработчиков и организаций: "
+        "репозитории, стек языков, паттерны коммитов и вовлечённость — и с помощью AI выявляет компании, "
+        "которые уже используют или внедряют нужные технологии.</p>"
+        "<p>Это эффективный способ находить продуктовые команды, SaaS-стартапы и dev-tools компании "
+        "для outbound-продаж, интеграций и партнёрств — без ручного просмотра GitHub.</p>"
+        "<h2>Что делает</h2>"
+        "<ul>"
+        "<li>Ищет организации и разработчиков по технологическому стеку</li>"
+        "<li>Анализирует паттерны репозиториев и языки программирования</li>"
+        "<li>Оценивает активность и вовлечённость через AI</li>"
+        "<li>Формирует списки компаний для обогащения в пайплайне LeadScaper</li>"
+        "</ul>"
+        "<h2>Источник данных</h2>"
+        "<p>GitHub API через платформу Apify — готовый облачный Actor без собственной инфраструктуры.</p>"
+    ),
+    "ai-find-customer": (
+        "<p><strong>AI_Find_Customer</strong> (AI Hunter) — открытая система автоматизированного поиска "
+        "B2B-клиентов для внешней торговли и B2B-продаж на базе FastAPI, LangGraph, мультиагентного "
+        "пайплайна и поддержки нескольких LLM.</p>"
+        "<p>Укажите сайт компании, загрузите документы о продукте или введите ключевые слова и целевой "
+        "рынок — система самостоятельно проанализирует компанию, сгенерирует поисковые запросы, "
+        "выполнит веб-поиск, извлечёт лиды и найдёт контактные данные.</p>"
+        "<h2>Ключевые возможности</h2>"
+        "<ul>"
+        "<li>Мультиагентный пайплайн: Insight → KeywordGen → Search → LeadExtract → Evaluate</li>"
+        "<li>Два типа моделей: reasoning-модель для ReAct-решений, стандартная — для извлечения и генерации</li>"
+        "<li>Гибкий ввод: URL сайта, PDF/Excel/CSV/Word/Markdown/TXT или ключевые слова</li>"
+        "<li>Многоканальный поиск: Google Search, Google Maps, B2B-площадки</li>"
+        "<li>Извлечение контактов: email, телефон, адрес, ссылки на соцсети</li>"
+        "<li>AI-генерация email-цепочек из 3 писем на основе ICP и инсайтов с сайта</li>"
+        "<li>Real-time прогресс через SSE; интеграция с Langfuse для мониторинга затрат</li>"
+        "<li>Поддержка OpenAI, Anthropic, OpenRouter, Groq, GLM, Moonshot, MiniMax через LiteLLM</li>"
+        "</ul>"
+        "<h2>Стек</h2>"
+        "<p>Backend: FastAPI + LangGraph. Frontend: React + Vite. Хранение: SQLite/JSON.</p>"
+    ),
+}
+
+TOOL_ABOUT_EN = {
+    "github-lead-signals": (
+        "<p><strong>GitHub Lead Signals</strong> is an Apify Actor for B2B prospecting based on GitHub "
+        "technology signals. It analyzes public developer and organization activity—repositories, language "
+        "stacks, commit patterns, and engagement—and uses AI to surface companies already using or adopting "
+        "your target technologies.</p>"
+        "<p>It is a practical way to find product teams, SaaS startups, and dev-tool vendors for outbound "
+        "sales, integrations, and partnerships—without manually browsing GitHub.</p>"
+        "<h2>What it does</h2>"
+        "<ul>"
+        "<li>Discovers organizations and developers by tech stack</li>"
+        "<li>Analyzes repository patterns and programming languages</li>"
+        "<li>Scores activity and engagement with AI</li>"
+        "<li>Exports company lists for enrichment in the LeadScaper pipeline</li>"
+        "</ul>"
+        "<h2>Data source</h2>"
+        "<p>GitHub API via Apify—a ready-to-run cloud Actor with no infrastructure to maintain.</p>"
+    ),
+    "ai-find-customer": (
+        "<p><strong>AI_Find_Customer</strong> (AI Hunter) is an open-source automated B2B lead discovery "
+        "system for export and B2B sales, built on FastAPI, LangGraph, a multi-agent pipeline, and "
+        "multi-model LLM support.</p>"
+        "<p>Provide your company website, product documents, or keywords plus a target market—the system "
+        "automatically analyzes the company, generates search queries, runs web search, extracts leads, "
+        "and discovers contact details.</p>"
+        "<h2>Key features</h2>"
+        "<ul>"
+        "<li>Multi-agent pipeline: Insight → KeywordGen → Search → LeadExtract → Evaluate</li>"
+        "<li>Dual-model setup: a reasoning model for ReAct decisions, a standard model for extraction and generation</li>"
+        "<li>Flexible input: website URL, PDF/Excel/CSV/Word/Markdown/TXT files, or keywords alone</li>"
+        "<li>Multi-channel search: Google Search, Google Maps, B2B platforms</li>"
+        "<li>Contact discovery: email, phone, address, social links</li>"
+        "<li>AI email sequences: 3-step outreach drafts based on ICP and website insights</li>"
+        "<li>Real-time progress via SSE; Langfuse integration for cost observability</li>"
+        "<li>Models via LiteLLM: OpenAI, Anthropic, OpenRouter, Groq, GLM, Moonshot, MiniMax</li>"
+        "</ul>"
+        "<h2>Stack</h2>"
+        "<p>Backend: FastAPI + LangGraph. Frontend: React + Vite. Storage: SQLite/JSON.</p>"
+    ),
+}
+
 
 def build_tools_page(locale: dict, lang: str) -> dict:
     """Build toolsPage section from generate_tools.TOOLS."""
+    about_map = TOOL_ABOUT_RU if lang == "ru" else TOOL_ABOUT_EN
     tools_page = {}
     for tool in TOOLS:
         slug = tool["slug"]
         if lang == "ru":
-            tools_page[slug] = {
+            entry = {
                 "role": tool["role"],
                 "layerName": tool["layer_name"],
             }
         else:
-            tools_page[slug] = {
+            entry = {
                 "role": TOOL_ROLES_EN[slug],
                 "layerName": LAYER_NAMES_EN[tool["layer"]],
             }
+        if slug in about_map:
+            entry["about"] = about_map[slug]
+        tools_page[slug] = entry
     return tools_page
 
 

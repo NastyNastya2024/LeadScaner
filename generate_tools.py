@@ -306,6 +306,8 @@ TOOLS = [
 
 LAYER_COLORS = {1: "var(--layer-1)", 2: "var(--layer-2)", 3: "var(--layer-3)", 4: "var(--layer-4)"}
 
+CUSTOM_ABOUT_SLUGS = {"github-lead-signals", "ai-find-customer"}
+
 
 def fetch_github_meta(repo: str) -> dict:
     req = urllib.request.Request(
@@ -396,6 +398,9 @@ def render_tool(tool: dict) -> str:
 
     stats_html = "\n          ".join(stats)
 
+    if tool["slug"] in CUSTOM_ABOUT_SLUGS:
+        readme_html = f'<div data-i18n="toolsPage.{html.escape(tool["slug"])}.about" data-i18n-html="true"></div>'
+
     return f"""<!DOCTYPE html>
 <html lang="ru">
 <head>
@@ -433,6 +438,8 @@ def render_tool(tool: dict) -> str:
           <div class="hero-stat-label" data-i18n-tool-layer data-layer="{layer}"></div>
           <h1 class="hero-stat-value tool-hero-title">{name}</h1>
           <p class="hero-stat-sub" data-i18n-tool-role></p>
+        </div>
+        <div class="tool-hero-actions">
           <a class="btn-external" href="{url}" target="_blank" rel="noopener" data-i18n-open data-source="{url_label}">
             Open on {url_label} →
           </a>
