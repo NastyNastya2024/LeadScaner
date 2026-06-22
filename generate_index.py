@@ -26,6 +26,18 @@ LAYER_TOOL_ORDER = {
 
 TOOLS_BY_SLUG = {t["slug"]: t for t in TOOLS}
 
+LAYER_TOOL_IDS = {
+    3: {"obsei": "3.3"},
+    4: {OBEI_L4_KEY: "4.4"},
+}
+
+
+def display_id(slug: str, layer: int) -> str:
+    if layer in LAYER_TOOL_IDS and slug in LAYER_TOOL_IDS[layer]:
+        return LAYER_TOOL_IDS[layer][slug]
+    tool = TOOLS_BY_SLUG["obsei" if slug == OBEI_L4_KEY else slug]
+    return tool["id"].split("/")[0].strip()
+
 
 def tool_row(slug: str, tool_id: str) -> str:
     if slug == OBEI_L4_KEY:
@@ -51,7 +63,7 @@ def tool_row(slug: str, tool_id: str) -> str:
 
 def layer_section(n: int) -> str:
     rows = "\n".join(
-        tool_row(slug, TOOLS_BY_SLUG["obsei" if slug == OBEI_L4_KEY else slug]["id"])
+        tool_row(slug, display_id(slug, n))
         for slug in LAYER_TOOL_ORDER[n]
     )
     arch = ""

@@ -211,7 +211,7 @@ TOOLS = [
         "name": "Obsei",
         "layer": 3,
         "layer_name": "Анализ данных",
-        "id": "3.3 / 4.4",
+        "id": "3.3",
         "role": "Анализ тональности и классификация сообщений; мониторинг упоминаний",
         "sources": "X, Reddit, Facebook, отзывы",
         "platform": "X, Reddit, Facebook",
