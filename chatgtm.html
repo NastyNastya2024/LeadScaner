@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>LeadScaper — ChatGTM Analysis</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body
+  class="model-page"
+  data-title-i18n="chatgtm.metaTitle"
+  data-doc-src="CHATGTM_ANALYSIS.md"
+  data-doc-download="CHATGTM_ANALYSIS.md"
+>
+  <header class="site-header">
+    <div class="header-inner">
+      <div class="header-start">
+        <button class="menu-toggle" type="button" aria-label="Menu" aria-expanded="false" aria-controls="model-nav">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+        <a class="logo" href="index.html">
+          <span class="logo-icon">✦</span>
+          LeadScaper
+        </a>
+      </div>
+      <div class="header-actions">
+        <a class="btn-soft header-doc-link" href="index.html" data-i18n="chatgtm.backArch"></a>
+        <a class="btn-soft header-doc-link" href="financial-model.html" data-i18n="chatgtm.backModel"></a>
+        <div class="lang-switch" role="group" aria-label="Language">
+          <button class="lang-btn active" type="button" data-lang="ru">RU</button>
+          <button class="lang-btn" type="button" data-lang="en">EN</button>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <div class="layout model-layout">
+    <aside class="sidebar model-sidebar" id="model-nav">
+      <div class="sidebar-label" data-i18n="chatgtm.tocLabel"></div>
+      <ul class="sidebar-nav model-toc" id="model-toc">
+        <li class="model-toc-placeholder"><span data-i18n="chatgtm.loading"></span></li>
+      </ul>
+      <div class="model-sidebar-foot">
+        <a class="btn-soft model-download" href="CHATGTM_ANALYSIS.md" download data-i18n="chatgtm.downloadMd"></a>
+      </div>
+    </aside>
+
+    <main class="main model-main">
+      <a class="back-link" href="index.html" data-i18n="ui.back"></a>
+
+      <div class="hero-card hero-card-accent model-hero">
+        <div>
+          <div class="hero-stat-label" data-i18n="chatgtm.tag"></div>
+          <h1 class="hero-stat-value" data-i18n="chatgtm.title"></h1>
+          <p class="hero-stat-sub" data-i18n="chatgtm.subtitle"></p>
+        </div>
+      </div>
+
+      <section class="panel model-panel">
+        <div id="model-status" class="model-status" role="status">
+          <span data-i18n="chatgtm.loading"></span>
+        </div>
+        <article id="model-content" class="readme-content model-content" hidden></article>
+      </section>
+
+      <footer data-i18n="ui.footer"></footer>
+    </main>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.min.js"></script>
+  <script src="i18n.js"></script>
+  <script src="doc-page.js"></script>
+</body>
+</html>

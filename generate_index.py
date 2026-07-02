@@ -232,6 +232,8 @@ def render() -> str:
         <li><a href="#data-flow" data-i18n="nav.dataFlow"></a></li>
         <li><a href="#tech" data-i18n="nav.tech"></a></li>
         <li><a href="#links" data-i18n="nav.links"></a></li>
+        <li><a href="financial-model.html" data-i18n="nav.financialModel"></a></li>
+        <li><a href="chatgtm.html" data-i18n="nav.chatgtm"></a></li>
       </ul>
     </aside>
 

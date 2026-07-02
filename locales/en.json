@@ -27,7 +27,30 @@
     "fullArch": "Architecture",
     "dataFlow": "Data Flow",
     "tech": "Tech Stack",
-    "links": "All Tools"
+    "links": "All Tools",
+    "financialModel": "Financial Model",
+    "chatgtm": "ChatGTM / AI-GTM"
+  },
+  "model": {
+    "metaTitle": "LeadScaper — Financial Model",
+    "tag": "Financial Model",
+    "title": "Financial Model",
+    "subtitle": "System configurations, unit economics, ICP, competitors, and RU data sources. All figures in ₽.",
+    "tocLabel": "Contents",
+    "loading": "Loading model…",
+    "downloadMd": "Download .md",
+    "backArch": "Architecture"
+  },
+  "chatgtm": {
+    "metaTitle": "LeadScaper — ChatGTM / AI-GTM Analysis",
+    "tag": "ChatGTM Reference",
+    "title": "ChatGTM × LeadScaper",
+    "subtitle": "Cursor AI-GTM workflow breakdown, competitors, ICP pains, RU tooling, and financial forecast.",
+    "tocLabel": "Contents",
+    "loading": "Loading analysis…",
+    "downloadMd": "Download .md",
+    "backArch": "Architecture",
+    "backModel": "Financial model"
   },
   "hero": {
     "label": "LeadScaper Platform",

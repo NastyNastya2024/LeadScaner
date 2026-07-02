@@ -27,7 +27,30 @@
     "fullArch": "Архитектура",
     "dataFlow": "Data Flow",
     "tech": "Техстек",
-    "links": "Все инструменты"
+    "links": "Все инструменты",
+    "financialModel": "Финансовая модель",
+    "chatgtm": "ChatGTM / AI-GTM"
+  },
+  "model": {
+    "metaTitle": "LeadScaper — Финансовая модель",
+    "tag": "Financial Model",
+    "title": "Финансовая модель",
+    "subtitle": "Конфигурации системы, unit economics, ICP, конкуренты и RU-источники данных. Все расчёты в ₽.",
+    "tocLabel": "Содержание",
+    "loading": "Загрузка модели…",
+    "downloadMd": "Скачать .md",
+    "backArch": "Архитектура"
+  },
+  "chatgtm": {
+    "metaTitle": "LeadScaper — ChatGTM / AI-GTM анализ",
+    "tag": "ChatGTM Reference",
+    "title": "ChatGTM × LeadScaper",
+    "subtitle": "Разбор AI-GTM workflow Cursor, конкуренты, боли ICP, инструментарий РФ и финансовый прогноз.",
+    "tocLabel": "Содержание",
+    "loading": "Загрузка анализа…",
+    "downloadMd": "Скачать .md",
+    "backArch": "Архитектура",
+    "backModel": "Финмодель"
   },
   "hero": {
     "label": "LeadScaper Platform",
