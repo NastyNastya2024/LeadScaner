@@ -163,9 +163,9 @@
       showContent(marked.parse(md));
     })
     .catch(function () {
-      showError(document.documentElement.lang === 'en'
-        ? 'Could not load ' + MD_URL
-        : 'Не удалось загрузить ' + MD_URL);
-      if (statusEl && loadingText) statusEl.textContent = loadingText;
+      var msg = document.documentElement.lang === 'en'
+        ? 'Could not load ' + MD_URL + '. If you use GitHub Pages, wait for the deploy workflow or check that the file is committed.'
+        : 'Не удалось загрузить ' + MD_URL + '. На GitHub Pages дождитесь деплоя (Actions) или проверьте, что файл закоммичен.';
+      showError(msg);
     });
 })();
